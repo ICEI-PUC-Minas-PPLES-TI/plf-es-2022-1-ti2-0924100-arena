@@ -47,8 +47,7 @@ para tal.
 
     1.3 Objetivo geral
 
-O aluno deve escrever um pequeno parágrafo ou frase com o **objetivo geral** do trabalho. 
-O objetivo deve ser bem direto, específico e definido com verbos de ação (elaborar, propor, ava-liar, comparar etc.).
+O objetivo geral do projeto é incentivar a realização de exercícios físicos na sociedade brasileira, criando meios para que a prática de esportes seja retomada após a pandemia de maneira segura,  abrangendo desde os esportes menos populares até os mais difundidos no país, agilizando vários processos relacionados à partida
 
         1.3.1 Objetivos específicos
 
