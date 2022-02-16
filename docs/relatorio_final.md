@@ -34,9 +34,14 @@ A introdução deve apresentar de dois ou quatro parágrafos de contextualizaç�
 
     1.1 Contextualização
 
-Na **contextualização**, o aluno deve dizer do que se trata o trabalho, em que área ou contexto se insere. 
-A **contextualização** deve ser desenvolvida de algo mais genérico para algo mais específico. 
-A citação de pesquisas quantitativas é bem aceita aqui (corretamente referenciadas).
+O número de pessoas sedentárias vem crescendo com o passar do tempo e esse problema se agravou com a pandemia da COVID-19. 
+De acordo com a Organização Mundial da Saúde (OMS), em média 5 milhões de mortes poderiam ser evitadas caso as vítimas realizassem algum tipo de atividade física, também segundo a fonte, o Brasil é o país mais sedentário da América Latina e ocupa a quinta posição no ranking mundial.
+Assim, surge a necessidade de se integrar o meio virtual à pratica e incentivo aos esportes, amenizando assim essa situação.
+
+OMS divulga guia para combater sedentarismo, que mata até 5 milhões por ano. ONU News, 27 de novembro de 2020. Disponível em: <https://news.un.org/pt/story/2020/11/1734322>. Acesso em: 14/02/2022.
+
+América Latina tem maior índice de sedentário, Brasil lidera. Agência Brasil, 05 de setembro de 2018. Disponível em: https://agenciabrasil.ebc.com.br/internacional/noticia/2018-09/america-latina-tem-maior-indice-de-sedentarios-brasil-lidera>. Acesso em: 16/02/2022.
+
 
     1.2 Problema
 
