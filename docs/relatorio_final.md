@@ -61,8 +61,10 @@ concentrar a sua prática investigativa, ou como você vai aprofundar no seu tra
 
     1.4 Justificativas
 
-Mostre também as **justificativas** para o 
-desenvolvimento do seu trabalho e, caso deseje, desta-que alguma contribuição do trabalho.
+“Qualquer tipo de atividade física, de qualquer duração, pode melhorar a saúde e o bem-estar, mas quanto mais fizer exercício, melhor será. Se você precisa passar muito tempo sentado, quieto, seja no trabalho ou na escola, deve praticar mais atividade física para combater os efeitos prejudiciais do comportamento sedentário.”, O Diretor de Promoção da OMS Ruediger Krech	
+	No entanto, com o advento do Covid-19, as pessoas se tornaram mais sedentárias, de acordo com o levantamento realizado pela Fundação Oswaldo Cruz (Fiocruz) em conjunto com a Universidade Federal de Minas Gerais (UFMG) e com a Universidade Estadual de Campinas (Unicamp), 62% de 44.062 dos brasileiros entrevistados pararam de fazer qualquer tipo de exercício físico durante a pandemia.
+    Ciente que essa vida sedentária é nociva à saúde, o projeto Arena pode colaborar  para inverter esse quadro. Com avanço significativo das vacinas e o regresso gradativo da vida cotidiana, os esportes estão retornando  de novo como uma ótima opção de atividade física e lazer.  
+
 
 
 ## 2. Participantes do processo
