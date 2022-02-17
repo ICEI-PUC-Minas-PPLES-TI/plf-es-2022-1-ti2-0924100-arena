@@ -43,12 +43,12 @@ OMS divulga guia para combater sedentarismo, que mata até 5 milhões por ano. O
 América Latina tem maior índice de sedentário, Brasil lidera. Agência Brasil, 05 de setembro de 2018. Disponível em: https://agenciabrasil.ebc.com.br/internacional/noticia/2018-09/america-latina-tem-maior-indice-de-sedentarios-brasil-lidera>. Acesso em: 16/02/2022.
 
 
-    1.2 Problema
+    1.2 Problema #2
 
-Em seguida o aluno deve caminhar a contextualização para descrever o **problema** que o artigo trata. 
-O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o aluno deve rapidamente apresentar 
-o cenário de problema da empresa. A empresa só deve ser citada explicitamente se o aluno tiver autorização 
-para tal.
+Problema: A falta de incentivo aos esportes no Brasil é notável tendo em vista que o mesmo é responsável por estimular uma saúde melhor, percebe-se que no Brasil a pratica do esporte futebol e maior do que qualquer outro, porém uma pesquisa realizada pelo Google mostrou que a pandemia estimulou os brasileiros a praticar e desenvolver paixões por novos esportes. Mesmo assim 2 de cada 3 brasileiros ainda não estão satisfeitos com suas práticas de exercícios, nessa pesquisa mostrou que entre março e novembro de 2020 a busca pelos esportes ciclismo aumentou (+144%) e natação (+230%) essa pesquisa mostra que a pratica de diferentes esportes tem tendencia a aumentar ainda mais pós pandemia.
+
+Pandemia estimula prática de esportes e brasileiros desenvolvem novas paixões além do futebol, mostra Google. Disponível em: https://valorinveste.globo.com/objetivo/gastar-bem/noticia/2021/03/04/pandemia-estimula-pratica-de-esportes-e-brasileiros-desenvolvem-novas-paixoes-alem-do-futebol-mostra-google.ghtml. 
+
 
     1.3 Objetivo geral
 
