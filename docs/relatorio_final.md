@@ -68,7 +68,16 @@ concentrar a sua prática investigativa, ou como você vai aprofundar no seu tra
 
 ## 2. Participantes do processo
 
-Apresente aqui os diferentes perfis dos Stakeholders (participantes do processo) chave do sistema. Diversas são as informações que podem ser relevantes para a definição dos perfis dos usuários, tais como idade, gênero, aspectos culturais, nível de educação, entre outros. A pesquisa de mercado pode ser uma ferramenta poderosa para se identificar e caracterizar os perfis de usuários.
+A partir do Mapa de stakeholders, um artefato para conhecer todas as partes interessadas pelo projeto, destaca-se: os iniciantes,  os atletas casuais e os  proprietários de quadra.
+
+![Arena - TIAPN - Mapa de Stakeholders](https://user-images.githubusercontent.com/90854484/154591928-eee5eed3-9683-4624-a1a5-e4c8e8f643d0.jpg)
+
+Os iniciantes compreendem o grupo de pessoas que desejam começar a praticar esportes, mas encontram dificuldades em encontrar possíveis companheiros de equipe, locais para começar a prática e apoio para sair do sedentarismo. De acordo com o Diagnóstico Nacional do Esporte realizado pelo Governo Federal, 45,9% dos entrevistados se consideram sedentários, dos quais 41,2% são homens e 50,4% são mulheres. Esse grupo de pessoas podem ser beneficiados diretamente através do uso do meio virtual para ingresso no mundo esportivo.
+
+Os atletas casuais englobam as pessoas que já possuem certa experiência em determinado(os) esporte(es) e procuram espaços adequados e também um tempo determinado  para o exercício destes. Este perfil também busca novos desafios, seja jogando com jogadores com o mesmo nível de experiência ou até mesmo participando de campeonatos organizados pelos usuários. Segundo  pesquisa realizada pelo Governo Federal, quase 60% dos entrevistados alegaram abandonar o esporte por causa da falta de tempo, enquanto cerca de 13,2%(homens) e 1,6%(mulheres) colocaram a falta de motivação e interesse como o seu motivo principal.
+
+Por fim, os proprietários de quadra, prejudicados pela  pandemia, buscam meios para uma retomada segura para a realização de novos eventos. Para isso, eles necessitam seguir os protocolos sanitários como o limite máximo de pessoas e máscara obrigatória que variam de município. Para isso, tanto o proprietário quanto os clientes tem que estar de acordo.
+
 
 ## 3. Modelagem do processo de negócio
 
