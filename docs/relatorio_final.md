@@ -1,29 +1,29 @@
-# TITULO DO PROJETO
+# Arena
 
 
-**Nome completo do Aluno 1, email do aluno 1**
+**Arthur Alexi Moreira Menezes, aammenezes@sga.pucminas.br**
 
-**Nome completo do Aluno 2, email do aluno 2**
+**Gabriel de Souza, gabriel.souza.1365691@sga.pucminas.br**
 
-**Nome completo do Aluno 3, email do aluno 3**
+**Gabriel Lima de Souza, gabriel.souza.1354648@sga.pucminas.br**
+
+**Hesdras Marciano Ferreira, hesdras.ferreira@sga.pucminas.br**
+
+**Marcus Vinícius Pinto Viana Filho, marcus.filho.1353449@sga.pucminas.br**
 
 ---
 
 Professores:
 
-** Prof. NOme do Prof 1 **
-** Prof. NOme do Prof 2 **
+**Prof. Hugo Bastos De Paula**
+
+**Profa. Joyce Christina De Paiva Carvalho**
 
 ---
 
 _Curso de Engenharia de Software, Unidade Praça da Liberdade_
 
 _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Minas Gerais (PUC MINAS), Belo Horizonte – MG – Brasil_
-
----
-
-_**Resumo**. Escrever aqui o resumo. O resumo deve contextualizar rapidamente o trabalho, descrever seu objetivo e, ao final, 
-mostrar algum resultado relevante do trabalho (até 10 linhas)._
 
 ---
 
@@ -55,8 +55,11 @@ O objetivo geral do projeto é incentivar a realização de exercícios físicos
 
         1.3.1 Objetivos específicos
 
-Apresente também alguns (pelo menos 2) **objetivos específicos** dependendo de onde você vai querer 
-concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+- Proporcionar acesso rápido e descomplicado à espaços físicos necessários para a prática dos esportes;
+- Atrair a atenção do público-alvo através da gameficação dos processos tradicionais;
+- Simplificar a organização de campeonatos amadores.
+
+Estes são os resultados esperados pelo projeto.
 
     1.4 Justificativas
 
