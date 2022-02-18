@@ -1,17 +1,19 @@
-# Nome do projeto
+# Arena 🏀
 
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+A aplicação busca facilitar a organização de partidas para competidores, buscando criar um canal entre pessoas que querem competir e locais disponíveis para sediar a partida, facilitando as partes burocráticas e dando oportunidade para novos atletas.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Arthur Alexi Moreira Menezes
+* Gabriel de Souza
+* Gabriel Lima de Souza
+* Hesdras Marciano Ferreira
+* Marcus Vinícius Pinto Viana Filho
 
 ## Professor
 
-* Nome completo do professor
+* Hugo Bastos De Paula
+* Joyce Christina De Paiva Carvalho
 
 ## Instruções de utilização
 
