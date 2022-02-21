@@ -63,13 +63,10 @@ Estes são os resultados esperados pelo projeto.
 
     1.4 Justificativas
 
-“Qualquer tipo de atividade física, de qualquer duração, pode melhorar a saúde e o bem-estar, mas quanto mais fizer exercício, melhor será. Se você precisa passar muito tempo sentado, quieto, seja no trabalho ou na escola, deve praticar mais atividade física para combater os efeitos prejudiciais do comportamento sedentário.”, O Diretor de Promoção da OMS Ruediger Krech
+Ciente que essa vida sedentária é nociva à saúde, o projeto Arena pode colaborar para inverter esse quadro. Com o avanço significativo das vacinas e o regresso gradativo da vida cotidiana, os esportes estão retornando de novo como uma ótima opção de atividade física e lazer. 
 
-No entanto, com o advento do Covid-19, as pessoas se tornaram mais sedentárias, de acordo com o levantamento realizado pela Fundação Oswaldo Cruz (Fiocruz) em conjunto com a Universidade Federal de Minas Gerais (UFMG) e com a Universidade Estadual de Campinas (Unicamp), 62% de 44.062 dos brasileiros entrevistados pararam de fazer qualquer tipo de exercício físico durante a pandemia.
-
-Ciente que essa vida sedentária é nociva à saúde, o projeto Arena pode colaborar  para inverter esse quadro. Com avanço significativo das vacinas e o regresso gradativo da vida cotidiana, os esportes estão retornando  de novo como uma ótima opção de atividade física e lazer.  
-
-
+Através de um processo automatizado, a aplicação proporcionará um acesso mais rápido e descomplicado para os espaços físicos e simplificará a organização e a formação de times, partidas e campeonatos. Consequentemente, poderá incentivar as pessoas a praticar esportes e sair da vida sedentária.
+ 
 
 ## 2. Participantes do processo
 
