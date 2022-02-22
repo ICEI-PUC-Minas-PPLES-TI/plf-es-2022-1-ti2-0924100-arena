@@ -7,8 +7,6 @@
 
 **Gabriel Lima de Souza, gabriel.souza.1354648@sga.pucminas.br**
 
-**Hesdras Marciano Ferreira, hesdras.ferreira@sga.pucminas.br**
-
 **Marcus Vinícius Pinto Viana Filho, marcus.filho.1353449@sga.pucminas.br**
 
 ---
