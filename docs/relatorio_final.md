@@ -68,13 +68,13 @@ Através de um processo automatizado, a aplicação proporcionará um acesso mai
 
 ## 2. Participantes do processo
 
-Os participantes do processo podem ser definidos como iniciantes, atletas casuais e proprietários de quadras. 
+Os participantes do processo podem ser definidos como iniciantes, atletas casuais e proprietários de quadras.
 
-Os iniciantes compreendem o grupo de pessoas que desejam começar a praticar esportes, mas encontram dificuldades em encontrar possíveis companheiros de equipe, locais para começar a prática e apoio para sair do sedentarismo. De acordo com o Diagnóstico Nacional do Esporte realizado pelo Governo Federal, 45,9% dos entrevistados se consideram sedentários, dos quais 41,2% são homens e 50,4% são mulheres. Esse grupo de pessoas podem ser beneficiados diretamente através do uso do meio virtual para ingresso no mundo esportivo.
+Os iniciantes compreendem o grupo de pessoas que desejam começar a praticar esportes, alguns com esportes predefinidos e outros em busca de experimentar novas categorias.  Geralmente encontram dificuldades em encontrar possíveis jogadores/companheiros de equipe, bem como locais para começar a sua prática.
 
-Os atletas casuais englobam as pessoas que já possuem certa experiência em determinado(os) esporte(es) e procuram espaços adequados e também um tempo determinado  para o exercício destes. Este perfil também busca novos desafios, seja jogando com jogadores com o mesmo nível de experiência ou até mesmo participando de campeonatos organizados pelos usuários. Segundo  pesquisa realizada pelo Governo Federal, quase 60% dos entrevistados alegaram abandonar o esporte por causa da falta de tempo, enquanto cerca de 13,2%(homens) e 1,6%(mulheres) colocaram a falta de motivação e interesse como o seu motivo principal.
+Os atletas casuais englobam as pessoas que já possuem certa experiência em determinado(os) esporte(es), procuram espaços adequados e um tempo determinado para o exercício destes. Este perfil também busca novos desafios, seja jogando com jogadores com o mesmo nível de experiência ou até mesmo participando de campeonatos organizados pelos usuários. 
 
-Por fim, os proprietários de quadras, prejudicados pela  pandemia, buscam meios para uma retomada segura para a realização de novos eventos. Para isso, eles necessitam seguir os protocolos sanitários como o limite máximo de pessoas e máscara obrigatória que variam de município. Para isso, tanto o proprietário quanto os clientes tem que estar de acordo.
+Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabelecimentos esportivos para locação, e que desejam encontrar clientes dispostos a utilizar suas instalações para a prática de esportes. 
 
 
 ## 3. Modelagem do processo de negócio
