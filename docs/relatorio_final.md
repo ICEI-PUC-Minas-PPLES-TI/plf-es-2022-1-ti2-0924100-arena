@@ -70,7 +70,7 @@ Através de um processo automatizado, a aplicação proporcionará um acesso mai
 
 Os participantes do processo podem ser definidos como iniciantes, atletas casuais e proprietários de quadras.
 
-Os iniciantes compreendem o grupo de pessoas que desejam começar a praticar esportes, alguns com esportes predefinidos e outros em busca de experimentar novas categorias.  Geralmente encontram dificuldades em encontrar possíveis jogadores/companheiros de equipe, bem como locais para começar a sua prática.
+Os iniciantes compreendem o grupo de pessoas que desejam começar a praticar esportes, alguns com modalidades predefinidas e outros em busca de experimentar novas categorias.  Geralmente encontram dificuldades em encontrar possíveis jogadores e companheiros de equipe, bem como locais para começar a sua prática.
 
 Os atletas casuais englobam as pessoas que já possuem certa experiência em determinado(os) esporte(es), procuram espaços adequados e um tempo determinado para o exercício destes. Este perfil também busca novos desafios, seja jogando com jogadores com o mesmo nível de experiência ou até mesmo participando de campeonatos organizados pelos usuários. 
 
