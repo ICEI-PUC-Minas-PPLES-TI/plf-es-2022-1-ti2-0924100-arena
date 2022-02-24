@@ -53,9 +53,14 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando
 
         1.3.1 Objetivos específicos
 
-- Proporcionar acesso rápido e descomplicado à espaços físicos necessários para a prática dos esportes;
-- Atrair a atenção do público-alvo através da gameficação dos processos tradicionais;
-- Simplificar a organização de campeonatos amadores.
+- Coleta de dados;
+- Levantamento de requisitos;
+- Permitir a criação de times;
+- Permitir a busca por jogadores;
+- Permitir a criação e busca de campeonatos;
+- Permitir a busca de quadras;
+- Permitir a busca por árbitros;
+- Permitir visualizar as informações do campeonato;
 
 Estes são os resultados esperados pelo projeto.
 
