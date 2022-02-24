@@ -28,8 +28,7 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Mi
 
 ## 1. Introdução
 
-O projeto Arena tem como proposta facilitar a prática de esportes no país. O objetivo principal do sistema é unir praticantes iniciantes ou atletas casuais a outros jogadores que podem estar em busca de times, campeonatos, adversários ou parceiros de equipe. </br> 
-A aplicação também realiza a intermediação entre jogadores e locatários de espaços para a prática esportiva, com o objetivo de proporcionar a localização para que os eventos ocorram.  
+O projeto Arena tem como proposta facilitar a prática de esportes no país. O objetivo principal do sistema é unir praticantes iniciantes ou atletas casuais a outros jogadores que podem estar em busca de times, campeonatos, adversários ou parceiros de equipe. A aplicação também realiza a intermediação entre jogadores e locatários de espaços para a prática esportiva, com o objetivo de proporcionar a localização para que os eventos ocorram.  
 
     1.1 Contextualização
 
