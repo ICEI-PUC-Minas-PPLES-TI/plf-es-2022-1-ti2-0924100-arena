@@ -49,7 +49,7 @@ Pandemia estimula prática de esportes e brasileiros desenvolvem novas paixões 
 
     1.3 Objetivo geral
 
-O objetivo geral do projeto é incentivar a realização de exercícios físicos na sociedade brasileira, criando meios para que a prática de esportes seja retomada após a pandemia de maneira segura,  abrangendo desde os esportes menos populares até os mais difundidos no país, agilizando vários processos relacionados à partida
+Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando conectar vários esportista e profissionais da área, automatizando vários processos relacionados à partida.
 
         1.3.1 Objetivos específicos
 
