@@ -44,7 +44,7 @@ Pandemia estimula prática de esportes e brasileiros desenvolvem novas paixões 
 
     1.3 Objetivo geral
 
-Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando conectar vários esportista e profissionais da área, automatizando vários processos relacionados à partida.
+Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando conectar vários esportistas e profissionais da área, automatizando vários processos relacionados à partida.
 
         1.3.1 Objetivos específicos
 
@@ -61,7 +61,7 @@ Estes são os resultados esperados pelo projeto.
 
     1.4 Justificativas
 
-Ciente que essa vida sedentária é nociva à saúde, o projeto Arena pode colaborar para inverter esse quadro. Com o avanço significativo das vacinas e o regresso gradativo da vida cotidiana, os esportes estão retornando de novo como uma ótima opção de atividade física e lazer. 
+Ciente que essa vida sedentária é nociva à saúde, o projeto Arena pode colaborar para inverter esse quadro. Com o avanço significativo das vacinas e o regresso gradativo da vida cotidiana, os esportes estão retornando como uma ótima opção de atividade física e lazer. 
 
 Através de um processo automatizado, a aplicação proporcionará um acesso mais rápido e descomplicado para os espaços físicos e simplificará a organização e a formação de times, partidas e campeonatos. Consequentemente, poderá incentivar as pessoas a praticar esportes e sair da vida sedentária.
  
