@@ -32,8 +32,8 @@ A introdução deve apresentar de dois ou quatro parágrafos de contextualizaç�
 
     1.1 Contextualização
 
-O número de pessoas sedentárias vem crescendo com o passar do tempo e esse problema se agravou com a pandemia da COVID-19. 
-De acordo com a Organização Mundial da Saúde (OMS), em média 5 milhões de mortes poderiam ser evitadas caso as vítimas realizassem algum tipo de atividade física [1.1], também segundo a fonte, o Brasil é o país mais sedentário da América Latina e ocupa a quinta posição no ranking mundial [1.2].
+O número de pessoas sedentárias vem crescendo com o passar do tempo e esse problema se agravou com a pandemia da COVID-19. </br>
+De acordo com a Organização Mundial da Saúde (OMS), em média 5 milhões de mortes poderiam ser evitadas caso as vítimas realizassem algum tipo de atividade física [1.1], também segundo a fonte, o Brasil é o país mais sedentário da América Latina e ocupa a quinta posição no ranking mundial [1.2]. </br>
 Assim, surge a necessidade de se integrar o meio virtual à pratica e incentivo aos esportes, amenizando assim essa situação.
 
     1.2 Problema 
