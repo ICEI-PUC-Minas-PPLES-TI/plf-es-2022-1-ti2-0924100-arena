@@ -33,13 +33,8 @@ A introdução deve apresentar de dois ou quatro parágrafos de contextualizaç�
     1.1 Contextualização
 
 O número de pessoas sedentárias vem crescendo com o passar do tempo e esse problema se agravou com a pandemia da COVID-19. 
-De acordo com a Organização Mundial da Saúde (OMS), em média 5 milhões de mortes poderiam ser evitadas caso as vítimas realizassem algum tipo de atividade física, também segundo a fonte, o Brasil é o país mais sedentário da América Latina e ocupa a quinta posição no ranking mundial.
+De acordo com a Organização Mundial da Saúde (OMS), em média 5 milhões de mortes poderiam ser evitadas caso as vítimas realizassem algum tipo de atividade física [1.1], também segundo a fonte, o Brasil é o país mais sedentário da América Latina e ocupa a quinta posição no ranking mundial [1.2].
 Assim, surge a necessidade de se integrar o meio virtual à pratica e incentivo aos esportes, amenizando assim essa situação.
-
-OMS divulga guia para combater sedentarismo, que mata até 5 milhões por ano. ONU News, 27 de novembro de 2020. Disponível em: <https://news.un.org/pt/story/2020/11/1734322>. Acesso em: 14/02/2022.
-
-América Latina tem maior índice de sedentário, Brasil lidera. Agência Brasil, 05 de setembro de 2018. Disponível em: https://agenciabrasil.ebc.com.br/internacional/noticia/2018-09/america-latina-tem-maior-indice-de-sedentarios-brasil-lidera>. Acesso em: 16/02/2022.
-
 
     1.2 Problema 
   Problema: A falta de incentivo aos esportes no Brasil é notável tendo em vista que o mesmo é responsável por estimular uma saúde melhor, percebe-se que no Brasil a pratica do esporte futebol e maior do que qualquer outro, porém uma pesquisa realizada pelo Google mostrou que a pandemia estimulou os brasileiros a praticar e desenvolver paixões por novos esportes. Mesmo assim 2 de cada 3 brasileiros ainda não estão satisfeitos com suas práticas de exercícios, nessa pesquisa mostrou que entre março e novembro de 2020 a busca pelos esportes ciclismo aumentou (+144%) e natação (+230%) essa pesquisa mostra que a pratica de diferentes esportes tem tendencia a aumentar ainda mais pós pandemia.
@@ -181,23 +176,9 @@ Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos n
 
 # REFERÊNCIAS
 
-Como um projeto de software não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as de acordo com a ABNT.
+**[1.1]** - OMS divulga guia para combater sedentarismo, que mata até 5 milhões por ano. ONU News, 27 de novembro de 2020. Disponível em:       <https://news.un.org/pt/story/2020/11/1734322>. Acesso em: 14/02/2022.
 
-Verifique no link abaixo como devem ser as referências no padrão ABNT:
-
-http://www.pucminas.br/imagedb/documento/DOC\_DSC\_NOME\_ARQUI20160217102425.pdf
-
-
-**[1.1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
-
-**[1.2]** - _COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8._
-
-**[1.3]** - _CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996._
-
-**[1.4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
-
-**[1.5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
-
+**[1.2]** - América Latina tem maior índice de sedentário, Brasil lidera. Agência Brasil, 05 de setembro de 2018. Disponível em: https://agenciabrasil.ebc.com.br/internacional/noticia/2018-09/america-latina-tem-maior-indice-de-sedentarios-brasil-lidera>. Acesso em: 16/02/2022.
 
 
 # APÊNDICES
