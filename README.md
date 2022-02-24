@@ -7,7 +7,6 @@ A aplicação busca facilitar a organização de partidas para competidores, bus
 * Arthur Alexi Moreira Menezes
 * Gabriel de Souza
 * Gabriel Lima de Souza
-* Hesdras Marciano Ferreira
 * Marcus Vinícius Pinto Viana Filho
 
 ## Professor
