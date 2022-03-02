@@ -81,7 +81,8 @@ Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabe
 
 ## 3.1. Análise da situação atual
 
-Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propoe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional.
+Nos dias de hoje, as pessoas dependem das redes sociais para encontrar jogadores. Esse método evidencia uma série de problemas, dos quais destaca-se: dificuldade de achar  membros para os grupos do Whatsapp e Facebook,  desorganização na formação dos times e na incerteza da realização das partidas.
+Quanto aos agendamentos de quadras, utiliza-se aplicativos como o “Agendei Quadras”, conta comercial dos estabelecimentos nas redes sociais ou por telefonemas. Entretanto, esses recursos não apresentam a integração entre agendamento de quadras com a formação de times e organização de partidas/campeonatos. Ademais, vale ressaltar que a divulgação das partidas (tanto para jogadores quanto para espectadores) é deficitária.
 
 ## 3.2. Descrição Geral da proposta
 
