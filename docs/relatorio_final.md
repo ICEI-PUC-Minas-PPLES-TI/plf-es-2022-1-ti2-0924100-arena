@@ -85,7 +85,9 @@ Apresente uma descrição textual de como os sistemas atuais resolvem o problema
 
 ## 3.2. Descrição Geral da proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+O projeto Arena tem a finalidade de conectar pessoas físicas e/ou jurídicas  interessadas  na pratica esportes. Para isso, a aplicação Web funcionará como uma ponte entre os jogadores e os locatários de espaços esportivos. O objetivo é facilitar a procura por jogadores para a formação de times e  agilizar os processos relacionados à localização e funcionamento das partidas.
+Para isso, as pessoas irão se cadastrar como atletas e indicar o esporte e o seu nível de experiência. Consequentemente, a Arena poderá disponibilizar, pessoas, times e partidas de interesse para o usuário. Após isso, será indicado locais adequados, assim como as regras e a forma de agendar para a realização  da atividade física.     
+Como diferencial, propomos fazer um sistema unificado, onde possamos abranger a maioria dos passos necessários para a realização do esporte. Dessa forma, visamos no futuro integrar não apenas os competidores mas também outras pessoas interessadas nas partidas, seja como, por exemplo, espectadores, patrocinadores e vendedores de artigos esportivos. Portanto, nossos planos nos levam a um sistema que engloba várias outras áreas do esporte, proporcionando a todos uma experiência completa.
 
 ## 3.3. Modelagem dos Processos
 
