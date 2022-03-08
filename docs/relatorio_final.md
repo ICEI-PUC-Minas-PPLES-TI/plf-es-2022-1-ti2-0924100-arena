@@ -81,9 +81,10 @@ Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabe
 
 ## 3.1. Análise da situação atual
 
-Nos dias de hoje, as pessoas dependem das redes sociais para encontrar jogadores. Esse método evidencia uma série de problemas, dos quais destaca-se: dificuldade de achar  membros para os grupos do Whatsapp e Facebook,  desorganização na formação dos times e na incerteza da realização das partidas. </br>
+Nos dias de hoje, as pessoas dependem das redes sociais para organizar as partidas de um determinado esporte. Para isso, cria-se um grupo no Whatsapp ou no Facebook e adiciona potenciais participantes. Deste ponto em diante, discute-se qual será o melhor dia, o horário, quem vai poder participar, as regras, a duração e o valor em dinheiro a pagar. Logo após, caso tenha um número mínimo de jogadores de acordo com os combinados, alguém poderá agendar uma quadra.
 
-Quanto aos agendamentos de quadras, utiliza-se aplicativos como o “Agendei Quadras”, conta comercial dos estabelecimentos nas redes sociais ou por telefonemas. Entretanto, esses recursos não apresentam a integração entre agendamento de quadras com a formação de times e organização de partidas/campeonatos. Ademais, vale ressaltar que a divulgação das partidas (tanto para jogadores quanto para espectadores) é deficitária.
+A utilização das redes sociais para realizar esses processos iniciais é ineficiente. Primeiramente, o número de pessoas adicionadas é limitado pelo ciclo social dos participantes; isso faz com que caso uma pequena parcela não possa comparecer prejudique a efetivação da partida. Segundamente, tanto o chat do Whatsapp quanto o do Facebook não são adequados para organizar eventos, pois a grande quantidade de mensagens trocadas tira o destaque das mais importantes e fica difícil distinguir qual pergunta a resposta enviada no chat responde.
+
 
 ## 3.2. Descrição Geral da proposta
 
