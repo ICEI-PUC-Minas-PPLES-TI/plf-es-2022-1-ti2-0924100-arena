@@ -96,18 +96,28 @@ Como diferencial, propomos fazer um sistema unificado, onde possamos abranger a 
 
 ## 3.3. Modelagem dos Processos
 
-### 3.3.1 Processo 1 – NOME DO PROCESSO
+### 3.3.1 Processo 1 – Cadastrar Atleta/Proprietário
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN.
+Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um jogador ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 1](imagens/process.png "Modelo BPMN do Processo 1.")
 
 
-### 3.3.2 Processo 2 – NOME DO PROCESSO
+### 3.3.2 Processo 2 – Cadastrar Quadra
 
 Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 2](imagens/call_process.png "Modelo BPMN do Processo 2.")
+
+### 3.3.3 Processo 3 – Criar ou entrar em um time
+
+### 3.3.4 Processo 4 – Criar ou entrar em uma partida/torneio
+
+### 3.3.5 Processo 5 – Atualizar a situação do torneio
+
+### 3.3.6 Processo 6 – Agendar quadra
+
+### 3.3.7 Processo 7 – Avaliar participantes
 
 ## 4. Projeto da Solução
 
