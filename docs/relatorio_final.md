@@ -115,6 +115,8 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ### 3.3.5 Processo 5 – Atualizar a situação do torneio
 
+Processo para auxiliar na manutenção durante  a  execução de um torneio. Desde o controle de partidas -  quem irá jogar com quem - até a pontuação e decisão do pódio. Espera-se que  com  essa funcionalidade, a organização no decorrer do campeonato seja facilitada.
+
 ### 3.3.6 Processo 6 – Agendar quadra
 
 ### 3.3.7 Processo 7 – Avaliar participantes
