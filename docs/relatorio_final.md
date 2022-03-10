@@ -124,6 +124,8 @@ Processo para auxiliar na manutenção durante  a  execução de um torneio. Des
 
 ### 3.3.6 Processo 6 – Agendar quadra
 
+Após logar no sistema e iniciar o processo de criação da partida/campeonato, será apresenatado os locais onde aquele esporte é suportado, locais esses que poderão ser filtrados conforme a necessidade do usuário. Depois disso, será selecionado pelo organizador a quadra e, dos horários disponíveis, o que mais lhe agrada. Desta forma propomos sugerir locais para a prática de esporte e agilizar os processos de agendamento.
+
 ### 3.3.7 Processo 7 – Avaliar participantes
 
 Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
