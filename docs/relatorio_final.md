@@ -126,6 +126,8 @@ Processo para auxiliar na manutenção durante  a  execução de um torneio. Des
 
 ### 3.3.7 Processo 7 – Avaliar participantes
 
+Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
+
 ## 4. Projeto da Solução
 
 ### 4.1. Detalhamento das atividades
