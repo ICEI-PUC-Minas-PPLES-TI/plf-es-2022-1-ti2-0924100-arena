@@ -86,9 +86,9 @@ A utilização das redes sociais para realizar esses processos iniciais é inefi
 
 ## 3.2. Descrição Geral da proposta
 
-Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando dados relevantes como nome, CPF e os esportes que deseja jogar. Após o registro, plataforma disponibilizará meios para: formar um time, procurar um para entrar ou simplesmente procurar pessoas com quem jogar. Dessa forma, os potenciais participantes serão todos os usuários cadastrados no banco de dados. Por consequência, a partida terá uma maior probabilidade de acontecer. 
+Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando dados relevantes como nome, CPF e os esportes que deseja praticar. Após o registro, a plataforma disponibilizará meios para: formar um time, procurar um para ingressar ou simplesmente encontrar pessoas com quem jogar. Dessa forma, os potenciais participantes serão todos os usuários cadastrados no banco de dados. Por consequência, a partida terá uma maior probabilidade de realização. 
 
-Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento, seja um jogo ou um campeonato. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção para eles. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
+Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento, seja um jogo ou um campeonato. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
 
 
 ## 3.3. Modelagem dos Processos
