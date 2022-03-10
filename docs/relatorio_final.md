@@ -68,11 +68,9 @@ Através de um processo automatizado, a aplicação proporcionará um acesso mai
 
 ## 2. Participantes do processo
 
-Os participantes do processo podem ser definidos como iniciantes, atletas casuais e proprietários de quadras.
+Os participantes do processo podem ser definidos como jogadores e proprietários de quadras.
 
-Os iniciantes compreendem o grupo de pessoas que desejam começar a praticar esportes, alguns com modalidades predefinidas e outros em busca de experimentar novas categorias.  Geralmente encontram dificuldades em encontrar possíveis jogadores e companheiros de equipe, bem como locais para começar a sua prática.
-
-Os atletas casuais englobam as pessoas que já possuem certa experiência em determinado(os) esporte(es), procuram espaços adequados e um tempo determinado para o exercício destes. Este perfil também busca novos desafios, seja jogando com jogadores com o mesmo nível de experiência ou até mesmo participando de campeonatos organizados pelos usuários. 
+Os jogadores - iniciantes ou experientes - que desejam praticar um esporte por meio de uma partida ou campeonato. Geralmente esse grupo encontra dificuldade em achar outras pessoas para jogar, quadras adequadas ou torneios para se desafiar. Caso o esporte não seja o futebol, esses processos tornam-se ainda mais complicados e demorados. 
 
 Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabelecimentos esportivos para locação, e que desejam encontrar clientes dispostos a utilizar suas instalações para a prática de esportes. 
 
