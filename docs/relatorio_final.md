@@ -116,6 +116,8 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida/torneio
 
+Processo no qual o usuário registrado poderá criar uma partida/torneio ou ingressar em um dos já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
+
 ### 3.3.5 Processo 5 – Atualizar a situação do torneio
 
 Processo para auxiliar na manutenção durante  a  execução de um torneio. Desde o controle de partidas -  quem irá jogar com quem - até a pontuação e decisão do pódio. Espera-se que  com  essa funcionalidade, a organização no decorrer do campeonato seja facilitada.
