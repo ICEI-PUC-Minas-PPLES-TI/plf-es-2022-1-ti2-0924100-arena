@@ -108,7 +108,7 @@ Processo para obter dados necessários e criar um login de cada usuário . Dessa
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+Após criar uma conta, terá uma seção "adicionar quadra”, que terá um formulário para preencher os dados relacionados ao estabelecimento e  os horários disponíveis para o aluguel. Este processo visa agilizar o agendamento e melhorar a comunicação do proprietário com o cliente.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 2](imagens/call_process.png "Modelo BPMN do Processo 2.")
 
