@@ -83,6 +83,12 @@ Nos dias de hoje, as pessoas dependem das redes sociais para organizar as partid
 
 A utilização das redes sociais para realizar esses processos iniciais é ineficiente. Primeiramente, o número de pessoas adicionadas é limitado pelo ciclo social dos participantes; isso faz com que caso uma pequena parcela não possa comparecer prejudique a efetivação da partida. Segundamente, tanto o chat do Whatsapp quanto o do Facebook não são adequados para organizar eventos, pois a grande quantidade de mensagens trocadas tira o destaque das mais importantes e fica difícil distinguir qual pergunta a resposta enviada no chat responde.
 
+Já para a parte do agendamento, ela pode ser feita por meio de aplicativos como “Agendei Quadras”, conta comercial dos estabelecimentos nas redes sociais ou por telefonemas. O cliente deve informar: o nome, número de contato,  quantos vão jogar, a data, o horário e a duração. Se o proprietário estiver de acordo, ele agenda a quadra.
+
+Por esse processo não ser integrado aos outros, pode ocorrer erros nos dados informados. Já que caso haja alguma alteração nas informações como um adiamento de um agendamento será necessário reabrir o canal de comunicação cliente com o proprietário e recomeçar todo o processo para agendar.
+ 
+Por consequência, utilizar todos esses processos para iniciar uma competição terá os mesmos problemas. Além da necessidade de formar uma tabela, pontuação e uma ordem das partidas a parte. 
+
 
 ## 3.2. Descrição Geral da proposta
 
