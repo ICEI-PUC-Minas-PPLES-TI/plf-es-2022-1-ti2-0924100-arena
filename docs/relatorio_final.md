@@ -96,6 +96,11 @@ Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando da
 
 Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento, seja um jogo ou um campeonato. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
 
+Assim que pelo menos um número mínimo de participantes - estabelecido pelo criador - confirmar a presença,  a Arena  confirmará o agendamento da quadra previamente escolhida. Consequentemente, o sistema auxiliará na efetivação do agendamento.
+
+Com a conclusão da partida ou campeonato, os jogadores poderão avaliar uns aos outros. Primeiro por sua conduta e segundo pelas habilidades. Na finalidade de manter o respeito e equilíbrio durante os jogos.   
+
+
 
 ## 3.3. Modelagem dos Processos
 
