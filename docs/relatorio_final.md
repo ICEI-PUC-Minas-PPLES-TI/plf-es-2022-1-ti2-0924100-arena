@@ -88,14 +88,10 @@ A utilização das redes sociais para realizar esses processos iniciais é inefi
 
 ## 3.2. Descrição Geral da proposta
 
-  Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando dados relevantes como nome, CPF e os esportes que deseja jogar.   Após o registro, plataforma disponibilizará meios para: </br>
+  Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando dados relevantes como nome, CPF e os esportes que deseja jogar. Após o registro, plataforma disponibilizará meios para: </br> </br>
   Formar um time, procurar um para entrar ou simplesmente procurar pessoas com quem jogar. Dessa forma, os potenciais participantes serão todos os usuários cadastrados no banco de dados. Por consequência, a partida terá uma maior probabilidade de acontecer. </br>
   Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento, seja um jogo ou um campeonato. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção para eles. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
 </br>
-
-Para isso, as pessoas irão se cadastrar como atletas e indicar o esporte e o seu nível de experiência. Consequentemente, a Arena poderá disponibilizar, pessoas, times e partidas de interesse para o usuário. Após isso, será indicado locais adequados, assim como as regras e a forma de agendar para a realização  da atividade física.</br>   
-
-Como diferencial, propomos fazer um sistema unificado, onde possamos abranger a maioria dos passos necessários para a realização do esporte. Dessa forma, visamos no futuro integrar não apenas os competidores mas também outras pessoas interessadas nas partidas, seja como, por exemplo, espectadores, patrocinadores e vendedores de artigos esportivos. Portanto, nossos planos nos levam a um sistema que engloba várias outras áreas do esporte, proporcionando a todos uma experiência completa.
 
 ## 3.3. Modelagem dos Processos
 
