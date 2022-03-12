@@ -103,11 +103,11 @@ Com a conclusão da partida ou campeonato, os jogadores poderão avaliar uns aos
 
 ## 3.3. Modelagem dos Processos
 
-### 3.3.1 Processo 1 – Cadastrar Atleta/Proprietário
+### 3.3.1 Processo 1 – Cadastrar  Atleta/Proprietário
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um jogador ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](imagens/process.png "Modelo BPMN do Processo 1.")
+![Cadastro_User_BPMN](https://user-images.githubusercontent.com/90854173/158020393-cde76bea-dd01-4a4a-b715-65ecfe8fa879.png)
 
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
@@ -124,9 +124,8 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 
 Processo no qual o usuário registrado poderá criar uma partida/torneio ou ingressar em um dos já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-### 3.3.5 Processo 5 – Atualizar a situação do torneio
+### 3.3.5 Processo 5 – Realizar pagamento
 
-Processo para auxiliar na manutenção durante  a  execução de um torneio. Desde o controle de partidas -  quem irá jogar com quem - até a pontuação e decisão do pódio. Espera-se que  com  essa funcionalidade, a organização no decorrer do campeonato seja facilitada.
 
 ### 3.3.6 Processo 6 – Agendar quadra
 
