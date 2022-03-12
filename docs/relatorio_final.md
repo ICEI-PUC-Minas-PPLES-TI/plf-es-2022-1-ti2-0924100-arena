@@ -54,7 +54,6 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando
 - Permitir a busca por jogadores;
 - Permitir a criação e busca de campeonatos;
 - Permitir a busca de quadras;
-- Permitir a busca por árbitros;
 - Permitir visualizar as informações do campeonato;
 
 Estes são os resultados esperados pelo projeto.
