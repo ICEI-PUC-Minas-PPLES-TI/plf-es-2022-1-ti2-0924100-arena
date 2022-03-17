@@ -114,8 +114,6 @@ Processo para obter dados necessários e criar um login de cada usuário . Dessa
 
 Após criar uma conta, terá uma seção "adicionar quadra”, que terá um formulário para preencher os dados relacionados ao estabelecimento e  os horários disponíveis para o aluguel. Este processo visa agilizar o agendamento e melhorar a comunicação do proprietário com o cliente.
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](imagens/call_process.png "Modelo BPMN do Processo 2.")
-
 ### 3.3.3 Processo 3 – Criar ou entrar em um time
 
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando jogadores, para isso, o jogador deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
