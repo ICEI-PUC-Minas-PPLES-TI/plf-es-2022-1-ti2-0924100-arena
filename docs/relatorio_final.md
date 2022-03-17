@@ -138,6 +138,9 @@ Após logar no sistema e iniciar o processo de criação da partida/campeonato, 
 
 Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
 
+![Processo 7 - Avaliar Participantes](https://user-images.githubusercontent.com/90854484/158886173-ca7c069c-b3af-4c9a-a5e8-0ea04cc69948.png)
+
+
 ## 4. Projeto da Solução
 
 ### 4.1. Detalhamento das atividades
