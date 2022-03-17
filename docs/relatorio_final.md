@@ -28,7 +28,7 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Mi
 
 ## 1. Introdução
 
-O projeto Arena tem como proposta facilitar a prática de esportes no país. O objetivo principal do sistema é unir praticantes iniciantes ou atletas casuais a outros jogadores que podem estar em busca de times, campeonatos, adversários ou parceiros de equipe. A aplicação também realiza a intermediação entre jogadores e locatários de espaços para a prática esportiva, com o objetivo de proporcionar a localização para que os eventos ocorram.  
+O projeto Arena tem como proposta facilitar a prática de esportes no país. O objetivo principal do sistema é unir praticantes iniciantes ou atletas casuais a outros jogadores que podem estar em busca de times, partidas, adversários ou parceiros de equipe. A aplicação também realiza a intermediação entre jogadores e locatários de espaços para a prática esportiva, com o objetivo de proporcionar a localização para que os eventos ocorram.  
 
     1.1 Contextualização
 
@@ -38,7 +38,7 @@ Assim, surge a necessidade de se integrar o meio virtual à pratica e incentivo 
 
     1.2 Problema 
 
-   A falta de ferramentas destinadas à prática de esportes no Brasil é notável, percebemos a dificuldade para encontrar pessoas que possam praticar o mesmo esporte que você e que esteja com seu nível de experiencia na devida atividade física, buscando também novos desafios através dos campeonatos. Outro grande problema encontrado foi o seguinte: “tenho meu time, onde vou treinar ou jogar? “, a falta de acesso a comunicação digital com locatários de quadras, campos, estádios, arenas sendo elas públicas ou particulares para a efetuação da pratica é um desafio a ser quebrado.  
+   A falta de ferramentas destinadas à prática de esportes no Brasil é notável, percebemos a dificuldade para encontrar pessoas que possam praticar o mesmo esporte que você e que esteja com seu nível de experiencia na devida atividade física. Outro grande problema encontrado foi o seguinte: “tenho meu time, onde vou treinar ou jogar? “, a falta de acesso a comunicação digital com locatários de quadras, campos, estádios, arenas sendo elas públicas ou particulares para a efetuação da pratica é um desafio a ser quebrado.  
 
 
 
@@ -52,9 +52,8 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando
 - Levantamento de requisitos;
 - Permitir a criação de times;
 - Permitir a busca por jogadores;
-- Permitir a criação e busca de campeonatos;
+- Permitir a criação e busca de partidas;
 - Permitir a busca de quadras;
-- Permitir visualizar as informações do campeonato;
 
 Estes são os resultados esperados pelo projeto.
 
@@ -69,7 +68,7 @@ Através de um processo automatizado, a aplicação proporcionará um acesso mai
 
 Os participantes do processo podem ser definidos como jogadores e proprietários de quadras.
 
-Os jogadores - iniciantes ou experientes - que desejam praticar um esporte por meio de uma partida ou campeonato. Geralmente esse grupo encontra dificuldade em achar outras pessoas para jogar, quadras adequadas ou torneios para se desafiar. Caso o esporte não seja o futebol, esses processos tornam-se ainda mais complicados e demorados. 
+Os jogadores - iniciantes ou experientes - que desejam praticar um esporte por meio de uma partida. Geralmente esse grupo encontra dificuldade em achar outras pessoas para jogar ou quadras adequadas. Caso o esporte não seja o futebol, esses processos tornam-se ainda mais complicados e demorados. 
 
 Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabelecimentos esportivos para locação, e que desejam encontrar clientes dispostos a utilizar suas instalações para a prática de esportes. 
 
@@ -78,26 +77,24 @@ Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabe
 
 ## 3.1. Análise da situação atual
 
-Nos dias de hoje, as pessoas dependem das redes sociais para organizar as partidas de um determinado esporte. Para isso, cria-se um grupo no Whatsapp ou no Facebook e adiciona potenciais participantes. Deste ponto em diante, discute-se qual será o melhor dia, o horário, quem vai poder participar, as regras, a duração e o valor em dinheiro a pagar. Logo após, caso tenha um número mínimo de jogadores de acordo com os combinados, alguém poderá agendar uma quadra.
+Nos dias de hoje, as pessoas dependem das redes sociais para organizar as partidas de um determinado esporte. Para isso, cria-se um grupo no Whatsapp ou no Facebook para adicionar potenciais participantes. Deste ponto em diante, discute-se qual será o melhor dia, o horário, quem vai poder participar, as regras, a duração e o valor em dinheiro a pagar. Logo após, caso tenha um número mínimo de jogadores de acordo com os combinados, alguém poderá agendar uma quadra.
 
 A utilização das redes sociais para realizar esses processos iniciais é ineficiente. Primeiramente, o número de pessoas adicionadas é limitado pelo ciclo social dos participantes; isso faz com que caso uma pequena parcela não possa comparecer prejudique a efetivação da partida. Segundamente, tanto o chat do Whatsapp quanto o do Facebook não são adequados para organizar eventos, pois a grande quantidade de mensagens trocadas tira o destaque das mais importantes e fica difícil distinguir qual pergunta a resposta enviada no chat responde.
 
 Já para a parte do agendamento, ela pode ser feita por meio de aplicativos como “Agendei Quadras”, conta comercial dos estabelecimentos nas redes sociais ou por telefonemas. O cliente deve informar: o nome, número de contato,  quantos vão jogar, a data, o horário e a duração. Se o proprietário estiver de acordo, ele agenda a quadra.
 
 Por esse processo não ser integrado aos outros, pode ocorrer erros nos dados informados. Já que caso haja alguma alteração nas informações como um adiamento de um agendamento será necessário reabrir o canal de comunicação cliente com o proprietário e recomeçar todo o processo para agendar.
- 
-Por consequência, utilizar todos esses processos para iniciar uma competição terá os mesmos problemas. Além da necessidade de formar uma tabela, pontuação e uma ordem das partidas a parte. 
-
+  
 
 ## 3.2. Descrição Geral da proposta
 
 Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando dados relevantes como nome, CPF e os esportes que deseja praticar. Após o registro, a plataforma disponibilizará meios para: formar um time, procurar um para ingressar ou simplesmente encontrar pessoas com quem jogar. Dessa forma, os potenciais participantes serão todos os usuários cadastrados no banco de dados. Por consequência, a partida terá uma maior probabilidade de realização. 
 
-Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento, seja um jogo ou um campeonato. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
+Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
 
-Assim que pelo menos um número mínimo de participantes - estabelecido pelo criador - confirmar a presença,  a Arena  confirmará o agendamento da quadra previamente escolhida. Consequentemente, o sistema auxiliará na efetivação do agendamento.
+Assim que pelo menos um número mínimo de participantes - estabelecido pelo criador - confirmar a presença,  a Arena   auxialará na efetivação do agendamento da quadra previamente escolhida.
 
-Com a conclusão da partida ou campeonato, os jogadores poderão avaliar uns aos outros. Primeiro por sua conduta e segundo pelas habilidades. Na finalidade de manter o respeito e equilíbrio durante os jogos.   
+Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Primeiro por sua conduta e segundo pelas habilidades. Na finalidade de manter o respeito e equilíbrio durante os jogos.   
 
 
 
@@ -133,7 +130,7 @@ Processo para decidir o valor que cada jogador irá pagar para alugar a quadra e
 
 ### 3.3.6 Processo 6 – Agendar quadra
 
-Após logar no sistema e iniciar o processo de criação da partida/campeonato, será apresenatado os locais onde aquele esporte é suportado, locais esses que poderão ser filtrados conforme a necessidade do usuário. Depois disso, será selecionado pelo organizador a quadra e, dos horários disponíveis, o que mais lhe agrada. Desta forma propomos sugerir locais para a prática de esporte e agilizar os processos de agendamento.
+Após logar no sistema e iniciar o processo de criação da partida, será apresenatado os locais onde aquele esporte é suportado, locais esses que poderão ser filtrados conforme a necessidade do usuário. Depois disso, será selecionado pelo organizador a quadra e, dos horários disponíveis, o que mais lhe agrada. Desta forma propomos sugerir locais para a prática de esporte e agilizar os processos de agendamento.
 
 ### 3.3.7 Processo 7 – Avaliar participantes
 
