@@ -135,6 +135,9 @@ Processo para decidir o valor que cada jogador irá pagar para alugar a quadra e
 
 Após logar no sistema e iniciar o processo de criação da partida, será apresenatado os locais onde aquele esporte é suportado, locais esses que poderão ser filtrados conforme a necessidade do usuário. Depois disso, será selecionado pelo organizador a quadra e, dos horários disponíveis, o que mais lhe agrada. Desta forma propomos sugerir locais para a prática de esporte e agilizar os processos de agendamento.
 
+![Agendamento_quadra 2](https://user-images.githubusercontent.com/90854634/158913733-56ee9da7-3e65-449e-afec-f683b1726694.png)
+
+
 ### 3.3.7 Processo 7 – Avaliar participantes
 
 Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
