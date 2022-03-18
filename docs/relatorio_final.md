@@ -118,11 +118,13 @@ Após criar uma conta, terá uma seção "adicionar quadra”, que terá um form
 
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando jogadores, para isso, o jogador deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
+![modelagem time](https://user-images.githubusercontent.com/90854062/158917800-3844f2e6-74c3-433a-83a0-a63d2ec482c8.png)
+
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-![modelagem time](https://user-images.githubusercontent.com/90854062/158917800-3844f2e6-74c3-433a-83a0-a63d2ec482c8.png)
+
 
 ![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/158886778-31c64249-2740-45f6-bfff-1280047f544d.png)
 
