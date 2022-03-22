@@ -104,7 +104,8 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um jogador ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_User_BPMN](https://user-images.githubusercontent.com/90854173/158020393-cde76bea-dd01-4a4a-b715-65ecfe8fa879.png)
+![Cadastro_1](https://user-images.githubusercontent.com/90854173/159589035-1fa3166a-a28e-433e-a16e-38e87ca55d35.png)
+
 
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
