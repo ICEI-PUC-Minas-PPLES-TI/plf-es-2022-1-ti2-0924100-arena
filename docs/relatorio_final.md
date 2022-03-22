@@ -134,7 +134,7 @@ Processo no qual o usuário registrado poderá criar uma partida ou ingressar em
 
 Processo para decidir o valor que cada jogador irá pagar para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa.
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/158816624-107947fc-8226-41ad-bb60-f81654b7bb30.png)
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/159589761-1260bca8-ce1a-470a-ac5e-f298b39f3373.png)
 
 ### 3.3.6 Processo 6 – Agendar quadra
 
