@@ -130,7 +130,7 @@ Processo no qual o usuário registrado poderá criar uma partida ou ingressar em
 
 ![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/160016316-0aa11d5f-09aa-4336-b159-26cd83d9b9cf.png)
 
-Pré-requisitos: Estar logado como atleta
+Pré-requisitos: Estar logado como atleta.
 
 ### 3.3.5 Processo 5 – Realizar pagamento
 
@@ -149,6 +149,10 @@ Pré-requisitos: Estar logado em uma conta do tipo proprietário.
 ### 3.3.7 Processo 7 – Avaliar participantes
 
 Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
+
+![Processo 7 - Avaliar Participantes](https://user-images.githubusercontent.com/90854484/160016694-6ee6c9dd-919a-493e-85dc-43d3fff637a2.png)
+
+Pré-requisitos: Estar logado como atleta e ter participado de alguma partida.
 
 
 ## 4. Projeto da Solução
