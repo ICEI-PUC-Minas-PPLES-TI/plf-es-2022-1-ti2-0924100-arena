@@ -114,7 +114,7 @@ Após criar uma conta, terá uma seção "adicionar quadra”, que terá um form
 
 ![Cadastro_quadra](https://user-images.githubusercontent.com/90854634/159992096-194df860-e0b6-47bc-88c3-945e26aceec9.png)
 
-Pré requisitos: Estar logado em uma conta do tipo proprietário.
+Pré-requisitos: Estar logado em uma conta do tipo proprietário.
 
 ### 3.3.3 Processo 3 – Criar ou entrar em um time
 
@@ -128,8 +128,9 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
 
-![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/160015993-6283a722-46dd-42b0-9706-a15a2542cf3f.png)
+![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/160016316-0aa11d5f-09aa-4336-b159-26cd83d9b9cf.png)
 
+Pré-requisitos: Estar logado
 
 ### 3.3.5 Processo 5 – Realizar pagamento
 
@@ -143,13 +144,11 @@ Após logar no sistema e iniciar o processo de criação da partida, será apres
 
 ![Agendamento_quadra](https://user-images.githubusercontent.com/90854634/159992881-40594d27-e0a6-4f6f-ad19-22103107c906.png)
 
-Pré requisitos: Estar logado em uma conta do tipo proprietário.
+Pré-requisitos: Estar logado em uma conta do tipo proprietário.
 
 ### 3.3.7 Processo 7 – Avaliar participantes
 
 Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
-
-![Processo 7 - Avaliar Participantes](https://user-images.githubusercontent.com/90854484/160016047-53850edd-aa9a-4cd3-aa65-0230d50a1f9c.png)
 
 
 ## 4. Projeto da Solução
