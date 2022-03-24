@@ -141,8 +141,9 @@ Processo para decidir o valor que cada jogador irá pagar para alugar a quadra e
 
 Após logar no sistema e iniciar o processo de criação da partida, será apresenatado os locais onde aquele esporte é suportado, locais esses que poderão ser filtrados conforme a necessidade do usuário. Depois disso, será selecionado pelo organizador a quadra e, dos horários disponíveis, o que mais lhe agrada. Desta forma propomos sugerir locais para a prática de esporte e agilizar os processos de agendamento.
 
-![Agendamento_quadra 2](https://user-images.githubusercontent.com/90854634/158913733-56ee9da7-3e65-449e-afec-f683b1726694.png)
+![Agendamento_quadra](https://user-images.githubusercontent.com/90854634/159992881-40594d27-e0a6-4f6f-ad19-22103107c906.png)
 
+Pré requisitos: Estar logado em uma conta do tipo proprietário.
 
 ### 3.3.7 Processo 7 – Avaliar participantes
 
