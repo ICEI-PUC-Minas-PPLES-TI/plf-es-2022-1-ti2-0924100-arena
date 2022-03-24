@@ -120,7 +120,8 @@ Pré requisitos: Estar logado em uma conta do tipo proprietário.
 
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando jogadores, para isso, o jogador deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
-![modelagem time](https://user-images.githubusercontent.com/90854062/158917800-3844f2e6-74c3-433a-83a0-a63d2ec482c8.png)
+![Criar time](https://user-images.githubusercontent.com/90854062/160015849-87484cf9-0cd6-49d8-abcc-4877a6a52854.png)
+
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
 
