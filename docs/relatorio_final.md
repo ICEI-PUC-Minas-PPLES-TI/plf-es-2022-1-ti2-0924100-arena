@@ -130,7 +130,7 @@ Processo no qual o usuário registrado poderá criar uma partida ou ingressar em
 
 ![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/160016316-0aa11d5f-09aa-4336-b159-26cd83d9b9cf.png)
 
-Pré-requisitos: Estar logado
+Pré-requisitos: Estar logado como atleta
 
 ### 3.3.5 Processo 5 – Realizar pagamento
 
