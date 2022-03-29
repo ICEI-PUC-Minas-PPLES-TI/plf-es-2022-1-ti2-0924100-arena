@@ -150,7 +150,7 @@ Pré-requisitos: Estar logado em uma conta do tipo proprietário.
 
 Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
 
-![Processo 7 - Avaliar Participantes](https://user-images.githubusercontent.com/90854484/160016694-6ee6c9dd-919a-493e-85dc-43d3fff637a2.png)
+![Processo 7 - Avaliar Participantes](https://user-images.githubusercontent.com/90854484/160717983-5433dc62-7f82-4733-a0d9-45000fb7bee1.png)
 
 Pré-requisitos: Estar logado como atleta e ter participado de alguma partida.
 
