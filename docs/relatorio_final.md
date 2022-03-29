@@ -197,21 +197,20 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 #### Processo 7 – Avaliar Participantes
 
-**Escolher jogador**
+**Escolher atleta**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| jogador | Seleção única | Obrigatório |  |
-|    |    |     |
+| atleta | Seleção única | Obrigatório |  |
 
 
-**Avaliar jogador**
+**Avaliar atleta**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| habilidade | Número | Intervalo: [0,10] |  |
-| conduta_esportiva   |  Número  |  Intervalo: [0,10]  |
-| comentarios   |  Caixa de texto  |     |
+| habilidade | Número | Intervalo: [0,10] (Obrigatório) |  |
+| conduta_esportiva   |  Número  |  Intervalo: [0,10] (Obrigatório) | |
+| comentarios   |  Área de texto  |     |
 
 ### 4.2. Tecnologias
 
