@@ -161,23 +161,31 @@ Pré-requisitos: Estar logado como atleta e ter participado de alguma partida.
 
 Descrever aqui cada uma das propriedades das atividades de cada um dos processos. Devem estar relacionadas com o modelo de processo apresentado anteriormente.
 
-#### Processo 1 – NOME DO PROCESSO
+#### Processo 1 – Cadastrar usuário
 
-**Nome da atividade 1**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
-| ***Exemplo:***  |    |     |
-| login | Caixa de Texto | formato de e-mail |  |
-| senha | Caixa de Texto | mínimo de 8 caracteres |   |
-
-**Nome da atividade 2**
+**Inserir dados gerais**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
-|    |    |     |
+| Nome | Caixa de Texto |  |  |
+| CPF | Caixa de Texto | 11 caracteres |   |
+| Data de Nascimento | Data |  |  |
+| Sexo | Seleção única |  |  |
+| E-mail | Caixa de Texto |  |  |
+| Senha | Caixa de Texto | Mínimo 8 caracteres |   |
+
+**Inserir dados do atleta**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Esportes | Múltipla escolha | Pelo menos 1 |  
+
+**Inserir dados do locatário**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| CNPJ | Caixa de texto |  |  |
+| Contato | Número |  |  |
 
 #### Processo 2 – NOME DO PROCESSO
 
