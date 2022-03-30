@@ -113,7 +113,7 @@ Após criar uma conta, terá uma seção "adicionar quadra”, que terá um form
 
 ![Cadastro_quadra3 0](https://user-images.githubusercontent.com/90854634/160921420-7fc95677-3b0f-4878-840b-f8d8209a4081.png)
 
-Pré-requisitos: Estar logado em uma conta do tipo proprietário.
+Pré-requisitos: Estar logado em uma conta do tipo locatário.
 
 ### 3.3.3 Processo 3 – Criar ou entrar em um time
 
