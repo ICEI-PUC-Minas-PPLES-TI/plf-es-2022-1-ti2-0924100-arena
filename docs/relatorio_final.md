@@ -187,21 +187,21 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | CNPJ | Caixa de texto |  |  |
 | Contato | Número |  |  |
 
-#### Processo 2 – NOME DO PROCESSO
+#### Processo 2 – Cadastrar quadra
 
-**Nome da atividade 1**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
-|    |    |     |
-
-**Nome da atividade 2**
+**Inserir dados do estabelecimento**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
-|    |    |     |
+| Nome da quadra | Caixa de texto | Mínimo 8 digítos |  |
+| Local | Número | Mínimo 8 digítos |  |
+| Esportes suportados | Seleção múltipla | Pelo menos 1 |  |
+| Datas disponiveis | Data |  |  |
+| Horários disponiveis | Seleção múltipla |  |  |
+| Capacidade | Número |  |  |
+| Preço de aluguel | Número |  |  |
+| Forma de pagamento | Seleção única | Pelo menos 1 |  |
+| Excritura de posse | Arquivo | 1 arquivo |  |
 
 #### Processo 5 – Realizar pagamento
 
