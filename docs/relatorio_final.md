@@ -51,7 +51,7 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web, visando
 - Coleta de dados;
 - Levantamento de requisitos;
 - Permitir a criação de times;
-- Permitir a busca por jogadores;
+- Permitir a busca por atletas;
 - Permitir a criação e busca de partidas;
 - Permitir a busca de quadras;
 
@@ -135,7 +135,8 @@ Pré-requisitos: Estar logado como atleta.
 
 Processo para decidir o valor que cada atleta irá pagar para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa.
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/159589761-1260bca8-ce1a-470a-ac5e-f298b39f3373.png)
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/160919916-1ef6763c-bf06-439b-8ea6-4170ded4f428.png)
+
 
 ### 3.3.6 Processo 6 – Agendar quadra
 
