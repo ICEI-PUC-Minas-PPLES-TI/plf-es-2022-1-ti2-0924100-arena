@@ -68,9 +68,9 @@ Através de um processo automatizado, a aplicação proporcionará um acesso mai
 
 Os participantes do processo podem ser definidos como jogadores e proprietários de quadras.
 
-Os jogadores - iniciantes ou experientes - que desejam praticar um esporte por meio de uma partida. Geralmente esse grupo encontra dificuldade em achar outras pessoas para jogar ou quadras adequadas. Caso o esporte não seja o futebol, esses processos tornam-se ainda mais complicados e demorados. 
+Os atletas - iniciantes ou experientes - que desejam praticar um esporte por meio de uma partida. Geralmente esse grupo encontra dificuldade em achar outras pessoas para jogar ou quadras adequadas. Caso o esporte não seja o futebol, esses processos tornam-se ainda mais complicados e demorados. 
 
-Por fim, os proprietários de quadras são o grupo de pessoas que possuem estabelecimentos esportivos para locação, e que desejam encontrar clientes dispostos a utilizar suas instalações para a prática de esportes. 
+Por fim, os locatários, o grupo de pessoas que possuem estabelecimentos esportivos para locação,  que desejam encontrar clientes dispostos a utilizar suas instalações para a prática de esportes. 
 
 
 ## 3. Modelagem do processo de negócio
@@ -100,12 +100,11 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 ## 3.3. Modelagem dos Processos
 
-### 3.3.1 Processo 1 – Cadastrar  Atleta/Proprietário
+### 3.3.1 Processo 1 – Cadastrar  usuário
 
-Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um jogador ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
+Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_1](https://user-images.githubusercontent.com/90854173/159589035-1fa3166a-a28e-433e-a16e-38e87ca55d35.png)
-
+![Cadastro_1](https://user-images.githubusercontent.com/90854173/160918256-c760e99e-9adb-4692-a24c-2712fa954250.png)
 
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
@@ -118,7 +117,7 @@ Pré-requisitos: Estar logado em uma conta do tipo proprietário.
 
 ### 3.3.3 Processo 3 – Criar ou entrar em um time
 
-Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando jogadores, para isso, o jogador deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
+Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando atletas, para isso, o usuário deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
 ![Criar time](https://user-images.githubusercontent.com/90854062/160015849-87484cf9-0cd6-49d8-abcc-4877a6a52854.png)
 
@@ -134,7 +133,7 @@ Pré-requisitos: Estar logado como atleta.
 
 ### 3.3.5 Processo 5 – Realizar pagamento
 
-Processo para decidir o valor que cada jogador irá pagar para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa.
+Processo para decidir o valor que cada atleta irá pagar para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa.
 
 ![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/159589761-1260bca8-ce1a-470a-ac5e-f298b39f3373.png)
 
@@ -148,7 +147,7 @@ Pré-requisitos: Estar logado em uma conta do tipo proprietário.
 
 ### 3.3.7 Processo 7 – Avaliar participantes
 
-Processo que ocorre ao final da partida realizada, em que os jogadores participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
+Processo que ocorre ao final da partida realizada, em que os atletas participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
 
 ![Processo 7 - Avaliar Participantes](https://user-images.githubusercontent.com/90854484/160717983-5433dc62-7f82-4733-a0d9-45000fb7bee1.png)
 
