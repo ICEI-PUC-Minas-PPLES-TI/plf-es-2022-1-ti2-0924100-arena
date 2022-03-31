@@ -126,8 +126,7 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-
-![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/160016316-0aa11d5f-09aa-4336-b159-26cd83d9b9cf.png)
+![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/161132641-fa677e83-6d8a-4045-8ad8-28bd8f03ea57.png)
 
 Pré-requisitos: Estar logado como atleta.
 
