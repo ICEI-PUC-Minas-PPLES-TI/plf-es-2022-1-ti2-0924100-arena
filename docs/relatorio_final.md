@@ -247,6 +247,60 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Motivo | área de texto | Obrigatório quando o comprovante é recusado |  |
 
+### Processo 4 - Criar ou entrar em uma partida
+
+**Escolher esporte**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Esporte | Seleção única |  |  |
+
+**Escolher partida**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Partida | Seleção única |  |  |
+
+**Ingressar na partida**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Ingressar | Link |  |  |
+
+**Confirmar presença**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Confirmar | Seleção única | Obrigatório |  |
+
+**Informar dados da partida**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Número de Participantes | Número | Obrigatório |  |
+| Tempo de Jogo | Número | Obrigatório |  |
+| Regras Gerais | Área de Texto |  |  |
+| Horário de Realização | Data | Obrigatório |  |
+
+**Escolher quadra**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Quadra | Seleção única |  |  |
+
+**Verificar disponibilidade**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Confimar disponibilidade | Seleção única |  |  |
+
+**Confirmar agendamento**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Confirmar agendamento | Seleção única |  |  |
+
+
 #### Processo 7 – Avaliar Participantes
 
 **Escolher atleta**
