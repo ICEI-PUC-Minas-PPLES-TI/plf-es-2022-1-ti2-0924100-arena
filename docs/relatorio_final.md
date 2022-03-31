@@ -273,7 +273,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Confimar disponibilidade | Seleção única |  |  |
+| Verificar disponibilidade | Seleção única |  |  |
 
 **Confirmar agendamento**
 
