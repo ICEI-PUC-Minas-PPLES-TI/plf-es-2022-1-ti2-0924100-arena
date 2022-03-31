@@ -119,7 +119,8 @@ Pré-requisitos: Estar logado em uma conta do tipo locatário.
 
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando atletas, para isso, o usuário deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
-![Criar time](https://user-images.githubusercontent.com/90854062/160015849-87484cf9-0cd6-49d8-abcc-4877a6a52854.png)
+
+![time certo](https://user-images.githubusercontent.com/90854062/161155748-cf244eeb-fb99-4f5b-97e0-2630fbd6d0c8.png)
 
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
