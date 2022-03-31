@@ -203,51 +203,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Forma de pagamento | Seleção única | Pelo menos 1 |  |
 | Excritura de posse | Arquivo | 1 arquivo |  |
 
-#### Processo 5 – Realizar pagamento
-
-**Escolher a(s) partida(s)**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Partidas | Múltipla escolha | Pelo menos 1 |  |
-
-**Informar valor total**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Valor total | Número |  |  |
-
-**Escolher forma de pagamento**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Forma de pagamento | Seleção única |  |  |
-
-**Enviar o comprovante**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Comprovante | Arquivo |  |  |
-
-**Receber comprovante**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Comprovante | Arquivo |  |  |
-
-**Averiguar o comprovante**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Confirmação do comprovante | Seleção única |  |  |
-
-**Informar o motivo**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Motivo | área de texto | Obrigatório quando o comprovante é recusado |  |
-
-### Processo 4 - Criar ou entrar em uma partida
+#### Processo 4 - Criar ou entrar em uma partida
 
 **Escolher esporte**
 
@@ -299,6 +255,51 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Confirmar agendamento | Seleção única |  |  |
+
+
+#### Processo 5 – Realizar pagamento
+
+**Escolher a(s) partida(s)**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Partidas | Múltipla escolha | Pelo menos 1 |  |
+
+**Informar valor total**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Valor total | Número |  |  |
+
+**Escolher forma de pagamento**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Forma de pagamento | Seleção única |  |  |
+
+**Enviar o comprovante**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Comprovante | Arquivo |  |  |
+
+**Receber comprovante**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Comprovante | Arquivo |  |  |
+
+**Averiguar o comprovante**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Confirmação do comprovante | Seleção única |  |  |
+
+**Informar o motivo**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Motivo | área de texto | Obrigatório quando o comprovante é recusado |  |
 
 
 #### Processo 7 – Avaliar Participantes
