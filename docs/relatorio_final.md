@@ -66,7 +66,7 @@ Através de um processo automatizado, a aplicação proporcionará um acesso mai
 
 ## 2. Participantes do processo
 
-Os participantes do processo podem ser definidos como jogadores e proprietários de quadras.
+Os participantes do processo podem ser definidos como atletas e locatários.
 
 Os atletas - iniciantes ou experientes - que desejam praticar um esporte por meio de uma partida. Geralmente esse grupo encontra dificuldade em achar outras pessoas para jogar ou quadras adequadas. Caso o esporte não seja o futebol, esses processos tornam-se ainda mais complicados e demorados. 
 
