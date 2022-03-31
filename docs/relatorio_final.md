@@ -194,7 +194,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Forma de pagamento | Seleção única | Pelo menos 1 |  |
 | Excritura de posse | Arquivo | 1 arquivo |  |
 
-#### Processo 3 - Criar ou entrar time
+#### Processo 3 - Criar ou entrar em um time
 
 **Escolher esporte**
 
@@ -206,9 +206,9 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nível de experiencia | Seleção única | Obrigatorio  |  |
-| Frequência obrigatória | Número | Obrigatorio   |  |
-| Vagas disponíveis | Número | Obrigatorio |  |
+| Nível de experiencia | Seleção única | Obrigatório  |  |
+| Frequência obrigatória | Número | Obrigatório   |  |
+| Vagas disponíveis | Número | Obrigatório |  |
 
 **Escolher Time** 
 
@@ -220,13 +220,13 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Disponibilidade | Seleção única | Obrigatório |  |
+| Disponibilidade | Seleção única |  |  |
 
-**Inscrever seu time**
+**Inscrever em um time**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Increver time | Seleção Única | Obrigatório |  |
+| Increver time | Seleção Única |  |  |
 
 #### Processo 4 - Criar ou entrar em uma partida
 
