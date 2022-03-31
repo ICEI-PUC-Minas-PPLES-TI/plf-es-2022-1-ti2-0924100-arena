@@ -136,16 +136,7 @@ Processo para decidir o valor que cada atleta irá pagar para alugar a quadra e 
 
 ![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/160919916-1ef6763c-bf06-439b-8ea6-4170ded4f428.png)
 
-
-### 3.3.6 Processo 6 – Agendar quadra
-
-Após logar no sistema e iniciar o processo de criação da partida, será apresenatado os locais onde aquele esporte é suportado, locais esses que poderão ser filtrados conforme a necessidade do usuário. Depois disso, será selecionado pelo organizador a quadra e, dos horários disponíveis, o que mais lhe agrada. Desta forma propomos sugerir locais para a prática de esporte e agilizar os processos de agendamento.
-
-![Agendamento_quadra](https://user-images.githubusercontent.com/90854634/159992881-40594d27-e0a6-4f6f-ad19-22103107c906.png)
-
-Pré-requisitos: Estar logado em uma conta do tipo proprietário.
-
-### 3.3.7 Processo 7 – Avaliar participantes
+### 3.3.7 Processo 6 – Avaliar participantes
 
 Processo que ocorre ao final da partida realizada, em que os atletas participantes poderão realizar uma avaliação dos envolvidos na partida, levando em consideração a conduta esportiva e sua habilidade no determinado esporte. Com essa avaliação, acredita-se garantir partidas mais equilibradas e respeitosas.
 
@@ -301,7 +292,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Motivo | área de texto | Obrigatório quando o comprovante é recusado |  |
 
 
-#### Processo 7 – Avaliar Participantes
+#### Processo 6 – Avaliar Participantes
 
 **Escolher atleta**
 
