@@ -159,7 +159,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nome | Caixa de Texto |  |  |
-| CPF | Caixa de Texto | 11 caracteres |   |
 | Data de Nascimento | Data |  |  |
 | Sexo | Seleção única |  |  |
 | E-mail | Caixa de Texto |  |  |
@@ -175,8 +174,8 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| CNPJ | Caixa de texto |  |  |
 | Contato | Número |  |  |
+| Chave pix | Caixa de Texto |  |  |
 
 #### Processo 2 – Cadastrar quadra
 
