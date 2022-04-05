@@ -289,12 +289,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Partidas | Múltipla escolha | Pelo menos 1 |  |
 
-**Informar valor total**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Valor total | Número |  |  |
-
 **Escolher forma de pagamento**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
@@ -302,12 +296,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Forma de pagamento | Seleção única |  |  |
 
 **Enviar o comprovante**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Comprovante | Arquivo |  |  |
-
-**Receber comprovante**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
