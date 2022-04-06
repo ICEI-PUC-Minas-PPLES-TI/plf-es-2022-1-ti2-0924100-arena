@@ -336,9 +336,9 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 
 ## 5. Modelo de dados
 
-Apresente o modelo de dados por meio de um modelo relacional ou Diagrama de Entidade-Relacionamento (DER) que contemple todos conceitos e atributos apresentados item anterior. 
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/90854173/162066644-18a1be83-9bb2-45ea-a7ef-e4b69594550d.svg)
 
-![Diagrama de Entidade Relacionamento de Exemplo](imagens/er_diagram.png "Diagrama de Entidade Relacionamento de Exemplo")
+
 
 ## 6. Indicadores de desempenho
 
