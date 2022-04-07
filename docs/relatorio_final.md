@@ -246,12 +246,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Ingressar | Link |  |  |
 
-**Confirmar presença**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Confirmar | Seleção única | Obrigatório |  |
-
 **Informar dados da partida**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
@@ -271,6 +265,12 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Verificar disponibilidade | Seleção única |  |  |
+
+**Confirmar agendamento**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Confirmar agendamento | Seleção única |  |  |
 
 #### Processo 5 – Realizar pagamento
 
