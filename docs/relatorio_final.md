@@ -214,12 +214,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Time | Seleção Única |  |  |
 
-**Ver disponibilidade do time**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Disponibilidade | Seleção única |  |  |
-
 **Inscrever em um time**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
