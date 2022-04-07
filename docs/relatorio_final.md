@@ -183,7 +183,8 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nome da quadra | Caixa de texto | Mínimo 8 digítos |  |
-| Local | Número | Mínimo 8 digítos |  |
+| CEP | Número | Mínimo 8 digítos |  |
+| Número da quadra | Número |  |  |
 | Esportes suportados | Seleção múltipla | Pelo menos 1 |  |
 | Datas disponiveis | Data |  |  |
 | Horários disponiveis | Seleção múltipla |  |  |
