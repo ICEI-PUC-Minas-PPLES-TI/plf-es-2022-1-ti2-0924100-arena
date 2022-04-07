@@ -126,7 +126,7 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/161132641-fa677e83-6d8a-4045-8ad8-28bd8f03ea57.png)
+![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/162280744-b617ade2-3522-4b49-ad81-4af56f53b77c.png)
 
 Pré-requisitos: Estar logado como atleta.
 
@@ -234,11 +234,11 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Esporte | Seleção única |  |  |
 
-**Escolher partida**
+**Selecionar time**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Partida | Seleção única |  |  |
+| Time | Seleção única |  |  |
 
 **Ingressar na partida**
 
@@ -258,7 +258,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Número de Participantes | Número | Obrigatório |  |
 | Tempo de Jogo | Número | Obrigatório |  |
-| Regras Gerais | Área de Texto |  |  |
 | Horário de Realização | Data | Obrigatório |  |
 
 **Escolher quadra**
@@ -272,13 +271,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Verificar disponibilidade | Seleção única |  |  |
-
-**Confirmar agendamento**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Confirmar agendamento | Seleção única |  |  |
-
 
 #### Processo 5 – Realizar pagamento
 
