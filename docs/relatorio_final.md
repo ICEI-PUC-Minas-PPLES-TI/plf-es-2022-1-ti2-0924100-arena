@@ -260,12 +260,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Quadra | Seleção única |  |  |
 
-**Verificar disponibilidade**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Verificar disponibilidade | Seleção única |  |  |
-
 **Confirmar agendamento**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
