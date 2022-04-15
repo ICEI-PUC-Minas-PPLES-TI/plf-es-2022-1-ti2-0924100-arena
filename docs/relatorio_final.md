@@ -110,7 +110,7 @@ Processo para obter dados necessários e criar um login de cada usuário . Dessa
 
 Após criar uma conta, terá uma seção "adicionar quadra”, que terá um formulário para preencher os dados relacionados ao estabelecimento e  os horários disponíveis para o aluguel. Este processo visa agilizar o agendamento e melhorar a comunicação do proprietário com o cliente.
 
-![Cadastro_quadra](https://user-images.githubusercontent.com/90854634/162320973-fc3ddf82-9c47-4e6e-98c8-1ab69577c61f.png)
+![Cadastro_quadra](https://user-images.githubusercontent.com/90854634/163627098-1937f67f-d5ab-44f8-9d4c-163c8732f1ae.png)
 
 Pré-requisitos: Estar logado em uma conta do tipo locatário.
 
