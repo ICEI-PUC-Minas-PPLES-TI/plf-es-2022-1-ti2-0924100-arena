@@ -271,10 +271,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 **Escolher forma de pagamento**
 
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Forma de pagamento | Seleção única |  |  |
-
 **Enviar o comprovante**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
