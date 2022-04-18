@@ -132,9 +132,10 @@ Pré-requisitos: Estar logado como atleta.
 
 ### 3.3.5 Processo 5 – Realizar pagamento
 
-Processo para decidir o valor que cada atleta irá pagar para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa.
+Processo para decidir o valor que cada atleta irá pagar, por meio do pix, para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa. 
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/160919916-1ef6763c-bf06-439b-8ea6-4170ded4f428.png)
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/163892063-51eba942-62c5-472f-9bd6-e951dfcb81e4.png)
+
 
 ### 3.3.7 Processo 6 – Avaliar participantes
 
