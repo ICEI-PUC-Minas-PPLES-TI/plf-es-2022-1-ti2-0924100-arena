@@ -206,7 +206,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nível de experiencia | Seleção única | Obrigatório  |  |
-| Frequência obrigatória | Número | Obrigatório   |  |
 | Vagas disponíveis | Número | Obrigatório |  |
 
 **Escolher Time** 
