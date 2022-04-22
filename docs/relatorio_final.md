@@ -191,7 +191,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Horários disponiveis | Seleção múltipla |  |  |
 | Capacidade | Número |  |  |
 | Preço de aluguel | Número |  |  |
-| Forma de pagamento | Seleção única | Pelo menos 1 |  |
 
 #### Processo 3 - Criar ou entrar em um time
 
