@@ -311,7 +311,7 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 
 ## 5. Modelo de dados
 
-![TabelaRelacional drawio](https://user-images.githubusercontent.com/90854173/163626441-10a623aa-1eb4-4cc1-985b-4ac554b1a316.svg)
+![TabelaRelacional drawio (1)](https://user-images.githubusercontent.com/90854173/165385797-154aba46-86d9-4658-88a6-6d3c5ec0d4f4.svg)
 
 
 ## 6. Indicadores de desempenho
