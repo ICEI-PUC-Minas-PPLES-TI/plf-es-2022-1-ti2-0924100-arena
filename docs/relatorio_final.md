@@ -104,7 +104,7 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_1](https://user-images.githubusercontent.com/90854173/161832079-695e16f0-608d-48c6-9284-3ea81eac390e.png)
+![Cadastro_2](https://user-images.githubusercontent.com/90854173/165630556-de4fe76e-b28b-4707-912a-cbd331558af5.png)
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
@@ -160,7 +160,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Nome | Caixa de Texto |  |  |
 | Data de Nascimento | Data |  |  |
-| Sexo | Seleção única |  |  |
 | E-mail | Caixa de Texto |  |  |
 | Senha | Caixa de Texto | Mínimo 8 caracteres |   |
 
@@ -169,6 +168,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Esportes | Múltipla escolha | Pelo menos 1 |  
+| Sexo | Seleção única | Pelo menos 1 |
 
 **Inserir dados do locatário**
 
@@ -311,7 +311,7 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 
 ## 5. Modelo de dados
 
-![TabelaRelacional drawio (2)](https://user-images.githubusercontent.com/90854173/165393259-f9ef3aa1-c5a8-40aa-90ca-b4a886660630.svg)
+![TabelaRelacional drawio (1)](https://user-images.githubusercontent.com/90854173/165630958-745a5da3-aa1a-4c2f-8c99-d6cf45a35fb8.svg)
 
 ## 6. Indicadores de desempenho
 
