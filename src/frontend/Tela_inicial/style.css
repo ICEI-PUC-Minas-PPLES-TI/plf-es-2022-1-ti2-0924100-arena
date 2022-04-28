@@ -1,0 +1,149 @@
+html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo {
+    width: 180px;
+  }
+  
+  .cabecalho {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: black !important;
+    opacity: 70%;
+  }
+  
+  .cabecalho p{
+    font-family: 'Roboto', sans-serif;
+    opacity: 70%;
+    font-weight: 500;
+    margin-top: 25px;
+  }
+  
+  .cabecalho button {
+    margin-top: 10px;
+  }
+  
+  .btn_login {
+    border: 2px solid #ed005a !important;
+    color: #CB0059 !important;
+    border-radius:10px !important;
+    margin-right: 10px;
+    width: 95px;
+    height: 50px;
+  }
+  
+  .frase_inicial {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 112px;
+    color: #ed005a;
+    line-height: 1.6;
+  }
+  
+  .paragrafo_inicial {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    opacity: 50%;
+    line-height: 28px;
+    color: #000000;
+  }
+  
+  .carrousel_imgs {
+    width: 650px;
+    height: 300px;
+  }
+  
+  .main {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  /* Rodape */
+  .rodape {
+      background-color: #CB0059;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      height: 50 px;
+      position: fixed;
+      width: 100%;
+      text-align: center;
+  }
+  
+  .div_conta {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 90px;
+    margin-top: 25px;
+    gap: 20px;
+    height: 70px;
+  }
+  
+  .criar_conta {
+    background-color: #CB0059 !important;
+    border-radius:10px !important;
+    margin-top: 20px;
+    width: 100px !important;
+    border: none !important;
+  }
+  
+  .gratuito {
+    opacity: 70%;
+    margin-top: 30px;
+  }
+  
+  .rodape2 {
+      display: flex;
+      justify-content: space-between;
+      flex-shrink: 50;
+  }
+  
+  .estilo_letra {
+      color: white;
+  }
+  
+  .teste{
+      display: flex;
+      justify-content: space-around;
+      border: #CB0059;
+      padding-top: 10px;
+  }
+  
+@media screen and (max-width: 770px){
+    .rodape {
+        background-color: #CB0059;
+        display: block;
+        bottom: 0;
+        left: 0;
+        height: 50 px;
+        position: fixed;
+        width: 100%;
+        border-top: solid;
+    }
+    .rodape2 {
+        display: block;
+        justify-content: space-between;
+        flex-shrink: 50;
+    }
+    
+}
+  
+  
