@@ -183,14 +183,14 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nome da quadra | Caixa de texto | Mínimo 8 digítos |  |
-| CEP | Número | Mínimo 8 digítos |  |
-| Número da quadra | Número |  |  |
+| Nome da quadra | Caixa de texto | not null |  |
+| CEP | Número | 8 digítos |  |
+| Número da quadra | Número | not null |  |
 | Esportes suportados | Seleção múltipla | Pelo menos 1 |  |
 | Datas disponiveis | Data |  |  |
 | Horários disponiveis | Seleção múltipla |  |  |
 | Capacidade | Número |  |  |
-| Preço de aluguel | Número |  |  |
+| Preço de aluguel | Número |  | R$ 000,00 |
 
 #### Processo 3 - Criar ou entrar em um time
 
