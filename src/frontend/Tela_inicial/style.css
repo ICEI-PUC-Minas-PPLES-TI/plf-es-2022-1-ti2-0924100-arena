@@ -15,7 +15,7 @@ html, body {
     align-items: center;
   }
   
-  a {
+  .cabecalho a {
     text-decoration: none !important;
     color: black !important;
     opacity: 70%;
@@ -73,18 +73,7 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  /* Rodape */
-  .rodape {
-      background-color: #CB0059;
-      display: flex;
-      bottom: 0;
-      left: 0;
-      height: 50 px;
-      position: fixed;
-      width: 100%;
-      text-align: center;
-  }
-  
+
   .div_conta {
     position: fixed;
     display: flex;
@@ -96,7 +85,7 @@ html, body {
     gap: 20px;
     height: 70px;
   }
-  
+
   .criar_conta {
     background-color: #CB0059 !important;
     border-radius:10px !important;
@@ -104,12 +93,34 @@ html, body {
     width: 120px !important;
     border: none !important;
   }
-  
+
+  .criar_conta a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .criar_conta a:hover {
+    color: white;
+    cursor: pointer;
+  }
+
   .gratuito {
     opacity: 70%;
     margin-top: 30px;
   }
-  
+
+  /* Rodape */
+  .rodape {
+      background-color: #CB0059;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      height: 50 px;
+      position: fixed;
+      width: 100%;
+      text-align: center;
+  }
+    
   .rodape2 {
       display: flex;
       justify-content: space-between;

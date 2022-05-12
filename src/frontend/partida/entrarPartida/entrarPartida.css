@@ -27,7 +27,7 @@ a:active {
     align-items: center;
 }
 
-.botao_sair {
+.botao_sair{
     height: 40px;
     width: 120px;
     border-radius: 16px;
@@ -92,6 +92,10 @@ a:active {
 
 
 /*********************************/
+
+.botao_sair a {
+    color:#CB0059;
+}
 
 /*Main*/
 .titulo {
