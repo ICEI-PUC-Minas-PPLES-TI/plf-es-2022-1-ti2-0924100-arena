@@ -81,7 +81,6 @@ a:active {
         height: 50 px;
         position: fixed;
         width: 100%;
-        border-top: solid;
     }
     .rodape2 {
         display: block;
@@ -93,3 +92,20 @@ a:active {
 
 
 /*********************************/
+
+/*Main*/
+.titulo {
+    font-family: 'Koulen', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: #CB0059;
+}
+
+.cards {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

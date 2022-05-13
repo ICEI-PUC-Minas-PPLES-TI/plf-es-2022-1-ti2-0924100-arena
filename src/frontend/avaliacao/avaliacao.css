@@ -69,7 +69,6 @@ a:active {
     justify-content: space-around;
     border: #CB0059;
     padding-top: 10px;
-    
 }
 
 @media screen and (max-width: 770px){
@@ -81,7 +80,6 @@ a:active {
         height: 50 px;
         position: fixed;
         width: 100%;
-        border-top: solid;
     }
     .rodape2 {
         display: block;
@@ -93,3 +91,38 @@ a:active {
 
 
 /*********************************/
+
+table {
+    margin-top: 50px;
+    width: 500px;
+    height: 250px;
+    border-collapse: collapse; /* CSS2 */
+    text-align: center;
+}
+ 
+table td {
+    border: 1px solid black;
+}
+ 
+table th {
+    border: 1px solid black;
+    background: #F0FFF0;
+}
+
+.partida {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.partida button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #CB0059 !important;
+}
+
+.title th {
+    background-color: #CB0059;
+    color: white;
+}

@@ -1,3 +1,4 @@
+
 /*definiçoes gerais dos links*/
 a:link,
 a:visited {
@@ -92,30 +93,24 @@ a:active {
 
 
 /*********************************/
-
-/* Main */
-.btn {
+.partida {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 100px;
-    margin-top: 5%;
+    gap: 20px;
 }
 
-.btn:hover {
-    background-color: white;
+.card-header, .card-footer {
+    background-color: #CB0059 !important;
+    color: white;
 }
 
-button {
-    width: 200px;
-    height: 120px;
-    border-radius: 20px !important;
-    border: 2px solid #CB0059 !important;
+.card-title {
+    background-color: #CB0059;
+    border-radius: 20px;
+    height: 28px;
+    color: white;
+    text-align: center;
 }
 
-.btn a {
-    color: #CB0059 !important;
-}
