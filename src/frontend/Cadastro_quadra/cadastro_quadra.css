@@ -128,7 +128,7 @@ a:active {
 .unidade{
     justify-content: center;
 }
-.linha{
+.linha1{
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
@@ -159,6 +159,32 @@ p{
     .form-floating{
         width: 70%;
     }
+
+}
+/*********************************/
+/*Calendario*/
+table{
+    text-align: center !important;
+    margin-left: 6%;
+    margin-bottom: 20px;
+}
+.cal_calendar{
+    border: 10px !important;
+    border: solid !important;
+}
+.divday{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    
+}
+.linhas{
+    border: 10px !important;
+    border: solid !important;
+}
+
+
+.cal_d_weeks{
+    border-bottom: solid !important;
 
 }
 /*********************************/
