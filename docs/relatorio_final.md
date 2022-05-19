@@ -122,12 +122,11 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 !![modelagem](https://user-images.githubusercontent.com/90854062/168180450-b0415a45-5451-41fa-a543-c230826a12e2.png)
 
 
-
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/162280744-b617ade2-3522-4b49-ad81-4af56f53b77c.png)
+![Processo 4 - Criar ou entrar em uma partida (2)](https://user-images.githubusercontent.com/90854484/169402826-37227b8d-da25-4f23-9f5a-e834b03cebb7.png)
 
 Pré-requisitos: Estar logado como atleta.
 
@@ -253,12 +252,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Quadra | Seleção única |  |  |
-
-**Confirmar agendamento**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Confirmar agendamento | Seleção única |  |  |
 
 #### Processo 5 – Realizar pagamento
 
