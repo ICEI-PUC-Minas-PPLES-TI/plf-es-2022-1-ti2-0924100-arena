@@ -314,7 +314,7 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 | --- | --- | --- | --- | --- | --- |
 | Quantidade de partidas no mês | Saber o indice de atividades no mês | Contabiliza o número de partidas realizadas no mês | Quantidade de registros de partidas feitos no mês | Tabela [Partida] | Processos internos |
 | Percentual de quadras para um esporte | Aumentar a quantidade de quadras de um  esporte, caso o percentual seja pequeno  | Mede a % de quadras de um esporte na plataforma | (∑ de quadras de um esporte / ∑ de quadras de um esporte) * 100  | Tabela [Esporte/Quadra] e Tabela [Quadra] | Clientes |
-| Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela Partida | Aprendizado e Crescimento |
+| Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela [Partida] | Aprendizado e Crescimento |
 | Quantidade de usuários cadastrados no mês | Saber a taxa de crescimento do site | Contabiliza o número de usuários cadastrados no mês |  (contas de locatário criadas no mês)+(contas de atletas criadas no mês) | Tabela [Atleta], Tabela [Locatario] | Processos internos |
 
 
