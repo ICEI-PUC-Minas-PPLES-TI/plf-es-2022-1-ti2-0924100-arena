@@ -315,7 +315,7 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 | Quantidade de partidas no mês | Saber o indice de atividades no mês | Contabiliza o número de partidas realizadas no mês | Quantidade de registros de partidas feitos no mês | Tabela [Partida] | Processos internos |
 | Taxa de Requisições abertas | Melhorar a prestação de serviços medindo a porcentagem de requisições | Mede % de requisições atendidas na semana | ![\frac{\sum{atendidas}}{\sum{requisicoes}}100](https://latex.codecogs.com/svg.latex?\frac{\sum{atendidas}}{\sum{requisicoes}}100) | Tabela solicitações | Processos internos |
 | Percentual de quadras para um esporte | Aumentar a quantidade de quadras de um  esporte, caso o percentual seja pequeno  | Mede a % de quadras de um esporte na plataforma | (∑ de quadras de um esporte / ∑ de quadras de um esporte) * 100  | Tabela [Esporte/Quadra] e Tabela [Quadra] | Clientes |
-
+| Quantidade de usuários cadastrados no mês | Saber a taxa de crescimento do site | Contabiliza o número de usuários cadastrados no mês |  (contas de locatário criadas no mês)+(contas de atletas criadas no mês) | Tabela [Atleta], Tabela [Locatario] | Processos internos |
 
 Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe **a ser proposto**
 
