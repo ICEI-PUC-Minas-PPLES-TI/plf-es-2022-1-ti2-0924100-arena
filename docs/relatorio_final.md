@@ -313,7 +313,7 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
 | Quantidade de partidas no mês | Saber o indice de atividades no mês | Contabiliza o número de partidas realizadas no mês | Quantidade de registros de partidas feitos no mês | Tabela [Partida] | Processos internos |
-| Percentual de quadras para um esporte | Aumentar a quantidade de quadras de um  esporte, caso o percentual seja pequeno  | Mede a % de quadras de um esporte na plataforma | (∑ de quadras de um esporte / ∑ de quadras de um esporte) * 100  | Tabela [Esporte/Quadra] e Tabela [Quadra] | Clientes |
+| Tempo de formação de um time | Saber o tempo necessário para formar um time completo  | Contabiliza o tempo médio que um time demora para ter o número máximo de pessoas | (∑ data de criação - data de entradada última seleção) / ∑ times) | Tabela [Time] | Processos Internos |
 | Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela [Partida] | Aprendizado e Crescimento |
 | Quantidade de usuários cadastrados no mês | Saber a taxa de crescimento do site | Contabiliza o número de usuários cadastrados no mês |  (contas de locatário criadas no mês)+(contas de atletas criadas no mês) | Tabela [Atleta], Tabela [Locatario] | Processos internos |
 | Média de avaliação de conduta dos jogadores | Identificar os jogadores mais violentos  | Contabilizar as avaliações de conduta dos jogadores e efetuar a média.| Quantidade de avaliações realizadas | Tabela [Avaliação/Conduta] |Clientes|
