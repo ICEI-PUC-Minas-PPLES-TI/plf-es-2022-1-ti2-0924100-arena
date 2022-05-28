@@ -122,12 +122,11 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 !![modelagem](https://user-images.githubusercontent.com/90854062/168180450-b0415a45-5451-41fa-a543-c230826a12e2.png)
 
 
-
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/162280744-b617ade2-3522-4b49-ad81-4af56f53b77c.png)
+![Processo 4 - Criar ou entrar em uma partida (2)](https://user-images.githubusercontent.com/90854484/169402826-37227b8d-da25-4f23-9f5a-e834b03cebb7.png)
 
 Pré-requisitos: Estar logado como atleta.
 
@@ -254,12 +253,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Quadra | Seleção única |  |  |
 
-**Confirmar agendamento**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Confirmar agendamento | Seleção única |  |  |
-
 #### Processo 5 – Realizar pagamento
 
 **Escolher a(s) partida(s)**
@@ -316,15 +309,15 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 
 ## 6. Indicadores de desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores.
-
-Usar o seguinte modelo:
 
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
-| Percentual reclamações | Avaliar quantitativamente as reclamações | Percentual de reclamações em relação ao total atendimento |   | Tabela reclamações | Aprendizado e Crescimento |
-| Taxa de Requisições abertas | Melhorar a prestação de serviços medindo a porcentagem de requisições | Mede % de requisições atendidas na semana | ![\frac{\sum{atendidas}}{\sum{requisicoes}}100](https://latex.codecogs.com/svg.latex?\frac{\sum{atendidas}}{\sum{requisicoes}}100) | Tabela solicitações | Processos internos |
-| Taxa de entrega de material | Manter controle sobre os materiais que estão sendo entregues | Mede % de material entregue dentro do mês |   | Tabela Pedidos | Clientes |
+| Quantidade de partidas no mês | Saber o indice de atividades no mês | Contabiliza o número de partidas realizadas no mês | Quantidade de registros de partidas feitos no mês | Tabela [Partida] | Processos internos |
+| Tempo de formação de um time | Saber o tempo necessário para formar um time completo  | Contabiliza o tempo médio que um time demora para ter o número máximo de pessoas | (∑ data de criação - data de entradada última seleção) / ∑ times) | Tabela [Time] | Processos Internos |
+| Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela [Partida] | Aprendizado e Crescimento |
+| Percentual de pagamentos aprovados | Saber a efetividade do sistema de pagamento | Mede o percentual de pagamentos aprovados |  (∑ de pagamentos aprovados/ ∑ de pagamentos efetuados) * 100 | Tabela [Pagamentos] | Processos internos |
+| Média de avaliação de conduta dos jogadores | Identificar os jogadores mais violentos  | Contabilizar as avaliações de conduta dos jogadores e efetuar a média.| (∑ de avaliação dos jogadores / ∑ de jogadores) * 100 | Tabela [Avaliação/Conduta] |Clientes|
+
 
 Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe **a ser proposto**
 
