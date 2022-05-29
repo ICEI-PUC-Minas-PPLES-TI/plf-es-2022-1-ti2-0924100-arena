@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const path = require('path')
+const partida = require('./Backend/routes/Partida')
 
 // Configurações
     // Body Parser
@@ -19,6 +20,8 @@ const path = require('path')
     app.get('/', function(req,res){
         res.sendFile(__dirname + "/frontend/Tela_inicial/index.html")
     })
+
+    app.use('/partida',partida)
 
 // Outros
 const PORT = 8081
