@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do Atleta</title>
+    <link rel="stylesheet" href="../../frontend/guia_de_estilos/guia_de_estilos.css"> <!-- Guia de Estilo do GitHub-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styleA.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <div class="flex-container">
+            <div><img src="../../img/logo.png" class="logo" alt=""></div>
+            <div><a href="../../frontend/Tela_inicial/index.html"><input type="button" class="botao_sair"
+                        value="Sair"></a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Cadastro do Atleta</h1>
+
+    <div class="container">
+
+        <form id="form-Atleta" method="post">
+
+            <div class="form-group row">
+
+                <div class="col-sm-1">
+                    <label for="inputId">Id</label>
+                    <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+                </div>
+
+                <div class="col-sm-5">
+                    <label for="inputNome">Nome (*)</label>
+                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o Nome">
+                </div>
+
+                <div class="col-sm-3 ">
+                    <label for="inputData">Sexo</label>
+                    <select name="sexo" id="sexo" class="form-control">
+                        <option value="null"></option>
+                        <option value="m">Masculino</option>
+                        <option value="s">Femenino</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-3">
+                    <label for="inputData">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="inputdata">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inputEmail">E-mail (*)</label>
+                    <input type="email" class="form-control" id="inputEmail" required placeholder="Informe o E-mail">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="inputSenha">Senha (*)</label>
+                    <input type="password" class="form-control" id="inputSenha" minlength="8" required
+                        placeholder="Informe a Senha">
+                </div>
+
+                <div class="col-sm-4 ">
+                    <small>(*) Campos obrigatórios</small>
+                </div>
+            </div>
+
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">ERROR</div>-->
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 " id="buttons">
+                    <a href="../../frontend/Tela_inicial/index.html"><input type="submit" class="botao_sair"
+                            value="Cadastrar"></a>
+                </div>
+            </div>
+
+    </div>
+    </div>
+
+
+    <footer class="rodape">
+
+        <div class="container">
+            <div class="row teste">
+
+                <div class="col">
+                    <div>
+                        <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="container rodape2">
+
+
+
+                        <div class="col">
+                            <a href="#" class="estilo_letra remover_decoracao">Serviços</a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="estilo_letra remover_decoracao">Sobre nós</a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="estilo_letra remover_decoracao">Contato</a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
