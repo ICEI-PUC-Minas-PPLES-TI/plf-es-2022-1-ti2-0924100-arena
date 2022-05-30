@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const path = require('path')
-
+const locatario = require("./routes/Locatario")
 // Configurações
     // Body Parser
     app.use(express.urlencoded({ extended: false }));
@@ -19,6 +19,9 @@ const path = require('path')
     app.get('/', function(req,res){
         res.sendFile(__dirname+"/Tela_inicial/index.html")
     })
+     
+    app.use('/homeLocatario', locatario)
+    app.use('/cadastroQuadra', locatario)
 
 // Outros
 const PORT = 8081
