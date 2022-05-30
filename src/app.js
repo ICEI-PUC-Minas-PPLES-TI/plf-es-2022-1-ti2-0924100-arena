@@ -1,6 +1,5 @@
 // Carregando módulos
 const express = require('express')
-//const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const app = express();
 const path = require('path')
@@ -10,11 +9,8 @@ const partida = require('./Backend/routes/Partida')
     // Body Parser
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
-    // Handlebars
-    //app.engine('handlebars', handlebars({defaultLayout: 'main'}))
-    //app.set('view engine','handlebars')
     // Public
-    app.use(express.static("frontend/Tela_inicial"))
+    app.use(express.static(path.join(__dirname,"frontend")))
 
 // Rotas
     app.get('/', function(req,res){
