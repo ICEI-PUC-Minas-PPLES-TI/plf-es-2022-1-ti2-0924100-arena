@@ -34,6 +34,6 @@ const quadra = db.sequelize.define("quadra", {
     },
 });
 
-//atleta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//quadra.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
 
 module.exports = quadra;
