@@ -12,13 +12,135 @@
     <title>Entrar em uma partida</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        /*definiçoes gerais dos links*/
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgb(255, 0, 170) !important;
+        }
+
+        a:active {
+            text-decoration: none
+        }
+
+        /*********************************/
+
+
+        /* Cabeçalho*/
+        .logo {
+
+            height: 80px;
+            width: 188, 74px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .botao_sair {
+            height: 40px;
+            width: 120px;
+            border-radius: 16px;
+            margin-right: 50px;
+
+            background: #FFFFFF;
+            border: 2px solid #CB0059;
+            box-sizing: border-box;
+            border-radius: 16px;
+            color: #CB0059;
+
+            font-size: larger;
+        }
+
+        /*********************************/
+
+        /* Rodape */
+        .rodape {
+            background-color: #CB0059;
+            display: flex;
+            bottom: 0;
+            left: 0;
+            height: 50 px;
+            position: fixed;
+            width: 100%;
+        }
+
+        .rodape2 {
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 50;
+        }
+
+        .estilo_letra {
+            color: white;
+        }
+
+        .teste {
+            display: flex;
+            justify-content: space-around;
+            border: #CB0059;
+            padding-top: 10px;
+
+        }
+
+        @media screen and (max-width: 770px) {
+            .rodape {
+                background-color: #CB0059;
+                display: block;
+                bottom: 0;
+                left: 0;
+                height: 50 px;
+                position: fixed;
+                width: 100%;
+            }
+
+            .rodape2 {
+                display: block;
+                justify-content: space-between;
+                flex-shrink: 50;
+            }
+
+        }
+
+
+        /*********************************/
+
+        .botao_sair a {
+            color: #CB0059;
+        }
+
+        /*Main*/
+        .titulo {
+            font-family: 'Koulen', cursive;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 30px;
+            color: #CB0059;
+        }
+
+        .cards {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="flex-container">
-            <div><img src="/src/img/logo.png" class="logo" alt=""></div>
+            <div><img src="../../Tela_inicial/img/logo.png" class="logo" alt=""></div>
             <h1 class="titulo">Meus Times</h1>
             <div><button class="botao_sair"><a href="../../Tela_inicial/index.html">Sair</a></button></div>
         </div>
@@ -27,26 +149,26 @@
         <div class="cards">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                <h5 class="card-title">Barões FC</h5>
-                <a href="../partida.html" class="card-link">Selecionar time</a>
+                    <h5 class="card-title">Barões FC</h5>
+                    <a href="../partida.html" class="card-link">Selecionar time</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                <h5 class="card-title">Os Amigos - Futebol Clube</h5>
-                <a href="../partida.html" class="card-link">Selecionar time</a>
+                    <h5 class="card-title">Os Amigos - Futebol Clube</h5>
+                    <a href="../partida.html" class="card-link">Selecionar time</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                <h5 class="card-title">Imparáveis</h5>
-                <a href="../partida.html" class="card-link">Selecionar time</a>
+                    <h5 class="card-title">Imparáveis</h5>
+                    <a href="../partida.html" class="card-link">Selecionar time</a>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                <h5 class="card-title">Beer Team</h5>
-                <a href="../partida.html" class="card-link">Selecionar time</a>
+                    <h5 class="card-title">Beer Team</h5>
+                    <a href="../partida.html" class="card-link">Selecionar time</a>
                 </div>
             </div>
         </div>
@@ -76,4 +198,5 @@
         </div>
     </footer>
 </body>
+
 </html>

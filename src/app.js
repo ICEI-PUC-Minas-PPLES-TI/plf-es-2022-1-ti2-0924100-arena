@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const path = require('path')
-const locatario = require("./routes/Locatario")
+//const locatario = require("./routes/Locatario")
 const partida = require('./Backend/routes/Partida')
 
 // Configurações
@@ -18,8 +18,8 @@ const partida = require('./Backend/routes/Partida')
         res.sendFile(__dirname + "/frontend/Tela_inicial/index.html")
     })
      
-    app.use('/homeLocatario', locatario)
-    app.use('/cadastroQuadra', locatario)
+   // app.use('/homeLocatario', locatario)
+   // app.use('/cadastroQuadra', locatario)
 
     app.use('/partida',partida)
 

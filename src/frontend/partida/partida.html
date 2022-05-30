@@ -1,125 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="partida.css" />
-    <title>Partida</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="flex-container">
-        <div>
-          <a href="../Tela_inicial/index.html"
-            ><img src="/src/img/logo.png" class="logo" alt=""
-          /></a>
-        </div>
-        <div><button class="botao_sair">Sair</button></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="partida.css" />
+  <title>Partida</title>
+  <style>
+    /*definiçoes gerais dos links*/
+    a:link,
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgb(255, 0, 170) !important;
+    }
+
+    a:active {
+      text-decoration: none
+    }
+
+    /*********************************/
+
+
+    /* Cabeçalho*/
+    .logo {
+
+      height: 80px;
+      width: 188, 74px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .botao_sair {
+      height: 40px;
+      width: 120px;
+      border-radius: 16px;
+      margin-right: 50px;
+
+      background: #FFFFFF;
+      border: 2px solid #CB0059;
+      box-sizing: border-box;
+      border-radius: 16px;
+      color: #CB0059;
+
+      font-size: larger;
+    }
+
+    /*********************************/
+
+    /* Rodape */
+    .rodape {
+      background-color: #CB0059;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      height: 50 px;
+      position: fixed;
+      width: 100%;
+    }
+
+    .rodape2 {
+      display: flex;
+      justify-content: space-between;
+      flex-shrink: 50;
+    }
+
+    .estilo_letra {
+      color: white;
+    }
+
+    .teste {
+      display: flex;
+      justify-content: space-around;
+      border: #CB0059;
+      padding-top: 10px;
+    }
+
+    @media screen and (max-width: 770px) {
+      .rodape {
+        background-color: #CB0059;
+        display: block;
+        bottom: 0;
+        left: 0;
+        height: 50 px;
+        position: fixed;
+        width: 100%;
+        border-top: solid;
+      }
+
+      .rodape2 {
+        display: block;
+        justify-content: space-between;
+        flex-shrink: 50;
+      }
+
+    }
+
+
+    /*********************************/
+    .partida {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card-header,
+    .card-footer {
+      background-color: #CB0059 !important;
+      color: white;
+    }
+
+    .card-title {
+      background-color: #CB0059;
+      border-radius: 20px;
+      height: 28px;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="flex-container">
+      <div>
+        <a href="/"><img src="../Tela_inicial/img/logo.png" class="logo" alt="" /></a>
       </div>
-    </header>
-    <main>
-      <div class="partida">
-        <div class="card text-center">
-          <div class="card-header">
-            Arena Esplanada - Bairro Esplanada
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">OGZ FC</h5>
-            <p class="card-text">Clique aqui para jogar uma partida contra OGZ FC</p>
-            <a href="#" class="btn btn-info">Entrar</a>
-            <a href="#" class="btn btn-info">Ver Informações</a>
-          </div>
-          <div class="card-footer">
-            19/04/2022 19:00
-          </div>
+      <div><button class="botao_sair">Sair</button></div>
+    </div>
+  </header>
+  <main>
+    <div class="partida">
+      <div class="card text-center">
+        <div class="card-header">
+          Arena Esplanada - Bairro Esplanada
         </div>
-        <div class="card text-center">
-          <div class="card-header">
-            Quadra do João - Bairro Savassi
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Implacável</h5>
-            <p class="card-text">Clique aqui para jogar uma partida contra Implacável</p>
-            <a href="#" class="btn btn-info">Entrar</a>
-            <a href="#" class="btn btn-info">Ver Informações</a>
-          </div>
-          <div class="card-footer">
-            25/04/2022 08:00
-          </div>
+        <div class="card-body">
+          <h5 class="card-title">OGZ FC</h5>
+          <p class="card-text">Clique aqui para jogar uma partida contra OGZ FC</p>
+          <a href="#" class="btn btn-info">Entrar</a>
+          <a href="#" class="btn btn-info">Ver Informações</a>
         </div>
-        <div class="card text-center">
-          <div class="card-header">
-            Bola na Rede - Bairro Liberdade
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Peita FC</h5>
-            <p class="card-text">Clique aqui para jogar uma partida contra Peita FC</p>
-            <a href="#" class="btn btn-info">Entrar</a>
-            <a href="#" class="btn btn-info">Ver Informações</a>
-          </div>
-          <div class="card-footer">
-            18/04/2022 15:00
-          </div>
-        </div>
-        <div class="card text-center">
-          <div class="card-header">
-            Gomes Society
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Os Caras</h5>
-            <p class="card-text">Clique aqui para jogar uma partida contra Os Caras</p>
-            <a href="#" class="btn btn-info">Entrar</a>
-            <a href="#" class="btn btn-info">Ver Informações</a>
-          </div>
-          <div class="card-footer">
-            22/04/2022 21:00
-          </div>
+        <div class="card-footer">
+          19/04/2022 19:00
         </div>
       </div>
-    </main>
-    <footer class="rodape">
-      <div class="container">
-        <div class="row teste">
-          <div class="col">
-            <div>
-              <p class="estilo_letra">&copy Todos os direitos resevados</p>
+      <div class="card text-center">
+        <div class="card-header">
+          Quadra do João - Bairro Savassi
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Implacável</h5>
+          <p class="card-text">Clique aqui para jogar uma partida contra Implacável</p>
+          <a href="#" class="btn btn-info">Entrar</a>
+          <a href="#" class="btn btn-info">Ver Informações</a>
+        </div>
+        <div class="card-footer">
+          25/04/2022 08:00
+        </div>
+      </div>
+      <div class="card text-center">
+        <div class="card-header">
+          Bola na Rede - Bairro Liberdade
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Peita FC</h5>
+          <p class="card-text">Clique aqui para jogar uma partida contra Peita FC</p>
+          <a href="#" class="btn btn-info">Entrar</a>
+          <a href="#" class="btn btn-info">Ver Informações</a>
+        </div>
+        <div class="card-footer">
+          18/04/2022 15:00
+        </div>
+      </div>
+      <div class="card text-center">
+        <div class="card-header">
+          Gomes Society
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Os Caras</h5>
+          <p class="card-text">Clique aqui para jogar uma partida contra Os Caras</p>
+          <a href="#" class="btn btn-info">Entrar</a>
+          <a href="#" class="btn btn-info">Ver Informações</a>
+        </div>
+        <div class="card-footer">
+          22/04/2022 21:00
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div class="row teste">
+        <div class="col">
+          <div>
+            <p class="estilo_letra">&copy Todos os direitos resevados</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="container rodape2">
+            <div class="col">
+              <a href="" class="estilo_letra remover_decoracao">Serviços</a>
+            </div>
+            <div class="col">
+              <a href="" class="estilo_letra remover_decoracao">Sobre nós</a>
+            </div>
+            <div class="col">
+              <a href="" class="estilo_letra remover_decoracao">Contato</a>
             </div>
           </div>
-          <div class="col">
-            <div class="container rodape2">
-              <div class="col">
-                <a href="" class="estilo_letra remover_decoracao">Serviços</a>
-              </div>
-              <div class="col">
-                <a href="" class="estilo_letra remover_decoracao">Sobre nós</a>
-              </div>
-              <div class="col">
-                <a href="" class="estilo_letra remover_decoracao">Contato</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
