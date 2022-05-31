@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const path = require('path')
 const locatario = require("./Backend/routes/Locatario")
+//const locatario = require("./routes/Locatario")
 const partida = require('./Backend/routes/Partida')
 
 // Configurações

@@ -7,11 +7,15 @@ router.get('/',function(req,res){
 })
 
 router.get('/criar',function(req,res){
-    res.send("Pagina de criação de partidas")
+    res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'criarPartida','criarPartida.html'))
+})
+
+router.get('/criar/escolher',function(req,res){
+    res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'criarPartida','escolherQuadra.html'))
 })
 
 router.get('/entrar',function(req,res){
-    res.send("Pagina de entrar em uma partida")
+    res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'entrarPartida','entrarPartida.html'))
 })
 
 

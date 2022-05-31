@@ -5,9 +5,7 @@ router.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'Cadastro_quadra', 'Cadastro_quadra.html'))
 })
 
-router.get('/cadastroQuadra', (req, res)=>{
-    res.send("Pagina do cadastro qaudra do locairo")
-})
+
 
 router.post('/add', function(req, res){
     res.send("Teste do BD: ");
