@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const path = require('path')
-const locatario = require("./routes/Locatario")
+const locatario = require("./Backend/routes/Locatario")
 const partida = require('./Backend/routes/Partida')
 
 // Configurações
@@ -19,6 +19,7 @@ const partida = require('./Backend/routes/Partida')
     })
      
     app.use('/homeLocatario', locatario)
+    app.use('/add', locatario)
     app.use('/cadastroQuadra', locatario)
 
     app.use('/partida',partida)
