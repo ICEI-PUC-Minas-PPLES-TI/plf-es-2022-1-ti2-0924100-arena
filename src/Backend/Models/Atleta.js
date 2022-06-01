@@ -2,7 +2,7 @@ const db = require("./Db"); //puxa conexão com o DataBase -> arena
 
 // TABELA ATLETAS:
 
-const atleta = db.sequelize.define("atleta", {
+const atleta = db.sequelize.define("atletas", {
   EmailAtleta: {
     type: db.Sequelize.STRING,
     primaryKey: true,

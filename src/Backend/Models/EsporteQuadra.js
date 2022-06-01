@@ -1,21 +1,30 @@
 const db = require("./Db"); //puxa conexão com o DataBase -> arena
+const esporte = require("./Esporte")//PUXA A TABELA ESPORTE
+const quadra = require("./Quadra")//PUXA A TABELA QUADRA
 
-// TABELA Esporte:
-
-const esportequadra = db.sequelize.define("esportequadra", {
+const esporteQuadra = db.sequelize.define('esporteQuadras', {
+  
+  IdEsporte: {
+    type: db.Sequelize.INTEGER,
+    references: {
+      model: esporte, 
+      key: 'IdEsporte'
+    }
+  },
   CodigoQuadra: {
-    type: db.Sequelize.STRING(4),
-    primaryKey: true,
-    allowNull: false,
-  },
-
-  CodigoEsporte: {
-    type: db.Sequelize.STRING(2),
-    primaryKey: true,
-    allowNull: false,
-  },
+    type: db.Sequelize.INTEGER,
+    references: {
+      model: quadra,
+      key: 'CodigoQuadra'
+    }
+  }
 });
 
-//esporte.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
 
-module.exports = esportequadra;
+
+esporte.belongsToMany(quadra,{through: 'esporteQuadras'})
+quadra.belongsToMany(esporte,{through: 'esporteQuadras'})
+//esporteQuadra.sync({force: true})
+
+
+module.exports = esporteQuadra;
