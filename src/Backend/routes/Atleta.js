@@ -1,6 +1,19 @@
 const express = require("express")
+const app = express();
 const router = express.Router()
 const path = require('path')
+const bodyParser = require('body-parser');//SERVE PARA RECEBER O FORMULÁRIO
+const atleta = require('../Models/Atleta')//PUXA A TABELA ATLETA
+
+
+//CONFIG BODY-PARSER -> pegar dados do  formularios 
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+// estrutura para pegar os dados: -> req.body.(nome do input)-> atribui os nomes para os inputs com o atributo name
+
+
+
+
 router.get('/', (req, res)=>{
     res.send("Pagina pricipal do Atleta")
 })
@@ -20,7 +33,19 @@ router.get('/cadastrar',(req,res)=>{
 
 //rota para receber dados do formulario de cadastro do atleta
 router.post('/cadastroRecebido',(req,res)=>{
-    res.send("DADOS RECEBIDOS")
+
+    //CRIANDO USUÁRIO ATLETA:
+    atleta.create({
+        EmailAtleta: req.body.email,
+        Nome: req.body.nome,
+        Senha: req.body.senha,
+        DataNascimento: req.body.data,
+        Sexo: req.body.sexo
+    }).then(function(){
+        res.send("DADOS RECEBIDOS")
+    }).catch((erro)=>{
+        res.send("Deu um erro!" + erro)
+    })
 })
 
 

@@ -38,12 +38,12 @@
 
                 <div class="col-sm-5">
                     <label for="inputNome">Nome (*)</label>
-                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o Nome">
+                    <input type="text" class="form-control" id="inputNome" name="nome" required placeholder="Informe o Nome">
                 </div>
 
                 <div class="col-sm-3 ">
                     <label for="inputData">Sexo</label>
-                    <select name="sexo" id="sexo" class="form-control">
+                    <select name="sexo" id="sexo" name="sexo" class="form-control">
                         <option value="null"></option>
                         <option value="m">Masculino</option>
                         <option value="s">Femenino</option>
@@ -52,17 +52,17 @@
 
                 <div class="col-sm-3">
                     <label for="inputData">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="inputdata">
+                    <input type="date" class="form-control" name="data" id="inputdata">
                 </div>
 
                 <div class="col-sm-6">
                     <label for="inputEmail">E-mail (*)</label>
-                    <input type="email" class="form-control" id="inputEmail" required placeholder="Informe o E-mail">
+                    <input type="email" class="form-control" name="email" id="inputEmail" required placeholder="Informe o E-mail">
                 </div>
 
                 <div class="col-sm-6">
                     <label for="inputSenha">Senha (*)</label>
-                    <input type="password" class="form-control" id="inputSenha" minlength="8" required
+                    <input type="password" class="form-control" name="senha"  id="inputSenha" minlength="8" required
                         placeholder="Informe a Senha">
                 </div>
 
