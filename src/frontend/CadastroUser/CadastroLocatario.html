@@ -27,7 +27,7 @@
 
     <div class="container">
 
-        <form id="form-Locatario">
+        <form id="form-Locatario" action="/locatario/cadastroRecebido" method="post">
 
             <div class="form-group row">
 
@@ -38,34 +38,43 @@
 
                 <div class="col-sm-5">
                     <label for="inputNome">Nome (*)</label>
-                    <input type="text" class="form-control" id="inputNome" required placeholder="Informe o Nome">
+                    <input type="text" name="nome" class="form-control" id="inputNome" required placeholder="Informe o Nome">
                 </div>
 
                 <div class="col-sm-3">
                     <label for="inputData">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="inputdata">
+                    <input type="date" name="data" class="form-control" id="inputdata">
                 </div>
 
                 <div class="col-sm-3">
                     <label for="inputContato">Contato</label>
-                    <input type="tel" class="form-control" id="inputContato" required
+                    <input type="tel" name="contato" class="form-control" id="inputContato" required
                         placeholder="Informe o seu número">
                 </div>
 
                 <div class="col-sm-6">
                     <label for="inputEmail">E-mail (*)</label>
-                    <input type="email" class="form-control" id="inputEmail" required placeholder="Informe o E-mail">
+                    <input type="email" name="email" class="form-control" id="inputEmail" required placeholder="Informe o E-mail">
                 </div>
 
                 <div class="col-sm-3">
                     <label for="inputSenha">Senha (*)</label>
-                    <input type="password" class="form-control" id="inputSenha" minlength="8" required
+                    <input type="password" name="senha" class="form-control" id="inputSenha" minlength="8" required
                         placeholder="Informe a Senha">
                 </div>
 
                 <div class="col-sm-6">
+                    <label for="inputChavePix">Tipo da Chave Pix (*)</label>
+                    <select name="chavePix" id="chavePix"  class="form-control">
+                        <option value="CPF/CNPJ">CPF/CNPJ</option>
+                        <option value="telefone">Telefone</option>
+                        <option value="email">E-mail</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-6">
                     <label for="inputPix">Chave Pix (*)</label>
-                    <input type="text" class="form-control" id="inputPix" required placeholder="Informe a Chave Pix">
+                    <input type="text" name="pix" class="form-control" id="inputPix" required placeholder="Informe a Chave Pix">
                 </div>
 
                 <div class="col-sm-4 offset-sm-4">
