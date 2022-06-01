@@ -17,7 +17,7 @@ const partida = require('./Backend/routes/Partida')
     app.get('/', function(req,res){
         res.sendFile(__dirname + "/frontend/Tela_inicial/index.html")
     })
-     
+ 
    // app.use('/homeLocatario', locatario)
    // app.use('/cadastroQuadra', locatario)
 
