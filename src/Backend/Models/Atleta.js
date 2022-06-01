@@ -20,7 +20,7 @@ const atleta = db.sequelize.define("atletas", {
   },
 
   DataNascimento: {
-    type: db.Sequelize.DATE,
+    type: db.Sequelize.DATEONLY,
   },
 
   Sexo: {
