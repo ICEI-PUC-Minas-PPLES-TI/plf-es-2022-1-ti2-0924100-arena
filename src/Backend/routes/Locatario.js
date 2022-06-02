@@ -24,13 +24,20 @@ router.get('/', (req, res)=>{
 router.post('/quadraCadastrada',(req,res)=>{
 
     //CRIANDO QUADRA LOCATÁRIO:
+    var invisivel = req.body.invisivel;
+    var nomeQuadra = req.body.nomeQuadra;
+    var CEP= req.body.Cep;
+    var numero = req.body.numero;
+    var capacidade = req.body.capacidade;
+    var preco = req.body.campopreco;
+
     quadra.create({
-        EmailLocatario: req.body.invisivel ,
-        NomeQuadra: req.body.nomeQuadra,
-        CEP: req.body.Cep,
-        Numero: req.body.numero,
-        Capaidade: req.body.capacidade,
-        Preco: req.body.campopreco,
+        EmailLocatario: invisivel ,
+        NomeQuadra: nomeQuadra,
+        CEP: CEP,
+        Numero: numero,
+        Capacidade: capacidade,
+        Preco: preco,
 
     }).then(()=>{
         res.send("Cadastro realizado com sucesso!")
