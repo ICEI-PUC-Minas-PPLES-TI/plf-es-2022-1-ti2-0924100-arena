@@ -26,6 +26,6 @@ const atletaTime = db.sequelize.define("atletaTimes", {
   },
 });
 
-atletaTime.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//atletaTime.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
 
 module.exports = atletaTime;
