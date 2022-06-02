@@ -3,7 +3,7 @@ const router = express.Router()
 const path = require('path')
 const partida = require('../Models/Partida')
 
-router.get('/',function(req,res){
+router.get('/home',function(req,res){
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'partida.html'))
 })
 

@@ -2,7 +2,7 @@ const db = require("./Db");//puxa conexão com o DataBase -> arena
 
 // TABELA LOCATARIO:
 
-const locatario = db.sequelize.define('locatario',{
+const locatario = db.sequelize.define('locatarios',{
     
     EmailLocatario: {
         type: db.Sequelize.STRING,
@@ -21,7 +21,8 @@ const locatario = db.sequelize.define('locatario',{
     },
 
     Contato: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        allowNull: false
     },
 
     DataNascimento: {
@@ -35,7 +36,7 @@ const locatario = db.sequelize.define('locatario',{
     
     ChavePix: {
         type: db.Sequelize.STRING,
-        uniqueKey: true,
+        unique: true,
         allowNull: false
     }
 
