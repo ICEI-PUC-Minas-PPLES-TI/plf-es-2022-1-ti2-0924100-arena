@@ -45,6 +45,6 @@ partida.belongsTo(esporte,{
       }
 })
 
-//partida.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//partida.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = partida;

@@ -20,7 +20,7 @@ const esporte = db.sequelize.define("esportes", {
   },
 });
 
-//esporte.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//esporte.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 //APOS JÁ TER CRIADO A TABELA ESPORTES:;
 
