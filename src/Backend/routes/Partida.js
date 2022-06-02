@@ -15,19 +15,17 @@ router.get('/entrar',function(req,res){
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'entrarPartida','entrarPartida.html'))
 })
 
-router.post('/criar/escolher',function(req,res){
-    res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'criarPartida','escolherQuadra.html'))
+router.get('/criar/escolher/:codesporte/:horarioi/:horariof/:data/:minimop',function(req,res){
+    partida.all().then(function(partidas){
+        res.sendFile(path.join(__dirname, '../', '../','frontend', 'partida', 'criarPartida','escolherQuadra.html'))
+    })
     /*partida.create({
         CodigoQuadra: 1,
-        CodigoEsporte: 1,
-        HorarioInicio: req.body.horario_realizacao,
-        HorarioFim: req.body.horario_termino,
-        Data: req.body.data,
-        MinimoParticipantes: req.body.participantes*/
-    console.log("Horario de Inicio: "+req.body.horario_realizacao)  
-    console.log("Horario de Término: "+req.body.horario_termino)
-    console.log("Data: "+req.body.data)
-    console.log("Mínimo Participantes: "+req.body.participantes)
+        CodigoEsporte: req.params.codesporte,
+        HorarioInicio: req.params.horarioi,
+        HorarioFim: req.params.horariof,
+        Data: req.params.data,
+        MinimoParticipantes: req.params.minimop*/
 })
 
 router.get('/lobby',function(req,res){
