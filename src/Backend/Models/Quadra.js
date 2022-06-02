@@ -17,13 +17,8 @@ const quadra = db.sequelize.define("quadras", {
     },
 
     NomeQuadra: {
-<<<<<<< HEAD
       type: db.Sequelize.STRING,
       allowNull: false
-=======
-        type: db.Sequelize.STRING,
-        allowNull: false
->>>>>>> 988a1450dd2a8b78ca1a6e5c478f8f294a462d91
     },
 
     CEP: {
