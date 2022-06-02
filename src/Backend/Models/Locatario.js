@@ -26,7 +26,7 @@ const locatario = db.sequelize.define('locatarios',{
     },
 
     DataNascimento: {
-        type: db.Sequelize.DATE
+        type: db.Sequelize.DATEONLY
     },
 
     TipoChavePix: {
