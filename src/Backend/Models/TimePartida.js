@@ -1,27 +1,41 @@
 const db = require("./Db"); //puxa conexão com o DataBase -> arena
+const time = require("./Time")
+const partida = require("./Partida")
 
-// TABELA Esporte:
+// TABELA TIMEPARTIDA:
 
-const timepartida = db.sequelize.define("timepartida", {
+const timePartida = db.sequelize.define("timePartidas", {
   CodigoTime: {
-    type: db.Sequelize.STRING(4),
+    type: db.Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false,
+    references: {
+      model: time, 
+      key: 'CodigoTime'
+    }
   },
 
   CodigoTime2: {
-    type: db.Sequelize.STRING(4),
+    type: db.Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false,
+    references: {
+      model: time, 
+      key: 'CodigoTime'
+    }
   },
 
   CodigoPartida: {
-    type: db.Sequelize.STRING(4),
+    type: db.Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false,
+    references: {
+      model: partida, 
+      key: 'CodigoPartida'
+    }
   },
 });
 
-//esporte.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//timePartida.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
 
-module.exports = timepartida;
+module.exports = timePartida;

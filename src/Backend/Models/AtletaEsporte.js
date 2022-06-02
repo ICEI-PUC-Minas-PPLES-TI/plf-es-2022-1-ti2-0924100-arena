@@ -1,21 +1,31 @@
 const db = require("./Db"); //puxa conexão com o DataBase -> arena
+const atleta = require("./Atleta")
+const esporte = require("./Esporte") 
 
-// TABELA ATLETAS:
+// TABELA ATLETAESPORTE:
 
-const atletaesporte = db.sequelize.define("atletaesporte", {
+const atletaEsporte = db.sequelize.define("atletaesportes", {
   EmailAtleta: {
     type: db.Sequelize.STRING,
     primaryKey: true,
     allowNull: false,
+    references: {
+      model: atleta, 
+      key: 'EmailAtleta'
+    }
   },
 
-  CodigoEsporte: {
-    type: db.Sequelize.STRING(2),
+  IdEsporte: {
+    type: db.Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false,
+    references: {
+      model: esporte, 
+      key: 'IdEsporte'
+    }
   },
 });
 
-//atleta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//atletaEsporte.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
 
-module.exports = atletaesporte;
+module.exports = atletaEsporte;
