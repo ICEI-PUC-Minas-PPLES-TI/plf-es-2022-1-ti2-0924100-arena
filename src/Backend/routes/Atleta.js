@@ -41,7 +41,7 @@ router.post('/cadastroRecebido',(req,res)=>{
         DataNascimento: req.body.data,
         Sexo: req.body.sexo
     }).then(function(){
-        res.send("DADOS RECEBIDOS")
+        res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
     }).catch((erro)=>{
         res.send("Deu um erro!" + erro)
     })
