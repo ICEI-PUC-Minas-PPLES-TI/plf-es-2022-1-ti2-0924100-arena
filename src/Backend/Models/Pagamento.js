@@ -37,6 +37,6 @@ const pagamento = db.sequelize.define("pagamentos", {
   },
 });
 
-//pagamento.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//pagamento.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = pagamento;

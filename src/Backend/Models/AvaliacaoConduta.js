@@ -43,6 +43,6 @@ const avaliacaoConduta = db.sequelize.define("avaliacaocondutas", {
   },
 });
 
-//avaliacaoConduta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//avaliacaoConduta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = avaliacaoConduta;

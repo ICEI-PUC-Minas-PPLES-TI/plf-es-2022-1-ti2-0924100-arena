@@ -27,6 +27,6 @@ disponibilidadeQuadra.belongsTo(quadra,{
   }
 })
 
-//disponibilidadeQuadra.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//disponibilidadeQuadra.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = disponibilidadeQuadra;

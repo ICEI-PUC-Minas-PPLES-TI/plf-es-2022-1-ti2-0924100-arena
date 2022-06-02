@@ -36,6 +36,6 @@ const timePartida = db.sequelize.define("timePartidas", {
   },
 });
 
-//timePartida.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//timePartida.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = timePartida;

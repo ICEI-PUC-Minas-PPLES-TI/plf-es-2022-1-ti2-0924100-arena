@@ -42,7 +42,7 @@ const locatario = db.sequelize.define('locatarios',{
 
 })
 
-//locatario.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//locatario.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = locatario;
 /**
