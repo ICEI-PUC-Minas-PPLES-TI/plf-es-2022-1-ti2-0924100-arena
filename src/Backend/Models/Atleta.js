@@ -28,6 +28,6 @@ const atleta = db.sequelize.define("atletas", {
   },
 });
 
-//atleta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//atleta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = atleta;

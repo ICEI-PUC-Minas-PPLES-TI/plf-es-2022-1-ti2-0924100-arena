@@ -46,6 +46,6 @@ time.belongsTo(esporte,{
     }
 })
 
-//time.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+//time.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = time;

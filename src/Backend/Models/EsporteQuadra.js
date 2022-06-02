@@ -6,6 +6,8 @@ const esporteQuadra = db.sequelize.define('esporteQuadras', {
   
   IdEsporte: {
     type: db.Sequelize.INTEGER,
+    primaryKey: true,
+    allowNull: false,
     references: {
       model: esporte, 
       key: 'IdEsporte'
@@ -13,6 +15,8 @@ const esporteQuadra = db.sequelize.define('esporteQuadras', {
   },
   CodigoQuadra: {
     type: db.Sequelize.INTEGER,
+    primaryKey: true,
+    allowNull: false,
     references: {
       model: quadra,
       key: 'CodigoQuadra'
@@ -22,8 +26,8 @@ const esporteQuadra = db.sequelize.define('esporteQuadras', {
 
 
 
-esporte.belongsToMany(quadra,{through: 'esporteQuadras'})
-quadra.belongsToMany(esporte,{through: 'esporteQuadras'})
+//esporte.belongsToMany(quadra,{through: 'esporteQuadras'})
+//quadra.belongsToMany(esporte,{through: 'esporteQuadras'})
 //esporteQuadra.sync({force: true})
 
 
