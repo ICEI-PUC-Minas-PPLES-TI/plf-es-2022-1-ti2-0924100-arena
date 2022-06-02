@@ -1,14 +1,8 @@
 const db = require("./Db"); //puxa conexão com o DataBase -> arena
-
+const quadra = require("./Quadra")
 // TABELA ATLETAS:
 
-const disponibilidadequadra = db.sequelize.define("disponibilidadequadra", {
-
-  CodigoQuadra: {
-    type: db.Sequelize.STRING(4),
-    primaryKey: true,
-    allowNull: false,
-  },
+const disponibilidadeQuadra = db.sequelize.define("disponibilidadeQuadras", {
 
   Data: {
     type: db.Sequelize.DATEONLY,
@@ -26,6 +20,13 @@ const disponibilidadequadra = db.sequelize.define("disponibilidadequadra", {
   }
 });
 
-//atleta.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+disponibilidadeQuadra.belongsTo(quadra,{
+  foreignKey: {
+    name: 'CodigoQuadra',
+    allowNull: false
+  }
+})
 
-module.exports = disponibilidadequadra;
+//disponibilidadeQuadra.sync({force: true})// Mantenha-se comentado caso já exista esta tabela
+
+module.exports = disponibilidadeQuadra;
