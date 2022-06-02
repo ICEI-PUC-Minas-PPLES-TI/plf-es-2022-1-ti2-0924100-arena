@@ -16,6 +16,11 @@ const quadra = db.sequelize.define("quadras", {
         autoIncrement: true
     },
 
+    NomeQuadra: {
+        type: db.Sequelize.STRING,
+        allowNull: false
+    },
+
     CEP: {
         type: db.Sequelize.STRING,
         allowNull: false

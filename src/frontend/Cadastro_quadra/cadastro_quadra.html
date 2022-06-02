@@ -16,11 +16,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
     </script>
     <script>
+       
             var diaSemana="";
 var controleDia= 0;
 var arreyDias= [];
 function calendar(mois){
-        
         var date = new Date();
         var day = date.getDate();
         var month = date.getMonth();
@@ -239,10 +239,16 @@ function domingo(){
 
 
 window.onload = () =>{
+    
+        
     //Campo CEP
     var tecla;
     let campoCEP = document.getElementById("campoCEP");
+    let invisivel = document.getElementById("invisivel")
     let msgCEP = document.getElementById("msgCEP");
+    let emailLogado = "teste@teste"; 
+    invisivel.value = "teste@teste"
+    console.log(emailLogado)
     campoCEP.addEventListener("input", ()=>{
         if(campoCEP.value.length>8){
             let inputText = campoCEP.value;
@@ -252,6 +258,7 @@ window.onload = () =>{
         else{
             msgCEP.style.display = "none";
         }
+        
     })
   /**************************************************/
 
@@ -548,7 +555,7 @@ table{
             <div><button class="botao_sair" id="botaoSair">Sair</button></div>
         </div>
     </header>
-    <form action="" method="post">
+    <form action="/locatario/quadraCadastrada" method="post">
     <section class="formulario">
         <div class="row tituloss">
             <div class="titulo">
@@ -559,24 +566,24 @@ table{
         <div class="row primeirobloco">
             <div class="col formulario_central">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nada" placeholder="name@example.com" name="testeDoBD">
+                    <input type="text" class="form-control" id="nada" placeholder="name@example.com" name="nomeQuadra">
                     <label for="floatingInput">Nome</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="campoCEP" placeholder="name@example.com"
+                    <input type="number" name="Cep" class="form-control" id="campoCEP" placeholder="name@example.com"
                         maxlength="10">
                     <label for="floatingInput">CEP</label>
                     <span id="msgCEP" style="color: red; display: none;">O campo deve possuir somente 8 digítos</span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" min="0" class="form-control" id="floatingInput" placeholder="100">
+                    <input type="number" min="0" class="form-control" id="floatingInput" placeholder="100" name="numero">
                     <label for="floatingInput">Número</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" min="0" class="form-control" id="floatingInput" placeholder="200">
+                    <input type="number" min="0" class="form-control" id="floatingInput" placeholder="200" name="capacidade">
                     <label for="floatingInput">Capacidade</label>
                 </div>
-
+                <input name="emailLogado" id="invisivel" type="text">
             </div>
         </div>
         <div class="linha1">
@@ -697,7 +704,7 @@ table{
                         <input type="time" class="time">
                     </div>
                     <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                        <input type="text" value="R$ 000,00" name="campopreco" class="form-control campomonetario"
                             onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
                     </div>
                 </div>
