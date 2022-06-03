@@ -28,7 +28,7 @@ const partida = db.sequelize.define('partidas',{
       Preco: {
           type: db.Sequelize.DECIMAL(10,2),
           allowNull: false
-      }    
+      }
 })
 
 partida.belongsTo(quadra,{
@@ -46,5 +46,6 @@ partida.belongsTo(esporte,{
 })
 
 //partida.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
+
 
 module.exports = partida;
