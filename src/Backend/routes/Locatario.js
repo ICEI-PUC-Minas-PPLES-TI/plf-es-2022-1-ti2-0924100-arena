@@ -23,6 +23,13 @@ router.get('/', (req, res)=>{
 //ROTA PARA RECEBER DADOS DO FORMULARIO DE CADASTRO DA QUADRA:
 router.post('/quadraCadastrada',(req,res)=>{
 
+
+    let checkFutebol = req.body.checkFutebol
+    let checkVolei = req.body.checkVolei
+    let checkBasquete = req.body.checkBasquete
+    let checkFutevolei = req.body.checkFutevolei
+    let checkTenis = req.body.checkTenis
+    
     //CRIANDO QUADRA LOCATÁRIO:
     var invisivel = req.body.invisivel;
     var nomeQuadra = req.body.nomeQuadra;
@@ -30,21 +37,57 @@ router.post('/quadraCadastrada',(req,res)=>{
     var numero = req.body.numero;
     var capacidade = req.body.capacidade;
     var preco = req.body.campopreco;
+    var arreyEsportes= [];
 
-    quadra.create({
-        EmailLocatario: invisivel ,
-        NomeQuadra: nomeQuadra,
-        CEP: CEP,
-        Numero: numero,
-        Capacidade: capacidade,
-        Preco: preco,
-
-    }).then(()=>{
-        res.send("Cadastro realizado com sucesso!")
-    }).catch((erro)=>{
-        res.send("Nao foi possivel realizar o cadastro!" + erro)
+    if(checkFutebol != undefined){
+        arreyEsportes.push("1")
+    }
+    if(checkVolei != undefined){
+        arreyEsportes.push("2")
+    }
+    if(checkBasquete != undefined){
+        arreyEsportes.push("3")
+    }
+    if(checkFutevolei != undefined){
+        arreyEsportes.push("4")
+    }
+    if(checkTenis != undefined){
+        arreyEsportes.push("5")
+    }
+    console.log("async")
+    (async function cadastro (){
+        
+        const novaQuadra = await quadra.create({
+            EmailLocatario: invisivel ,
+            NomeQuadra: nomeQuadra,
+            CEP: CEP,
+            Numero: numero,
+            Capacidade: capacidade,
+            Preco: preco
     })
- })
+    cadastro()
+        console.log("Criou a quadra")
+            console.log("começou esporte")
+            
+              console.log("achou o id")
+              console.log(novaQuadra)
+              console.log(novaQuadra.NomeQuadra)
+              console.log(novaQuadra.CodigoQuadra)
+                esporteQuadra.create({
+                IdEsporte: arreyEsportes[0],
+                CodigoQuadra: novaQuadra.CodigoQuadra 
+            },
+            console.log("criou dnv")
+            ).then(()=>{
+                res.send("Cadastro realizado com sucesso!")
+            })
+
+        
+    
+
+    })     
+    })
+            
 
 //ROTA PARA A HOME DO LOCATARIO:
 router.get('/home',(req,res)=>{
@@ -60,6 +103,7 @@ router.get('/cadastrar',(req,res)=>{
  router.post('/cadastroRecebido',(req,res)=>{
 
     //CRIANDO USUÁRIO LOCATÁRIO:
+    
     locatario.create({
         EmailLocatario: req.body.email,
         Nome: req.body.nome,
