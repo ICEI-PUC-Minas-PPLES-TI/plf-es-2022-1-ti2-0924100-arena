@@ -4,6 +4,7 @@ const router = express.Router()
 const path = require('path')
 const bodyParser = require('body-parser');//SERVE PARA RECEBER O FORMULÁRIO
 const time = require('../Models/Time')//PUXA A TABELA TIME
+const esporte = require('../Models/Esporte')//PUXA A TABELA ESPORTE
 
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
@@ -33,7 +34,19 @@ router.post('/timeCadastrado',(req,res)=>{
     })
 })
 
+//ROTA PARA VISUALIZAR TIMES:
+router.get('/visualizarTimes',(req,res)=>{
+    time.findAll({raw:true}).then((times)=>{
+        res.render('escolherTime',{times})
+       
+    })
+    
+})
 
+//ROTA PARA INSCREVER-SE EM UM TIME:
+router.get('/time/info',(req,res)=>{
+    res.sendFile(path.join(__dirname, '../', '../','frontend', 'entrar_time', 'entrartime.html'))
+})
 
 
 
