@@ -40,11 +40,12 @@ const locatario = db.sequelize.define('locatarios',{
         allowNull: false
     }
 
-},  {timestamps: false})
+})
 
 //locatario.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
-module.exports = locatario;
+module.exports = locatario
+
 /**
  * `EmailLocatario` varchar(50) NOT NULL,
   `Nome` varchar(100) NOT NULL,
