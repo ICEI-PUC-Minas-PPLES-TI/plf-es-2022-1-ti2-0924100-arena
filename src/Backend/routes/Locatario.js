@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 // estrutura para pegar os dados: -> req.body.(nome do input)-> atribui os nomes para os inputs com o atributo name
 
 //ROTA PARA CADASTRAR QUADRA:
-router.get('/', (req, res)=>{
+router.get('/cadastrar/quadra', (req, res)=>{
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'Cadastro_quadra', 'Cadastro_quadra.html'))
 })
 //ROTA PARA RECEBER DADOS DO FORMULARIO DE CADASTRO DA QUADRA:
@@ -63,7 +63,7 @@ router.get('/cadastrar',(req,res)=>{
         ChavePix: req.body.pix
 
     }).then(()=>{
-        res.send("Cadastro realizado com sucesso!")
+        res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeLocatario.html'))
     }).catch((erro)=>{
         res.send("Nao foi possivel realizar o cadastro!" + erro)
     })

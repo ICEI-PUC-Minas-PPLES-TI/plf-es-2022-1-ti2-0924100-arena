@@ -33,7 +33,15 @@ router.post('/timeCadastrado',(req,res)=>{
     })
 })
 
+//ROTA PARA VISUALIZAR TIMES:
+router.get('/visualizarTimes',(req,res)=>{
+    res.sendFile(path.join(__dirname, '../', '../','frontend', 'entrar_time', 'entrartime.html'))
+})
 
+//ROTA PARA INSCREVER-SE EM UM TIME:
+router.get('/time/info',(req,res)=>{
+    res.sendFile(path.join(__dirname, '../', '../','frontend', 'entrar_time', 'entrartime.html'))
+})
 
 
 
