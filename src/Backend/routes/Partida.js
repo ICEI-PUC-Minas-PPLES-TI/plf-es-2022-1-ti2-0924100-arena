@@ -17,7 +17,9 @@ router.get('/entrar',function(req,res){
 })
 
 router.get('/criar/escolher/:codesporte/:horarioi/:horariof/:data/:minimop',function(req,res){
-    quadra.findAll().then(function(quadras){
+    quadra.findAll({
+        raw: true
+    }).then(function(quadras){
         res.render('escolherQuadra', {quadras: quadras})
     })
     /*partida.create({
