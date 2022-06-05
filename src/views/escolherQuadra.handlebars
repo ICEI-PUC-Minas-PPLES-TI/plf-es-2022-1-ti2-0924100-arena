@@ -7,19 +7,20 @@
     </div>
 </header>
 <main>
-    {{#each quadras}}
     <div class="cards">
+        {{#each quadras}}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{NomeQuadra}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Futsal</h6>
-                <p class="card-text">Quadra de futsal localizada no bairro Buritis em Belo Horizonte.</p>
-                <a href="#" class="card-link" id="btn">Agendar</a>
+                <h6 class="card-subtitle mb-2 text-muted">Quadra: {{CodigoQuadra}}</h6>
+                <p class="card-text">CEP: {{CEP}} </br>Número: {{Numero}}</p>
+                <p class="card-text" id="{{@index}}">Preço: {{Preco}}</p>
+                <a href="" class="card-link" id="{{CodigoQuadra}}">Agendar</a>
+                <input type="text" id="invisible" value="{{Preco}}">
             </div>
         </div>
+        {{/each}}
     </div>
-    {{quadras}}
-    {{/each}}
 </main>
 <footer class="rodape">
     <div class="container">
@@ -49,8 +50,18 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 <script>
-    var btn = document.getElementById('btn');
-    btn.addEventListener('click', function () {
-        console.log('foi');
-    })
+    document.getElementsByTagName("title")[0].innerText = 'Escolher Quadra';
+    var btn = document.querySelector('.card-link');
+    btn.addEventListener("click", function () {
+        const el = event.target || event.srcElement;
+        const id = el.id;
+        var esporte = "{{codesporte}}";
+        var horarioi = "{{horarioi}}";
+        var horariof = "{{horariof}}";
+        var data = "{{data}}";
+        var minimop = "{{minimop}}";
+        var codquadra = id;
+        var preco = document.getElementById('invisible').value;
+        btn.setAttribute("href", `/partida/lobby/${esporte}/${horarioi}/${horariof}/${data}/${minimop}/${codquadra}/${preco}`);
+    });
 </script>

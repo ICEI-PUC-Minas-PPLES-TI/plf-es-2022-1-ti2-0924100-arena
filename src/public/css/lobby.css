@@ -1,136 +1,3 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* Reset CSS */
-
 /*definiçoes gerais dos links*/
 a:link,
 a:visited {
@@ -176,11 +43,6 @@ a:active {
     font-size: larger;
 }
 
-.btnsair a {
-    text-decoration: none;
-    color: #CB0059;
-}
-
 /*********************************/
 
 /* Rodape */
@@ -209,7 +71,6 @@ a:active {
     justify-content: space-around;
     border: #CB0059;
     padding-top: 10px;
-
 }
 
 @media screen and (max-width: 770px) {
@@ -234,43 +95,38 @@ a:active {
 
 /*********************************/
 
-/*Main*/
-
-.titulo {
-    font-family: 'Koulen', cursive;
-    font-family: 'Open Sans', sans-serif;
-    color: #CB0059;
-    font-weight: bolder;
-    font-size: 30px;
+table {
+    margin-top: 50px;
+    width: 500px;
+    height: 250px;
+    border-collapse: collapse;
+    /* CSS2 */
+    text-align: center;
 }
 
-.cards {
-    margin-top: 30px;
+table td {
+    border: 1px solid black;
+}
+
+table th {
+    border: 1px solid black;
+    background: #F0FFF0;
+}
+
+.partida {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
 }
 
-.card-title {
-    text-align: center;
+.partida button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #CB0059 !important;
 }
 
-span {
-    font-weight: bolder;
-}
-
-.informacoes {
+.title th {
     background-color: #CB0059;
-    width: 300px;
     color: white;
-    padding: 20px;
-    height: 230px;
-    margin-left: 50px;
-    border-radius: 50px;
-}
-
-#invisible {
-    display: none;
 }
