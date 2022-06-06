@@ -1,0 +1,84 @@
+<header>
+    <div class="flex-container">
+        <div><img src="../../img/logo.png" class="logo" alt=""></div>
+        <div><a href="../frontend/Tela_inicial/index.html"><input type="button" class="botao_sair" value="Sair"></a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <form id="form-Atleta">
+
+        <div class="form-group row">
+
+
+           {{#each time}}
+            <div class="col-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{Nome}}</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Falta deixar isso dinamico </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           {{/each}}
+
+
+        </div>
+
+        <div id="msg" class="col-sm-10 offset-sm-1 ">
+            <!--<div class="alert alert-warning">ERROR</div>-->
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2" id="buttons">
+                <a href="#"><input type="submit" class="botao_sair"
+                        value="Inscrever-se"></a>
+            </div>
+        </div>
+
+</div>
+</div>
+
+<footer class="rodape">
+
+    <div class="container">
+        <div class="row teste">
+
+            <div class="col">
+                <div>
+                    <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                </div>
+            </div>
+
+            <div class="col">
+
+                <div class="container rodape2">
+
+
+
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Serviços</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Sobre nós</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Contato</a>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

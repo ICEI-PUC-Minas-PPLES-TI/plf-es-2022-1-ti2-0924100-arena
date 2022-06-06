@@ -21,13 +21,15 @@ router.get('/', (req, res)=>{
 //ROTA PARA A PAGINA HOME DO ATLETA:
 
 router.get('/home',(req,res)=>{
-    res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
+    //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
+    res.render('homeAtleta')
 })
 
 
 //ROTA PARA A PAGINA DE CADASTRO
 router.get('/cadastrar',(req,res)=>{
-   res.sendFile(path.join(__dirname, '../', '../','frontend', 'CadastroUser', 'CadastroAtleta.html'))
+   //res.sendFile(path.join(__dirname, '../', '../','frontend', 'CadastroUser', 'CadastroAtleta.html'))
+   res.render('cadastroAtleta')
 })
 
 //ROTA PARA RECEBER OS DADOS DE CADASTRO DO ATLETA:
@@ -41,7 +43,8 @@ router.post('/cadastroRecebido',(req,res)=>{
         DataNascimento: req.body.data,
         Sexo: req.body.sexo
     }).then(function(){
-        res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
+        //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
+        res.render('homeAtleta')
     }).catch((erro)=>{
         res.send("Deu um erro!" + erro)
     })

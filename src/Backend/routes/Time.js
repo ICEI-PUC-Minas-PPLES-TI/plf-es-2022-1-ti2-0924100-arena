@@ -43,6 +43,13 @@ router.get('/visualizarTimes',(req,res)=>{
     
 })
 
+//ROTA PARA AS INFORMAÇÕES DE UM TIME EM ESPECIFICO:
+router.get('/:id',(req,res)=>{
+    time.findByPk(req.params.id).then((time)=>{
+        res.render('infoTime',{time})
+    })
+})
+
 //ROTA PARA INSCREVER-SE EM UM TIME:
 router.get('/time/info',(req,res)=>{
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'entrar_time', 'entrartime.html'))
