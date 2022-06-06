@@ -1,0 +1,149 @@
+<header>
+    <div class="flex-container">
+        <div><img src="../../img/logo.png" class="logo" alt=""></div>
+        <div><a href="/"><input type="button" class="botao_sair" value="Sair"></a>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
+
+    <div class="row" id="meuPontuacao">
+        <div class="col-sm-12">
+            <h2><strong>Minhas Pontuações:</strong></h2>
+        </div>
+        <div class="col-sm-2" id="pontEsporte">
+            <div class="card" style="width: 8rem;">
+                <img src="../frontend/Tela_inicial/img/basket.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Basquete</h5>
+                    <p class="card-text">6.7</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2" id="pontConduta">
+            <div class="card" style="width: 8rem;">
+                <img src="../frontend/Tela_inicial/img/basket.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Conduta</h5>
+                    <p class="card-text">8.7</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="meuTime">
+        <div class="col-sm-12">
+            <h2><strong>Meus Times</strong></h2>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <table id="grid_meuTime" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Esporte</th>
+                        <th scope="col">Participantes</th>
+                    </tr>
+                </thead>
+                <tbody id="grid_meuTime">
+                    <th scope="col"><a href="#">É nois</a></th>
+                    <th scope="col">Futebol</th>
+                    <th scope="col">15</th>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <a href="/time/cadastrar"><input type="button" class="btn btn-outline-danger"
+                    id="btn" value="Criar Time"></a>
+            <a href="/time/visualizarTimes"><input type="button" class="btn btn-outline-danger"
+                    id="btn" value="Entrar no time"></a>
+        </div>
+    </div>
+
+    <div class="row" id="meuPartida">
+        <div class="col-sm-3">
+            <h2><strong>Minhas Partidas</strong></h2>
+        </div>
+        <div class="col-sm-3 offset-1">
+            <a href="../Pagamento/PagAtleta.html"><input type="button" id="btn_pagar" value="Pagar"></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <table id="grid_meuParida" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Partida</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="grid_meuParida">
+                    <th scope="col"><a href="#">4021</a></th>
+                    <th scope="col">13/05/2022</th>
+                    <th scope="col">15:00</th>
+                    <th scope="col">Não Pago</th>
+                </tbody>
+                <tbody id="grid_meuParida">
+                    <th scope="col"><a href="#">4021</a></th>
+                    <th scope="col">13/05/2022</th>
+                    <th scope="col">15:00</th>
+                    <th scope="col">Não Pago</th>
+                </tbody>
+                <tbody id="grid_meuParida">
+                    <th scope="col"><a href="#">4031</a></th>
+                    <th scope="col">15/05/2022</th>
+                    <th scope="col">14:00</th>
+                    <th scope="col">Pago</th>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-sm-6">
+            <a href="../frontend/partida/criarPartida/criarPartida.html"><input type="button"
+                    class="btn btn-outline-danger" id="btn" value="Criar Partida"></a>
+            <a href="../frontend/partida/entrarPartida/entrarPartida.html"><input type="button"
+                    class="btn btn-outline-danger" id="btn" value="Entrar na Partida"></a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<footer class="rodape">
+
+    <div class="container">
+        <div class="row teste">
+
+            <div class="col">
+                <div>
+                    <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                </div>
+            </div>
+
+
+
+            <div class="col">
+                <div class="container rodape2">
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Serviços</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Sobre nós</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
