@@ -14,7 +14,7 @@
                 <h5 class="card-title">{{NomeQuadra}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Quadra: {{CodigoQuadra}}</h6>
                 <p class="card-text">CEP: {{CEP}} </br>Número: {{Numero}}</p>
-                <p class="card-text" id="{{@index}}">Preço: {{Preco}}</p>
+                <p class="card-text">Preço: {{Preco}}</p>
                 <a href="" class="card-link" id="{{CodigoQuadra}}">Agendar</a>
                 <input type="text" id="invisible" value="{{Preco}}">
             </div>
@@ -62,6 +62,6 @@
         var minimop = "{{minimop}}";
         var codquadra = id;
         var preco = document.getElementById('invisible').value;
-        btn.setAttribute("href", `/partida/lobby/${esporte}/${horarioi}/${horariof}/${data}/${minimop}/${codquadra}/${preco}`);
+        btn.setAttribute("href", `/partida/lobby/${esporte}/${horarioi}/${horariof}/${data}/${minimop}/${codquadra}/${preco}/{{codigotime}}`);
     });
 </script>

@@ -1,45 +1,20 @@
 <header>
     <div class="flex-container">
         <div><img src="/img/logo.png" class="logo" alt=""></div>
-        <h1 class="titulo">Partida</h1>
-        <div><button class="botao_sair">Sair</button></div>
+        <h1 class="titulo">Meus Times</h1>
+        <div><button class="botao_sair"><a href="../../Tela_inicial/index.html">Sair</a></button></div>
     </div>
 </header>
 <main>
-    <div class="informacoes">
-        <p><span>Esporte:</span> </p>
-        <p><span>Quadra:</span> </p>
-        <p><span>Quantidade de jogadores:</span> </p>
-        <p><span>Data:</span> {{data}}</p>
-        <p><span>Horário:</span> {{horarioi}}-{{horariof}}</p>
-    </div>
-    <div class="partida" border="1">
-        <table>
-            <tr class="title">
-                <th>{{time.Nome}}</th>
-                <th>-</th>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-        </table>
+    <div class="cards">
+        {{#each times}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{Nome}}</h5>
+                <a href="#" class="card-link" id="{{CodigoTime}}">Selecionar time</a>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </main>
 <footer class="rodape">
@@ -63,7 +38,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </footer>
+<script>
+    var btn = document.querySelector('.card-link');
+    btn.addEventListener('click', function () {
+        const el = event.target || event.srcElement;
+        const id = el.id;
+        var CodigoTime = id;
+        btn.setAttribute("href", `/partida/criar/escolher/{{codesporte}}/{{horarioi}}/{{horariof}}/{{data}}/{{minimop}}/${CodigoTime}`);
+    })
+</script>

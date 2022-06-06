@@ -8,8 +8,19 @@ const locatario = require("./Backend/routes/Locatario")
 const atleta = require('./Backend/routes/Atleta')
 const partida = require('./Backend/routes/Partida')
 const time = require('./Backend/routes/Time')
+const passport = require("passport")
+const session = require("express-session")
+require('./config/auth')(passport)
 
 // Configurações
+    // Sessão
+    app.use(session({
+        secret: "arena",
+        resave: true,
+        saveUninitialized: true
+    }))
+    app.use(passport.initialize())
+    app.use(passport.session())
     // Body Parser
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());

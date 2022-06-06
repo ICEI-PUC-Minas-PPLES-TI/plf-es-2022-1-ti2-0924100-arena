@@ -1,45 +1,22 @@
 <header>
     <div class="flex-container">
         <div><img src="/img/logo.png" class="logo" alt=""></div>
-        <h1 class="titulo">Partida</h1>
-        <div><button class="botao_sair">Sair</button></div>
+        <h1 class="titulo">Login</h1>
+        <div class="btnsair"><a href="/"><button class="botao_sair">Sair</button></a>
+        </div>
     </div>
 </header>
 <main>
-    <div class="informacoes">
-        <p><span>Esporte:</span> </p>
-        <p><span>Quadra:</span> </p>
-        <p><span>Quantidade de jogadores:</span> </p>
-        <p><span>Data:</span> {{data}}</p>
-        <p><span>Horário:</span> {{horarioi}}-{{horariof}}</p>
-    </div>
-    <div class="partida" border="1">
-        <table>
-            <tr class="title">
-                <th>{{time.Nome}}</th>
-                <th>-</th>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-        </table>
+    <div class="div">
+        <div class="card_login">
+            <form method="POST" action="/atleta/login">
+                <label for="email">Email: </label></br>
+                <input type="email" name="email" id="email" required></br>
+                <label for="password">Senha: </label></br>
+                <input type="password" name="password" id="password" required></br>
+                <button class="btn btn-info" type="submit">Entrar</button>
+            </form>
+        </div>
     </div>
 </main>
 <footer class="rodape">
@@ -63,7 +40,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
