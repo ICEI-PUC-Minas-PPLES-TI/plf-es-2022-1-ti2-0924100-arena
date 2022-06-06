@@ -8,6 +8,7 @@ const locatario = require("./Backend/routes/Locatario")
 const atleta = require('./Backend/routes/Atleta')
 const partida = require('./Backend/routes/Partida')
 const time = require('./Backend/routes/Time')
+const indicadores = require('./Backend/routes/Indicadores')
 
 // Configurações
     // Body Parser
@@ -33,6 +34,8 @@ const time = require('./Backend/routes/Time')
    app.use('/partida',partida)
 
    app.use('/time',time)
+
+   app.use('/indicadores', indicadores)
 
 // Outros
 const PORT = 8081

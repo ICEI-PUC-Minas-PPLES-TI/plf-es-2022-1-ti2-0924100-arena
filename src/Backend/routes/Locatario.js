@@ -54,46 +54,46 @@ router.post('/quadraCadastrada',(req,res)=>{
     if(checkTenis != undefined){
         arreyEsportes.push("5")
     }
-    console.log("async")
-    (async function cadastro (){
-        
-        const novaQuadra = await quadra.create({
-            EmailLocatario: invisivel ,
-            NomeQuadra: nomeQuadra,
-            CEP: CEP,
-            Numero: numero,
-            Capacidade: capacidade,
-            Preco: preco
-    })
-    cadastro()
-        console.log("Criou a quadra")
-            console.log("começou esporte")
-            
-              console.log("achou o id")
-              console.log(novaQuadra)
-              console.log(novaQuadra.NomeQuadra)
-              console.log(novaQuadra.CodigoQuadra)
-                esporteQuadra.create({
-                IdEsporte: arreyEsportes[0],
-                CodigoQuadra: novaQuadra.CodigoQuadra 
-            },
-            console.log("criou dnv")
-            ).then(()=>{
-                res.send("Cadastro realizado com sucesso!")
-            })
-
-        
-    
-
-    })     
-    })
+    var ultimo
+    teste()
+    function teste (){
+        console.log("deu")
+        quadra.create({
+        EmailLocatario: invisivel ,
+        NomeQuadra: nomeQuadra,
+        CEP: CEP,
+        Numero: numero,
+        Capacidade: capacidade,
+        Preco: preco
+}).then(function(){
+    acharUtimo()
+    async function acharUtimo(){
+        ultimo = await quadra.findOne({
+            order: [
+                ["CodigoQuadra", "DESC"]
+            ]
+          }             
+        )
+        console.log("é pra ir")
+        let stringUltimo = JSON.stringify(ultimo)
+        let split1 = stringUltimo.split(',')
+        let split2 = split1[0].split(':')
+        for(let i=0; i<arreyEsportes.length;i++){
+            esporteQuadra.create({
+                IdEsporte: arreyEsportes[i],
+                CodigoQuadra: split2[1]
+          })
+        }
+        res.send('Quadra "' + nomeQuadra + '" cadastrada!')
+    }
+})}
+})
             
 
 //ROTA PARA A HOME DO LOCATARIO:
 router.get('/home',(req,res)=>{
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeLocatario.html'))
 })
-
 //ROTA PARA CADASTRAR LOCATARIO:
 router.get('/cadastrar',(req,res)=>{
     res.sendFile(path.join(__dirname, '../', '../','frontend', 'CadastroUser', 'CadastroLocatario.html'))
