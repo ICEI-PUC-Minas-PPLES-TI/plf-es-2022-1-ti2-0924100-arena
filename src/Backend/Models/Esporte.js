@@ -58,9 +58,9 @@ esporte.create({
   Nome:'Tênis',
   Descricao: 'Tênis é um esporte praticado entre dois oponentes ou duas duplas de oponentes em uma quadra dividida por uma rede, onde os jogadores usam raquetes para rebater uma pequena bola de um lado para o outro.'
 
-})
+})*/
 
-*/
+
 
 
 module.exports = esporte;
