@@ -1,0 +1,108 @@
+<header>
+    <div class="flex-container">
+        <div><img src="../../img/logo.png" class="logo" alt=""></div>
+        <div><a href="/"><input type="button" class="botao_sair" value="Sair"></a>
+        </div>
+    </div>
+</header>
+
+<h1>Cadastro do Atleta</h1>
+
+<div class="container">
+
+    <form id="form-Atleta" method="post" action="/atleta/cadastroRecebido">
+
+        <div class="form-group row">
+
+            <div class="col-sm-1">
+                <label for="inputId">Id</label>
+                <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>
+            </div>
+
+            <div class="col-sm-5">
+                <label for="inputNome">Nome (*)</label>
+                <input type="text" class="form-control" id="inputNome" name="nome" required
+                    placeholder="Informe o Nome">
+            </div>
+
+            <div class="col-sm-3 ">
+                <label for="inputData">Sexo</label>
+                <select name="sexo" id="sexo" class="form-control">
+                    <option value="null"></option>
+                    <option value="m">Masculino</option>
+                    <option value="s">Femenino</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <label for="inputData">Data de Nascimento</label>
+                <input type="date" class="form-control" name="data" id="inputdata">
+            </div>
+
+            <div class="col-sm-6">
+                <label for="inputEmail">E-mail (*)</label>
+                <input type="email" class="form-control" name="email" id="inputEmail" required
+                    placeholder="Informe o E-mail">
+            </div>
+
+            <div class="col-sm-6">
+                <label for="inputSenha">Senha (*)</label>
+                <input type="password" class="form-control" name="senha" id="inputSenha" minlength="8" required
+                    placeholder="Informe a Senha">
+            </div>
+
+            <div class="col-sm-4 ">
+                <small>(*) Campos obrigatórios</small>
+            </div>
+        </div>
+
+        <div id="msg" class="col-sm-10 offset-sm-1 ">
+            <!--<div class="alert alert-warning">ERROR</div>-->
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 " id="buttons">
+                <a href="/atleta/home"><input type="submit" class="botao_sair"
+                        value="Cadastrar"></a>
+            </div>
+        </div>
+
+</div>
+</div>
+
+
+<footer class="rodape">
+
+    <div class="container">
+        <div class="row teste">
+
+            <div class="col">
+                <div>
+                    <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                </div>
+            </div>
+
+            <div class="col">
+
+                <div class="container rodape2">
+
+
+
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Serviços</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Sobre nós</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="estilo_letra remover_decoracao">Contato</a>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

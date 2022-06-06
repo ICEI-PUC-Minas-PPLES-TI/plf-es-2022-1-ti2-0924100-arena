@@ -2,7 +2,7 @@
     <div class="flex-container">
         <div><img src="../img/logo.png" class="logo" alt=""></div>
         <h1 class="titulo">Times Disponíveis</h1>
-        <div><button class="botao_sair">Sair</button></div>
+        <div><a href="/"><button class="botao_sair">Sair</button></div></a>
     </div>
 </header>
 
@@ -20,33 +20,28 @@
                         class="btn btn-outline-danger" id="btn" value=" + quadra"></a>
             </div>
         </div>
-        <div class="row">
+    <div class="row">
+        {{#each quadras}}
+        
             <div class="col-sm-3 offset-1">
                 <div class="card" style="width: 10rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Cod_Quadra</h5>
-                        <p class="card-text">CEP</p>
+                        <h5 class="card-title">{{NomeQuadra}}</h5>
+                        <p class="card-text">CEP: {{CEP}}</p>
                         <p class="card-text">Esporte</p>
-                        <p class="card-text">Preço</p>
+                        <p class="card-text">Preço: {{Preco}}</p>
                         <a href="#" class="card-link">Editar</a>
                         <a href="../Pagamento/TabQuadra.html" class="card-link">Agendamentos</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 10rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Cod_Quadra</h5>
-                        <p class="card-text">CEP</p>
-                        <p class="card-text">Esporte</p>
-                        <p class="card-text">Preço</p>
-                        <a href="#" class="card-link">Editar</a>
-                        <a href="#" class="card-link">Agendamentos</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {{else}}
+            <h2>Cadastre sua primeira Quadra</h2>
+        
+        {{/each}}
     </div>
+
+
 
 </main>
 
