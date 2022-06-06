@@ -43,7 +43,6 @@ require('./config/auth')(passport)
 
    app.use('/time',time)
 
-   app.use('/indicadores', indicadores)
 
 // Outros
 const PORT = 8081
