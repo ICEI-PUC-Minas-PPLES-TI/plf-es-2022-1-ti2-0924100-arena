@@ -9,11 +9,9 @@ const atleta = require('./Backend/routes/Atleta')
 const partida = require('./Backend/routes/Partida')
 const time = require('./Backend/routes/Time')
 const passport = require("passport")
-const session = require("express-session")
 require('./config/auth')(passport)
 
 // Configurações
-    // Sessão
     app.use(session({
         secret: "arena",
         resave: true,
@@ -44,6 +42,7 @@ require('./config/auth')(passport)
    app.use('/partida',partida)
 
    app.use('/time',time)
+
 
 // Outros
 const PORT = 8081
