@@ -8,8 +8,17 @@ const locatario = require("./Backend/routes/Locatario")
 const atleta = require('./Backend/routes/Atleta')
 const partida = require('./Backend/routes/Partida')
 const time = require('./Backend/routes/Time')
+const passport = require("passport")
+require('./config/auth')(passport)
 
 // Configurações
+    app.use(session({
+        secret: "arena",
+        resave: true,
+        saveUninitialized: true
+    }))
+    app.use(passport.initialize())
+    app.use(passport.session())
     // Body Parser
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
@@ -33,6 +42,7 @@ const time = require('./Backend/routes/Time')
    app.use('/partida',partida)
 
    app.use('/time',time)
+
 
 // Outros
 const PORT = 8081
