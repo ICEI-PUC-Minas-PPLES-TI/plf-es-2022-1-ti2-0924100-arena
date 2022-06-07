@@ -22,7 +22,7 @@ router.get('/', (req, res)=>{
 
 router.get('/home/:id',(req,res)=>{
     //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
-    res.render('homeAtleta', { email: req.params.id})
+    res.render('homeAtleta', { id: req.params.id})
 })
 
 

@@ -28,8 +28,12 @@ router.post('/timeCadastrado',(req,res)=>{
         NumeroAtletas: 1,
         IdEsporte: req.body.esporte
 
-    }).then(()=>{
-        res.send('TimeCadastrado')
+    }).then((time)=>{
+        atletaTime.create({
+            EmailAtleta: req.body.email,
+            CodigoTime: time.CodigoTime
+        })
+        res.redirect('/atleta/home/' + req.body.email )
     }).catch((erro)=>{
         res.send("Erro ao cadastrar o time: " + erro)
     })
@@ -38,7 +42,7 @@ router.post('/timeCadastrado',(req,res)=>{
 //ROTA PARA VISUALIZAR TIMES:
 router.get('/visualizarTimes',(req,res)=>{
     time.findAll({raw:true}).then((times)=>{
-        res.render('escolherTime',{times: times, email: req.params.email})
+        res.render('escolherTime',{times: times})
        
     })
     
@@ -56,10 +60,15 @@ router.get('/:id',(req,res)=>{
 //ROTA PARA ENTRAR NO TIME:
 router.post('/entrarTime/:id',(req,res)=>{
     atletaTime.create({
-        EmailAtleta: req.body.entrar,
+        EmailAtleta: req.body.email,
         CodigoTime: req.params.id
     }).then(()=>{
-        res.send('TimeCadastrado')
+        time.findOne({_id: req.params.id }).then((time)=>{
+            var numeber = time.NumeroAtletas 
+            number++ 
+            time.NumeroAtletas = number
+        })
+        res.redirect('/atleta/home/' + req.body.email)
     }).catch((erro)=>{
         res.send("Erro ao cadastrar o time: " + erro)
     })
