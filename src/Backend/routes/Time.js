@@ -5,6 +5,7 @@ const path = require('path')
 const bodyParser = require('body-parser');//SERVE PARA RECEBER O FORMULÁRIO
 const time = require('../Models/Time')//PUXA A TABELA TIME
 const esporte = require('../Models/Esporte')//PUXA A TABELA ESPORTE
+const atletaTime = require("../Models/AtletaTime");
 
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
@@ -37,7 +38,7 @@ router.post('/timeCadastrado',(req,res)=>{
 //ROTA PARA VISUALIZAR TIMES:
 router.get('/visualizarTimes',(req,res)=>{
     time.findAll({raw:true}).then((times)=>{
-        res.render('escolherTime',{times})
+        res.render('escolherTime',{times: times, email: req.params.email})
        
     })
     
@@ -45,14 +46,23 @@ router.get('/visualizarTimes',(req,res)=>{
 
 //ROTA PARA AS INFORMAÇÕES DE UM TIME EM ESPECIFICO:
 router.get('/:id',(req,res)=>{
-    time.findByPk(req.params.id).then((time)=>{
-        res.render('infoTime',{time})
+    time.findByPk(req.params.id,{raw:true}).then((time)=>{
+        res.render('infoTime',{time: time})
+
     })
 })
 
-//ROTA PARA INSCREVER-SE EM UM TIME:
-router.get('/time/info',(req,res)=>{
-    res.sendFile(path.join(__dirname, '../', '../','frontend', 'entrar_time', 'entrartime.html'))
+
+//ROTA PARA ENTRAR NO TIME:
+router.post('/entrarTime/:id',(req,res)=>{
+    atletaTime.create({
+        EmailAtleta: req.body.entrar,
+        CodigoTime: req.params.id
+    }).then(()=>{
+        res.send('TimeCadastrado')
+    }).catch((erro)=>{
+        res.send("Erro ao cadastrar o time: " + erro)
+    })
 })
 
 

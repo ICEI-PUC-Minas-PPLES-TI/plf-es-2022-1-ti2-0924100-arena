@@ -20,9 +20,9 @@ router.get('/', (req, res)=>{
 
 //ROTA PARA A PAGINA HOME DO ATLETA:
 
-router.get('/home',(req,res)=>{
+router.get('/home/:id',(req,res)=>{
     //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
-    res.render('homeAtleta')
+    res.render('homeAtleta', { email: req.params.id})
 })
 
 

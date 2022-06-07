@@ -5,47 +5,59 @@
         </div>
     </div>
 </header>
+<main>
+    <div class="container">
+        {{#with time}}
+        <form id="form-Atleta" method="post" action="/time/entrarTime/{{CodigoTime}}">
 
-<div class="container">
-
-    <form id="form-Atleta">
-
-        <div class="form-group row">
+            <div class="form-group row">
 
 
-           {{#each time}}
-            <div class="col-sm-6">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{Nome}}</h5>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Falta deixar isso dinamico </li>
-                                </ul>
+                <div class="col-sm-6">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{Nome}}</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Falta deixar isso dinamico </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
-           {{/each}}
 
-
-        </div>
-
-        <div id="msg" class="col-sm-10 offset-sm-1 ">
-            <!--<div class="alert alert-warning">ERROR</div>-->
-        </div>
-
-        <div class="row">
-            <div class="col-sm-2" id="buttons">
-                <a href="#"><input type="submit" class="botao_sair"
-                        value="Inscrever-se"></a>
+            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                <!--<div class="alert alert-warning">ERROR</div>-->
             </div>
-        </div>
 
-</div>
-</div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="inputEmail">E-mail (*)</label>
+                    <input type="email" class="form-control" name="email" id="inputEmail" required
+                        placeholder="Informe o E-mail">
+                </div>
+
+                <div class="col-sm-2" id="buttons">
+                    <a href="#"><input type="submit" name="entrar" class="botao_sair" value="Inscrever-se"></a>
+                </div>
+
+            </div>
+            {{/with}}
+
+
+            <div class="row">
+
+            </div>
+
+    </div>
+</main>
 
 <footer class="rodape">
 

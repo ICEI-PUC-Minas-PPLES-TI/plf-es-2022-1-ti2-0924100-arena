@@ -18,6 +18,9 @@
                             <p>Esporte: {{IdEsporte}} </p>
                             <p>Máximo de participantes: {{NumeroMaximo}} </p>
                             <p>Número de participantes: {{NumeroAtletas}} </p>
+                            {{#with email}}
+                            <p>{{email}}</p>
+                            {{/with}}
                             <a href="/time/{{CodigoTime}}" ><input type="button"
                         class="btn btn-outline-danger" id="{{CodigoTime}}" value="visualizar"></a>
                         </div>
