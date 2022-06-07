@@ -12,13 +12,14 @@ const passport = require("passport")
 require('./config/auth')(passport)
 
 // Configurações
-    app.use(session({
+    /*app.use(session({
         secret: "arena",
         resave: true,
         saveUninitialized: true
     }))
     app.use(passport.initialize())
     app.use(passport.session())
+    */
     // Body Parser
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
