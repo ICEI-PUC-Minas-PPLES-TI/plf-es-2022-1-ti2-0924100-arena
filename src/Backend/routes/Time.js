@@ -51,10 +51,19 @@ router.get('/visualizarTimes',(req,res)=>{
 //ROTA PARA AS INFORMAÇÕES DE UM TIME EM ESPECIFICO:
 router.get('/:id',(req,res)=>{
     time.findByPk(req.params.id,{raw:true}).then((time)=>{
-        res.render('infoTime',{time: time})
+        atletaTime.findAll({
+            raw: true,
+            where: {
+                CodigoTime: req.params.id
+            }
+        }).then((atletas)=>{
+            res.render('infoTime',{time: time, atletas: atletas})
+        })
+        
 
     })
 })
+
 
 
 //ROTA PARA ENTRAR NO TIME:
@@ -63,10 +72,11 @@ router.post('/entrarTime/:id',(req,res)=>{
         EmailAtleta: req.body.email,
         CodigoTime: req.params.id
     }).then(()=>{
-        time.findOne({_id: req.params.id }).then((time)=>{
-            var numeber = time.NumeroAtletas 
-            number++ 
-            time.NumeroAtletas = number
+        time.findByPk(req.params.id,{raw:true} ).then((time)=>{
+            
+                time.NumeroAtletas = time.NumeroAtletas + 1
+            
+            
         })
         res.redirect('/atleta/home/' + req.body.email)
     }).catch((erro)=>{

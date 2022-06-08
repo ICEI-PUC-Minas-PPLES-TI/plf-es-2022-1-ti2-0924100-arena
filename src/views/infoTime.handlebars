@@ -19,18 +19,40 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">{{Nome}}</h5>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Falta deixar isso dinamico </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            {{/with}}
 
 
+
+            <div class="col-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class=" row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"> Atletas no time:</h5>
+
+                                {{#each atletas}}
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{EmailAtleta}} </li>
+                                </ul>
+                                {{/each}}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
+
+
+
 
             <div id="msg" class="col-sm-10 offset-sm-1 ">
                 <!--<div class="alert alert-warning">ERROR</div>-->
@@ -45,11 +67,11 @@
                 </div>
 
                 <div class="col-sm-2" id="buttons">
-                    <a href="#"><input type="submit" name="entrar" class="botao_sair" value="Inscrever-se"></a>
+                    <a href="#"><input type="submit" name="entrar" class="botao_sair" value="Entrar"></a>
                 </div>
 
             </div>
-            {{/with}}
+
 
 
             <div class="row">
@@ -94,3 +116,7 @@
         </div>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>

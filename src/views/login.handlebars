@@ -9,11 +9,16 @@
 <main>
     <div class="div">
         <div class="card_login">
-            <form method="POST" action="/atleta/login">
+            <form method="POST" action="/validarLogin">
                 <label for="email">Email: </label></br>
                 <input type="email" name="email" id="email" required></br>
                 <label for="password">Senha: </label></br>
                 <input type="password" name="password" id="password" required></br>
+                <label for="inputData">Tipo de usuário</label>
+                <select name="usuario" id="usuario" >
+                    <option value="atleta">Atleta</option>
+                    <option value="locatario">Locatário</option>
+                </select><br>
                 <button class="btn btn-info" type="submit">Entrar</button>
             </form>
         </div>
