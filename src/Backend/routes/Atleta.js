@@ -15,15 +15,11 @@ app.use(bodyParser.json())
 
 
 
-router.get('/', (req, res)=>{
-    res.send("Pagina pricipal do Atleta")
-})
-
 //ROTA PARA A PAGINA HOME DO ATLETA:
 
-router.get('/home',(req,res)=>{
+router.get('/home/:id',(req,res)=>{
     //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
-    res.render('homeAtleta')
+    res.render('homeAtleta', { id: req.params.id})
 })
 
 
@@ -45,7 +41,7 @@ router.post('/cadastroRecebido',(req,res)=>{
         Sexo: req.body.sexo
     }).then(function(){
         //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
-        res.render('homeAtleta')
+        res.redirect('/atleta/home' + req.body.email)
     }).catch((erro)=>{
         res.send("Deu um erro!" + erro)
     })
