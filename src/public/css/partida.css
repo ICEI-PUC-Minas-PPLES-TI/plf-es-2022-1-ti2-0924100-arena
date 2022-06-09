@@ -1,3 +1,4 @@
+
 /*definiçoes gerais dos links*/
 a:link,
 a:visited {
@@ -11,7 +12,6 @@ a:hover {
 a:active {
     text-decoration: none
 }
-
 /*********************************/
 
 
@@ -19,7 +19,7 @@ a:active {
 .logo {
 
     height: 80px;
-    width: 188, 74px;
+    width: 188,74px;
 }
 
 .flex-container {
@@ -42,7 +42,6 @@ a:active {
 
     font-size: larger;
 }
-
 /*********************************/
 
 /* Rodape */
@@ -52,6 +51,7 @@ a:active {
     bottom: 0;
     left: 0;
     height: 50 px;
+    position: fixed;
     width: 100%;
 }
 
@@ -65,23 +65,24 @@ a:active {
     color: white;
 }
 
-.teste {
+.teste{
     display: flex;
     justify-content: space-around;
     border: #CB0059;
     padding-top: 10px;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 770px){
     .rodape {
         background-color: #CB0059;
         display: block;
         bottom: 0;
         left: 0;
         height: 50 px;
+        position: fixed;
         width: 100%;
+        border-top: solid;
     }
-
     .rodape2 {
         display: block;
         justify-content: space-between;
@@ -92,40 +93,24 @@ a:active {
 
 
 /*********************************/
-
-table {
-    margin-top: 50px;
-    width: 500px;
-    height: 250px;
-    border-collapse: collapse;
-    /* CSS2 */
-    text-align: center;
-    margin-bottom: 50%;
-}
-
-table td {
-    border: 1px solid black;
-}
-
-table th {
-    border: 1px solid black;
-    background: #F0FFF0;
-}
-
 .partida {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
-.partida button {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.card-header, .card-footer {
     background-color: #CB0059 !important;
-}
-
-.title th {
-    background-color: #CB0059;
     color: white;
 }
+
+.card-title {
+    background-color: #CB0059;
+    border-radius: 20px;
+    height: 28px;
+    color: white;
+    text-align: center;
+}
+
