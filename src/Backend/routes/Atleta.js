@@ -5,6 +5,9 @@ const path = require('path')
 const bodyParser = require('body-parser');//SERVE PARA RECEBER O FORMULÁRIO
 const atleta = require('../Models/Atleta')//PUXA A TABELA ATLETA
 
+const {QueryTypes} = require('sequelize')
+const {sequelize,Sequelize} = require('../Models/db')
+
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
 app.use(bodyParser.urlencoded({extended: false}))
@@ -17,14 +20,22 @@ app.use(bodyParser.json())
 //ROTA PARA A PAGINA HOME DO ATLETA:
 
 router.get('/home/:id',(req,res)=>{
-    //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
+   //PRECISO DAS TABELAS: partida [TIMEPARTIDAS , PAGAMENTOS] [TIMES , ATLETATIMES] , [ AVALIACAOHABILIDADES , AVALIACAOCONDUTA ]
     res.render('homeAtleta', { id: req.params.id})
+
+    async ()=>{
+        let avaliacaoConduta = await sequelize.query(`SELECT * FROM avaliacaocondutas WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
+        let avaliacaoHabilidade = await sequelize.query(`SELECT * FROM avaliacaohabilidades WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
+        //NAO TA FEITO ESSA DAQUI: PRECISO RECURAR DADOS DAS PARTIDAS Q OS TIMES DO USUARIO ESTÁ  E SE ELAS JA FORAM PAGAS OU NÃO
+        let partidas = await sequelize.query("SELECT * FROM timepartidas AS t1 JOIN pagamentos AS t2 on t1.codigopartida = t2.codigopartida WHERE t1.partidas IN ( SELECT   FROM times AS t1 JOIN atletatimes AS t2) ",{type: QueryTypes.SELECT})
+        let times = await sequelize.query(`SELECT * FROM  times AS t1 JOIN atletatimes  AS  t2 on t1.codigotime = t2.codigotime WHERE  t2.emailatleta = ${req.params.id};`,{type: QueryTypes.SELECT})
+    }
 })
 
 
 //ROTA PARA A PAGINA DE CADASTRO
 router.get('/cadastrar',(req,res)=>{
-   //res.sendFile(path.join(__dirname, '../', '../','frontend', 'CadastroUser', 'CadastroAtleta.html'))
+   
    res.render('cadastroAtleta')
 })
 
