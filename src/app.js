@@ -8,9 +8,14 @@ const locatario = require("./Backend/routes/Locatario")
 const atleta = require('./Backend/routes/Atleta')
 const partida = require('./Backend/routes/Partida')
 const time = require('./Backend/routes/Time')
+const indicadores = require('./Backend/routes/Indicadores')
 const passport = require("passport")
 const atletaBd = require('./Backend/Models/Atleta')
 const locatarioBd = require('./Backend/Models/Locatario')
+
+const {QueryTypes} = require('sequelize')
+const { sequelize, Sequelize } = require('./Backend/Models/db')  
+const quadra = require('./Backend/Models/Quadra')//PUXA O MODELS QUADRA
 require('./config/auth')(passport)
 
 // Configurações
@@ -41,6 +46,26 @@ app.get('/', function (req, res) {
 app.get('/login', (req, res) => {
     res.render('login')
 })
+
+
+
+
+app.get('/indicadores', (req, res) =>{
+
+    async function executa(){
+    let qntAtual = await sequelize.query(
+        "SELECT COUNT(CodigoQuadra) FROM quadras ;",{type: QueryTypes.SELECT})
+        var myString = JSON.stringify(qntAtual);
+        var splits = myString.split(':');
+        splits = splits[1].split('}');
+        console.log(splits[0])
+          res.render('Indicadores', {qtdAtual: splits[0]}) 
+      }
+            executa() 
+})
+
+
+
 
 app.post('/validarLogin', (req, res) => {
     if(req.body.usuario == "atleta"){
@@ -99,6 +124,8 @@ app.use('/atleta', atleta)
 app.use('/partida', partida)
 
 app.use('/time', time)
+
+
 
 
 // Outros
