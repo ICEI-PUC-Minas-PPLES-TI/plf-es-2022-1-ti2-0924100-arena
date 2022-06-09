@@ -7,6 +7,8 @@ const time = require('../Models/Time')//PUXA A TABELA TIME
 const esporte = require('../Models/Esporte')//PUXA A TABELA ESPORTE
 const atletaTime = require("../Models/AtletaTime");
 
+const {QueryTypes} = require('sequelize')
+const {sequelize,Sequelize} = require('../Models/db')
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
 app.use(bodyParser.urlencoded({extended: false}))
@@ -67,23 +69,30 @@ router.get('/:id',(req,res)=>{
 
 
 //ROTA PARA ENTRAR NO TIME:
+//FALTA CONSEGUIR FAZER UM UPDATE NA TABELA DO TIME PARA SUBIR EM 1 O NUMERO DE ATLETAS;
 router.post('/entrarTime/:id',(req,res)=>{
+    let idTime = req.params.id
     atletaTime.create({
         EmailAtleta: req.body.email,
         CodigoTime: req.params.id
     }).then(()=>{
-        time.findByPk(req.params.id,{raw:true} ).then((time)=>{
-            
-                time.NumeroAtletas = time.NumeroAtletas + 1
-            
-            
-        })
+        async (req,res)=>{
+            let NovoNumeroAtletas = req.body.nrAtletas + 1;
+            await time.update({
+
+                NumeroAtletas: NovoNumeroAtletas
+            },{
+                where:{
+                    CodigoTime: idTime
+                }
+            })
+        }
         res.redirect('/atleta/home/' + req.body.email)
+        
     }).catch((erro)=>{
         res.send("Erro ao cadastrar o time: " + erro)
     })
 })
-
 
 
 module.exports = router
