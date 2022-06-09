@@ -4,6 +4,7 @@ const router = express.Router()
 const path = require('path')
 const bodyParser = require('body-parser');//SERVE PARA RECEBER O FORMULÁRIO
 const atleta = require('../Models/Atleta')//PUXA A TABELA ATLETA
+const passport = require('passport')
 
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
@@ -48,6 +49,17 @@ router.post('/cadastroRecebido',(req,res)=>{
     }).catch((erro)=>{
         res.send("Deu um erro!" + erro)
     })
+})
+
+router.get('/login', function(req,res){
+    res.render("loginAtleta")
+})
+
+router.post('/login',(req,res,next)=>{
+    passport.authenticate("local", {
+        successRedirect: "/",
+        failureRedirect: "/atleta/login"
+    })(req,res,next)
 })
 
 
