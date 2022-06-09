@@ -8,10 +8,23 @@
 
 
 <div>
-    <h1>A quantidade é <p>{{qtdAtual}}</p></h1>
+    <h1>A quantidade é {{qtdAtual}}</h1>
+
+
+    <h1>Quadras cadastradas por mês</h1>
+    <input type="text" id="stringQuadras" value={{stringQuadras}}>
+    <input type="text" id="stringQuadrasdia" value={{stringQuadrasdia}}>
+    <h1>Partidas cadastradas por mês</h1>
+    <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
+    <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
 </div>
 
+
+
 <div id="grafico" style="width: 800px;">
+</div>
+
+<div id="grafico1" style="width: 800px;">
 </div>
 
 
@@ -22,18 +35,50 @@
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
+    var stringQuadras = document.getElementById("stringQuadras").value;
+    var stringQuadrasdia = document.getElementById("stringQuadrasdia").value;
+
+    var arreynovo = []
+    stringQuadras = JSON.parse(stringQuadras)
+    for(let i=0; i<stringQuadras.length; i++){
+        arreynovo.push(stringQuadras[i][1] + stringQuadras[i][2] + stringQuadras[i][3] + stringQuadras[i][4] + stringQuadras[i][5] + stringQuadras[i][6] + stringQuadras[i][7] + stringQuadras[i][8] + stringQuadras[i][9] + stringQuadras[i][10])
+    }
+    stringQuadras = JSON.parse(stringQuadrasdia)
+    console.log(stringQuadras)
+
 var garf_1 = {
-    x: [10,9,8,7,6,5,4,3,2,1],
-    y: [10,9,8,7,6,5,4,3,2,1],
+    x: arreynovo,
+    y: stringQuadras,
     mode: 'lines+markers',
     type: 'scatter',
 }
-var garf_2 = {
-    x: [10,9,8,7,6,5,4,3,2,1],
-    y: [1,2,3,4,5,6,7,8,9,10],
-    mode: 'lines+markers',
-    type: 'scatter',
-}
-var data = [garf_1, garf_2]
+
+var data = [garf_1]
 Plotly.newPlot('grafico', data)
+
+
+var stringpartidas = document.getElementById("stringpartidas").value;
+    var stringpartidasdia = document.getElementById("stringpartidasdia").value;
+
+    var arreynovo = []
+    stringpartidas = JSON.parse(stringpartidas)
+    for(let i=0; i<stringpartidas.length; i++){
+        arreynovo.push(stringpartidas[i][1] + stringpartidas[i][2] + stringpartidas[i][3] + stringpartidas[i][4] + stringpartidas[i][5] + stringpartidas[i][6] + stringpartidas[i][7] + stringpartidas[i][8] + stringpartidas[i][9] + stringpartidas[i][10])
+    }
+    stringpartidas = JSON.parse(stringpartidasdia)
+    console.log(stringpartidas)
+
+var garf_2 = {
+    x: arreynovo,
+    y: stringpartidas,
+    mode: 'lines+markers',
+    type: 'scatter',
+}
+
+var data = [garf_2]
+Plotly.newPlot('grafico1', data)
+
+
+
+
 </script>
