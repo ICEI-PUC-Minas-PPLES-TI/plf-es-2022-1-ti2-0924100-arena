@@ -1,0 +1,52 @@
+<header>
+    <div class="flex-container">
+        <div><img src="/img/logo.png" class="logo" alt=""></div>
+        <h1 class="titulo">Meus Times</h1>
+        <div><button class="botao_sair"><a href="../../Tela_inicial/index.html">Sair</a></button></div>
+    </div>
+</header>
+<main>
+    <div class="cards">
+        {{#each times}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{Nome}}</h5>
+                <a href="#" class="card-link" id="{{CodigoTime}}">Selecionar time</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</main>
+<footer class="rodape">
+    <div class="container">
+        <div class="row teste">
+            <div class="col">
+                <div>
+                    <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container rodape2">
+                    <div class="col">
+                        <a href="" class="estilo_letra remover_decoracao">Serviços</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="estilo_letra remover_decoracao">Sobre nós</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="estilo_letra remover_decoracao">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    var btn = document.querySelector('.card-link');
+    btn.addEventListener('click', function () {
+        const el = event.target || event.srcElement;
+        const id = el.id;
+        var CodigoTime = id;
+        btn.setAttribute("href", `/partida/entrar/partidas/${CodigoTime}`);
+    })
+</script>
