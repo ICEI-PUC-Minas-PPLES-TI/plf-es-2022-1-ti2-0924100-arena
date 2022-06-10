@@ -17,6 +17,9 @@
     <h1>Partidas cadastradas por mês</h1>
     <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
     <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
+
+
+
 </div>
 
 
@@ -44,7 +47,7 @@
         arreynovo.push(stringQuadras[i][1] + stringQuadras[i][2] + stringQuadras[i][3] + stringQuadras[i][4] + stringQuadras[i][5] + stringQuadras[i][6] + stringQuadras[i][7] + stringQuadras[i][8] + stringQuadras[i][9] + stringQuadras[i][10])
     }
     stringQuadras = JSON.parse(stringQuadrasdia)
-    console.log(stringQuadras)
+
 
 var garf_1 = {
     x: arreynovo,
@@ -66,7 +69,7 @@ var stringpartidas = document.getElementById("stringpartidas").value;
         arreynovo.push(stringpartidas[i][1] + stringpartidas[i][2] + stringpartidas[i][3] + stringpartidas[i][4] + stringpartidas[i][5] + stringpartidas[i][6] + stringpartidas[i][7] + stringpartidas[i][8] + stringpartidas[i][9] + stringpartidas[i][10])
     }
     stringpartidas = JSON.parse(stringpartidasdia)
-    console.log(stringpartidas)
+
 
 var garf_2 = {
     x: arreynovo,
