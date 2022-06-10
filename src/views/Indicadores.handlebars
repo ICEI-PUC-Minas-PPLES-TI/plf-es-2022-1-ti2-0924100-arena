@@ -8,18 +8,17 @@
 
 
 <div>
-    <h1>A quantidade é {{qtdAtual}}</h1>
     <h1>Quadras cadastradas por mês</h1>
-    <input type="text" id="stringQuadras" value={{stringQuadras}}>
-    <input type="text" id="stringQuadrasdia" value={{stringQuadrasdia}}>
+    <input type="text" id="stringQuadras" style="display: none;" value={{stringQuadras}}>
+    <input type="text" id="stringQuadrasdia" style="display: none;" value={{stringQuadrasdia}}>
     <div id="grafico1" style="width: 800px;">
 </div>
 </div>
 
 <div>
 <h1>Partidas cadastradas por mês</h1>
-    <input type="text" id="stringpartidas" value={{stringpartidas}}>
-    <input type="text" id="stringpartidasdia" value={{stringpartidasdia}}>
+    <input type="text" id="stringpartidas" style="display: none;" value={{stringpartidas}}>
+    <input type="text" id="stringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
     <div id="grafico" style="width: 800px;">
 </div>
 </div>
@@ -45,7 +44,6 @@
         arreynovo.push(stringQuadras[i][1] + stringQuadras[i][2] + stringQuadras[i][3] + stringQuadras[i][4] + stringQuadras[i][5] + stringQuadras[i][6] + stringQuadras[i][7] + stringQuadras[i][8] + stringQuadras[i][9] + stringQuadras[i][10])
     }
     stringQuadras = JSON.parse(stringQuadrasdia)
-    console.log(stringQuadras)
 
 var garf_1 = {
     x: arreynovo,
@@ -67,7 +65,6 @@ Plotly.newPlot('grafico1', data)
     for(let i=0; i<stringpartidas.length; i++){
         arreynovo1.push(stringpartidasdia[i] )
     }
-    console.log(stringpartidas)
 
 
 var garf_2 = {

@@ -88,17 +88,14 @@ app.get('/indicadores', (req, res) => {
 
         todosdatapartida = JSON.stringify(todosdatapartida);
         todosdatapartida = JSON.parse(todosdatapartida)
-        
-        let auxpartida = []
 
         
-        console.log(todosdatapartida[0].Data)
+
         let registrosDiapartida = 0;
         var arreyCadastrospartida= []
         var arreyCadastrospartidadia= []
         
         for(let j=0; j<todosdatapartida.length; j++){
-            console.log("entrou")
             registrosDiapartida = 0
             let date2 = todosdatapartida[j].Data;
         
@@ -106,24 +103,21 @@ app.get('/indicadores', (req, res) => {
             for (let i = 0; i < todosdatapartida.length; i++) {
 
                 let date1 = todosdatapartida[i].Data;
-                console.log(date1 + "é: " + date2)
                 if (date1 == date2) {
-                    console.log("igyal1")
-                    console.log("Foi no: "+todosdatapartida[i].Data + "  reistro: "+ registrosDiapartida)
+
                     registrosDiapartida = registrosDiapartida + 1
                     
                 }
                 else if (date1 > date2) {
-                    console.log("igyal2")
+                    
                 }
                 else {
-                    console.log("igyal3")
-                    console.log("Foi no: "+todosdatapartida[i].Data + "  reistro: "+ registrosDiapartida)
+                    
                     registrosDiapartida = registrosDiapartida + 1
                     
                 }
             }
-            console.log(registrosDiapartida)
+          
             arreyCadastrospartida.push(`${todosdatapartida[j].Data}`)
             arreyCadastrospartidadia.push(`${registrosDiapartida}`)
         }
@@ -132,7 +126,7 @@ app.get('/indicadores', (req, res) => {
 
 
 
-        console.log(arreyCadastrospartida)
+        
         res.render('Indicadores', { qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros), stringQuadrasdia: JSON.stringify(arreyCadastrosdia), stringpartidas: JSON.stringify(arreyCadastrospartida), stringpartidasdia: JSON.stringify(arreyCadastrospartidadia)})
     }
     executa()
