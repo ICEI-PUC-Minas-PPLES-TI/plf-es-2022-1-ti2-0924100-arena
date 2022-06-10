@@ -11,6 +11,10 @@ const partida = db.sequelize.define('partidas',{
         primaryKey: true,
         allowNull: false,
       },
+      CodigoTime: {
+        type: db.Sequelize.INTEGER,
+        allowNull: true,
+      },
       HorarioInicio: {
         type: db.Sequelize.TIME,
         allowNull: false
