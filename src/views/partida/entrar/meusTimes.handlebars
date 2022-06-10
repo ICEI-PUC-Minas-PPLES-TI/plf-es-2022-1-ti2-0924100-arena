@@ -7,6 +7,14 @@
 </header>
 <main>
     <div class="cards">
+        <select name="esportes" id="esportes" required>
+            <option value="" disabled selected>Esporte</option>
+            <option value="Futebol">Futebol</option>
+            <option value="Basquete">Basquete</option>
+            <option value="Volêi">Volêi</option>
+            <option value="Futevolêi">Futevolêi</option>
+            <option value="Tênis">Tênis</option>
+        </select>
         {{#each times}}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -47,6 +55,20 @@
         const el = event.target || event.srcElement;
         const id = el.id;
         var CodigoTime = id;
-        btn.setAttribute("href", `/partida/entrar/partidas/${CodigoTime}`);
+        var select = document.getElementById('esportes');
+        var esporte = select.options[select.selectedIndex].value;
+        if (esporte == "Futebol") {
+            esporte = 1;
+        } else if (esporte == "Volêi") {
+            esporte = 2;
+        } else if (esporte == "Basquete") {
+            esporte = 3;
+        } else if (esporte == "Futevôlei") {
+            esporte = 4;
+        }
+        else {
+            esporte = 5;
+        }
+        btn.setAttribute("href", `/partida/entrar/partidas/${CodigoTime}/${esporte}`);
     })
 </script>
