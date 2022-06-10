@@ -42,12 +42,12 @@ router.post('/timeCadastrado',(req,res)=>{
 })
 
 //ROTA PARA VISUALIZAR TIMES:
-router.get('/visualizarTimes',(req,res)=>{
-    time.findAll({raw:true}).then((times)=>{
-        res.render('escolherTime',{times: times})
-       
-    })
+router.get('/visualizarTimes',async(req,res)=>{
     
+    let times = await sequelize.query(`select t1.Nome,t1.NumeroMaximo,t1.CodigoTime,t1.NumeroAtletas, t2.nome as nomeEsporte from  times as t1 join esportes as t2
+    on t1.IdEsporte = t2.IdEsporte
+    WHERE NumeroAtletas < NumeroMaximo ;`,{type: QueryTypes.SELECT})
+    res.render('escolherTime',{times: times})
 })
 
 //ROTA PARA AS INFORMAÇÕES DE UM TIME EM ESPECIFICO:
@@ -76,16 +76,9 @@ router.post('/entrarTime/:id',(req,res)=>{
         EmailAtleta: req.body.email,
         CodigoTime: req.params.id
     }).then(()=>{
-        async (req,res)=>{
-            let NovoNumeroAtletas = req.body.nrAtletas + 1;
-            await time.update({
-
-                NumeroAtletas: NovoNumeroAtletas
-            },{
-                where:{
-                    CodigoTime: idTime
-                }
-            })
+        async ()=>{
+            var novoNrAtletas = req.body.nrAltetas + 1;
+            var time  = await sequelize.query(`UPDATE times SET NumeroAtletas = ${novoNrAtletas} WHERE CodigoTime = ${req.params.id};`,{type: QueryTypes.UPDATE}) 
         }
         res.redirect('/atleta/home/' + req.body.email)
         
