@@ -1,8 +1,7 @@
 <header>
     <div class="flex-container">
-        <div>
-            <a href="/"><img src="/img/logo.png" class="logo" alt="" /></a>
-        </div>
+        <div><img src="/img/logo.png" class="logo" alt=""></div>
+        <h1 class="titulo">Partidas</h1>
         <div><button class="botao_sair">Sair</button></div>
     </div>
 </header>
@@ -18,7 +17,8 @@
             <div class="card-body">
                 <p><span>Jogadores: </span>{{MinimoParticipantes}}</p>
                 <p><span>Preço: </span>R${{Preco}}</p>
-                <a href="#" class="btn btn-info">Entrar</a>
+                <a href="/partida/entrar/lobby/{{../codigotime}}/{{../esporte}}/{{CodigoPartida}}"
+                    class="btn btn-info">Entrar</a>
             </div>
             <div class="card-footer">
                 {{Data}} {{HorarioInicio}} - {{HorarioFim}}

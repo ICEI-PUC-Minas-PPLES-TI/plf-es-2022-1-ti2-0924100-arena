@@ -2,39 +2,42 @@ const express = require("express")
 const router = express.Router()
 const path = require('path')
 const partida = require('../Models/Partida')
-const atletatime = require('../Models/AtletaTime')
+const timepartidas = require('../Models/TimePartida')
 const quadra = require('../Models/Quadra')
 const esportequadra = require('../Models/EsporteQuadra')
 const times = require('../Models/Time')
 const {QueryTypes} = require('sequelize')
 const { sequelize, Sequelize } = require("../Models/Db")
 
-router.get('/entrar/time',function(req,res){
+router.get('/entrar/esporte',function(req,res){
+    res.render('partida/entrar/esporte')
+})
+
+router.get('/entrar/time/:esporte',function(req,res){
     async function getTimes(){
         let times = await sequelize.query(`SELECT * FROM TIMES INNER JOIN ATLETATIMES ON TIMES.CodigoTime = ATLETATIMES.CodigoTime WHERE ATLETATIMES.EmailAtleta = 'gabriel.limasouza@hotmail.com';`, {type: QueryTypes.SELECT})
-        res.render('partida/entrar/meusTimes', {times: times})
+        res.render('partida/entrar/meusTimes', {times: times, esporte:req.params.esporte})
     }
     getTimes();
 })
 
 router.get('/entrar/partidas/:codigotime/:esporte',function(req,res){
     async function getPartidas(){
-        var partidas = await sequelize.query(`SELECT * FROM PARTIDAS INNER JOIN QUADRAS ON PARTIDAS.CodigoQuadra = QUADRAS.CodigoQuadra WHERE IdEsporte=${req.params.esporte};`, {type: QueryTypes.SELECT})
-        /*
-        atletatime.create({
-            CodigoTime: partidas[0].CodigoTime,
-            CodigoTime2: req.params.codigotime,
-            CodigoPartida: partidas[0].CodigoPartida,
-        })*/
-        res.render('partida/entrar/partidas', {partidas: partidas,codtime: partidas[0].CodigoTime,codtime2: req.params.codigotime,esporte: req.params.esporte})
+        var partidas = await sequelize.query(`SELECT * FROM PARTIDAS INNER JOIN ESPORTEQUADRAS ON PARTIDAS.IdEsporte = ESPORTEQUADRAS.IdEsporte INNER JOIN QUADRAS ON QUADRAS.CodigoQuadra = ESPORTEQUADRAS.CodigoQuadra WHERE PARTIDAS.IdEsporte=${req.params.esporte}`, {type: QueryTypes.SELECT})
+        res.render('partida/entrar/partidas', {partidas: partidas,codigotime: req.params.codigotime,esporte: req.params.esporte})
     }
     getPartidas();
 })
 
 router.get('/entrar/lobby/:codigotime/:esporte/:codigopartida',function(req,res){
     async function getPartidas(){
-        let partidas = await sequelize.query(`SELECT * FROM PARTIDAS WHERE CodigoPartida=${req.params.codigopartida};`, {type: QueryTypes.SELECT})
-        res.render('/partida/entrar/lobby', {partidas: partidas})
+        let partidas = await sequelize.query(`SELECT * FROM PARTIDAS INNER JOIN QUADRAS ON PARTIDAS.CodigoQuadra = QUADRAS.CodigoQuadra INNER JOIN ESPORTES ON PARTIDAS.IdEsporte = ESPORTES.IdEsporte WHERE CodigoPartida=${req.params.codigopartida};`, {type: QueryTypes.SELECT})
+        timepartidas.create({
+            CodigoTime: partidas[0].CodigoTime,
+            CodigoTime2: req.params.codigotime,
+            CodigoPartida: partidas[0].CodigoPartida,
+        })
+        res.render('partida/entrar/lobby', {partidas: partidas[0]})
     }
     getPartidas();
 })
