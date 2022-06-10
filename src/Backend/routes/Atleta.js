@@ -25,7 +25,7 @@ router.get('/home/:id',(req,res)=>{
     res.render('homeAtleta', { id: req.params.id})
 
     async ()=>{
-        let avaliacaoConduta = await sequelize.query(`SELECT * FROM avaliacaocondutas WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
+        let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) FROM avaliacaocondutas WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
         let avaliacaoHabilidade = await sequelize.query(`SELECT * FROM avaliacaohabilidades WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
         //NAO TA FEITO ESSA DAQUI: PRECISO RECURAR DADOS DAS PARTIDAS Q OS TIMES DO USUARIO ESTÁ  E SE ELAS JA FORAM PAGAS OU NÃO
         let partidas = await sequelize.query("SELECT * FROM timepartidas AS t1 JOIN pagamentos AS t2 on t1.codigopartida = t2.codigopartida WHERE t1.partidas IN ( SELECT   FROM times AS t1 JOIN atletatimes AS t2) ",{type: QueryTypes.SELECT})

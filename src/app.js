@@ -46,7 +46,7 @@ app.get('/indicadores', (req, res) => {
     var stringData = '2022-06-03'
     async function executa() {
         let todosdata = await sequelize.query(
-            `SELECT * FROM quadras;`, { type: QueryTypes.SELECT, raw: true })
+            `SELECT * FROM partidas;`, { type: QueryTypes.SELECT, raw: true })
         todosdata = JSON.stringify(todosdata);
         todosdata = JSON.parse(todosdata)
         var tam = Object.keys(todosdata).length
@@ -114,15 +114,7 @@ app.get('/indicadores', (req, res) => {
             arreyCadastrospartida.push(`${auxpartida[j]}`)
             arreyCadastrospartidadia.push(`${registrosDiapartida}`)
         }
-        
 
-
-
-
-        console.log(tam)
-        console.log(registrosDia)
-        console.log(JSON.stringify(arreyCadastros))
-        console.log(JSON.stringify(arreyCadastrosdia))
         res.render('Indicadores', { qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros), stringQuadrasdia: JSON.stringify(arreyCadastrosdia), stringpartidas: JSON.stringify(arreyCadastrospartida), stringpartidasdia: JSON.stringify(arreyCadastrospartidadia)})
     }
     executa()
