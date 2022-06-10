@@ -49,6 +49,7 @@ app.get('/indicadores', (req, res) => {
             `SELECT * FROM partidas;`, { type: QueryTypes.SELECT, raw: true })
         todosdata = JSON.stringify(todosdata);
         todosdata = JSON.parse(todosdata)
+
         var tam = Object.keys(todosdata).length
 
         for (let i = 0; i < tam; i++) {
@@ -71,7 +72,7 @@ app.get('/indicadores', (req, res) => {
                     
                 }
                 else {
-                    console.log("Igual= " + registrosDia)
+
                     registrosDia = registrosDia +1
                 }
     
@@ -81,32 +82,32 @@ app.get('/indicadores', (req, res) => {
         }
         
         let todosdatapartida = await sequelize.query(
-            `SELECT * FROM quadras;`, { type: QueryTypes.SELECT, raw: true })
+            `SELECT DISTINCT Data FROM partidas;`, { type: QueryTypes.SELECT, raw: true })
+
         todosdatapartida = JSON.stringify(todosdatapartida);
         todosdatapartida = JSON.parse(todosdatapartida)
-        var tam = Object.keys(todosdatapartida).length
+        let auxpartida = []
 
         for (let i = 0; i < tam; i++) {
-            let dataNova = JSON.stringify(todosdatapartida[i].createdAt).split('T')[0] + `"`
-            todosdatapartida[i].createdAt = dataNova
+            let dataNova = JSON.stringify(todosdatapartida[i])
+            todosdatapartida[i] = dataNova
         }
 
         let registrosDiapartida = 0;
         var arreyCadastrospartida= []
         var arreyCadastrospartidadia= []
-        let auxpartida = ['"2022-06-02"','"2022-06-03"', '"2022-06-04"','"2022-06-06"']
+        
         for(let j=0; j<auxpartida.length; j++){
             let date2 = auxpartida[j];
             registrosDiapartida = 0
             for (let i = 0; i < tam; i++) {
-                let date1 = todosdatapartida[i].createdAt;
+                let date1 = todosdatapartida[i];
                 if (date1 < date2) {
                 }
                 else if (date1 > date2) {
                     
                 }
                 else {
-                    console.log("Igual= " + registrosDiapartida)
                     registrosDiapartida = registrosDiapartida +1
                 }
     
