@@ -8,9 +8,6 @@
 
 
 <div>
-    <h1>A quantidade é {{qtdAtual}}</h1>
-
-
     <h1>Quadras cadastradas por mês</h1>
     <input type="text" id="stringQuadras" value={{stringQuadras}}>
     <input type="text" id="stringQuadrasdia" value={{stringQuadrasdia}}>
@@ -25,15 +22,17 @@
     <input type="hidden" id="volPartidas" value={{volPartidas}}>
     <input type="hidden" id="tenPartidas" value={{tenlPartidas}}>
 
+<div>
+<h1>Partidas cadastradas por mês</h1>
+    <input type="text" id="stringpartidas" style="display: none;" value={{stringpartidas}}>
+    <input type="text" id="stringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
+    <div id="grafico" style="width: 800px;">
+</div>
 </div>
 
 
 
-<div id="grafico" style="width: 800px;">
-</div>
 
-<div id="grafico1" style="width: 800px;">
-</div>
 
 <div id="piechart_3d" style="width: 900px; height: 500px;"></div><!-- Grafico para partidas por esporte -->
 
@@ -55,7 +54,6 @@
     }
     stringQuadras = JSON.parse(stringQuadrasdia)
 
-
 var garf_1 = {
     x: arreynovo,
     y: stringQuadras,
@@ -64,22 +62,22 @@ var garf_1 = {
 }
 
 var data = [garf_1]
-Plotly.newPlot('grafico', data)
+Plotly.newPlot('grafico1', data)
 
 
-var stringpartidas = document.getElementById("stringpartidas").value;
-    var stringpartidasdia = document.getElementById("stringpartidasdia").value;
+    var stringpartidas = document.getElementById("stringpartidasdia").value;
+    var stringpartidasdia = document.getElementById("stringpartidas").value;
 
-    var arreynovo = []
+    var arreynovo1 = []
+    stringpartidasdia = JSON.parse(stringpartidasdia)
     stringpartidas = JSON.parse(stringpartidas)
     for(let i=0; i<stringpartidas.length; i++){
-        arreynovo.push(stringpartidas[i][1] + stringpartidas[i][2] + stringpartidas[i][3] + stringpartidas[i][4] + stringpartidas[i][5] + stringpartidas[i][6] + stringpartidas[i][7] + stringpartidas[i][8] + stringpartidas[i][9] + stringpartidas[i][10])
+        arreynovo1.push(stringpartidasdia[i] )
     }
-    stringpartidas = JSON.parse(stringpartidasdia)
 
 
 var garf_2 = {
-    x: arreynovo,
+    x: arreynovo1,
     y: stringpartidas,
     mode: 'lines+markers',
     type: 'scatter',

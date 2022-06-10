@@ -47,7 +47,9 @@ app.get('/indicadores', (req, res) => {
     var stringData = '2022-06-03'
     async function executa() {
         let todosdata = await sequelize.query(
-            `SELECT * FROM partidas;`, { type: QueryTypes.SELECT, raw: true })
+            `SELECT * FROM quadras;`, { type: QueryTypes.SELECT, raw: true })
+
+        
         todosdata = JSON.stringify(todosdata);
         todosdata = JSON.parse(todosdata)
 
@@ -87,12 +89,8 @@ app.get('/indicadores', (req, res) => {
 
         todosdatapartida = JSON.stringify(todosdatapartida);
         todosdatapartida = JSON.parse(todosdatapartida)
-        let auxpartida = []
 
-        for (let i = 0; i < tam; i++) {
-            let dataNova = JSON.stringify(todosdatapartida[i])
-            todosdatapartida[i] = dataNova
-        }
+        
 
         let registrosDiapartida = 0;
         var arreyCadastrospartida = []
@@ -101,9 +99,16 @@ app.get('/indicadores', (req, res) => {
         for (let j = 0; j < auxpartida.length; j++) {
             let date2 = auxpartida[j];
             registrosDiapartida = 0
-            for (let i = 0; i < tam; i++) {
-                let date1 = todosdatapartida[i];
-                if (date1 < date2) {
+            date2 = todosdatapartida[j].Data;
+        
+            
+            for (let i = 0; i < todosdatapartida.length; i++) {
+
+                let date1 = todosdatapartida[i].Data;
+                if (date1 == date2) {
+
+                    registrosDiapartida = registrosDiapartida + 1
+                    
                 }
                 else if (date1 > date2) {
 
@@ -113,7 +118,8 @@ app.get('/indicadores', (req, res) => {
                 }
 
             }
-            arreyCadastrospartida.push(`${auxpartida[j]}`)
+          
+            arreyCadastrospartida.push(`${todosdatapartida[j].Data}`)
             arreyCadastrospartidadia.push(`${registrosDiapartida}`)
             //Indicador 1: Fim
             //Indicador 2: Inicio
@@ -148,6 +154,7 @@ app.get('/indicadores', (req, res) => {
             var totalPartidasTen = await sequelize.query(
                 `select count(*) from partidas where IdEsporte = 5;`, { type: QueryTypes.SELECT, raw: true })
         }
+        
 
 
         res.render('Indicadores', { qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros), 
