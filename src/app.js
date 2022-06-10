@@ -49,7 +49,7 @@ app.get('/indicadores', (req, res) => {
         let todosdata = await sequelize.query(
             `SELECT * FROM quadras;`, { type: QueryTypes.SELECT, raw: true })
 
-        
+
         todosdata = JSON.stringify(todosdata);
         todosdata = JSON.parse(todosdata)
 
@@ -90,25 +90,25 @@ app.get('/indicadores', (req, res) => {
         todosdatapartida = JSON.stringify(todosdatapartida);
         todosdatapartida = JSON.parse(todosdatapartida)
 
-        
+
 
         let registrosDiapartida = 0;
         var arreyCadastrospartida = []
         var arreyCadastrospartidadia = []
 
-        for (let j = 0; j < auxpartida.length; j++) {
-            let date2 = auxpartida[j];
+        for (let j = 0; j < todosdatapartida.length; j++) {
+            let date2 = todosdatapartida[j];
             registrosDiapartida = 0
             date2 = todosdatapartida[j].Data;
-        
-            
+
+
             for (let i = 0; i < todosdatapartida.length; i++) {
 
                 let date1 = todosdatapartida[i].Data;
                 if (date1 == date2) {
 
                     registrosDiapartida = registrosDiapartida + 1
-                    
+
                 }
                 else if (date1 > date2) {
 
@@ -118,56 +118,79 @@ app.get('/indicadores', (req, res) => {
                 }
 
             }
-          
+
             arreyCadastrospartida.push(`${todosdatapartida[j].Data}`)
             arreyCadastrospartidadia.push(`${registrosDiapartida}`)
             //Indicador 1: Fim
-            //Indicador 2: Inicio
 
-
-            //Indicador 2: FIM
-            //Indicador 3: Inicio
-
-            //TOTAL DE PARTIDAS
-            var totalPartidas = await sequelize.query(
-                `select count(*) from partidas;`, { type: QueryTypes.SELECT, raw: true })
-                totalPartidas = JSON.stringify(totalPartidas);
-                totalPartidas = JSON.parse(totalPartidas)
-
-            //TOTAL DE PARTIDAS DE FUTEBOL;
-            var totalPartidasFut = await sequelize.query(
-                `select count(*) from partidas where IdEsporte = 1;`, { type: QueryTypes.SELECT, raw: true })    
-
-            //TOTAL DE PARTIDAS DE BASQUETE;
-            var totalPartidasBas = await sequelize.query(
-                `select count(*) from partidas where IdEsporte = 2;`, { type: QueryTypes.SELECT, raw: true })
-
-            //TOTAL DE PARTIDAS DE FUTVOLEI;
-            var totalPartidasFutVol = await sequelize.query(
-                `select count(*) from partidas where IdEsporte = 3;`, { type: QueryTypes.SELECT, raw: true })
-            
-                //TOTAL DE PARTIDAS DE VOLEI;
-            var totalPartidasVol = await sequelize.query(
-                `select count(*) from partidas where IdEsporte = 4;`, { type: QueryTypes.SELECT, raw: true })
-            
-            //TOTAL DE PARTIDAS DE Tenis;
-            var totalPartidasTen = await sequelize.query(
-                `select count(*) from partidas where IdEsporte = 5;`, { type: QueryTypes.SELECT, raw: true })
         }
+
+        //Indicador 2: Inicio
+
+
+        //Indicador 2: FIM
+        //Indicador 3: Inicio
+
+        //TOTAL DE PARTIDAS
+        var totalPartidas = await sequelize.query(
+            `select count(*) from partidas;`, { type: QueryTypes.SELECT, raw: true })
         
 
+        //TOTAL DE PARTIDAS DE FUTEBOL;
+        var totalPartidasFut = await sequelize.query(
+            `select count(*) from partidas where IdEsporte = 1;`, { type: QueryTypes.SELECT, raw: true })
 
-        res.render('Indicadores', { qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros), 
-            stringQuadrasdia: JSON.stringify(arreyCadastrosdia), 
-            stringpartidas: JSON.stringify(arreyCadastrospartida), 
+        //TOTAL DE PARTIDAS DE BASQUETE;
+        var totalPartidasBas = await sequelize.query(
+            `select count(*) from partidas where IdEsporte = 2;`, { type: QueryTypes.SELECT, raw: true })
+
+        //TOTAL DE PARTIDAS DE FUTVOLEI;
+        var totalPartidasFutVol = await sequelize.query(
+            `select count(*) from partidas where IdEsporte = 3;`, { type: QueryTypes.SELECT, raw: true })
+
+        //TOTAL DE PARTIDAS DE VOLEI;
+        var totalPartidasVol = await sequelize.query(
+            `select count(*) from partidas where IdEsporte = 4;`, { type: QueryTypes.SELECT, raw: true })
+
+        //TOTAL DE PARTIDAS DE Tenis;
+        var totalPartidasTen = await sequelize.query(
+            `select count(*) from partidas where IdEsporte = 5;`, { type: QueryTypes.SELECT, raw: true })
+
+
+            console.log(JSON.stringify(totalPartidas))
+            totalPartidas = JSON.stringify(totalPartidas).split(':', 2)[1]
+            totalPartidas = totalPartidas.split('}')[0]
+
+            totalPartidasFut = JSON.stringify(totalPartidasFut).split(':', 2)[1]
+            totalPartidasFut = totalPartidasFut.split('}')[0]
+
+            totalPartidasBas = JSON.stringify(totalPartidasBas).split(':', 2)[1]
+            totalPartidasBas = totalPartidasBas.split('}')[0]
+
+            totalPartidasFutVol = JSON.stringify(totalPartidasFutVol).split(':', 2)[1]
+            totalPartidasFutVol = totalPartidasFutVol.split('}')[0]
+
+            totalPartidasVol = JSON.stringify(totalPartidasVol).split(':', 2)[1]
+            totalPartidasVol = totalPartidasVol.split('}')[0]
+
+            totalPartidasTen = JSON.stringify(totalPartidasTen).split(':', 2)[1]
+            totalPartidasTen = totalPartidasTen.split('}')[0]
+            console.log(totalPartidasFut)
+            console.log(totalPartidasBas)
+            console.log(totalPartidasFutVol)
+            console.log(totalPartidasVol)
+        res.render('Indicadores', {
+            qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros),
+            stringQuadrasdia: JSON.stringify(arreyCadastrosdia),
+            stringpartidas: JSON.stringify(arreyCadastrospartida),
             stringpartidasdia: JSON.stringify(arreyCadastrospartidadia),
-            totalPartidas: totalPartidas, 
-            futPartidas: totalPartidasFut, 
-            basPartidas: totalPartidasBas, 
-            futVolPartidas: 
-            totalPartidasFutVol, 
-            VolPartidas: totalPartidasVol, 
-            TenPartidas: totalPartidasTen })
+            totalPartidas: totalPartidas,
+            futPartidas: totalPartidasFut,
+            basPartidas: totalPartidasBas,
+            futVolPartidas:totalPartidasFutVol,
+            VolPartidas: totalPartidasVol,
+            TenPartidas: totalPartidasTen
+        })
     }
     executa()
 })

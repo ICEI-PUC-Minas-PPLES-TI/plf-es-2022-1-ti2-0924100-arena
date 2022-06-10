@@ -14,13 +14,16 @@
     <h1>Partidas cadastradas por mês</h1>
     <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
     <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
-
-    <input type="hidden" id="totalPartidas" value={{totalPartidas}}>
-    <input type="hidden" id="futPartidas" value={{futPartidas}}>
-    <input type="hidden" id="basPartidas" value={{basPartidas}}>
-    <input type="hidden" id="futVolPartidas" value={{futVolPartidas}}>
-    <input type="hidden" id="volPartidas" value={{volPartidas}}>
-    <input type="hidden" id="tenPartidas" value={{tenlPartidas}}>
+    <br>
+    <h2>ARTHUR AQUI</h2>
+    <!--  Inputs do Arthur -> Sai souza   -->
+    <input type="text" id="totalPartidas" value={{totalPartidas}}>
+    <input type="text" id="futPartidas" value={{futPartidas}}>
+    <input type="text" id="basPartidas" value={{basPartidas}}>
+    <input type="text" id="futVolPartidas" value={{futVolPartidas}}>
+    <input type="text" id="volPartidas" value={{volPartidas}}>
+    <input type="text" id="tenPartidas" value={{tenPartidas}}>
+    <div id="grafico1" style="width: 800px;"></div>
 
 <div>
 <h1>Partidas cadastradas por mês</h1>
@@ -46,17 +49,19 @@
 <script>
     var stringQuadras = document.getElementById("stringQuadras").value;
     var stringQuadrasdia = document.getElementById("stringQuadrasdia").value;
-
+    
     var arreynovo = []
     stringQuadras = JSON.parse(stringQuadras)
     for(let i=0; i<stringQuadras.length; i++){
         arreynovo.push(stringQuadras[i][1] + stringQuadras[i][2] + stringQuadras[i][3] + stringQuadras[i][4] + stringQuadras[i][5] + stringQuadras[i][6] + stringQuadras[i][7] + stringQuadras[i][8] + stringQuadras[i][9] + stringQuadras[i][10])
     }
-    stringQuadras = JSON.parse(stringQuadrasdia)
+    
+    console.log("StringQuadras:" +stringQuadrasdia)
+    
 
 var garf_1 = {
     x: arreynovo,
-    y: stringQuadras,
+    y: stringQuadrasdia,
     mode: 'lines+markers',
     type: 'scatter',
 }
@@ -84,7 +89,7 @@ var garf_2 = {
 }
 
 var data = [garf_2]
-Plotly.newPlot('grafico1', data)
+Plotly.newPlot('grafico', data)
 </script>
 
 
@@ -102,12 +107,10 @@ Plotly.newPlot('grafico1', data)
         let tenPartidas = parseInt(getElementById('tenPartidas').value)
 
 
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+      
         var data = google.visualization.arrayToDataTable([
           ['partidas',totalPartidas],
-          ['Futebol',     11],
+          ['Futebol', futPartidas ],
           ['Basquete', futPartidas],
           ['FutVolei',  futVolPartidas],
           ['Vôlei', volPartidas],
@@ -121,5 +124,5 @@ Plotly.newPlot('grafico1', data)
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
         chart.draw(data, options);
-      }
+      
     </script>

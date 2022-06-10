@@ -10,6 +10,7 @@ const esporte = require('../Models/Esporte')//PUXA O MODELS ESPORTE
 const esporteQuadra = require('../Models/EsporteQuadra');//PUXA O MODELS EPORTEQUADRA
 const res = require("express/lib/response");
 const console = require("console");
+const partida = require('../Models/Partida') //PUXA O MODELS PARTIDAS
 
 
 
@@ -59,51 +60,52 @@ router.post('/quadraCadastrada', (req, res) => {
     }
     var ultimo
     teste()
-    function teste (){
+    function teste() {
         console.log("deu")
         quadra.create({
-        EmailLocatario: invisivel ,
-        NomeQuadra: nomeQuadra,
-        CEP: CEP,
-        Numero: numero,
-        Capacidade: capacidade,
-        Preco: preco
-}).then(function(){
-    acharUtimo()
-    async function acharUtimo(){
-        ultimo = await quadra.findOne({
-            order: [
-                ["CodigoQuadra", "DESC"]
-            ]
-          }             
-        )
-        console.log("é pra ir")
-        let stringUltimo = JSON.stringify(ultimo)
-        let split1 = stringUltimo.split(',')
-        let split2 = split1[0].split(':')
-        for(let i=0; i<arreyEsportes.length;i++){
-            esporteQuadra.create({
-                IdEsporte: arreyEsportes[i],
-                CodigoQuadra: split2[1]
-          })
-        }
-        res.send('Quadra "' + nomeQuadra + '" cadastrada!')
+            EmailLocatario: invisivel,
+            NomeQuadra: nomeQuadra,
+            CEP: CEP,
+            Numero: numero,
+            Capacidade: capacidade,
+            Preco: preco
+        }).then(function () {
+            acharUtimo()
+            async function acharUtimo() {
+                ultimo = await quadra.findOne({
+                    order: [
+                        ["CodigoQuadra", "DESC"]
+                    ]
+                }
+                )
+                console.log("é pra ir")
+                let stringUltimo = JSON.stringify(ultimo)
+                let split1 = stringUltimo.split(',')
+                let split2 = split1[0].split(':')
+                for (let i = 0; i < arreyEsportes.length; i++) {
+                    esporteQuadra.create({
+                        IdEsporte: arreyEsportes[i],
+                        CodigoQuadra: split2[1]
+                    })
+                }
+                res.send('Quadra "' + nomeQuadra + '" cadastrada!')
+            }
+        })
     }
-})}
 })
-            
+
 
 //ROTA PARA A HOME DO LOCATARIO:
 router.get('/home/:email', (req, res) => {
     // res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeLocatario.html'))
     quadra.findAll({
-        raw:true,
+        raw: true,
         where: {
             EmailLocatario: req.params.email
         }
     }).then((quadras) => {
-        res.render('homeLocatario', { quadras })
-        
+        res.render('homeLocatario', { quadras, email:req.params.email })
+
     })
 })
 //ROTA PARA CADASTRAR LOCATARIO:
@@ -132,5 +134,14 @@ router.post('/cadastroRecebido', (req, res) => {
     })
 })
 
-
+router.get('/agendamentos/:idQuadra', (req, res) => {
+    partida.findAll({
+        raw: true,
+        where: {
+            CodigoQuadra: req.params.idQuadra
+        }
+    }).then((partidas) => {
+        res.render('Agendamentos', { partidas: partidas, idQuadra: req.params.idQuadra })
+    })
+})
 module.exports = router

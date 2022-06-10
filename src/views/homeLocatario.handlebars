@@ -24,14 +24,14 @@
         {{#each quadras}}
         
             <div class="col-sm-3 offset-1">
-                <div class="card" style="width: 10rem;">
+                <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{NomeQuadra}}</h5>
                         <p class="card-text">CEP: {{CEP}}</p>
                         <p class="card-text">Esporte</p>
                         <p class="card-text">Preço: {{Preco}}</p>
                         <a href="#" class="card-link">Editar</a>
-                        <a href="../Pagamento/TabQuadra.html" class="card-link">Agendamentos</a>
+                        <a href="/locatario/agendamentos/{{CodigoQuadra}}" class="card-link">Agendamentos</a>
                     </div>
                 </div>
             </div>
