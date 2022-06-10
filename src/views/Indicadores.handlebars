@@ -18,7 +18,12 @@
     <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
     <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
 
-
+    <input type="hidden" id="totalPartidas" value={{totalPartidas}}>
+    <input type="hidden" id="futPartidas" value={{futPartidas}}>
+    <input type="hidden" id="basPartidas" value={{basPartidas}}>
+    <input type="hidden" id="futVolPartidas" value={{futVolPartidas}}>
+    <input type="hidden" id="volPartidas" value={{volPartidas}}>
+    <input type="hidden" id="tenPartidas" value={{tenlPartidas}}>
 
 </div>
 
@@ -29,6 +34,8 @@
 
 <div id="grafico1" style="width: 800px;">
 </div>
+
+<div id="piechart_3d" style="width: 900px; height: 500px;"></div><!-- Grafico para partidas por esporte -->
 
 
 
@@ -80,8 +87,41 @@ var garf_2 = {
 
 var data = [garf_2]
 Plotly.newPlot('grafico1', data)
-
-
-
-
 </script>
+
+
+
+<!--ARTHUR AQUI HEIN-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        //PEGAR VALORES DO HTML:
+        let totalPartidas = parseInt(getElementById('totalPartidas').value)
+        let futPartidas = parseInt(getElementById('futPartidas').value)
+        let totalPartidas = parseInt(getElementById('basPartidas').value)
+        let futVolPartidas = parseInt(getElementById('futVolPartidas').value)
+        let volPartidas = parseInt(getElementById('volPartidas').value)
+        let tenPartidas = parseInt(getElementById('tenPartidas').value)
+
+
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['partidas',totalPartidas],
+          ['Futebol',     11],
+          ['Basquete', futPartidas],
+          ['FutVolei',  futVolPartidas],
+          ['Vôlei', volPartidas],
+          ['Tênis',    tenPartidas]
+        ]);
+
+        var options = {
+          title: 'Percentual de partidas por esportes',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>

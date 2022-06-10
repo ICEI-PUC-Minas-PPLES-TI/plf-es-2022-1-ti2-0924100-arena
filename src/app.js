@@ -43,6 +43,7 @@ app.get('/login', (req, res) => {
 
 
 app.get('/indicadores', (req, res) => {
+    //----- Indicador 1: Inicio
     var stringData = '2022-06-03'
     async function executa() {
         let todosdata = await sequelize.query(
@@ -58,10 +59,10 @@ app.get('/indicadores', (req, res) => {
         }
 
         let registrosDia = 0;
-        var arreyCadastros= []
-        var arreyCadastrosdia= []
-        let aux = ['"2022-06-02"','"2022-06-03"', '"2022-06-04"','"2022-06-06"']
-        for(let j=0; j<aux.length; j++){
+        var arreyCadastros = []
+        var arreyCadastrosdia = []
+        let aux = ['"2022-06-02"', '"2022-06-03"', '"2022-06-04"', '"2022-06-06"']
+        for (let j = 0; j < aux.length; j++) {
             let date2 = aux[j];
             registrosDia = 0
             for (let i = 0; i < tam; i++) {
@@ -69,18 +70,18 @@ app.get('/indicadores', (req, res) => {
                 if (date1 < date2) {
                 }
                 else if (date1 > date2) {
-                    
+
                 }
                 else {
 
-                    registrosDia = registrosDia +1
+                    registrosDia = registrosDia + 1
                 }
-    
+
             }
             arreyCadastros.push(`${aux[j]}`)
             arreyCadastrosdia.push(`${registrosDia}`)
         }
-        
+
         let todosdatapartida = await sequelize.query(
             `SELECT DISTINCT Data FROM partidas;`, { type: QueryTypes.SELECT, raw: true })
 
@@ -94,10 +95,10 @@ app.get('/indicadores', (req, res) => {
         }
 
         let registrosDiapartida = 0;
-        var arreyCadastrospartida= []
-        var arreyCadastrospartidadia= []
-        
-        for(let j=0; j<auxpartida.length; j++){
+        var arreyCadastrospartida = []
+        var arreyCadastrospartidadia = []
+
+        for (let j = 0; j < auxpartida.length; j++) {
             let date2 = auxpartida[j];
             registrosDiapartida = 0
             for (let i = 0; i < tam; i++) {
@@ -105,18 +106,61 @@ app.get('/indicadores', (req, res) => {
                 if (date1 < date2) {
                 }
                 else if (date1 > date2) {
-                    
+
                 }
                 else {
-                    registrosDiapartida = registrosDiapartida +1
+                    registrosDiapartida = registrosDiapartida + 1
                 }
-    
+
             }
             arreyCadastrospartida.push(`${auxpartida[j]}`)
             arreyCadastrospartidadia.push(`${registrosDiapartida}`)
+            //Indicador 1: Fim
+            //Indicador 2: Inicio
+
+
+            //Indicador 2: FIM
+            //Indicador 3: Inicio
+
+            //TOTAL DE PARTIDAS
+            var totalPartidas = await sequelize.query(
+                `select count(*) from partidas;`, { type: QueryTypes.SELECT, raw: true })
+                totalPartidas = JSON.stringify(totalPartidas);
+                totalPartidas = JSON.parse(totalPartidas)
+
+            //TOTAL DE PARTIDAS DE FUTEBOL;
+            var totalPartidasFut = await sequelize.query(
+                `select count(*) from partidas where IdEsporte = 1;`, { type: QueryTypes.SELECT, raw: true })    
+
+            //TOTAL DE PARTIDAS DE BASQUETE;
+            var totalPartidasBas = await sequelize.query(
+                `select count(*) from partidas where IdEsporte = 2;`, { type: QueryTypes.SELECT, raw: true })
+
+            //TOTAL DE PARTIDAS DE FUTVOLEI;
+            var totalPartidasFutVol = await sequelize.query(
+                `select count(*) from partidas where IdEsporte = 3;`, { type: QueryTypes.SELECT, raw: true })
+            
+                //TOTAL DE PARTIDAS DE VOLEI;
+            var totalPartidasVol = await sequelize.query(
+                `select count(*) from partidas where IdEsporte = 4;`, { type: QueryTypes.SELECT, raw: true })
+            
+            //TOTAL DE PARTIDAS DE Tenis;
+            var totalPartidasTen = await sequelize.query(
+                `select count(*) from partidas where IdEsporte = 5;`, { type: QueryTypes.SELECT, raw: true })
         }
 
-        res.render('Indicadores', { qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros), stringQuadrasdia: JSON.stringify(arreyCadastrosdia), stringpartidas: JSON.stringify(arreyCadastrospartida), stringpartidasdia: JSON.stringify(arreyCadastrospartidadia)})
+
+        res.render('Indicadores', { qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros), 
+            stringQuadrasdia: JSON.stringify(arreyCadastrosdia), 
+            stringpartidas: JSON.stringify(arreyCadastrospartida), 
+            stringpartidasdia: JSON.stringify(arreyCadastrospartidadia),
+            totalPartidas: totalPartidas, 
+            futPartidas: totalPartidasFut, 
+            basPartidas: totalPartidasBas, 
+            futVolPartidas: 
+            totalPartidasFutVol, 
+            VolPartidas: totalPartidasVol, 
+            TenPartidas: totalPartidasTen })
     }
     executa()
 })
@@ -152,7 +196,7 @@ app.post('/validarLogin', (req, res) => {
                 res.send("USUARIO NAO ENCONTADO" + erro)
             })
     }
-    
+
 })
 
 app.use('/locatario', locatario)
