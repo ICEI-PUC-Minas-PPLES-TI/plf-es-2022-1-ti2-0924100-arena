@@ -7,6 +7,8 @@ const time = require('../Models/Time')//PUXA A TABELA TIME
 const esporte = require('../Models/Esporte')//PUXA A TABELA ESPORTE
 const atletaTime = require("../Models/AtletaTime");
 
+const {QueryTypes} = require('sequelize')
+const {sequelize,Sequelize} = require('../Models/db')
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
 app.use(bodyParser.urlencoded({extended: false}))
@@ -40,12 +42,12 @@ router.post('/timeCadastrado',(req,res)=>{
 })
 
 //ROTA PARA VISUALIZAR TIMES:
-router.get('/visualizarTimes',(req,res)=>{
-    time.findAll({raw:true}).then((times)=>{
-        res.render('escolherTime',{times: times})
-       
-    })
+router.get('/visualizarTimes',async(req,res)=>{
     
+    let times = await sequelize.query(`select t1.Nome,t1.NumeroMaximo,t1.CodigoTime,t1.NumeroAtletas, t2.nome as nomeEsporte from  times as t1 join esportes as t2
+    on t1.IdEsporte = t2.IdEsporte
+    WHERE NumeroAtletas < NumeroMaximo ;`,{type: QueryTypes.SELECT})
+    res.render('escolherTime',{times: times})
 })
 
 //ROTA PARA AS INFORMAÇÕES DE UM TIME EM ESPECIFICO:
@@ -67,23 +69,23 @@ router.get('/:id',(req,res)=>{
 
 
 //ROTA PARA ENTRAR NO TIME:
+//FALTA CONSEGUIR FAZER UM UPDATE NA TABELA DO TIME PARA SUBIR EM 1 O NUMERO DE ATLETAS;
 router.post('/entrarTime/:id',(req,res)=>{
+    let idTime = req.params.id
     atletaTime.create({
         EmailAtleta: req.body.email,
         CodigoTime: req.params.id
     }).then(()=>{
-        time.findByPk(req.params.id,{raw:true} ).then((time)=>{
-            
-                time.NumeroAtletas = time.NumeroAtletas + 1
-            
-            
-        })
+        async ()=>{
+            var novoNrAtletas = req.body.nrAltetas + 1;
+            var time  = await sequelize.query(`UPDATE times SET NumeroAtletas = ${novoNrAtletas} WHERE CodigoTime = ${req.params.id};`,{type: QueryTypes.UPDATE}) 
+        }
         res.redirect('/atleta/home/' + req.body.email)
+        
     }).catch((erro)=>{
         res.send("Erro ao cadastrar o time: " + erro)
     })
 })
-
 
 
 module.exports = router

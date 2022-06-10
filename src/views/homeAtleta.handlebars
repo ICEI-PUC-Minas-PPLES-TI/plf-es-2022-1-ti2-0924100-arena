@@ -10,27 +10,27 @@
 <div class="container">
     
     <div class="row" id="meuPontuacao">
+        
         <div class="col-sm-12">
             <h2><strong>Minhas Pontuações:</strong></h2>
         </div>
+        <div class="col-sm-2" id="pontConduta">
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Conduta</h5>
+                    <p class="card-text"><strong>{{avaliacaoConduta}}</strong></p>
+                </div>
+            </div>
+        </div>
         <div class="col-sm-2" id="pontEsporte">
-            <div class="card" style="width: 8rem;">
-                <img src="../frontend/Tela_inicial/img/basket.png" class="card-img-top" alt="...">
+            <div class="card" style="width: 10rem;">
                 <div class="card-body">
                     <h5 class="card-title">Basquete</h5>
                     <p class="card-text">6.7</p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2" id="pontConduta">
-            <div class="card" style="width: 8rem;">
-                <img src="../frontend/Tela_inicial/img/basket.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Conduta</h5>
-                    <p class="card-text">8.7</p>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <div class="row" id="meuTime">
@@ -50,11 +50,15 @@
                         <th scope="col">Participantes</th>
                     </tr>
                 </thead>
+
+                {{#each times}}
                 <tbody id="grid_meuTime">
-                    <th scope="col"><a href="#">É nois</a></th>
-                    <th scope="col">Futebol</th>
-                    <th scope="col">15</th>
+                    <th scope="col"><a href="#">{{nome}}</a></th>
+                    <th scope="col">{{nomeEsporte}}</th>
+                    <th scope="col">{{NumeroAtletas}}</th>
                 </tbody>
+                {{/each}}
+            
             </table>
         </div>
         
@@ -87,24 +91,15 @@
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
+                {{#each partidas}}
+                    
                 <tbody id="grid_meuParida">
-                    <th scope="col"><a href="#">4021</a></th>
-                    <th scope="col">13/05/2022</th>
-                    <th scope="col">15:00</th>
-                    <th scope="col">Não Pago</th>
+                    <th scope="col"><a href="#">{{CodigoPartida}}</a></th>
+                    <th scope="col">{{Data}}</th>
+                    <th scope="col">{{HorarioInicio}} - {{HorarioFim}}</th>
+                    <th scope="col">{{pago}}</th>
                 </tbody>
-                <tbody id="grid_meuParida">
-                    <th scope="col"><a href="#">4021</a></th>
-                    <th scope="col">13/05/2022</th>
-                    <th scope="col">15:00</th>
-                    <th scope="col">Não Pago</th>
-                </tbody>
-                <tbody id="grid_meuParida">
-                    <th scope="col"><a href="#">4031</a></th>
-                    <th scope="col">15/05/2022</th>
-                    <th scope="col">14:00</th>
-                    <th scope="col">Pago</th>
-                </tbody>
+                {{/each}}
             </table>
         </div>
 

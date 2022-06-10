@@ -8,11 +8,36 @@
 
 
 <div>
-    <h1>A quantidade é <p>{{qtdAtual}}</p></h1>
+    <h1>Quadras cadastradas por mês</h1>
+    <input type="text" id="stringQuadras" value={{stringQuadras}}>
+    <input type="text" id="stringQuadrasdia" value={{stringQuadrasdia}}>
+    <h1>Partidas cadastradas por mês</h1>
+    <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
+    <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
+    <br>
+    <h2>ARTHUR AQUI</h2>
+    <!--  Inputs do Arthur -> Sai souza   -->
+    <input type="text" id="totalPartidas" value={{totalPartidas}}>
+    <input type="text" id="futPartidas" value={{futPartidas}}>
+    <input type="text" id="basPartidas" value={{basPartidas}}>
+    <input type="text" id="futVolPartidas" value={{futVolPartidas}}>
+    <input type="text" id="volPartidas" value={{volPartidas}}>
+    <input type="text" id="tenPartidas" value={{tenPartidas}}>
+    <div id="grafico1" style="width: 800px;"></div>
+
+<div>
+<h1>Partidas cadastradas por mês</h1>
+    <input type="text" id="stringpartidas" style="display: none;" value={{stringpartidas}}>
+    <input type="text" id="stringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
+    <div id="grafico" style="width: 800px;">
+</div>
 </div>
 
-<div id="grafico" style="width: 800px;">
-</div>
+
+
+
+
+<div id="piechart_3d" style="width: 900px; height: 500px;"></div><!-- Grafico para partidas por esporte -->
 
 
 
@@ -22,18 +47,82 @@
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
+    var stringQuadras = document.getElementById("stringQuadras").value;
+    var stringQuadrasdia = document.getElementById("stringQuadrasdia").value;
+    
+    var arreynovo = []
+    stringQuadras = JSON.parse(stringQuadras)
+    for(let i=0; i<stringQuadras.length; i++){
+        arreynovo.push(stringQuadras[i][1] + stringQuadras[i][2] + stringQuadras[i][3] + stringQuadras[i][4] + stringQuadras[i][5] + stringQuadras[i][6] + stringQuadras[i][7] + stringQuadras[i][8] + stringQuadras[i][9] + stringQuadras[i][10])
+    }
+    
+    console.log("StringQuadras:" +stringQuadrasdia)
+    
+
 var garf_1 = {
-    x: [10,9,8,7,6,5,4,3,2,1],
-    y: [10,9,8,7,6,5,4,3,2,1],
+    x: arreynovo,
+    y: stringQuadrasdia,
     mode: 'lines+markers',
     type: 'scatter',
 }
+
+var data = [garf_1]
+Plotly.newPlot('grafico1', data)
+
+
+    var stringpartidas = document.getElementById("stringpartidasdia").value;
+    var stringpartidasdia = document.getElementById("stringpartidas").value;
+
+    var arreynovo1 = []
+    stringpartidasdia = JSON.parse(stringpartidasdia)
+    stringpartidas = JSON.parse(stringpartidas)
+    for(let i=0; i<stringpartidas.length; i++){
+        arreynovo1.push(stringpartidasdia[i] )
+    }
+
+
 var garf_2 = {
-    x: [10,9,8,7,6,5,4,3,2,1],
-    y: [1,2,3,4,5,6,7,8,9,10],
+    x: arreynovo1,
+    y: stringpartidas,
     mode: 'lines+markers',
     type: 'scatter',
 }
-var data = [garf_1, garf_2]
+
+var data = [garf_2]
 Plotly.newPlot('grafico', data)
 </script>
+
+
+
+<!--ARTHUR AQUI HEIN-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        //PEGAR VALORES DO HTML:
+        let totalPartidas = parseInt(getElementById('totalPartidas').value)
+        let futPartidas = parseInt(getElementById('futPartidas').value)
+        let totalPartidas = parseInt(getElementById('basPartidas').value)
+        let futVolPartidas = parseInt(getElementById('futVolPartidas').value)
+        let volPartidas = parseInt(getElementById('volPartidas').value)
+        let tenPartidas = parseInt(getElementById('tenPartidas').value)
+
+
+      
+        var data = google.visualization.arrayToDataTable([
+          ['partidas',totalPartidas],
+          ['Futebol', futPartidas ],
+          ['Basquete', futPartidas],
+          ['FutVolei',  futVolPartidas],
+          ['Vôlei', volPartidas],
+          ['Tênis',    tenPartidas]
+        ]);
+
+        var options = {
+          title: 'Percentual de partidas por esportes',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      
+    </script>
