@@ -7,7 +7,8 @@ const atleta = require('../Models/Atleta')//PUXA A TABELA ATLETA
 const passport = require('passport')
 
 const {QueryTypes} = require('sequelize')
-const {sequelize,Sequelize} = require('../Models/db')
+const {sequelize,Sequelize} = require('../Models/db');
+const { json } = require("body-parser");
 
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
@@ -20,17 +21,39 @@ app.use(bodyParser.json())
 
 //ROTA PARA A PAGINA HOME DO ATLETA:
 
-router.get('/home/:id',(req,res)=>{
+router.get('/home/:id', async (req,res)=>{
    //PRECISO DAS TABELAS: partida [TIMEPARTIDAS , PAGAMENTOS] [TIMES , ATLETATIMES] , [ AVALIACAOHABILIDADES , AVALIACAOCONDUTA ]
-    res.render('homeAtleta', { id: req.params.id})
+    //res.render('homeAtleta', { id: req.params.id})
 
-    async ()=>{
-        let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) FROM avaliacaocondutas WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
-        let avaliacaoHabilidade = await sequelize.query(`SELECT * FROM avaliacaohabilidades WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
-        //NAO TA FEITO ESSA DAQUI: PRECISO RECURAR DADOS DAS PARTIDAS Q OS TIMES DO USUARIO ESTÁ  E SE ELAS JA FORAM PAGAS OU NÃO
-        let partidas = await sequelize.query("SELECT * FROM timepartidas AS t1 JOIN pagamentos AS t2 on t1.codigopartida = t2.codigopartida WHERE t1.partidas IN ( SELECT   FROM times AS t1 JOIN atletatimes AS t2) ",{type: QueryTypes.SELECT})
-        let times = await sequelize.query(`SELECT * FROM  times AS t1 JOIN atletatimes  AS  t2 on t1.codigotime = t2.codigotime WHERE  t2.emailatleta = ${req.params.id};`,{type: QueryTypes.SELECT})
-    }
+
+        //let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) FROM avaliacaocondutas WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
+        //let avaliacaoHabilidade = await sequelize.query(`SELECT * FROM avaliacaohabilidades WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
+        //SELECT PARA AS PARTIDAS QUE OS TIMES QUE O ATLETA ESTÁ E SE ESTÃO PAGAS OU NÃO
+        let partidas = await sequelize.query(`select t1.CodigoPartida, t1.Data, t1.HorarioInicio, t1.HorarioFim, t3.pago from partidas as t1 join timepartidas as t2 on t1.CodigoPartida = t2.CodigoPartida
+        join pagamentos as t3 on t1.CodigoPartida = t3.CodigoPartida
+        where t2.CodigoTime  in ( select CodigoTime from atletatimes as t4 join atletas  as t5  on t4.EmailAtleta = t5.EmailAtleta
+        where t5.EmailAtleta = '${req.params.id}') or t2.CodigoTime2  in ( select CodigoTime from atletatimes as t4 join atletas  as t5  on t4.EmailAtleta = t5.EmailAtleta
+        where t5.EmailAtleta = '${req.params.id}')  ; `,{type: QueryTypes.SELECT})
+        let times = await sequelize.query(`select t1.nome , t2.nome as nomeEsporte, t1.NumeroAtletas from times as t1 join esportes as t2  
+        on t1.IdEsporte = t2.IdEsporte 
+        join atletatimes as t3 
+        on t1.CodigoTime = t3.CodigoTime
+        where t3.EmailAtleta = '${req.params.id}';`,{type: QueryTypes.SELECT})
+        let arreyPago = []
+            
+            for(let i=0; i<2; i++){
+                if(partidas[i].pago == 0){
+                    arreyPago.push("Pago")
+                }else{
+                    arreyPago.push("Não-pago")
+                }
+            }
+
+            res.render('homeAtleta', { id: req.params.id, partidas: partidas, times: times})
+       
+        
+    
+    
 })
 
 
