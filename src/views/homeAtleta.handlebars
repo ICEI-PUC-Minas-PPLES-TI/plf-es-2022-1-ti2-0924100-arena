@@ -8,9 +8,9 @@
 
 
 <div class="container">
-    
+
     <div class="row" id="meuPontuacao">
-        
+
         <div class="col-sm-12">
             <h2><strong>Minhas Pontuações:</strong></h2>
         </div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <div class="row" id="meuTime">
@@ -58,17 +58,17 @@
                     <th scope="col">{{NumeroAtletas}}</th>
                 </tbody>
                 {{/each}}
-            
+
             </table>
         </div>
-        
+
         <div class="col-sm-6">
-            <a href="/time/cadastrar"><input type="button" class="btn btn-outline-danger"
-                    id="btn" value="Criar Time"></a>
-            <a href="/time/visualizarTimes"><input type="button" class="btn btn-outline-danger"
-                    id="btn" value="Entrar no time"></a>
+            <a href="/time/cadastrar"><input type="button" class="btn btn-outline-danger" id="btn"
+                    value="Criar Time"></a>
+            <a href="/time/visualizarTimes"><input type="button" class="btn btn-outline-danger" id="btn"
+                    value="Entrar no time"></a>
         </div>
-        
+
     </div>
 
     <div class="row" id="meuPartida">
@@ -92,7 +92,7 @@
                     </tr>
                 </thead>
                 {{#each partidas}}
-                    
+
                 <tbody id="grid_meuParida">
                     <th scope="col"><a href="#">{{CodigoPartida}}</a></th>
                     <th scope="col">{{Data}}</th>
@@ -104,13 +104,13 @@
         </div>
 
         <div class="col-sm-6">
-            <a href="../frontend/partida/criarPartida/criarPartida.html"><input type="button"
-                    class="btn btn-outline-danger" id="btn" value="Criar Partida"></a>
-            <a href="../frontend/partida/entrarPartida/entrarPartida.html"><input type="button"
-                    class="btn btn-outline-danger" id="btn" value="Entrar na Partida"></a>
+            <a href="/partida/criar/form/{{id}}"><input type="button" class="btn btn-outline-danger" id="btn"
+                    value="Criar Partida"></a>
+            <a href="/partida/entrar/esporte/{{id}}"><input type="button" class="btn btn-outline-danger" id="btn"
+                    value="Entrar na Partida"></a>
         </div>
     </div>
-    
+
 </div>
 
 

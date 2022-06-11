@@ -1,0 +1,49 @@
+/***Main***/
+.form-partida {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+#esportes {
+    margin-top: 20px;
+}
+
+.form-partida input,
+.form-partida select {
+    margin-bottom: 20px;
+    width: 500px;
+    text-align: center;
+    border: 0.5px solid;
+}
+
+
+.btn-partida {
+    background-color: #CB0059 !important;
+}
+
+.div_btn {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.texto_horario {
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.a_btn {
+    text-decoration: none;
+    color: white;
+}
+
+.a_btn:hover {
+    color: white !important;
+}

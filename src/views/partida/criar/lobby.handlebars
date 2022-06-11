@@ -14,14 +14,18 @@
     </div>
     <div class="partida" border="1">
         <table id="table">
-            <tr class="title">
-                <th>{{time.Nome}}</th>
-                <th>-</th>
-            </tr>
+            <thead class="title">
+                <tr>
+                    <th>{{time.Nome}}</th>
+                    <th>-</th>
+                </tr>
+            </thead>
+            {{#each atletatime}}
             <tr>
-                <td>-</td>
+                <td>{{Nome}}</td>
                 <td>-</td>
             </tr>
+            {{/each}}
         </table>
     </div>
 </main>

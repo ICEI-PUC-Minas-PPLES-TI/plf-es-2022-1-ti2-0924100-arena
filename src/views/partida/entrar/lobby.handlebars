@@ -9,19 +9,25 @@
     <div class="informacoes">
         <p><span>Esporte:</span> {{partidas.Nome}}</p>
         <p><span>Quadra:</span> {{partidas.NomeQuadra}}</p>
-        <p><span>Data:</span> {{partidas.data}}</p>
-        <p><span>Horário:</span> {{partidas.horarioi}}-{{partidas.horariof}}</p>
+        <p><span>Data:</span> {{partidas.Data}}</p>
+        <p><span>Horário:</span> {{partidas.HorarioInicio}}-{{partidas.HorarioFim}}</p>
     </div>
     <div class="partida" border="1">
         <table id="table">
-            <tr class="title">
-                <th>{{Nome}}</th>
-                <th>-</th>
-            </tr>
+            <thead class="title">
+                <tr>
+                    <th>{{nome1.Nome}}</th>
+                    <th>{{nome2.Nome}}</th>
+                </tr>
+            </thead>
+            {{#each atletatimes1}}
+            {{#each ../atletatimes2}}
             <tr>
-                <td>-</td>
-                <td>-</td>
+                <td>{{Nome}}</td>
+                <td>{{../Nome}}</td>
             </tr>
+            {{/each}}
+            {{/each}}
         </table>
     </div>
 </main>
