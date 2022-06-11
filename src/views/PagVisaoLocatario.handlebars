@@ -14,7 +14,8 @@
                 <h1><strong>Partida: {{idPartida}}</strong></h1>
             </div>
             <div class="col-sm-3 offset-sm-1">
-                <a href="/locatario/agendamentos/{{idQuadra}}/{{idLocatario}}"><input type="button" class="botao_sair" value="Retornar"></a>
+                <a href="/locatario/agendamentos/{{idQuadra}}/{{idLocatario}}"><input type="button" class="botao_sair"
+                        value="Retornar"></a>
             </div>
             <div class="col-sm-2 ">
                 <input type="submit" class="botao_sair" value="Validar"></a>
@@ -26,7 +27,6 @@
                     <table id="grid-pagamentos" class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Partida</th>
                                 <th scope="col">Atleta</th>
                                 <th scope="col">Data</th>
                                 <th scope="col">Status</th>
@@ -35,7 +35,6 @@
                             </tr>
                         </thead>
                         <tbody id="table-pagamentos">
-                            <th scope="col">4021</th>
                             <th scope="col">Gregório Ney</th>
                             <th scope="col">11/05/2022</th>
                             <th scope="col">Não pago</th>
@@ -43,13 +42,21 @@
                             <th scope="col"><input type="checkbox"></th>
                         </tbody>
                         <tbody id="table-pagamentos">
-                            <th scope="col">4021</th>
                             <th scope="col">Messias do rei</th>
                             <th scope="col">11/05/2022</th>
                             <th scope="col">pago</th>
                             <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
                             <th scope="col"><input type="checkbox" disabled></th>
                         </tbody>
+                        {{#each pagamentos}}
+                        <tbody id="table-pagamentos">
+                            <th scope="col">{{EmailAtleta}}</th>
+                            <th scope="col">{{DataPagamento}}</th>
+                            <th scope="col">{{Pago}}</th>
+                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
+                            <th scope="col"><input type="checkbox" disabled></th>
+                        </tbody>
+                        {{/each}}
                     </table>
                 </div>
 
