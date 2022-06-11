@@ -18,7 +18,9 @@
             <div class="card" style="width: 10rem;">
                 <div class="card-body">
                     <h5 class="card-title">Conduta</h5>
-                    <p class="card-text"><strong>{{avaliacaoConduta}}</strong></p>
+                    {{#each avaliacaoConduta }}
+                    <p class="card-text"><strong>{{media}}</strong></p>
+                    {{/each}}
                 </div>
             </div>
         </div>

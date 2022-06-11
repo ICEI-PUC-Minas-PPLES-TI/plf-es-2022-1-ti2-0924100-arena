@@ -13,7 +13,8 @@ const console = require("console");
 const partida = require('../Models/Partida') //PUXA O MODELS PARTIDAS
 
 
-
+const {QueryTypes} = require('sequelize')
+const {sequelize,Sequelize} = require('../Models/db');
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -134,14 +135,30 @@ router.post('/cadastroRecebido', (req, res) => {
     })
 })
 
-router.get('/agendamentos/:idQuadra', (req, res) => {
-    partida.findAll({
-        raw: true,
-        where: {
-            CodigoQuadra: req.params.idQuadra
-        }
-    }).then((partidas) => {
-        res.render('Agendamentos', { partidas: partidas, idQuadra: req.params.idQuadra })
+//ROTA VER OS AGENDAMENTOS DE UMA DETERMINADA QUADRA
+router.get('/agendamentos/:idQuadra/:idLocatario', async (req, res) => {
+    
+    let partidas = await sequelize.query(`select * from partidas  WHERE CodigoQuadra = ${req.params.idQuadra};`,{type: QueryTypes.SELECT})
+    let quadra = await sequelize.query(`select * from quadras  WHERE CodigoQuadra = ${req.params.idQuadra};`,{type: QueryTypes.SELECT})
+    
+    res.render('Agendamentos', { partidas: partidas, 
+        quadra: quadra,
+        idQuadra: req.params.idQuadra,
+        email: req.params.idLocatario })
+})
+
+//ROTA PARA VER OS PAGEMENTOS DOS ATLETAS
+router.get('/pagamentos/:idQuadra/:idLocatario/:idPartida', async(req,res)=>{
+
+    let pagamentos = await sequelize.query(`select * from quadras  WHERE CodigoQuadra = ${req.params.idQuadra};`,{type: QueryTypes.SELECT})
+    res.render('PagVisaoLocatario',{
+        idQuadra: req.params.idQuadra,
+        idLocatario: req.params.idLocatario,
+        idPartida: req.params.idPartida
     })
 })
+
+
+
+
 module.exports = router
