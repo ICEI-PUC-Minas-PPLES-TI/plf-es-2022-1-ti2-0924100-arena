@@ -35,6 +35,10 @@ const pagamento = db.sequelize.define("pagamentos", {
     type: db.Sequelize.DATEONLY,
     allowNull: false,
   },
+
+  Comprovante: {
+    type: db.Sequelize.BLOB('medium')
+  }
 });
 
 //pagamento.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
