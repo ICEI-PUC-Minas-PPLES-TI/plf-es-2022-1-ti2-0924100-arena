@@ -11,7 +11,8 @@
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{Nome}}</h5>
-                <a href="#" class="card-link" id="{{CodigoTime}}">Selecionar time</a>
+                <a href="/partida/entrar/partidas/{{CodigoTime}}/{{../esporte}}" class="card-link"
+                    id="{{CodigoTime}}">Selecionar time</a>
             </div>
         </div>
         {{/each}}
@@ -41,12 +42,3 @@
         </div>
     </div>
 </footer>
-<script>
-    var btn = document.querySelector('.card-link');
-    btn.addEventListener('click', function () {
-        const el = event.target || event.srcElement;
-        const id = el.id;
-        var CodigoTime = id;
-        btn.setAttribute("href", `/partida/entrar/partidas/${CodigoTime}`);
-    })
-</script>

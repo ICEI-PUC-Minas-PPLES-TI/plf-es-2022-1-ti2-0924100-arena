@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js">
@@ -16,530 +19,549 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
     </script>
     <script>
-       
-            var diaSemana="";
-var controleDia= 0;
-var arreyDias= [];
-function calendar(mois){
-        var date = new Date();
-        var day = date.getDate();
-        var month = date.getMonth();
-        var year = date.getYear();
-    
-        if(year<=200)
-        {
+
+        var diaSemana = "";
+        var controleDia = 0;
+        var arreyDias = [];
+        function calendar(mois) {
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth();
+            var year = date.getYear();
+
+            if (year <= 200) {
                 year += 1900;
-        }
-        months = new Array('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez');
-        days_in_month = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
-    
-        var moisaujorduiu = month;
-    
-        month = mois;
-    
-        //ano bissesto, muda dia fevereiro
-        if(year%4 == 0 && year!=1900)
-        {
-                days_in_month[1]=29;
-        }
-    
-    
-        total = days_in_month[month]; //days month
-    
-        var date_today = day+' '+months[month]+' '+year;//22 ouctober 2014
-    
-        beg_j = date; //today date
-    
-        if(month > 0) { 
-            soma = 0;
-            for(var m=0; m<month; m++) {
-                soma += days_in_month[m];
             }
-            beg_j.setDate(soma+1);
-        }
-        else {
-            beg_j.setDate(1);
-        }
-    
-    
-        if(beg_j.getDate()==2) //1
-        {
-                beg_j=setDate(0);
-        }
-        beg_j = beg_j.getDay();
-    
-        document.write('<table class="cal_calendar"><tr><th colspan="7">'+months[mois]+' '+year+'</th></tr><br>');
-        document.write('<tr class="cal_d_weeks"><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr><tr>'); 
-        week = 0;
-    
-        for(i=1;i<=beg_j;i++)
-        {
-                var beforemonth = months[month-1]; 
-    
-               
+            months = new Array('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez');
+            days_in_month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+
+            var moisaujorduiu = month;
+
+            month = mois;
+
+            //ano bissesto, muda dia fevereiro
+            if (year % 4 == 0 && year != 1900) {
+                days_in_month[1] = 29;
+            }
+
+
+            total = days_in_month[month]; //days month
+
+            var date_today = day + ' ' + months[month] + ' ' + year;//22 ouctober 2014
+
+            beg_j = date; //today date
+
+            if (month > 0) {
+                soma = 0;
+                for (var m = 0; m < month; m++) {
+                    soma += days_in_month[m];
+                }
+                beg_j.setDate(soma + 1);
+            }
+            else {
+                beg_j.setDate(1);
+            }
+
+
+
+            beg_j = beg_j.getDay();
+
+            document.write('<table class="cal_calendar"><tr><th colspan="7">' + months[mois] + ' ' + year + '</th></tr>');
+            document.write('<tr class="cal_d_weeks"><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr><tr>');
+            week = 0;
+
+            for (i = 1; i <= beg_j; i++) {
+                var beforemonth = months[month - 1];
+
+
                 week++;
-        }
-        for(i=-5;i<=total;i++)
-        {       
-                if(i>0){
-                        if(controleDia % 7 == 0){
-                                diaSemana = "sab";
-                                console.log(diaSemana);
-                        }
-                        if(controleDia % 7 == 1){
-                                diaSemana = "dom";
-                                console.log(diaSemana);
-                        }
-                        if(controleDia % 7 == 2){
-                                diaSemana = "seg";
-                                console.log(diaSemana);
-                        }
-                        if(controleDia % 7 == 3){
-                                diaSemana = "ter";
-                                console.log(diaSemana);
-                        }
-                        if(controleDia % 7 == 4){
-                                diaSemana = "qua";
-                                console.log(diaSemana);
-                        }
-                        if(controleDia % 7 == 5){
-                                diaSemana = "qui";
-                                console.log(diaSemana);
-                        }
-                        if(controleDia % 7 == 6){
-                                diaSemana = "sex";
-                                console.log(diaSemana);
-                        }
-                        
-                }
-                else{
-                        diaSemana="";
-                }
-                if(i<1){
-                        if(week==0)
-                {
-                    
-                }
-    
-                if(day==i && moisaujorduiu==month) //si le jour = le jour de aujordhui est si le mois = mois aujordui 
-                {
-                        
-                    
-                }
-                //les autre jours
-                else
-                {
-                        
-                    document.write("<td class= '' ><div class ='divday " +diaSemana+ "' onclick='open_popup(\""+i+" "+months[month]+"\")' href='#'>"+" " +"</div></td>");
-                }
-                week++;
-                if(week==7)
-                {
-                        document.write('</tr>');
-                        week=0;
-                }
-                }else{
-                if(week==0)
-                {
-                        document.write("<tr class ='linha'>");
-                }
-    
-                if(day==i && moisaujorduiu==month) //si le jour = le jour de aujordhui est si le mois = mois aujordui 
-                {
-    
-                    document.write("<td class= 'linhas' ><b><div class ='divtoday " +diaSemana+ "' onclick='open_popup(\""+i+" "+months[month]+"\")' href='#'>"+i+"</div><b></td>"); //day of today
+            }
+            for (i = -9; i <= total; i++) {
+                if (i > 0) {
+                    if (controleDia % 7 == 0) {
+                        diaSemana = "sab";
+                        console.log(diaSemana);
+                    }
+                    if (controleDia % 7 == 1) {
+                        diaSemana = "dom";
+                        console.log(diaSemana);
+                    }
+                    if (controleDia % 7 == 2) {
+                        diaSemana = "seg";
+                        console.log(diaSemana);
+                    }
+                    if (controleDia % 7 == 3) {
+                        diaSemana = "ter";
+                        console.log(diaSemana);
+                    }
+                    if (controleDia % 7 == 4) {
+                        diaSemana = "qua";
+                        console.log(diaSemana);
+                    }
+                    if (controleDia % 7 == 5) {
+                        diaSemana = "qui";
+                        console.log(diaSemana);
+                    }
+                    if (controleDia % 7 == 6) {
+                        diaSemana = "sex";
+                        console.log(diaSemana);
+                    }
 
                 }
-                //les autre jours
-                else
-                {
-    
-                    document.write("<td class= 'linhas' ><div class ='divday " +diaSemana+"' id='"+i+months[month]+ "" + "' onclick='open_popup(\""+i+" "+months[month]+"\")' href='#'>"+i+"</div></td>");
+                else {
+                    diaSemana = "";
                 }
-                week++;
-                if(week==7)
-                {
-                        document.write('</tr>');
-                        week=0;
-                }}
-                if(i>0){
-                        controleDia= controleDia+1;
-                        
-                }
-                
-        }
-    
-            //pour les jour du prochain mois
-    
-             for(i=1;week!=0;i++)
-            {
-                    var nextmonth = months[month+1];
-                    document.write('<td class= "linhas"><div class ="divday">'+" "+'</td>');
-                    week++;
-                    if(week==7)
-                    {
-                            document.write('</tr>');
-                            week=0;
+                if (i < 1) {
+                    if (week == 0) {
+
                     }
+
+                    if (day == i && moisaujorduiu == month) //si le jour = le jour de aujordhui est si le mois = mois aujordui 
+                    {
+
+
+                    }
+                    //les autre jours
+                    else {
+
+                        document.write("<td class= '' ><div class ='divday " + diaSemana + "' onclick='open_popup(\"" + i + " " + months[month] + "\")' href='#'>" + " " + "</div></td>");
+                    }
+                    week++;
+                    if (week == 7) {
+                        document.write('</tr>');
+                        week = 0;
+                    }
+                } else {
+                    if (week == 0) {
+                        document.write("<tr class ='linha'>");
+                    }
+
+                    if (day == i && moisaujorduiu == month) //si le jour = le jour de aujordhui est si le mois = mois aujordui 
+                    {
+
+                        document.write("<td class= 'linhas' ><b><div class ='divtoday " + diaSemana + "' onclick='open_popup(\"" + i + " " + months[month] + "\")' href='#'>" + i + "</div><b></td>"); //day of today
+
+                    }
+                    //les autre jours
+                    else {
+
+                        document.write("<td class= 'linhas' ><div class ='divday " + diaSemana + "' id='" + i + months[month] + "" + "' onclick='open_popup(\"" + i + " " + months[month] + "\")' href='#'>" + i + "</div></td>");
+                    }
+                    week++;
+                    if (week == 7) {
+                        document.write('</tr>');
+                        week = 0;
+                    }
+                }
+                if (i > 0) {
+                    controleDia = controleDia + 1;
+
+                }
+
             }
-        document.write('</table>');
-    }
-    function open_popup(stringClasse){
-        stringClasse = stringClasse.split(" ").join("");
-        let classeQueDesejoAlterar = document.getElementById(stringClasse);
-        console.log(stringClasse)
-        classeQueDesejoAlterar.style.background = '#990847';
-    }
-    function sabado(){
+
+            //pour les jour du prochain mois
+
+            for (i = 1; week != 0; i++) {
+                var nextmonth = months[month + 1];
+                document.write('<td class= "linhas"><div class ="divday">' + " " + '</td>');
+                week++;
+                if (week == 7) {
+                    document.write('</tr>');
+                    week = 0;
+                }
+            }
+            document.write('</table>');
+        }
+        function open_popup(stringClasse) {
+            stringClasse = stringClasse.split(" ").join("");
+            let classeQueDesejoAlterar = document.getElementById(stringClasse);
+            console.log(stringClasse)
+            classeQueDesejoAlterar.style.background = '#990847';
+        }
+        function sabado() {
             var classDia = document.querySelectorAll(".sab");
-            for(let i=0; i<classDia.length; i++){
+            for (let i = 0; i < classDia.length; i++) {
                 document.getElementsByClassName("sab")[i].style.background = "#990847";
             }
-    }
-    function segunda(){
-        var classDia = document.querySelectorAll(".seg");
-        for(let i=0; i<classDia.length; i++){
-            document.getElementsByClassName("seg")[i].style.background = "#990847";
         }
-}
-function terca(){
-        var classDia = document.querySelectorAll(".ter");
-        for(let i=0; i<classDia.length; i++){
-            document.getElementsByClassName("ter")[i].style.background = "#990847";
+        function segunda() {
+            var classDia = document.querySelectorAll(".seg");
+            for (let i = 0; i < classDia.length; i++) {
+                document.getElementsByClassName("seg")[i].style.background = "#990847";
+            }
         }
-}
-function quarta(){
-        var classDia = document.querySelectorAll(".qua");
-        for(let i=0; i<classDia.length; i++){
-            document.getElementsByClassName("qua")[i].style.background = "#990847";
+        function terca() {
+            var classDia = document.querySelectorAll(".ter");
+            for (let i = 0; i < classDia.length; i++) {
+                document.getElementsByClassName("ter")[i].style.background = "#990847";
+            }
         }
-}
-function quinta(){
-        var classDia = document.querySelectorAll(".qui");
-        for(let i=0; i<classDia.length; i++){
-            document.getElementsByClassName("qui")[i].style.background = "#990847";
+        function quarta() {
+            var classDia = document.querySelectorAll(".qua");
+            for (let i = 0; i < classDia.length; i++) {
+                document.getElementsByClassName("qua")[i].style.background = "#990847";
+            }
         }
-}
-function sexta(){
-        var classDia = document.querySelectorAll(".sex");
-        for(let i=0; i<classDia.length; i++){
-            document.getElementsByClassName("sex")[i].style.background = "#990847";
+        function quinta() {
+            var classDia = document.querySelectorAll(".qui");
+            for (let i = 0; i < classDia.length; i++) {
+                document.getElementsByClassName("qui")[i].style.background = "#990847";
+            }
         }
-}
-function domingo(){
-        var classDia = document.querySelectorAll(".dom");
-        for(let i=0; i<classDia.length; i++){
-            document.getElementsByClassName("dom")[i].style.background = "#990847";
+        function sexta() {
+            var classDia = document.querySelectorAll(".sex");
+            for (let i = 0; i < classDia.length; i++) {
+                document.getElementsByClassName("sex")[i].style.background = "#990847";
+            }
         }
-}
-
-
-
-
-
-
-window.onload = () =>{
-    
-        
-    //Campo CEP
-    var tecla;
-    let campoCEP = document.getElementById("campoCEP");
-    let msgCEP = document.getElementById("msgCEP");
-    campoCEP.addEventListener("input", ()=>{
-        if(campoCEP.value.length>8){
-            let inputText = campoCEP.value;
-            campoCEP.value = inputText.substring(0,inputText.length-1);
-            msgCEP.style.display = "";
+        function domingo() {
+            var classDia = document.querySelectorAll(".dom");
+            for (let i = 0; i < classDia.length; i++) {
+                document.getElementsByClassName("dom")[i].style.background = "#990847";
+            }
         }
-        else{
-            msgCEP.style.display = "none";
+
+
+
+
+
+
+        window.onload = () => {
+
+
+            //Campo CEP
+            var tecla;
+            let campoCEP = document.getElementById("campoCEP");
+            let msgCEP = document.getElementById("msgCEP");
+            campoCEP.addEventListener("input", () => {
+                if (campoCEP.value.length > 8) {
+                    let inputText = campoCEP.value;
+                    campoCEP.value = inputText.substring(0, inputText.length - 1);
+                    msgCEP.style.display = "";
+                }
+                else {
+                    msgCEP.style.display = "none";
+                }
+
+            })
+            /**************************************************/
+
+            //Campo Checkboxes
+            var checkBoxes = document.querySelectorAll(".form-check-input");
+            let btnConfirmar = document.getElementById("botaoConfirmar")
+            var passou = -1;
+            var passados = [];
+            btnConfirmar.addEventListener("click", () => {
+                checkBoxes.forEach(function (el) {
+                    passou = passou + 1;
+                    console.log("passou")
+                    if (el.checked) {
+                        passados.push(passou);
+                    }
+                });
+                console.log(passados);
+
+
+            })
+
+
+
+
+
+
         }
-        
-    })
-  /**************************************************/
-
-  //Campo Checkboxes
-  var checkBoxes = document.querySelectorAll(".form-check-input");
-  let btnConfirmar = document.getElementById("botaoConfirmar")
-  var passou=-1;
-  var passados=[];
-  btnConfirmar.addEventListener("click", ()=>{
-    checkBoxes.forEach(function(el) {
-        passou = passou+1;
-        console.log("passou")
-        if(el.checked) {
-            passados.push(passou);
-        }
-        });
-      console.log(passados);
-    
-    
-  })
-  
 
 
-
-
-
-}
-
-        
     </script>
-    <link
-      rel="stylesheet"
-      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
     <style>
         /*definiçoes gerais dos links*/
-html, body 
-{ 
+        html,
+        body {
 
- overflow-x: hidden
-}
-a:link,
-a:visited {
-    text-decoration: none;
-}
+            overflow-x: hidden
+        }
 
-a:hover {
-    color: rgb(255, 0, 170) !important;
-}
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
 
-a:active {
-    text-decoration: none
-}
-/*********************************/
+        a:hover {
+            color: rgb(255, 0, 170) !important;
+        }
 
+        a:active {
+            text-decoration: none
+        }
 
-/* Cabeçalho*/
-.logo {
-
-    height: 80px;
-    width: 188,74px;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.botao_sair {
-    height: 40px;
-    width: 120px;
-    border-radius: 16px;
-    margin-right: 50px;
-
-    background: #FFFFFF;
-    border: 2px solid #CB0059;
-    box-sizing: border-box;
-    border-radius: 16px;
-    color: #CB0059;
-
-    font-size: larger;
-}
-/*********************************/
-
-/*Formulario*/
-.formulario{
-    margin-top: 30px;
-}
-.primeirobloco{
-    margin-bottom: 20px;
-}
-.titulo{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size:x-large;
-    margin-bottom: 50px;
-}
-.formulario_central{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.formulario_central2{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0%;
-    margin-right: 0%;
-}
-.formulario_esquerdo{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.formulario_direito{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-check-input{
-    margin-bottom: 10px;
-}
-.form-floating{
-    width: 40%;
-}
-.form-floating3{
-    display: flex;
-    flex-direction: row;
-    height: 50%;
-    align-items: center;
-}
-.campomonetario{
-    margin-left: 5px;
-    width: 100% !important;
-}
-
-.for2{
-    width: 40%;
-}
-.esportes{
-    margin-bottom: 50px;
-}
-.time{
-    margin-left: 10px;
-}
-.margim1{
-
-    margin: 1px;
-    
-}
-.botoes{
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 50px;
-    padding-top: 50px;
-}
-.unidade{
-    justify-content: center;
-}
-.linha1{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 30px;
-}
-p{
-    color: white;
-    background-color: #CB0059;
-    border-radius: 22px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-@media screen and (max-width: 471px){
-    .campomonetario{
-        width: 80% !important;
-    }
-    .primeirobloco{
-        padding-left: 10px;
-    }
-}
-@media screen and (max-width: 630px){
-    .titulo{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size:small;
-        margin-bottom: 50px;
-    }
-    .form-floating{
-        width: 70%;
-    }
-
-}
-/*********************************/
-/*Calendario*/
-table{
-    text-align: center !important;
-    margin-left: 6%;
-    margin-bottom: 20px;
-}
-.cal_calendar{
-    border: 10px !important;
-    border: solid !important;
-}
-.divday{
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-    
-}
-.linhas{
-    border: 10px !important;
-    border: solid !important;
-}
+        /*********************************/
 
 
-.cal_d_weeks{
-    border-bottom: solid !important;
+        /* Cabeçalho*/
+        .logo {
 
-}
-/*********************************/
+            height: 80px;
+            width: 188, 74px;
+        }
 
-/* Rodape */
-.rodape {
-    background-color: #CB0059;
-    display: flex;
-    bottom: 0;
-    left: 0;
-    height: 50 px;
-    width: 100%;
-    border-top: solid;
-}
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.rodape2 {
-    display: flex;
-    justify-content: space-between;
-    flex-shrink: 50;
-}
+        .botao_sair {
+            height: 40px;
+            width: 120px;
+            border-radius: 16px;
+            margin-right: 50px;
 
-.estilo_letra {
-    color: white;
-}
+            background: #FFFFFF;
+            border: 2px solid #CB0059;
+            box-sizing: border-box;
+            border-radius: 16px;
+            color: #CB0059;
 
-.teste{
-    display: flex;
-    justify-content: space-around;
-    border: #CB0059;
-    padding-top: 10px;
-    
-}
+            font-size: larger;
+        }
 
-@media screen and (max-width: 770px){
-    .rodape {
-        background-color: #CB0059;
-        display: block;
-        bottom: 0;
-        left: 0;
-        height: 50 px;
-        width: 100%;
-        border-top: solid;
-    }
-    .rodape2 {
-        display: block;
-        justify-content: space-between;
-        flex-shrink: 50;
-    }
-   
-}
+        /*********************************/
+
+        /*Formulario*/
+        .formulario {
+            margin-top: 30px;
+        }
+
+        .primeirobloco {
+            margin-bottom: 20px;
+        }
+
+        .titulo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: x-large;
+            margin-bottom: 50px;
+        }
+
+        .formulario_central {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .formulario_central2 {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0%;
+            margin-right: 0%;
+        }
+
+        .formulario_esquerdo {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .formulario_direito {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-check-input {
+            margin-bottom: 10px;
+        }
+
+        .form-floating {
+            width: 40%;
+        }
+
+        .form-floating3 {
+            display: flex;
+            flex-direction: row;
+            height: 50%;
+            align-items: center;
+        }
+
+        .campomonetario {
+            margin-left: 5px;
+            width: 100% !important;
+        }
+
+        .for2 {
+            width: 40%;
+        }
+
+        .esportes {
+            margin-bottom: 50px;
+        }
+
+        .time {
+            margin-left: 10px;
+        }
+
+        .margim1 {
+
+            margin: 1px;
+
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+
+        .unidade {
+            justify-content: center;
+        }
+
+        .linha1 {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+
+        p {
+            color: white;
+            background-color: #CB0059;
+            border-radius: 22px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        @media screen and (max-width: 471px) {
+            .campomonetario {
+                width: 80% !important;
+            }
+
+            .primeirobloco {
+                padding-left: 10px;
+            }
+        }
+
+        @media screen and (max-width: 630px) {
+            .titulo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                font-size: small;
+                margin-bottom: 50px;
+            }
+
+            .form-floating {
+                width: 70%;
+            }
+
+        }
+
+        /*********************************/
+        /*Calendario*/
+        table {
+            text-align: center !important;
+            margin-left: 6%;
+            margin-bottom: 20px;
+        }
+
+        .cal_calendar {
+            border: 10px !important;
+            border: solid !important;
+        }
+
+        .divday {
+            margin-left: 5px !important;
+            margin-right: 5px !important;
+
+        }
+
+        .linhas {
+            border: 10px !important;
+            border: solid !important;
+        }
 
 
-/*********************************/
+        .cal_d_weeks {
+            border-bottom: solid !important;
 
+        }
+
+        /*********************************/
+
+        /* Rodape */
+        .rodape {
+            background-color: #CB0059;
+            display: flex;
+            bottom: 0;
+            left: 0;
+            height: 50 px;
+            width: 100%;
+            border-top: solid;
+        }
+
+        .rodape2 {
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 50;
+        }
+
+        .estilo_letra {
+            color: white;
+        }
+
+        .teste {
+            display: flex;
+            justify-content: space-around;
+            border: #CB0059;
+            padding-top: 10px;
+
+        }
+
+        @media screen and (max-width: 770px) {
+            .rodape {
+                background-color: #CB0059;
+                display: block;
+                bottom: 0;
+                left: 0;
+                height: 50 px;
+                width: 100%;
+                border-top: solid;
+            }
+
+            .rodape2 {
+                display: block;
+                justify-content: space-between;
+                flex-shrink: 50;
+            }
+
+        }
+
+        .flex-container1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .divcal{
+            margin: 30px;
+        }
+
+
+        /*********************************/
     </style>
     <title>Cadastro_quadra</title>
 </head>
@@ -552,332 +574,348 @@ table{
         </div>
     </header>
     <form action="/locatario/quadraCadastrada" method="post">
-    <section class="formulario">
-        <div class="row tituloss">
-            <div class="titulo">
-                <p>Preencha os campos com os respectivos dados</p>
-            </div>
+        <section class="formulario">
+            <div class="row tituloss">
+                <div class="titulo">
+                    <p>Preencha os campos com os respectivos dados</p>
+                </div>
 
-        </div>
-        <div class="row primeirobloco">
-            <div class="col formulario_central">
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nada" placeholder="name@example.com" name="nomeQuadra">
-                    <label for="floatingInput">Nome</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="number" name="Cep" class="form-control" id="campoCEP" placeholder="name@example.com"
-                        maxlength="10">
-                    <label for="floatingInput">CEP</label>
-                    <span id="msgCEP" style="color: red; display: none;">O campo deve possuir somente 8 digítos</span>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="number" min="0" class="form-control" id="floatingInput" placeholder="100" name="numero">
-                    <label for="floatingInput">Número</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="number" min="0" class="form-control" id="floatingInput" placeholder="200" name="capacidade">
-                    <label for="floatingInput">Capacidade</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" min="0" class="form-control" id="floatingInput" placeholder="200" name="invisivel">
-                    <label for="floatingInput">invisivel</label>
+            </div>
+            <div class="row primeirobloco">
+                <div class="col formulario_central">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="nada" placeholder="name@example.com"
+                            name="nomeQuadra">
+                        <label for="floatingInput">Nome</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" name="Cep" class="form-control" id="campoCEP"
+                            placeholder="name@example.com" maxlength="10">
+                        <label for="floatingInput">CEP</label>
+                        <span id="msgCEP" style="color: red; display: none;">O campo deve possuir somente 8
+                            digítos</span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" min="0" class="form-control" id="floatingInput" placeholder="100"
+                            name="numero">
+                        <label for="floatingInput">Número</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" min="0" class="form-control" id="floatingInput" placeholder="200"
+                            name="capacidade">
+                        <label for="floatingInput">Capacidade</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" min="0" class="form-control" id="floatingInput" placeholder="200"
+                            name="invisivel">
+                        <label for="floatingInput">invisivel</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="linha1">
-            __________________________________________________________
-        </div>
-        <div class="row esportes">
+            <div class="linha1">
+                __________________________________________________________
+            </div>
+            <div class="row esportes">
+                <div class="row titulo">
+                    <div class="titulo">
+                        <p>Selecione os esportes surpotados pela quadra</p>
+                    </div>
+
+                </div>
+                <div class="col formulario_esquerdo">
+                    <div>
+                        <div>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                name="checkFutebol">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Futebol
+                            </label>
+
+                        </div>
+
+                        <div>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                name="checkVolei">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Vôlei
+                            </label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                name="checkBasquete">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Basquete
+                            </label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                name="checkFutevolei">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Futevôlei
+                            </label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                name="checkTenis">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Tênis
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="linha1">
+                __________________________________________________________
+            </div>
             <div class="row titulo">
                 <div class="titulo">
-                    <p>Selecione os esportes surpotados pela quadra</p>
+                    <p>Preencha com os horarios (inicio)(fim) e o preço desejado</p>
                 </div>
 
             </div>
-            <div class="col formulario_esquerdo">
-                <div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="checkFutebol">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Futebol
-                        </label>
 
+            <div class="row primeirobloco">
+                <div class="col formulario_central2">
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Domingo:</label>
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="000.00" name="campopreco" class="form-control campomonetario"
+                                onkeypress="$(this).mask('##0.00', {reverse: true});">
+                        </div>
+                    </div>
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Segunda:</label>
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
+                        </div>
+                    </div>
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Terça:</label>
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
+                        </div>
+                    </div>
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Quarta:</label>
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
+                        </div>
+                    </div>
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Quinta:</label>
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
+                        </div>
+                    </div>
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Sexta:</label>
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
+                        </div>
+                    </div>
+                    <div class="col form-floating3 mb-3">
+                        <div class="margim">
+                            <label for="hora">Sábado:</label>
+                        </div>
+                        <div class="margim margim1">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="time" class="time">
+                        </div>
+                        <div class="margim">
+                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
+                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
+                        </div>
                     </div>
 
-                    <div>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="checkVolei">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Vôlei
-                        </label>
-                    </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="checkBasquete">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Basquete
-                        </label>
-                    </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="checkFutevolei">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Futevôlei
-                        </label>
-                    </div>
-                    <div>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="checkTenis">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Tênis
-                        </label>
-                    </div>
+
                 </div>
             </div>
-        </div>
-        <div class="linha1">
-            __________________________________________________________
-        </div>
-        <div class="row titulo">
-            <div class="titulo">
-                <p>Preencha com os horarios (inicio)(fim) e o preço desejado</p>
+        </section>
+
+
+
+
+
+
+                <div class="flex-container1">
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 0; //janvier
+                            calendar(mois);
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 1; //fevrier
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 2; //mars
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+                </div>
+
+                <div class="flex-container1">
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 3; //janvier
+                            calendar(mois);
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 4; //fevrier
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 5; //mars
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+                </div>
+                <div class="flex-container1">
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 6; //janvier
+                            calendar(mois);
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 7; //fevrier
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 8; //mars
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+                </div>
+                <div class="flex-container1">
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 9; //janvier
+                            calendar(mois);
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 10; //fevrier
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+
+                    <div class="divcal">
+                        <script type="text/javascript">
+                            var mois = 11; //mars
+
+                            calendar(mois);
+
+                        </script>
+                    </div>
+                </div>
+
+
+
+
+        <section>
+            <div class="flex-container botoes">
+
+
+                <button class="botao_sair" id="botaoVoltar">Voltar</button>
+                <button class="botao_sair" type="submit" id="botaoConfirmar">Confirmar</button>
+
+
             </div>
-
-        </div>
-
-        <div class="row primeirobloco">
-            <div class="col formulario_central2">
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Domingo:</label>
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="000.00" name="campopreco" class="form-control campomonetario"
-                            onkeypress="$(this).mask('##0.00', {reverse: true});">
-                    </div>
-                </div>
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Segunda:</label>
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                            onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                    </div>
-                </div>
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Terça:</label>
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                            onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                    </div>
-                </div>
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Quarta:</label>
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                            onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                    </div>
-                </div>
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Quinta:</label>
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                            onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                    </div>
-                </div>
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Sexta:</label>
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                            onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                    </div>
-                </div>
-                <div class="col form-floating3 mb-3">
-                    <div class="margim">
-                        <label for="hora">Sábado:</label>
-                    </div>
-                    <div class="margim margim1">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="time" class="time">
-                    </div>
-                    <div class="margim">
-                        <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                            onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <table border=0 width=100% height=100%>
-        <tr>
-            <td>
-                    <script type="text/javascript">
-                        var mois = 0; //janvier
-                       
-                           calendar(mois);
-                       
-                       
-                    </script>
-            </td>
-            <td>
-                <script type="text/javascript">
-                    var mois = 1; //fevrier
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>
-                <script type="text/javascript">
-                    var mois = 2; //mars
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>
-                <script type="text/javascript">
-                    var mois = 3; //avril
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>    
-                <script type="text/javascript">
-                    var mois = 4; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>
-                <script type="text/javascript">
-                    var mois = 5; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>    
-                <script type="text/javascript">
-                    var mois = 6; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>    
-                <script type="text/javascript">
-                    var mois = 7; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>    
-                <script type="text/javascript">
-                    var mois = 8; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>    
-                <script type="text/javascript">
-                    var mois = 9; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            <td>    
-                <script type="text/javascript">
-                    var mois = 10; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-            
-            <td>    
-                <script type="text/javascript">
-                    var mois = 11; 
-                    
-                           calendar(mois);
-                       
-                </script>
-            </td>
-        </tr>   
-    </table>
-    
-
-
-    <section>
-        <div class="flex-container botoes">
-
-
-            <button class="botao_sair" id="botaoVoltar">Voltar</button>
-            <button class="botao_sair" type="submit" id="botaoConfirmar">Confirmar</button>
-
-            
-        </div>
-    </section>
-</form>
+        </section>
+    </form>
     <footer class="rodape">
 
         <div class="container">
@@ -915,7 +953,7 @@ table{
 
     </footer>
 
-    
+
 </body>
 
 </html>

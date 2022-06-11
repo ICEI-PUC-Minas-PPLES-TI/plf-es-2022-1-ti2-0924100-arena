@@ -1,3 +1,7 @@
+body {
+    height: 100vh !important;
+}
+
 /*definiçoes gerais dos links*/
 a:link,
 a:visited {

@@ -1,3 +1,6 @@
+body {
+    height: 100vh !important;
+}
 
 /*definiçoes gerais dos links*/
 a:link,
@@ -12,6 +15,7 @@ a:hover {
 a:active {
     text-decoration: none
 }
+
 /*********************************/
 
 
@@ -19,7 +23,7 @@ a:active {
 .logo {
 
     height: 80px;
-    width: 188,74px;
+    width: 188, 74px;
 }
 
 .flex-container {
@@ -42,6 +46,7 @@ a:active {
 
     font-size: larger;
 }
+
 /*********************************/
 
 /* Rodape */
@@ -65,14 +70,14 @@ a:active {
     color: white;
 }
 
-.teste{
+.teste {
     display: flex;
     justify-content: space-around;
     border: #CB0059;
     padding-top: 10px;
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 770px) {
     .rodape {
         background-color: #CB0059;
         display: block;
@@ -83,6 +88,7 @@ a:active {
         width: 100%;
         border-top: solid;
     }
+
     .rodape2 {
         display: block;
         justify-content: space-between;
@@ -101,7 +107,8 @@ a:active {
     gap: 20px;
 }
 
-.card-header, .card-footer {
+.card-header,
+.card-footer {
     background-color: #CB0059 !important;
     color: white;
 }
@@ -113,4 +120,3 @@ a:active {
     color: white;
     text-align: center;
 }
-
