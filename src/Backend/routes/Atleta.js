@@ -43,10 +43,17 @@ router.get('/home/:id', async (req,res)=>{
         join atletatimes as t3 
         on t1.CodigoTime = t3.CodigoTime
         where t3.EmailAtleta = '${req.params.id}';`,{type: QueryTypes.SELECT})
-       
+        let arreyPago = []
+            
+           /* for(let i=0; i<2; i++){
+                if(partidas[i].pago == 0){
+                    arreyPago.push("Pago")
+                }else{
+                    arreyPago.push("Não-pago")
+                }
+            }*/
 
-            res.render('homeAtleta', { id: req.params.id, partidas: partidas, times: times, 
-                avaliacaoConduta: avaliacaoConduta})
+            res.render('homeAtleta', { id: req.params.id, partidas: partidas, times: times, avaliacaoConduta: avaliacaoConduta})
        
         
     
@@ -72,7 +79,7 @@ router.post('/cadastroRecebido',(req,res)=>{
         Sexo: req.body.sexo
     }).then(function(){
         //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
-        res.redirect('/atleta/home' + req.body.email)
+        res.redirect('/atleta/home/' + req.body.email)
     }).catch((erro)=>{
         res.send("Deu um erro!" + erro)
     })

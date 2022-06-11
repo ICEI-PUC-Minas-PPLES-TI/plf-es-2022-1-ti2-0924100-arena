@@ -11,11 +11,9 @@ const time = require('./Backend/routes/Time')
 const indicadores = require('./Backend/routes/Indicadores')
 const atletaBd = require('./Backend/Models/Atleta')
 const locatarioBd = require('./Backend/Models/Locatario')
-
-const { QueryTypes } = require('sequelize')
-const { sequelize, Sequelize } = require('./Backend/Models/db')
+const {QueryTypes} = require('sequelize')
+const { sequelize, Sequelize } = require('./Backend/Models/db')  
 const quadra = require('./Backend/Models/Quadra')//PUXA O MODELS QUADRA
-
 
 // Configurações
 
