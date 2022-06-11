@@ -1,0 +1,94 @@
+<body>
+    <header>
+        <div class="flex-container">
+            <div><img src="../../img/logo.png" class="logo" alt=""></div>
+            <div><a href="../../frontend/Tela_inicial/index.html"><input type="button" class="botao_sair"
+                        value="Sair"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1><strong>Partida: {{idPartida}}</strong></h1>
+            </div>
+            <div class="col-sm-3 offset-sm-1">
+                <a href="/locatario/agendamentos/{{idQuadra}}/{{idLocatario}}"><input type="button" class="botao_sair"
+                        value="Retornar"></a>
+            </div>
+            <div class="col-sm-2 ">
+                <input type="submit" class="botao_sair" value="Validar"></a>
+            </div>
+        </div>
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-sm-8">
+                    <table id="grid-pagamentos" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Atleta</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Comprovante</th>
+                                <th scope="col">Confirmar?</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-pagamentos">
+                            <th scope="col">Gregório Ney</th>
+                            <th scope="col">11/05/2022</th>
+                            <th scope="col">Não pago</th>
+                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
+                            <th scope="col"><input type="checkbox"></th>
+                        </tbody>
+                        <tbody id="table-pagamentos">
+                            <th scope="col">Messias do rei</th>
+                            <th scope="col">11/05/2022</th>
+                            <th scope="col">pago</th>
+                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
+                            <th scope="col"><input type="checkbox" disabled></th>
+                        </tbody>
+                        {{#each pagamentos}}
+                        <tbody id="table-pagamentos">
+                            <th scope="col">{{EmailAtleta}}</th>
+                            <th scope="col">{{DataPagamento}}</th>
+                            <th scope="col">{{Pago}}</th>
+                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
+                            <th scope="col"><input type="checkbox" disabled></th>
+                        </tbody>
+                        {{/each}}
+                    </table>
+                </div>
+
+            </div>
+    </div>
+    </form>
+    <footer class="rodape">
+
+        <div class="container">
+            <div class="row teste">
+
+                <div class="col">
+                    <div>
+                        <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="container rodape2">
+                        <div class="col">
+                            <a href="#" class="estilo_letra remover_decoracao">Serviços</a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="estilo_letra remover_decoracao">Sobre nós</a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="estilo_letra remover_decoracao">Contato</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
