@@ -124,7 +124,7 @@
                     //les autre jours
                     else {
 
-                        document.write("<td class= '' ><div class ='divday " + diaSemana + "' onclick='open_popup(\"" + i + " " + months[month] + "\")' href='#'>" + " " + "</div></td>");
+                        document.write("<td class= '' ><div class ='divday " + diaSemana + " " + year + "-" + (month+1) + "-" + i  + "' onclick='open_popup(\""+year +"-" + (month+1) + "-" + i + "\")' href='#'>" + " " + "</div></td>");
                     }
                     week++;
                     if (week == 7) {
@@ -139,13 +139,13 @@
                     if (day == i && moisaujorduiu == month) //si le jour = le jour de aujordhui est si le mois = mois aujordui 
                     {
 
-                        document.write("<td class= 'linhas' ><b><div class ='divtoday " + diaSemana + "' onclick='open_popup(\"" + i + " " + months[month] + "\")' href='#'>" + i + "</div><b></td>"); //day of today
+                        document.write("<td class= 'linhas' ><b><div class ='divday " + diaSemana + " " +year+"-"+ (month+1) + "-" + i + "' id='" +year +"-" + (month+1) + "-" + i + "' onclick='open_popup(\""+year +"-" + (month+1) + "-" + i +"\")' href='#'</div>" + i + "<b></td>"); //day of today
 
                     }
                     //les autre jours
                     else {
 
-                        document.write("<td class= 'linhas' ><div class ='divday " + diaSemana + "' id='" + i + months[month] + "" + "' onclick='open_popup(\"" + i + " " + months[month] + "\")' href='#'>" + i + "</div></td>");
+                        document.write("<td class= 'linhas' ><div class ='divday "+ diaSemana + " " +year+ "-"+ (month+1) + "-" + i + "' id='"+year +"-" + (month+1) + "-" + i + "" + "' onclick='open_popup(\""+year +"-" + (month+1) + "-" + i +"\")' href='#'>" + i + "</div></td>");
                     }
                     week++;
                     if (week == 7) {
@@ -173,52 +173,280 @@
             }
             document.write('</table>');
         }
+        var diasMarcados = []
+        
         function open_popup(stringClasse) {
-            stringClasse = stringClasse.split(" ").join("");
-            let classeQueDesejoAlterar = document.getElementById(stringClasse);
             console.log(stringClasse)
-            classeQueDesejoAlterar.style.background = '#990847';
+            let marcado = 0
+            let classeQueDesejoAlterar = document.getElementsByClassName(stringClasse);
+            console.log(classeQueDesejoAlterar[0])
+            for (let i = 0; i < diasMarcados.length; i++) {
+                if (stringClasse == diasMarcados[i]) {
+                    marcado = 1
+                    console.log("Agr é 1")
+                }
+            }
+            console.log("marcado = " + marcado)
+            console.log("marcado = " + diasMarcados)
+            if (marcado == 0) {
+                diasMarcados.push(stringClasse)
+                classeQueDesejoAlterar[0].style.background = '#990847';
+                invisivel2.value = JSON.stringify(diasMarcados)
+            } else {
+                console.log("repetiu")
+                for (let i = 0; i < diasMarcados.length; i++) {
+                    if (stringClasse == diasMarcados[i]) {
+                        console.log("Removeu")
+                        let f = i + 1
+                        diasMarcados.splice(i, f)
+                        
+                    }
+                }
+                classeQueDesejoAlterar[0].style.background = 'rgb(255,255,255';
+                invisivel2.value = JSON.stringify(diasMarcados)
+            }
+            console.log("marcado = " + diasMarcados)
+            console.log(stringClasse)
+
         }
         function sabado() {
+            let marcado = 0
             var classDia = document.querySelectorAll(".sab");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("sab")[i].style.background = "#990847";
+            console.log()
+
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("sab")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    classeQueDesejoAlterar.style.background = '#990847';
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
         function segunda() {
+            let marcado=0
             var classDia = document.querySelectorAll(".seg");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("seg")[i].style.background = "#990847";
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("seg")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    classeQueDesejoAlterar.style.background = '#990847';
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
         function terca() {
+            let marcado=0
             var classDia = document.querySelectorAll(".ter");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("ter")[i].style.background = "#990847";
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("ter")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    classeQueDesejoAlterar.style.background = '#990847';
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
         function quarta() {
+            let marcado=0
             var classDia = document.querySelectorAll(".qua");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("qua")[i].style.background = "#990847";
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("qua")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    classeQueDesejoAlterar.style.background = '#990847';
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
         function quinta() {
+            let marcado=0
             var classDia = document.querySelectorAll(".qui");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("qui")[i].style.background = "#990847";
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("qui")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    classeQueDesejoAlterar.style.background = '#990847';
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
         function sexta() {
+            let marcado=0
             var classDia = document.querySelectorAll(".sex");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("sex")[i].style.background = "#990847";
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("sex")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = '#990847';
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
         function domingo() {
+            let marcado=0
             var classDia = document.querySelectorAll(".dom");
-            for (let i = 0; i < classDia.length; i++) {
-                document.getElementsByClassName("dom")[i].style.background = "#990847";
+            for (let j = 0; j < classDia.length; j++) {
+
+                let atual = document.getElementsByClassName("dom")[j]
+                let classeQueDesejoAlterar = document.getElementById(atual.getAttribute("ID"))
+                for (let i = 0; i < classDia.length; i++) {
+
+                    if (atual.getAttribute("ID") == diasMarcados[i]) {
+                        marcado = 1
+                        console.log("Agr é 1")
+                    }
+                }
+                if (marcado == 0) {
+                    diasMarcados.push(atual.getAttribute("ID"))
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = '#990847';
+                } else {
+                    for (let i = 0; i < diasMarcados.length; i++) {
+                        if (atual.getAttribute("ID") == diasMarcados[i]) {
+                            console.log("Removeu")
+                            let f = i + 1
+                            diasMarcados.splice(i, f)
+                        }
+                    }
+                    invisivel2.value = JSON.stringify(diasMarcados)
+                    classeQueDesejoAlterar.style.background = 'rgb(255,255,255';
+                }
+
+
+
             }
         }
 
@@ -231,6 +459,8 @@
 
 
             //Campo CEP
+            var invisivel2 = document.getElementById("invisivel2")
+        console.log(invisivel2)
             var tecla;
             let campoCEP = document.getElementById("campoCEP");
             let msgCEP = document.getElementById("msgCEP");
@@ -261,7 +491,7 @@
                     }
                 });
                 console.log(passados);
-
+ 
 
             })
 
@@ -556,7 +786,8 @@
             align-items: flex-start;
             flex-wrap: wrap;
         }
-        .divcal{
+
+        .divcal {
             margin: 30px;
         }
 
@@ -608,6 +839,11 @@
                     <div class="form-floating mb-3">
                         <input type="text" min="0" class="form-control" id="floatingInput" placeholder="200"
                             name="invisivel">
+                        <label for="floatingInput">invisivel</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" min="0" class="form-control" id="invisivel2" placeholder="200"
+                            name="invisivel2">
                         <label for="floatingInput">invisivel</label>
                     </div>
                 </div>
@@ -681,226 +917,140 @@
                             <label for="hora">Domingo:</label>
                         </div>
                         <div class="margim">
-                            <input type="time" class="time">
+                            <input type="time" class="time" id="timeInicio" name="timeInicio">
                         </div>
                         <div class="margim">
-                            <input type="time" class="time">
+                            <input type="time" class="time" id="timeFim" name="timeFim">
                         </div>
                         <div class="margim">
                             <input type="text" value="000.00" name="campopreco" class="form-control campomonetario"
                                 onkeypress="$(this).mask('##0.00', {reverse: true});">
                         </div>
                     </div>
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
-                            <label for="hora">Segunda:</label>
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                        </div>
-                    </div>
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
-                            <label for="hora">Terça:</label>
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                        </div>
-                    </div>
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
-                            <label for="hora">Quarta:</label>
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                        </div>
-                    </div>
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
-                            <label for="hora">Quinta:</label>
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                        </div>
-                    </div>
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
-                            <label for="hora">Sexta:</label>
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                        </div>
-                    </div>
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
-                            <label for="hora">Sábado:</label>
-                        </div>
-                        <div class="margim margim1">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="time" class="time">
-                        </div>
-                        <div class="margim">
-                            <input type="text" value="R$ 000,00" class="form-control campomonetario"
-                                onkeypress="$(this).mask('R$ ##0,00', {reverse: true});">
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </section>
 
+        <button onclick="domingo()" type="button">Domingo</button>
+        <button onclick="segunda()" type="button">Segunda</button>
+        <button onclick="terca()" type="button">Terça</button>
+        <button onclick="quarta()" type="button">Quarta</button>
+        <button onclick="quinta()" type="button">Quinta</button>
+        <button onclick="sexta()" type="button">Sexta</button>
+        <button onclick="sabado()" type="button">Sabado</button>
 
 
 
 
+        <div class="flex-container1">
 
-                <div class="flex-container1">
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 0; //janvier
+                    calendar(mois);
+                </script>
+            </div>
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 0; //janvier
-                            calendar(mois);
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 1; //fevrier
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 1; //fevrier
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
 
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 2; //mars
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 2; //mars
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
+        </div>
 
-                        </script>
-                    </div>
-                </div>
+        <div class="flex-container1">
 
-                <div class="flex-container1">
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 3; //janvier
+                    calendar(mois);
+                </script>
+            </div>
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 3; //janvier
-                            calendar(mois);
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 4; //fevrier
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 4; //fevrier
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
 
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 5; //mars
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 5; //mars
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
+        </div>
+        <div class="flex-container1">
 
-                        </script>
-                    </div>
-                </div>
-                <div class="flex-container1">
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 6; //janvier
+                    calendar(mois);
+                </script>
+            </div>
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 6; //janvier
-                            calendar(mois);
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 7; //fevrier
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 7; //fevrier
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
 
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 8; //mars
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 8; //mars
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
+        </div>
+        <div class="flex-container1">
 
-                        </script>
-                    </div>
-                </div>
-                <div class="flex-container1">
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 9; //janvier
+                    calendar(mois);
+                </script>
+            </div>
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 9; //janvier
-                            calendar(mois);
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 10; //fevrier
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 10; //fevrier
+                    calendar(mois);
 
-                            calendar(mois);
+                </script>
+            </div>
 
-                        </script>
-                    </div>
+            <div class="divcal">
+                <script type="text/javascript">
+                    var mois = 11; //mars
 
-                    <div class="divcal">
-                        <script type="text/javascript">
-                            var mois = 11; //mars
+                    calendar(mois);
 
-                            calendar(mois);
-
-                        </script>
-                    </div>
-                </div>
+                </script>
+            </div>
+        </div>
 
 
 
