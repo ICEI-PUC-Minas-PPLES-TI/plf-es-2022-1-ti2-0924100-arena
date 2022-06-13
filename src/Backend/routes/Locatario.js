@@ -11,7 +11,7 @@ const esporteQuadra = require('../Models/EsporteQuadra');//PUXA O MODELS EPORTEQ
 const res = require("express/lib/response");
 const console = require("console");
 const partida = require('../Models/Partida') //PUXA O MODELS PARTIDAS
-
+const disponibilidadeQuadra = require('../Models/DisponibilidadeQuadra')
 
 const {QueryTypes} = require('sequelize')
 const {sequelize,Sequelize} = require('../Models/db');
@@ -34,7 +34,6 @@ router.post('/quadraCadastrada', (req, res) => {
     let checkBasquete = req.body.checkBasquete
     let checkFutevolei = req.body.checkFutevolei
     let checkTenis = req.body.checkTenis
-
     //CRIANDO QUADRA LOCATÁRIO:
     var invisivel = req.body.invisivel;
     var nomeQuadra = req.body.nomeQuadra;
@@ -43,6 +42,11 @@ router.post('/quadraCadastrada', (req, res) => {
     var capacidade = req.body.capacidade;
     var preco = req.body.campopreco;
     var arreyEsportes = [];
+    
+    var arreyDias = req.body.invisivel2
+    var HorarioInicio = req.body.timeInicio
+    var HorarioFim = req.body.timeFim
+    arreyDias = JSON.parse(arreyDias)
 
     if (checkFutebol != undefined) {
         arreyEsportes.push("1")
@@ -89,6 +93,18 @@ router.post('/quadraCadastrada', (req, res) => {
                         CodigoQuadra: split2[1]
                     })
                 }
+                
+                for(let i=0; i<arreyDias.length; i++){
+                    disponibilidadeQuadra.create({
+                        Data: arreyDias[i],
+                        CodigoQuadra: split2[1],
+                        HorarioInicio: HorarioInicio,
+                        HorarioFim: HorarioFim,
+                        Alugado: 0
+                    })
+                }
+
+
                 res.send('Quadra "' + nomeQuadra + '" cadastrada!')
             }
         })

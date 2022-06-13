@@ -9,11 +9,14 @@ const disponibilidadeQuadra = db.sequelize.define("disponibilidadeQuadras", {
     allowNull: false,
   },
 
-  Horario: {
+  HorarioInicio: {
     type: db.Sequelize.TIME,
     allowNull: false,
   },
-
+  HorarioFim: {
+    type: db.Sequelize.TIME,
+    allowNull: false,
+  },
   Alugado: {
       type: db.Sequelize.BOOLEAN,
       allowNull: false,
