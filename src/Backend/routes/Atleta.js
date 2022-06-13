@@ -85,16 +85,24 @@ router.post('/cadastroRecebido',(req,res)=>{
     })
 })
 
-router.get('/login', function(req,res){
-    res.render("loginAtleta")
+router.get('/escolherPartidas/:idAtleta', async (req,res)=>{
+    //TABS: PARTIDAS, ESPORTES, QUADRA, TIME, timepartidas
+    let totalParticipantes = await sequelize.query(`select sum(NumeroAtletas) as totalParticipantes 
+    from times as t1 join timepartidas as t2
+    on  t1.CodigoTime = t2.CodigoTime or t1.CodigoTime = t2.CodigoTime2
+    group by t2.CodigoPartida
+    HAVING t2.CodigoPartida in(
+        select t1.CodigoPartida
+        from timepartidas as t1 join atletatimes as t2
+        on t1.CodigoTime = t2.CodigoTime or t1.CodigoTime2 = t2.CodigoTime
+        join atletas as t3
+        on t2.EmailAtleta = t3.EmailAtleta
+        WHERE t3.EmailAtleta = '${req.params.idAtleta}'
+    );`,{type: QueryTypes.SELECT})
 })
 
-router.post('/login',(req,res,next)=>{
-    passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/atleta/login"
-    })(req,res,next)
-})
+
+
 
 
 module.exports = router
