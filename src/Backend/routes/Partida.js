@@ -33,8 +33,8 @@ router.get('/entrar/lobby/:codigotime/:esporte/:codigopartida/:id',function(req,
     async function getPartidas(){
         let partidas = await sequelize.query(`SELECT * FROM PARTIDAS INNER JOIN QUADRAS ON PARTIDAS.CodigoQuadra = QUADRAS.CodigoQuadra INNER JOIN ESPORTES ON PARTIDAS.IdEsporte = ESPORTES.IdEsporte WHERE CodigoPartida=${req.params.codigopartida};`, {type: QueryTypes.SELECT})
         let time1 = await sequelize.query(`select TIMES.CodigoTime from partidas inner join times on PARTIDAS.CodigoTime = TIMES.CodigoTime WHERE CodigoPartida=${req.params.codigopartida};`, {type: QueryTypes.SELECT})
-        let nome1 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${time1[0].CodigoTime}`, {type: QueryTypes.SELECT})
-        let nome2 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${req.params.codigotime}`, {type: QueryTypes.SELECT})
+        let nome1 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${time1[0].CodigoTime};`, {type: QueryTypes.SELECT})
+        let nome2 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${req.params.codigotime};`, {type: QueryTypes.SELECT})
         let atletatimes1 = await sequelize.query(`SELECT ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time1[0].CodigoTime};`, {type: QueryTypes.SELECT})
         let atletatimes2 = await sequelize.query(`SELECT ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${req.params.codigotime};`, {type: QueryTypes.SELECT})
         timepartidas.create({

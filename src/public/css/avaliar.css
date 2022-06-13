@@ -1,0 +1,21 @@
+.form-avaliacao {
+    margin-top: 100px;
+    padding: 50px;
+    margin-bottom: 200px;
+    justify-content: center;
+    background-color: #CB0059;
+    color: white;
+    border-radius: 50px;
+}
+
+.btn-avaliacao {
+    margin-bottom: 50px;
+}
+
+.t2-nome {
+    margin-top: 50px;
+}
+
+.input-avaliacao {
+    width: 200px;
+}
