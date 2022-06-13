@@ -66,7 +66,6 @@ router.post('/quadraCadastrada', (req, res) => {
     var ultimo
     teste()
     function teste() {
-        console.log("deu")
         quadra.create({
             EmailLocatario: invisivel,
             NomeQuadra: nomeQuadra,
@@ -83,7 +82,6 @@ router.post('/quadraCadastrada', (req, res) => {
                     ]
                 }
                 )
-                console.log("é pra ir")
                 let stringUltimo = JSON.stringify(ultimo)
                 let split1 = stringUltimo.split(',')
                 let split2 = split1[0].split(':')

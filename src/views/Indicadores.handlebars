@@ -21,26 +21,24 @@
     <input type="text" id="futPartidas" value={{futPartidas}}>
     <input type="text" id="basPartidas" value={{basPartidas}}>
     <input type="text" id="futVolPartidas" value={{futVolPartidas}}>
-    <input type="text" id="volPartidas" value={{volPartidas}}>
-    <input type="text" id="tenPartidas" value={{tenPartidas}}>
+    <input type="text" id="volPartidas" value={{VolPartidas}}>
+    <input type="text" id="tenPartidas" value={{TenPartidas}}>
     <div id="grafico1" style="width: 800px;"></div>
 
-<div>
-<h1>Partidas cadastradas por mês</h1>
-    <input type="text" id="stringpartidas" style="display: none;" value={{stringpartidas}}>
-    <input type="text" id="stringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
-    <div id="grafico" style="width: 800px;">
+    <div>
+        <h1>Partidas cadastradas por mês</h1>
+        <input type="text" id="stringpartidas" style="display: none;" value={{stringpartidas}}>
+        <input type="text" id="stringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
+        <div id="grafico" style="width: 800px;"></div>
+    </div>
+
+    <h1>Esportes populares</h1>
+
+    <div id="graficoEsportes"></div><!-- Grafico para partidas por esporte -->
+
+    <h1>Média da avaliação de conduta</h1>
+    <p>Média de avaliação de conduta: {{mediaAvaliacao}}</p>
 </div>
-</div>
-
-
-
-
-
-<div id="piechart_3d" style="width: 900px; height: 500px;"></div><!-- Grafico para partidas por esporte -->
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
@@ -49,25 +47,25 @@
 <script>
     var stringQuadras = document.getElementById("stringQuadras").value;
     var stringQuadrasdia = document.getElementById("stringQuadrasdia").value;
-    
+
     var arreynovo = []
     stringQuadras = JSON.parse(stringQuadras)
-    for(let i=0; i<stringQuadras.length; i++){
+    for (let i = 0; i < stringQuadras.length; i++) {
         arreynovo.push(stringQuadras[i][1] + stringQuadras[i][2] + stringQuadras[i][3] + stringQuadras[i][4] + stringQuadras[i][5] + stringQuadras[i][6] + stringQuadras[i][7] + stringQuadras[i][8] + stringQuadras[i][9] + stringQuadras[i][10])
     }
-    
-    console.log("StringQuadras:" +stringQuadrasdia)
-    
 
-var garf_1 = {
-    x: arreynovo,
-    y: stringQuadrasdia,
-    mode: 'lines+markers',
-    type: 'scatter',
-}
+    console.log("StringQuadras:" + stringQuadrasdia)
 
-var data = [garf_1]
-Plotly.newPlot('grafico1', data)
+
+    var garf_1 = {
+        x: arreynovo,
+        y: stringQuadrasdia,
+        mode: 'lines+markers',
+        type: 'scatter',
+    }
+
+    var data = [garf_1]
+    Plotly.newPlot('grafico1', data)
 
 
     var stringpartidas = document.getElementById("stringpartidasdia").value;
@@ -76,20 +74,20 @@ Plotly.newPlot('grafico1', data)
     var arreynovo1 = []
     stringpartidasdia = JSON.parse(stringpartidasdia)
     stringpartidas = JSON.parse(stringpartidas)
-    for(let i=0; i<stringpartidas.length; i++){
-        arreynovo1.push(stringpartidasdia[i] )
+    for (let i = 0; i < stringpartidas.length; i++) {
+        arreynovo1.push(stringpartidasdia[i])
     }
 
 
-var garf_2 = {
-    x: arreynovo1,
-    y: stringpartidas,
-    mode: 'lines+markers',
-    type: 'scatter',
-}
+    var garf_2 = {
+        x: arreynovo1,
+        y: stringpartidas,
+        mode: 'lines+markers',
+        type: 'scatter',
+    }
 
-var data = [garf_2]
-Plotly.newPlot('grafico', data)
+    var data = [garf_2]
+    Plotly.newPlot('grafico', data)
 </script>
 
 
@@ -97,32 +95,28 @@ Plotly.newPlot('grafico', data)
 <!--ARTHUR AQUI HEIN-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script type="text/javascript">
-        //PEGAR VALORES DO HTML:
-        let totalPartidas = parseInt(getElementById('totalPartidas').value)
-        let futPartidas = parseInt(getElementById('futPartidas').value)
-        let totalPartidas = parseInt(getElementById('basPartidas').value)
-        let futVolPartidas = parseInt(getElementById('futVolPartidas').value)
-        let volPartidas = parseInt(getElementById('volPartidas').value)
-        let tenPartidas = parseInt(getElementById('tenPartidas').value)
+<script type="text/javascript">
+    //PEGAR VALORES DO HTML:
+    var arreyDadosEsportes = []
+    arreyDadosEsportes.push(document.getElementById('futPartidas').value)
+    arreyDadosEsportes.push(document.getElementById('basPartidas').value)
+    arreyDadosEsportes.push(document.getElementById('futVolPartidas').value)
+    arreyDadosEsportes.push(document.getElementById('volPartidas').value)
+    arreyDadosEsportes.push(document.getElementById('tenPartidas').value)
 
 
-      
-        var data = google.visualization.arrayToDataTable([
-          ['partidas',totalPartidas],
-          ['Futebol', futPartidas ],
-          ['Basquete', futPartidas],
-          ['FutVolei',  futVolPartidas],
-          ['Vôlei', volPartidas],
-          ['Tênis',    tenPartidas]
-        ]);
+    console.log(arreyDadosEsportes)
+    var data = [{
+        values: arreyDadosEsportes,
+        labels: ['Futbol', 'Basquete', 'FutVolei', 'Volei', 'Tenis'],
+        type: 'pie'
+    }];
 
-        var options = {
-          title: 'Percentual de partidas por esportes',
-          is3D: true,
-        };
+    var layout = {
+        height: 400,
+        width: 500
+    };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      
-    </script>
+    Plotly.newPlot('graficoEsportes', data, layout);
+
+</script>

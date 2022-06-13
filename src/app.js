@@ -13,7 +13,8 @@ const atletaBd = require('./Backend/Models/Atleta')
 const locatarioBd = require('./Backend/Models/Locatario')
 const {QueryTypes} = require('sequelize')
 const { sequelize, Sequelize } = require('./Backend/Models/db')  
-const quadra = require('./Backend/Models/Quadra')//PUXA O MODELS QUADRA
+const quadra = require('./Backend/Models/Quadra');//PUXA O MODELS QUADRA
+const avaliacaoConduta = require('./Backend/Models/AvaliacaoConduta')
 
 // Configurações
 
@@ -124,7 +125,7 @@ app.get('/indicadores', (req, res) => {
         }
 
         //Indicador 2: Inicio
-
+        
 
         //Indicador 2: FIM
         //Indicador 3: Inicio
@@ -155,7 +156,6 @@ app.get('/indicadores', (req, res) => {
             `select count(*) from partidas where IdEsporte = 5;`, { type: QueryTypes.SELECT, raw: true })
 
 
-            console.log(JSON.stringify(totalPartidas))
             totalPartidas = JSON.stringify(totalPartidas).split(':', 2)[1]
             totalPartidas = totalPartidas.split('}')[0]
 
@@ -173,10 +173,12 @@ app.get('/indicadores', (req, res) => {
 
             totalPartidasTen = JSON.stringify(totalPartidasTen).split(':', 2)[1]
             totalPartidasTen = totalPartidasTen.split('}')[0]
-            console.log(totalPartidasFut)
-            console.log(totalPartidasBas)
-            console.log(totalPartidasFutVol)
-            console.log(totalPartidasVol)
+            //Indicador 3: FIM
+
+        var mediaAvaliacao = await sequelize.query(
+            `SELECT AVG(Nota) FROM avaliacaoCondutas;`
+        )
+        console.log(mediaAvaliacao)
         res.render('Indicadores', {
             qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros),
             stringQuadrasdia: JSON.stringify(arreyCadastrosdia),
@@ -187,7 +189,8 @@ app.get('/indicadores', (req, res) => {
             basPartidas: totalPartidasBas,
             futVolPartidas:totalPartidasFutVol,
             VolPartidas: totalPartidasVol,
-            TenPartidas: totalPartidasTen
+            TenPartidas: totalPartidasTen,
+            mediaAvaliacao: mediaAvaliacao
         })
     }
     executa()
