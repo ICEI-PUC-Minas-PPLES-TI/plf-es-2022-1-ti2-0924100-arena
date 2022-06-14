@@ -1,0 +1,74 @@
+<header>
+    <div class="flex-container">
+        <div><img src="/img/logo.png" class="logo" alt=""></div>
+        <h1 class="titulo">Avaliar Jogadores</h1>
+        <div><button class="botao_sair">Sair</button></div>
+    </div>
+</header>
+<main>
+    <div class="form-avaliacao">
+        <h3 class="t1-nome">Time 1</h3>
+        {{#each atletas1}}
+        <form action="/atleta/avaliacao/{{../id}}/{{../codigopartida}}/{{EmailAtleta}}/{{../esporte.IdEsporte}}"
+            method="POST">
+            <label for="habilidade">{{Nome}}</label></br>
+            <input type="number" min="0" max="10" name="habilidade" id="habilidade" placeholder="Habilidade"
+                class="input-avaliacao" required></br>
+            <input type="number" min="0" max="10" name="conduta" id="conduta" placeholder="Conduta Esportiva"
+                class="input-avaliacao" required> </br>
+            <button type="submit" class="btn btn-info btn-avaliacao" id="btn-submit">Enviar Avaliação</button>
+            </br>
+        </form>
+        {{/each}}
+        <h3 class="t2-nome">Time 2</h3>
+        {{#each atletas2}}
+        <form action="/atleta/avaliacao/{{../id}}/{{../codigopartida}}/{{EmailAtleta}}/{{../esporte.IdEsporte}}"
+            method="POST">
+            <label for="input">{{Nome}}</label></br>
+            <input type="number" min="0" max="10" name="habilidade" id="habilidade" placeholder="Habilidade"
+                class="input-avaliacao" required></br>
+            <input type="number" min="0" max="10" name="conduta" id="conduta" placeholder="Conduta Esportiva"
+                class="input-avaliacao" required> </br>
+            <button type="submit" class="btn btn-info btn-avaliacao" id="btn-submit">Enviar Avaliação</button>
+            </br>
+        </form>
+        {{/each}}
+    </div>
+    </br>
+</main>
+<footer class="rodape">
+    <div class="container">
+        <div class="row teste">
+            <div class="col">
+                <div>
+                    <p class="estilo_letra">&copy Todos os direitos resevados</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container rodape2">
+                    <div class="col">
+                        <a href="" class="estilo_letra remover_decoracao">Serviços</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="estilo_letra remover_decoracao">Sobre nós</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="estilo_letra remover_decoracao">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    var ultimo = document.getElementById('ultimo')
+    ultimo.addEventListener('change', function () {
+        var input = ultimo.value;
+        var valores[];
+        for (int i = 0; i < input; i++) {
+        var outrosinputs = document.getElementById(input)
+        valores.push(outrosinputs)
+        console.log(outrosinputs)
+    }
+    })
+</script>

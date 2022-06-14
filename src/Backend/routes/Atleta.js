@@ -5,6 +5,8 @@ const path = require('path')
 const bodyParser = require('body-parser');//SERVE PARA RECEBER O FORMULÁRIO
 const atleta = require('../Models/Atleta')//PUXA A TABELA ATLETA
 const passport = require('passport')
+const avaliacaoconduta = require('../Models/AvaliacaoConduta')
+const avaliacaohabilidade = require('../Models/AvaliacaoHabilidade')
 
 const {QueryTypes} = require('sequelize')
 const {sequelize,Sequelize} = require('../Models/db');
@@ -62,6 +64,54 @@ router.get('/home/:id', async (req,res)=>{
     
 })
 
+router.get('/avaliar/:id/:codpartida',(req,res)=>{
+    async function getPartidas(){
+        let time1 = await sequelize.query(`select TIMES.CodigoTime from partidas inner join times on PARTIDAS.CodigoTime = TIMES.CodigoTime WHERE CodigoPartida=${req.params.codpartida};`, {type: QueryTypes.SELECT})
+        let time2 = await sequelize.query(`SELECT CodigoTime2 FROM TIMEPARTIDAS WHERE CodigoPartida=${req.params.codpartida};`, {type: QueryTypes.SELECT})
+        let nome1 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${time1[0].CodigoTime};`,{type: QueryTypes.SELECT})
+        let nome2 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${time2[0].CodigoTime2};`,{type: QueryTypes.SELECT})
+        var esporte = await sequelize.query(`SELECT IdEsporte FROM PARTIDAS WHERE CodigoPartida=${req.params.codpartida};`,{type: QueryTypes.SELECT})
+        let atletas1 = await sequelize.query(`SELECT ATLETAS.EmailAtleta ,ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time1[0].CodigoTime};`,{type: QueryTypes.SELECT})
+        let atletas2 = await sequelize.query(`SELECT ATLETAS.EmailAtleta ,ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time2[0].CodigoTime2};`,{type: QueryTypes.SELECT})
+        res.render('avaliar', {esporte: esporte[0],codigopartida: req.params.codpartida,time1: time1[0],time2: time2[0],nome1: nome1[0], nome2: nome2[0], atletas1: atletas1, atletas2: atletas2,id: req.params.id})
+    }
+    getPartidas()   
+})
+
+router.post('/avaliacao/:id/:codigopartida/:avaliado/:esporte',(req,res)=>{
+    async function getEsporte(){
+        avaliacaoconduta.create({
+            EmailAtleta: req.params.avaliado,
+            AtletaAvaliador: req.params.id,
+            CodigoPartida: req.params.codigopartida,
+            Nota: req.body.conduta
+        }).then(function(){
+
+        }).catch(function(err){
+            console.log(err)
+        })
+        
+        avaliacaohabilidade.create({
+            EmailAtleta: req.params.avaliado,
+            CodigoEsporte: req.params.esporte,
+            AtletaAvaliador: req.params.id,
+            Nota: req.body.habilidade
+        }).then(function(){
+
+        }).catch(function(err){
+            console.log(err)
+        })
+        /*let time1 = await sequelize.query(`select TIMES.CodigoTime from partidas inner join times on PARTIDAS.CodigoTime = TIMES.CodigoTime WHERE CodigoPartida=${req.params.codpartida};`, {type: QueryTypes.SELECT})
+        let time2 = await sequelize.query(`SELECT CodigoTime2 FROM TIMEPARTIDAS WHERE CodigoPartida=${req.params.codpartida};`, {type: QueryTypes.SELECT})
+        let nome1 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${time1[0].CodigoTime};`)
+        let nome2 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${time2[0].CodigoTime2};`)
+        let atletas1 = await sequelize.query(`SELECT ATLETAS.EmailAtleta ,ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time1[0].CodigoTime};`,{type: QueryTypes.SELECT})
+        let atletas2 = await sequelize.query(`SELECT ATLETAS.EmailAtleta ,ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time2[0].CodigoTime2};`,{type: QueryTypes.SELECT})
+        res.render('avaliar', {codigopartida: req.params.codigopartida,time1: time1[0],time2: time2[0],nome1: nome1[0], nome2: nome2[0], atletas1: atletas1, atletas2: atletas2,id: req.params.id})
+        */
+    }
+    getEsporte()
+})
 
 //ROTA PARA A PAGINA DE CADASTRO
 router.get('/cadastrar',(req,res)=>{
