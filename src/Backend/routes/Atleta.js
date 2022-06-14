@@ -194,7 +194,8 @@ router.get('/pagamentos/:idAtleta', async (req,res)=>{
     teste = stringify(teste)
     console.log(teste)
     
-    res.render('Pagamentos',{dados: dados, email:req.params.idAtleta, valoresIndividuais: valoresIndividuais, teste: teste })
+    res.render('Pagamentos',{dados: dados, email:req.params.idAtleta, valoresIndividuais: valoresIndividuais, 
+        teste: teste })
 })
 
 
