@@ -9,6 +9,8 @@ const passport = require('passport')
 const {QueryTypes} = require('sequelize')
 const {sequelize,Sequelize} = require('../Models/db');
 const { json } = require("body-parser");
+const { stringify } = require("querystring");
+const { V4MAPPED } = require("dns");
 
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
@@ -85,8 +87,10 @@ router.post('/cadastroRecebido',(req,res)=>{
     })
 })
 
-router.get('/escolherPartidas/:idAtleta', async (req,res)=>{
-    //TABS: PARTIDAS, ESPORTES, QUADRA, TIME, timepartidas
+
+
+router.get('/pagamentos/:idAtleta', async (req,res)=>{
+    // DEVOLVE UM ARRAY COM O NUMERO TOTAL DE PARTICIPANTES POR PARTIDA
     let totalParticipantes = await sequelize.query(`select sum(NumeroAtletas) as totalParticipantes 
     from times as t1 join timepartidas as t2
     on  t1.CodigoTime = t2.CodigoTime or t1.CodigoTime = t2.CodigoTime2
@@ -98,7 +102,49 @@ router.get('/escolherPartidas/:idAtleta', async (req,res)=>{
         join atletas as t3
         on t2.EmailAtleta = t3.EmailAtleta
         WHERE t3.EmailAtleta = '${req.params.idAtleta}'
-    );`,{type: QueryTypes.SELECT})
+    )
+    order by t2.CodigoPartida  ASC;`,{type: QueryTypes.SELECT})
+    
+    //query é para pegar as informações das partidas dos locatarios das quadras 
+    //q os times do ATLETA irão jogar e se já estão pagos ou não
+    let dados = await sequelize.query(`select t1.CodigoPartida, t1.Data, t7.Nome, t7.TipoChavePix, t7.chavepix, t6.preco, t3.pago
+    from partidas as t1 join timepartidas as t2 on t1.CodigoPartida = t2.CodigoPartida
+    join pagamentos as t3 on t1.CodigoPartida = t3.CodigoPartida
+    join quadras as t6 on t1.CodigoQuadra = t6.CodigoQuadra
+    join locatarios as t7 on t7.EmailLocatario = t6.EmailLocatario
+    where t2.CodigoTime  in 
+    ( select CodigoTime from atletatimes as t4 join atletas  as t5  on t4.EmailAtleta = t5.EmailAtleta
+    where t5.EmailAtleta = '${req.params.idAtleta}') or t2.CodigoTime2  in 
+    ( select CodigoTime from atletatimes as t4 join atletas  as t5  on t4.EmailAtleta = t5.EmailAtleta
+    where t5.EmailAtleta = '${req.params.idAtleta}')
+    order by t1.CodigoPartida  ASC;`,{type: QueryTypes.SELECT})
+
+    // CALCULA O VALOR INDIVIDUAL DE CADA PARTIDA 
+    let valoresIndividuais = []
+    
+    var i = 0;
+    while(dados[i] != null){
+        var totalParticipantesPartida = totalParticipantes[i].totalParticipantes   
+        var precoQuadra = dados[i].preco
+        var valorIndividual = precoQuadra / totalParticipantesPartida;
+        valoresIndividuais.push(valorIndividual.toFixed(2))
+        i++;
+    }
+    //var teste =  stringify(valoresIndividuais)
+    for(var i = 0; i < valoresIndividuais.length; i++){
+
+    }
+    var teste = {
+        valorIndividual: []
+    }
+    for( var i = 0 ; i < valorIndividual.length; i++){
+        teste.valorIndividual.push(valoresIndividuais[i])
+    } 
+    teste.valorIndividual.push(valoresIndividuais[0])
+    teste = stringify(teste)
+    console.log(teste)
+    
+    res.render('Pagamentos',{dados: dados, email:req.params.idAtleta, valoresIndividuais: valoresIndividuais, teste: teste })
 })
 
 
