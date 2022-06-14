@@ -11,8 +11,8 @@ const time = require('./Backend/routes/Time')
 const indicadores = require('./Backend/routes/Indicadores')
 const atletaBd = require('./Backend/Models/Atleta')
 const locatarioBd = require('./Backend/Models/Locatario')
-const {QueryTypes} = require('sequelize')
-const { sequelize, Sequelize } = require('./Backend/Models/db')  
+const { QueryTypes } = require('sequelize')
+const { sequelize, Sequelize } = require('./Backend/Models/db')
 const quadra = require('./Backend/Models/Quadra');//PUXA O MODELS QUADRA
 const avaliacaoConduta = require('./Backend/Models/AvaliacaoConduta')
 
@@ -125,7 +125,7 @@ app.get('/indicadores', (req, res) => {
         }
 
         //Indicador 2: Inicio
-        
+
 
         //Indicador 2: FIM
         //Indicador 3: Inicio
@@ -133,7 +133,7 @@ app.get('/indicadores', (req, res) => {
         //TOTAL DE PARTIDAS
         var totalPartidas = await sequelize.query(
             `select count(*) from partidas;`, { type: QueryTypes.SELECT, raw: true })
-        
+
 
         //TOTAL DE PARTIDAS DE FUTEBOL;
         var totalPartidasFut = await sequelize.query(
@@ -156,29 +156,44 @@ app.get('/indicadores', (req, res) => {
             `select count(*) from partidas where IdEsporte = 5;`, { type: QueryTypes.SELECT, raw: true })
 
 
-            totalPartidas = JSON.stringify(totalPartidas).split(':', 2)[1]
-            totalPartidas = totalPartidas.split('}')[0]
+        totalPartidas = JSON.stringify(totalPartidas).split(':', 2)[1]
+        totalPartidas = totalPartidas.split('}')[0]
 
-            totalPartidasFut = JSON.stringify(totalPartidasFut).split(':', 2)[1]
-            totalPartidasFut = totalPartidasFut.split('}')[0]
+        totalPartidasFut = JSON.stringify(totalPartidasFut).split(':', 2)[1]
+        totalPartidasFut = totalPartidasFut.split('}')[0]
 
-            totalPartidasBas = JSON.stringify(totalPartidasBas).split(':', 2)[1]
-            totalPartidasBas = totalPartidasBas.split('}')[0]
+        totalPartidasBas = JSON.stringify(totalPartidasBas).split(':', 2)[1]
+        totalPartidasBas = totalPartidasBas.split('}')[0]
 
-            totalPartidasFutVol = JSON.stringify(totalPartidasFutVol).split(':', 2)[1]
-            totalPartidasFutVol = totalPartidasFutVol.split('}')[0]
+        totalPartidasFutVol = JSON.stringify(totalPartidasFutVol).split(':', 2)[1]
+        totalPartidasFutVol = totalPartidasFutVol.split('}')[0]
 
-            totalPartidasVol = JSON.stringify(totalPartidasVol).split(':', 2)[1]
-            totalPartidasVol = totalPartidasVol.split('}')[0]
+        totalPartidasVol = JSON.stringify(totalPartidasVol).split(':', 2)[1]
+        totalPartidasVol = totalPartidasVol.split('}')[0]
 
-            totalPartidasTen = JSON.stringify(totalPartidasTen).split(':', 2)[1]
-            totalPartidasTen = totalPartidasTen.split('}')[0]
-            //Indicador 3: FIM
+        totalPartidasTen = JSON.stringify(totalPartidasTen).split(':', 2)[1]
+        totalPartidasTen = totalPartidasTen.split('}')[0]
+        //Indicador 3: FIM
 
         var mediaAvaliacao = await sequelize.query(
             `SELECT AVG(Nota) FROM avaliacaoCondutas;`
         )
-        console.log(mediaAvaliacao)
+        let mediaFormartada = ""
+        mediaAvaliacao = JSON.stringify(mediaAvaliacao[0])
+        mediaAvaliacao = JSON.stringify(mediaAvaliacao).split(':', 2)[1]
+        mediaAvaliacao = mediaAvaliacao.split('}')[0]
+        mediaFormartada = mediaFormartada + mediaAvaliacao[2]
+        mediaFormartada = mediaFormartada + mediaAvaliacao[3]
+        mediaFormartada = mediaFormartada + mediaAvaliacao[4]
+        mediaFormartada = mediaFormartada + mediaAvaliacao[5]
+
+        console.log(mediaFormartada)
+        let atletasAgr = await sequelize.query(
+            `SELECT Nota, EmailAtleta from avaliacaocondutas
+                where Nota>${ mediaFormartada }
+                 GROUP BY EmailAtleta;`
+        )
+        
         res.render('Indicadores', {
             qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros),
             stringQuadrasdia: JSON.stringify(arreyCadastrosdia),
@@ -187,10 +202,10 @@ app.get('/indicadores', (req, res) => {
             totalPartidas: totalPartidas,
             futPartidas: totalPartidasFut,
             basPartidas: totalPartidasBas,
-            futVolPartidas:totalPartidasFutVol,
+            futVolPartidas: totalPartidasFutVol,
             VolPartidas: totalPartidasVol,
             TenPartidas: totalPartidasTen,
-            mediaAvaliacao: mediaAvaliacao
+            mediaAvaliacao: mediaFormartada
         })
     }
     executa()
