@@ -15,7 +15,7 @@ router.get('/entrar/esporte/:id',function(req,res){
 
 router.get('/entrar/time/:esporte/:id',function(req,res){
     async function getTimes(){
-        let times = await sequelize.query(`SELECT * FROM TIMES INNER JOIN ATLETATIMES ON TIMES.CodigoTime = ATLETATIMES.CodigoTime WHERE ATLETATIMES.EmailAtleta = '${req.params.id}';`, {type: QueryTypes.SELECT})
+        let times = await sequelize.query(`SELECT * FROM TIMES INNER JOIN ATLETATIMES ON TIMES.CodigoTime = ATLETATIMES.CodigoTime WHERE ATLETATIMES.EmailAtleta = '${req.params.id}' AND IdEsporte=${req.params.esporte};`, {type: QueryTypes.SELECT})
         res.render('partida/entrar/meusTimes', {times: times, esporte:req.params.esporte, id:req.params.id})
     }
     getTimes();
@@ -53,7 +53,7 @@ router.get('/criar/form/:id',function(req,res){
 
 router.get('/criar/time/:codesporte/:horarioi/:horariof/:data/:minimop/:id',function(req,res){
     async function getTimes(){
-        let times = await sequelize.query(`SELECT TIMES.CodigoTime,TIMES.Nome FROM TIMES WHERE IdEsporte=${req.params.codesporte};`, {type: QueryTypes.SELECT})
+        let times = await sequelize.query(`SELECT TIMES.CodigoTime,TIMES.Nome FROM TIMES INNER JOIN ATLETATIMES ON TIMES.CodigoTime = ATLETATIMES.CodigoTime WHERE ATLETATIMES.EmailAtleta = '${req.params.id}' AND IdEsporte=${req.params.codesporte};`, {type: QueryTypes.SELECT})
         res.render('partida/criar/meusTimes', {times: times, codesporte: req.params.codesporte, horarioi: req.params.horarioi, horariof: req.params.horariof, data: req.params.data, minimop: req.params.minimop,id:req.params.id})
     }
     getTimes();

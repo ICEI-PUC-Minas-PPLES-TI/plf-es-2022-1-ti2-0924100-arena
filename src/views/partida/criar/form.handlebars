@@ -16,12 +16,13 @@
                 <option value="Tênis">Tênis</option>
             </select>
             <p class="texto_horario">Digite a data de realização da partida:</p>
-            <input type="date" name="data" id="data">
-            <input type="number" name="participantes" id="participantes" placeholder="Digite a quantidade de jogadores">
+            <input type="date" name="data" id="data" required>
+            <input type="number" name="participantes" id="participantes" placeholder="Digite a quantidade de jogadores"
+                required>
             <p class="texto_horario">Digite o horário de ínicio:</p><input type="time" name="horario_realizacao"
-                id="horario_realizacao">
+                id="horario_realizacao" required>
             <p class="texto_horario">Digite o horário de término:</p><input type="time" name="horario_fim"
-                id="horario_fim">
+                id="horario_fim" required>
             <div class="div_btn">
                 <button type="submit" class="btn btn-primary btn-partida" id="btn"><a href="#" class="a_btn"
                         id="redirect">Escolher
@@ -78,6 +79,12 @@
         else {
             esporte = 5;
         }
-        document.getElementById("redirect").setAttribute("href", `/partida/criar/time/${esporte}/${horarioI}/${horarioF}/${data}/${minimoParticipantes}/{{id}}`);
+        if (minimoParticipantes.length == 0 || data.length == 0 || horarioI.length == 0 || horarioF.length == 0) {
+            alert("Preencha os campos corretamente")
+        }
+        else {
+            document.getElementById("redirect").setAttribute("href", `/partida/criar/time/${esporte}/${horarioI}/${horarioF}/${data}/${minimoParticipantes}/{{id}}`);
+        }
     });
 </script>
+<script>document.title = "Criação de Partidas"</script>
