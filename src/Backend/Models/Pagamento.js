@@ -34,7 +34,6 @@ const pagamento = db.sequelize.define("pagamentos", {
 
   DataPagamento: {
     type: db.Sequelize.DATEONLY,
-    allowNull: false,
   },
 
   Comprovante: {
