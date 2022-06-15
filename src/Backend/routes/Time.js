@@ -17,13 +17,13 @@ app.use(bodyParser.json())
 
 
 //ROTA PARA O CADASTRO DO TIME
-router.get('/cadastrar',(req,res)=>{
+router.get('/cadastrar/:id',(req,res)=>{
 
-    res.sendFile(path.join(__dirname, '../', '../','frontend', 'Cadastro_Time', 'time.html'))
+    res.render("CadastroTime",{id: req.params.id})
 })
 
 //ROTA QUE RECEBE OS DADOS DO TIME:
-router.post('/timeCadastrado',(req,res)=>{
+router.post('/timeCadastrado/:id',(req,res)=>{
     time.create({
         Nome: req.body.nome,   
         NumeroMaximo: req.body.nrVagas,
@@ -32,10 +32,12 @@ router.post('/timeCadastrado',(req,res)=>{
 
     }).then((time)=>{
         atletaTime.create({
-            EmailAtleta: req.body.email,
+            EmailAtleta: req.params.id,
             CodigoTime: time.CodigoTime
+        }).then(()=>{
+            res.redirect('/atleta/home/' + req.params.id  )
         })
-        res.redirect('/atleta/home/' + req.body.email )
+        
     }).catch((erro)=>{
         res.send("Erro ao cadastrar o time: " + erro)
     })
@@ -92,11 +94,16 @@ router.post('/entrarTime/:id',(req,res)=>{
         EmailAtleta: req.body.email,
         CodigoTime: req.params.id
     }).then(()=>{
-        async ()=>{
-            var novoNrAtletas = req.body.nrAltetas + 1;
-            var time  = await sequelize.query(`UPDATE times SET NumeroAtletas = ${novoNrAtletas} WHERE CodigoTime = ${req.params.id};`,{type: QueryTypes.UPDATE}) 
-        }
-        res.redirect('/atleta/home/' + req.body.email)
+        time.findByPk(req.params.id).then((time)=>{
+            //ATUALIZA O NUMERO DE ATLETAS NO TIME
+            var novoNrAtletas = time.NumeroAtletas + 1;
+            time.NumeroAtletas = novoNrAtletas;
+            time.save().then(()=>{
+                res.redirect('/atleta/home/' + req.body.email)
+            }).catch((erro)=>{
+                res.send("NAO FOI POSSIVEL ATUALIZAR" + erro)
+            })
+        })
         
     }).catch((erro)=>{
         res.send("Erro ao cadastrar o time: " + erro)
