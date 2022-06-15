@@ -66,6 +66,22 @@ router.get('/:id',(req,res)=>{
     })
 })
 
+//ROTA PARA AS INFORMAÇÕES DE UM TIME EM ESPECIFICO que já esta inserido:
+router.get('/info/:idTime/:idAtleta',(req,res)=>{
+    time.findByPk(req.params.id,{raw:true}).then((time)=>{
+        atletaTime.findAll({
+            raw: true,
+            where: {
+                CodigoTime: req.params.idTime
+            }
+        }).then((atletas)=>{
+            res.render('infoTime2',{time: time, atletas: atletas})
+        })
+        
+
+    })
+})
+
 
 
 //ROTA PARA ENTRAR NO TIME:

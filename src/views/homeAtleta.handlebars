@@ -55,7 +55,7 @@
 
                 {{#each times}}
                 <tbody id="grid_meuTime">
-                    <th scope="col"><a href="#">{{nome}}</a></th>
+                    <th scope="col"><a href="/time/info/{{CodigoTime}}/{{../id}}">{{nome}}</a></th>
                     <th scope="col">{{nomeEsporte}}</th>
                     <th scope="col">{{NumeroAtletas}}</th>
                 </tbody>
@@ -77,9 +77,6 @@
         <div class="col-sm-3">
             <h2><strong>Minhas Partidas</strong></h2>
         </div>
-        <div class="col-sm-3 offset-1">
-            <a href="/atleta/pagamentos/{{id}}"><input type="button" id="btn_pagar" class="btn btn-outline-danger" value="Pagar"></a>
-        </div>
     </div>
 
     <div class="row">
@@ -91,6 +88,7 @@
                         <th scope="col">Data</th>
                         <th scope="col">Horario</th>
                         <th scope="col">Status</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 {{#each partidas}}
@@ -100,6 +98,8 @@
                     <th scope="col">{{Data}}</th>
                     <th scope="col">{{HorarioInicio}} - {{HorarioFim}}</th>
                     <th scope="col">{{pago}}</th>
+                    <th scope="col"><a href="/atleta/pagamentos/{{../id}}/{{CodigoPartida}}"><input type="button" class="btn btn-outline-danger" id="btn"
+                    value="Pagar"></a></th>
                 </tbody>
                 {{/each}}
             </table>
