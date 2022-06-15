@@ -29,7 +29,7 @@ const pagamento = db.sequelize.define("pagamentos", {
   Pago: {
     type: db.Sequelize.STRING,
     allowNull: false,
-    default: "Pendente"
+    defaultValue: "Pendente"
   },
 
   DataPagamento: {
