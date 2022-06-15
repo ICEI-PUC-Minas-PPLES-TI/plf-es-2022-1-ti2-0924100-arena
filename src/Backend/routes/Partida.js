@@ -37,6 +37,10 @@ router.get('/entrar/lobby/:codigotime/:esporte/:codigopartida/:id',function(req,
         let nome2 = await sequelize.query(`SELECT Nome FROM TIMES WHERE CodigoTime=${req.params.codigotime};`, {type: QueryTypes.SELECT})
         let atletatimes1 = await sequelize.query(`SELECT ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time1[0].CodigoTime};`, {type: QueryTypes.SELECT})
         let atletatimes2 = await sequelize.query(`SELECT ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${req.params.codigotime};`, {type: QueryTypes.SELECT})
+        
+        let EmailAtletas1 = await sequelize.query(``, {type: QueryTypes.SELECT})
+        let EmailAtletas2 = await sequelize.query(``, {type: QueryTypes.SELECT})
+        
         timepartidas.create({
             CodigoTime: partidas[0].CodigoTime,
             CodigoTime2: req.params.codigotime,
