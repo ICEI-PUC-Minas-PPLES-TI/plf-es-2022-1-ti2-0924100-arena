@@ -17,16 +17,24 @@
             <thead class="title">
                 <tr>
                     <th>{{nome1.Nome}}</th>
-                    <th>{{nome2.Nome}}</th>
                 </tr>
             </thead>
             {{#each atletatimes1}}
-            {{#each ../atletatimes2}}
             <tr>
                 <td>{{Nome}}</td>
-                <td>{{../Nome}}</td>
             </tr>
             {{/each}}
+        </table>
+        <table id="table">
+            <thead class="title">
+                <tr>
+                    <th>{{nome2.Nome}}</th>
+                </tr>
+            </thead>
+            {{#each atletatimes2}}
+            <tr>
+                <td>{{Nome}}</td>
+            </tr>
             {{/each}}
         </table>
     </div>
@@ -56,3 +64,6 @@
         </div>
     </div>
 </footer>
+<script>
+    document.title = "Lobby"
+</script>
