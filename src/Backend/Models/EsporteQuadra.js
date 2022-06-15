@@ -26,8 +26,6 @@ const esporteQuadra = db.sequelize.define('esporteQuadras', {
 
 
 
-//esporte.belongsToMany(quadra,{through: 'esporteQuadras'})
-//quadra.belongsToMany(esporte,{through: 'esporteQuadras'})
 //esporteQuadra.sync({force: true})
 
 

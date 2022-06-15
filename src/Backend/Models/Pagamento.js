@@ -27,8 +27,9 @@ const pagamento = db.sequelize.define("pagamentos", {
   },
 
   Pago: {
-    type: db.Sequelize.BOOLEAN,
+    type: db.Sequelize.STRING,
     allowNull: false,
+    default: "Pendente"
   },
 
   DataPagamento: {
