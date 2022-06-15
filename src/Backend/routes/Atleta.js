@@ -31,10 +31,16 @@ router.get('/home/:id', async (req, res) => {
 
 
     // SELECT A MÉDIA DAS AVALIAÇÕES DO ATLETA LOGADO
-    let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) as media FROM avaliacaocondutas WHERE emailatleta =  '${req.params.id}';`, { type: QueryTypes.SELECT })
+    let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) as media FROM avaliacaocondutas
+     WHERE emailatleta =  '${req.params.id}';`, { type: QueryTypes.SELECT })
 
-
-    //let avaliacaoHabilidade = await sequelize.query(`SELECT * FROM avaliacaohabilidades WHERE emailatleta =  ${req.params.id};`,{type: QueryTypes.SELECT})
+    //SELECT para a media de avaliações das habilidades por esporte
+    let avaliacaoHabilidade = await sequelize.query(`select t1.nome, avg(t2.nota) as nota 
+    from esportes as t1 join avaliacaohabilidades as t2
+    on t1.IdEsporte = t2.CodigoEsporte
+    where t2.EmailAtleta = '${req.params.id}'
+    GROUP by t1.Nome;`,{type: QueryTypes.SELECT})
+   
     //SELECT PARA AS PARTIDAS QUE OS TIMES QUE O ATLETA ESTÁ E SE ESTÃO PAGAS OU NÃO
     let partidas = await sequelize.query(`select t1.CodigoPartida, t1.Data, t1.HorarioInicio, t1.HorarioFim, t3.pago 
         from partidas as t1 join timepartidas as t2 on t1.CodigoPartida = t2.CodigoPartida
@@ -48,7 +54,8 @@ router.get('/home/:id', async (req, res) => {
         on t1.CodigoTime = t3.CodigoTime
         where t3.EmailAtleta = '${req.params.id}';`, { type: QueryTypes.SELECT })
 
-    res.render('homeAtleta', { id: req.params.id, partidas: partidas, times: times, avaliacaoConduta: avaliacaoConduta })
+    res.render('homeAtleta', { id: req.params.id, partidas: partidas, times: times, 
+        avaliacaoConduta: avaliacaoConduta, avaliacaoHabilidade: avaliacaoHabilidade })
 
 
 

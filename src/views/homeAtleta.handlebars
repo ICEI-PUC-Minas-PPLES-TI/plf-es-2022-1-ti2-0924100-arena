@@ -14,24 +14,30 @@
         <div class="col-sm-12">
             <h2><strong>Minhas Pontuações:</strong></h2>
         </div>
+        {{#each avaliacaoConduta }}
         <div class="col-sm-2" id="pontConduta">
             <div class="card" style="width: 10rem;">
                 <div class="card-body">
                     <h5 class="card-title">Conduta</h5>
-                    {{#each avaliacaoConduta }}
+                    
                     <p class="card-text"><strong>{{media}}</strong></p>
-                    {{/each}}
+                    
                 </div>
             </div>
         </div>
+        {{else}}
+        
+        {{/each}}
+        {{#each avaliacaoHabilidade}}
         <div class="col-sm-2" id="pontEsporte">
             <div class="card" style="width: 10rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Basquete</h5>
-                    <p class="card-text">6.7</p>
+                    <h5 class="card-title">{{nome}}</h5>
+                    <p class="card-text"><strong>{{nota}}</strong></p>
                 </div>
             </div>
         </div>
+        {{/each}}
 
     </div>
 
