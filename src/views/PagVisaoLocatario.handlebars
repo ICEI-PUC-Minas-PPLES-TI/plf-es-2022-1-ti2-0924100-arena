@@ -34,27 +34,14 @@
                                 <th scope="col">Confirmar?</th>
                             </tr>
                         </thead>
-                        <tbody id="table-pagamentos">
-                            <th scope="col">Gregório Ney</th>
-                            <th scope="col">11/05/2022</th>
-                            <th scope="col">Não pago</th>
-                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
-                            <th scope="col"><input type="checkbox"></th>
-                        </tbody>
-                        <tbody id="table-pagamentos">
-                            <th scope="col">Messias do rei</th>
-                            <th scope="col">11/05/2022</th>
-                            <th scope="col">pago</th>
-                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
-                            <th scope="col"><input type="checkbox" disabled></th>
-                        </tbody>
                         {{#each pagamentos}}
                         <tbody id="table-pagamentos">
-                            <th scope="col">{{EmailAtleta}}</th>
+                            <th scope="col"><input type="hidden" value="{{EmailAtleta}}"> {{EmailAtleta}}</th>
                             <th scope="col">{{DataPagamento}}</th>
                             <th scope="col">{{Pago}}</th>
-                            <th scope="col"><a href="Lista  10 .pdf">Comprovante</a></th>
-                            <th scope="col"><input type="checkbox" disabled></th>
+                            <th scope="col">{{Comprovante}}</th>
+                            <th scope="col"><button type="submit" class="btn btn-outline-danger">Sim</button>
+                            <a href=""><button type="button" class="btn btn-outline-danger">Não</button></a></th>
                         </tbody>
                         {{/each}}
                     </table>

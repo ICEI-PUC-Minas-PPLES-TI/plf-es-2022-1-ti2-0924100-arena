@@ -164,7 +164,7 @@ router.get('/agendamentos/:idQuadra/:idLocatario', async (req, res) => {
 //ROTA PARA VER OS PAGEMENTOS DOS ATLETAS
 router.get('/pagamentos/:idQuadra/:idLocatario/:idPartida', async(req,res)=>{
 
-    let pagamentos = await sequelize.query(`select * from pagamentos  WHERE CodigoPartida = ${req.params.idQuadra};`,{type: QueryTypes.SELECT})
+    let pagamentos = await sequelize.query(`select * from pagamentos  WHERE CodigoPartida = ${req.params.idPartida};`,{type: QueryTypes.SELECT})
     res.render('PagVisaoLocatario',{
         idQuadra: req.params.idQuadra,
         idLocatario: req.params.idLocatario,

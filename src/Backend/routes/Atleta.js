@@ -7,7 +7,7 @@ const atleta = require('../Models/Atleta')//PUXA A TABELA ATLETA
 const passport = require('passport')
 const avaliacaoconduta = require('../Models/AvaliacaoConduta')
 const avaliacaohabilidade = require('../Models/AvaliacaoHabilidade')
-const pagamentos = require('../Models/Pagamento')
+const pagamento = require('../Models/Pagamento')
 
 const { QueryTypes, DOUBLE } = require('sequelize')
 const { sequelize, Sequelize } = require('../Models/db');
@@ -121,7 +121,7 @@ router.post('/cadastroRecebido', (req, res) => {
         DataNascimento: req.body.data,
         Sexo: req.body.sexo
     }).then(function () {
-        //res.sendFile(path.join(__dirname, '../', '../','frontend', 'Home', 'homeAtleta.html'))
+        
         res.redirect('/atleta/home/' + req.body.email)
     }).catch((erro) => {
         res.send("Deu um erro!" + erro)
@@ -129,7 +129,7 @@ router.post('/cadastroRecebido', (req, res) => {
 })
 
 
-
+//ROTA PARA OS DETALHES DA PARTIDA E AS INFORMAÇÕES PARA REALIZAR O PAGAMENTO
 router.get('/pagamentos/:idAtleta/:idPartida', async (req, res) => {
 
     // DEVOLVE UM ARRAY COM O NUMERO TOTAL DE PARTICIPANTES POR PARTIDA
@@ -151,7 +151,8 @@ router.get('/pagamentos/:idAtleta/:idPartida', async (req, res) => {
     on t1.CodigoTime = t2.CodigoTime WHERE t2.CodigoPartida = ${req.params.idPartida};`, { type: QueryTypes.SELECT })
     time = JSON.parse(JSON.stringify(time))//transforma em um objeto JSON
     time = time[0].Nome//pega o nome
-
+    
+    //select para os nomes dos times q vao participar da partida:
     let adversario = await sequelize.query(`select t1.Nome as adversario from times as t1 join timepartidas as t2
     on t1.CodigoTime = t2.CodigoTime2 WHERE t2.CodigoPartida = ${req.params.idPartida};`, { type: QueryTypes.SELECT })
     adversario = JSON.parse(JSON.stringify(adversario))//transforma em um objeto JSON
@@ -171,14 +172,36 @@ router.get('/pagamentos/:idAtleta/:idPartida', async (req, res) => {
     res.render('Pagamentos', {
         dados: dados, email: req.params.idAtleta,
         valorIndividual: valorIndividual, idPartida: req.params.idPartida,
-        time: time, adversario: adversario
+        time: time, adversario: adversario,
     })
 })
 
-app.post('/recebeComprovantes/:idAtleta/:idPartida', async (req, res) => {
+//ROTA PARA RECEBER O COMPRAVANTE ENVIADO POR UM ATLETA:
+router.post('/recebeComprovante/:idAtleta/:idPartida', async (req, res) => {
+    //Pegando a data atual
+    var data = new Date();
+    var dia = String(data.getDate()).padStart(2, '0');
+    var mes = String(data.getMonth() + 1).padStart(2, '0');
+    var ano = data.getFullYear();
+    dataAtual = ano  + '-' + mes + '-' + dia;
 
+    //PROCURA OS DADOS DO ATLETA NA TABELA PAGAMENTOS
+    pagamento.findOne({ _CodigoPartida: req.params.id, _EmailAtleta: req.params.idAtleta })
+        .then((pagamento) => {
+            pagamento.Pago = 'Em avaliação'
+            pagamento.DataPagamento =  dataAtual
+            pagamento.Comprovante = req.body.arquivo  
 
-    res.redirect('/atleta/home/' + req.params.idAtleta)
+            pagamento.save().then(()=>{
+                res.redirect('/atleta/home/' + req.params.idAtleta)
+            }).catch((erro)=>{
+                res.send("DEU UM ERRO AÍ" + erro)    
+            })
+        }).catch((err)=>{
+            res.send("DEU UM ERRO AÍ" + err)
+        })
+
+    
 })
 
 

@@ -28,7 +28,7 @@
                     <li class="list-group-item"><strong>Data:</strong> {{Data}}</li>
                     <li class="list-group-item"><strong>CEP:</strong> {{CEP}}</li>
                     <li class="list-group-item"><strong>Número:</strong> {{Numero}}</li>
-                    <li class="list-group-item">And a fifth one</li>
+                    <li class="list-group-item"></li>
                 </ul>
 
             </div>
@@ -41,6 +41,7 @@
                     <li class="list-group-item"><strong>Tipo da Chave Pix:</strong> {{TipoChavePix}}</li>
                     <li class="list-group-item"><strong>Pix:</strong> {{chavepix}}</li>
                     <li class="list-group-item"><strong>Valor da Quadra:</strong> {{preco}}</li>
+                    <li class="list-group-item"></li>
                 </ul>
 
             </div>
@@ -51,13 +52,13 @@
     <br>
     <br>
     <div class="container">
-        <form action="/atleta/recebeComprovantes/{{email}}/{{CodigoPartida}}" method="post">
+        <form action="/atleta//recebeComprovante/{{email}}/{{idPartida}}" method="post">
             <div class="row">
                 <div class="col-sm-5">
                     <h3><strong>Valor a pagar: {{valorIndividual}}</strong></h3>
                 </div>
                 <div class="col-sm-4">
-                    <input type="file" name="arquivo" class="btn btn-outline-danger" required id="{{CodigoPartida}}" accept=".pdf,.png,.jpg">
+                    <input type="file" name="arquivo" class="btn btn-outline-danger" required id="{{idPartida}}" accept=".pdf,.png,.jpg">
                 </div>
                 <div class="col-sm-2">
                 <a href="#"><input type="submit" class="botao_sair" value="Enviar"></a>
