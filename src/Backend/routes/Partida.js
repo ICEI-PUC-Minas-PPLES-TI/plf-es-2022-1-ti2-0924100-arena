@@ -6,6 +6,7 @@ const timepartidas = require('../Models/TimePartida')
 const quadra = require('../Models/Quadra')
 const esportequadra = require('../Models/EsporteQuadra')
 const times = require('../Models/Time')
+const pagamento = require('../Models/Pagamento')
 const {QueryTypes} = require('sequelize')
 const { sequelize, Sequelize } = require("../Models/Db")
 
@@ -38,13 +39,35 @@ router.get('/entrar/lobby/:codigotime/:esporte/:codigopartida/:id',function(req,
         let atletatimes1 = await sequelize.query(`SELECT ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${time1[0].CodigoTime};`, {type: QueryTypes.SELECT})
         let atletatimes2 = await sequelize.query(`SELECT ATLETAS.Nome FROM ATLETAS INNER JOIN ATLETATIMES ON ATLETAS.EmailAtleta = ATLETATIMES.EmailAtleta INNER JOIN TIMES ON ATLETATIMES.CodigoTime = TIMES.CodigoTime WHERE TIMES.CodigoTime=${req.params.codigotime};`, {type: QueryTypes.SELECT})
         
-        let EmailAtletas1 = await sequelize.query(``, {type: QueryTypes.SELECT})
-        let EmailAtletas2 = await sequelize.query(``, {type: QueryTypes.SELECT})
+        let EmailAtletas1 = await sequelize.query(`select EmailAtleta from  atletatimes WHERE CodigoTime = ${time1[0].CodigoTime}; ;`, {type: QueryTypes.SELECT})
+        let EmailAtletas2 = await sequelize.query(`select EmailAtleta from  atletatimes WHERE CodigoTime = ${req.params.codigotime} `, {type: QueryTypes.SELECT})
         
         timepartidas.create({
             CodigoTime: partidas[0].CodigoTime,
             CodigoTime2: req.params.codigotime,
             CodigoPartida: partidas[0].CodigoPartida,
+        }).then(()=>{
+            //Adiciona os atletas dos dois times na tabela de pagamentos:
+            //Primeiro time
+            var i = 0;
+            while(EmailAtletas1[i] != null){
+                pagamento.create({
+                    CodigoPartida: partidas[0].CodigoPartida,
+                    EmailAtleta: EmailAtletas1[i].EmailAtleta,
+                    Pago: 'Pendente'
+                })    
+                i++;
+            }
+            //Segundo Time time
+            i = 0;
+            while(EmailAtletas2[i] != null){
+                pagamento.create({
+                    CodigoPartida: partidas[0].CodigoPartida,
+                    EmailAtleta: EmailAtletas2[i].EmailAtleta,
+                    Pago: 'Pendente'
+                })    
+                i++;
+            }
         })
         res.render('partida/entrar/lobby', {nome1: nome1[0], nome2: nome2[0],atletatimes1: atletatimes1,atletatimes2: atletatimes2,partidas: partidas[0],id:req.params.id})
     }
