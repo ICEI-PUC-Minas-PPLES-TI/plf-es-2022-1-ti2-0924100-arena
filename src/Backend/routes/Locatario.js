@@ -12,9 +12,13 @@ const res = require("express/lib/response");
 const console = require("console");
 const partida = require('../Models/Partida') //PUXA O MODELS PARTIDAS
 const disponibilidadeQuadra = require('../Models/DisponibilidadeQuadra')
+const pagamento = require("../Models/Pagamento");
+const reclamacao = require('../Models/Reclamacao')
+
 
 const {QueryTypes} = require('sequelize')
 const {sequelize,Sequelize} = require('../Models/db');
+
 
 //CONFIG BODY-PARSER -> pegar dados do  formularios 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -173,6 +177,51 @@ router.get('/pagamentos/:idQuadra/:idLocatario/:idPartida', async(req,res)=>{
     })
 })
 
+
+//ROTA DE CONFIRMAÇÃO DE PAGAMENTO:
+router.post("/pagamentoConfirmado/:idQuadra/:idLocatario/:idPartida",(req,res)=>{
+
+    pagamento.findOne({ _CodigoPartida: req.params.idPartida, _EmailAtleta: req.body.email })
+    .then((pagamento)=>{
+        pagamento.Pago = 'Confirmado'
+    
+        pagamento.save().then(()=>{
+            res.redirect('/locatario/pagamentos/' +  req.params.idQuadra + '/' + req.params.idLocatario + '/' + req.params.idPartida )
+        })
+    })
+
+
+})
+
+
+//ROTA PARA O LOCATARIO EXPLICAR A RECUSA:
+router.get('/recusado/:idQuadra/:idLocatario/:idPartida/:idAtleta',(req,res)=>{
+    res.render('recusaLocatario',{
+        idQuadra: req.params.idQuadra,
+        idLocatario: req.params.idLocatario,
+        idPartida: req.params.idPartida,
+        idAtleta: req.params.idAtleta
+    })
+})
+
+//ROTA PARA RECEBER AS INFORMAÇÕES DA RECUSA DO PAGAMENTO:
+router.post('/recusaRecebido/:idQuadra/:idLocatario/:idPartida/:idAtleta' ,(req,res)=>{
+    reclamacao.create({
+        EmailAtleta: req.params.idAtleta,
+        CodigoPartida: req.params.idPartida,
+        EmailLocatario: req.params.idLocatario,
+        Motivo: req.body.conteudo
+    })
+    pagamento.findOne({ _CodigoPartida: req.params.idPartida, _EmailAtleta: req.params.idAtleta })
+    .then((pagamento)=>{
+        pagamento.Pago = 'Recusado'
+    
+        pagamento.save().then(()=>{
+            res.redirect('/locatario/pagamentos/' +  req.params.idQuadra + '/' + req.params.idLocatario + '/' + req.params.idPartida )
+        })
+
+    })
+})
 
 
 

@@ -1,6 +1,7 @@
 const db = require("./Db"); //puxa conexão com o DataBase -> arena
 const atleta = require("./Atleta")
-const partida = require("./Partida")
+const partida = require("./Partida");
+const locatario = require("./Locatario");
 
 
 
@@ -29,6 +30,16 @@ const reclamacao = db.sequelize.define("reclamacoes", {
         }
     },
 
+    EmailLocatario: {
+        type: db.Sequelize.STRING,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+            model: locatario,
+            key: 'EmailLocatario'
+        }
+    },
+
     Motivo: {
         type: db.Sequelize.STRING(500),
         allowNull: false
@@ -37,6 +48,6 @@ const reclamacao = db.sequelize.define("reclamacoes", {
 
 })
 
-reclamacao.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
+//reclamacao.sync({force: true})// Mantenha-se comentado caso já exista esta tabela.
 
 module.exports = reclamacao;

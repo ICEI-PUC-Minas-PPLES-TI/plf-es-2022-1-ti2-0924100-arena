@@ -1,7 +1,8 @@
 <body>
     <header>
         <div class="flex-container">
-            <div><img src="../../img/logo.png" class="logo" alt=""></div>
+           <div><img src="#" class="logo" alt=""></div>
+            
             <div><a href="../../frontend/Tela_inicial/index.html"><input type="button" class="botao_sair"
                         value="Sair"></a>
             </div>
@@ -14,14 +15,10 @@
                 <h1><strong>Partida: {{idPartida}}</strong></h1>
             </div>
             <div class="col-sm-3 offset-sm-1">
-                <a href="/locatario/agendamentos/{{idQuadra}}/{{idLocatario}}"><input type="button" class="botao_sair"
-                        value="Retornar"></a>
-            </div>
-            <div class="col-sm-2 ">
-                <input type="submit" class="botao_sair" value="Validar"></a>
+                <a href="/locatario/agendamentos/{{idQuadra}}/{{idLocatario}}"><button class="botao_sair">Retornar</button></a>
             </div>
         </div>
-        <form action="" method="post">
+        <form action="/locatario/pagamentoConfirmado/{{idQuadra}}/{{idLocatario}}/{{idPartida}}" method="post">
             <div class="row">
                 <div class="col-sm-8">
                     <table id="grid-pagamentos" class="table table-striped">
@@ -36,12 +33,13 @@
                         </thead>
                         {{#each pagamentos}}
                         <tbody id="table-pagamentos">
-                            <th scope="col"><input type="hidden" value="{{EmailAtleta}}"> {{EmailAtleta}}</th>
+                            <th scope="col"><input type="hidden" name="email" value="{{EmailAtleta}}"> {{EmailAtleta}}</th>
                             <th scope="col">{{DataPagamento}}</th>
                             <th scope="col">{{Pago}}</th>
                             <th scope="col">{{Comprovante}}</th>
                             <th scope="col"><button type="submit" class="btn btn-outline-danger">Sim</button>
-                            <a href=""><button type="button" class="btn btn-outline-danger">Não</button></a></th>
+                            <a href="/locatario/recusado/{{../idQuadra}}/{{../idLocatario}}/{{../idPartida}}/{{EmailAtleta}}">
+                            <button type="button" class="btn btn-outline-danger">Não</button></a></th>
                         </tbody>
                         {{/each}}
                     </table>
