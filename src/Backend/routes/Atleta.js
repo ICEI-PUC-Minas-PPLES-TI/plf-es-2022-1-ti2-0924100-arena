@@ -8,8 +8,9 @@ const passport = require('passport')
 const avaliacaoconduta = require('../Models/AvaliacaoConduta')
 const avaliacaohabilidade = require('../Models/AvaliacaoHabilidade')
 const pagamento = require('../Models/Pagamento')
+const recusa = require('../Models/Reclamacao')
 
-const { QueryTypes, DOUBLE } = require('sequelize')
+const { QueryTypes, DOUBLE, where } = require('sequelize')
 const { sequelize, Sequelize } = require('../Models/db');
 const { json } = require("body-parser");
 const { stringify } = require("querystring");
@@ -39,8 +40,8 @@ router.get('/home/:id', async (req, res) => {
     from esportes as t1 join avaliacaohabilidades as t2
     on t1.IdEsporte = t2.CodigoEsporte
     where t2.EmailAtleta = '${req.params.id}'
-    GROUP by t1.Nome;`,{type: QueryTypes.SELECT})
-   
+    GROUP by t1.Nome;`, { type: QueryTypes.SELECT })
+
     //SELECT PARA AS PARTIDAS QUE OS TIMES QUE O ATLETA ESTÁ E SE ESTÃO PAGAS OU NÃO
     let partidas = await sequelize.query(`select t1.CodigoPartida, t1.Data, t1.HorarioInicio, t1.HorarioFim, t3.pago 
         from partidas as t1 join timepartidas as t2 on t1.CodigoPartida = t2.CodigoPartida
@@ -53,9 +54,15 @@ router.get('/home/:id', async (req, res) => {
         join atletatimes as t3 
         on t1.CodigoTime = t3.CodigoTime
         where t3.EmailAtleta = '${req.params.id}';`, { type: QueryTypes.SELECT })
+    //SELECT DAS RECUSAS DE PAGAMENTOS DO ATLETA:
+    let recusas = await sequelize.query(`SELECT * from reclamacoes WHERE EmailAtleta = '${req.params.id}'`, { type: QueryTypes.SELECT })
 
-    res.render('homeAtleta', { id: req.params.id, partidas: partidas, times: times, 
-        avaliacaoConduta: avaliacaoConduta, avaliacaoHabilidade: avaliacaoHabilidade })
+
+    res.render('homeAtleta', {
+        id: req.params.id, partidas: partidas, times: times,
+        avaliacaoConduta: avaliacaoConduta, avaliacaoHabilidade: avaliacaoHabilidade,
+        recusas: recusas
+    })
 
 
 
@@ -128,7 +135,7 @@ router.post('/cadastroRecebido', (req, res) => {
         DataNascimento: req.body.data,
         Sexo: req.body.sexo
     }).then(function () {
-        
+
         res.redirect('/atleta/home/' + req.body.email)
     }).catch((erro) => {
         res.send("Deu um erro!" + erro)
@@ -158,7 +165,7 @@ router.get('/pagamentos/:idAtleta/:idPartida', async (req, res) => {
     on t1.CodigoTime = t2.CodigoTime WHERE t2.CodigoPartida = ${req.params.idPartida};`, { type: QueryTypes.SELECT })
     time = JSON.parse(JSON.stringify(time))//transforma em um objeto JSON
     time = time[0].Nome//pega o nome
-    
+
     //select para os nomes dos times q vao participar da partida:
     let adversario = await sequelize.query(`select t1.Nome as adversario from times as t1 join timepartidas as t2
     on t1.CodigoTime = t2.CodigoTime2 WHERE t2.CodigoPartida = ${req.params.idPartida};`, { type: QueryTypes.SELECT })
@@ -190,25 +197,37 @@ router.post('/recebeComprovante/:idAtleta/:idPartida', async (req, res) => {
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
     var ano = data.getFullYear();
-    dataAtual = ano  + '-' + mes + '-' + dia;
+    dataAtual = ano + '-' + mes + '-' + dia;
 
     //PROCURA OS DADOS DO ATLETA NA TABELA PAGAMENTOS
-    pagamento.findOne({ _CodigoPartida: req.params.id, _EmailAtleta: req.params.idAtleta })
+    pagamento.findOne({ _CodigoPartida: req.params.idPartida, _EmailAtleta: req.params.idAtleta })
         .then((pagamento) => {
             pagamento.Pago = 'Em avaliação'
-            pagamento.DataPagamento =  dataAtual
-            pagamento.Comprovante = req.body.arquivo  
+            pagamento.DataPagamento = dataAtual
+            pagamento.Comprovante = req.body.arquivo
 
-            pagamento.save().then(()=>{
-                res.redirect('/atleta/home/' + req.params.idAtleta)
-            }).catch((erro)=>{
-                res.send("DEU UM ERRO AÍ" + erro)    
+            pagamento.save().then(() => {
+                recusa.destroy({
+                    where: {
+                        EmailLocatario: req.params.idAtleta,
+                        CodigoPartida: req.params.idPartida
+                    }
+                })
+                .then(()=>{
+                    res.redirect('/atleta/home/' + req.params.idAtleta)
+                    console.log("RECUSA DELETADO")
+                }).catch((err)=>{
+                    res.redirect('/atleta/home/' + req.params.idAtleta)
+                    console.log("RECUSA nao foi DELETADO" + err)
+                })
+            }).catch((erro) => {
+                res.send("DEU UM ERRO AÍ" + erro)
             })
-        }).catch((err)=>{
+        }).catch((err) => {
             res.send("DEU UM ERRO AÍ" + err)
         })
 
-    
+
 })
 
 

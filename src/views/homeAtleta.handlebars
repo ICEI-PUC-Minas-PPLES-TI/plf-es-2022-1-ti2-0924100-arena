@@ -9,6 +9,24 @@
 
 <div class="container">
 
+    {{#each recusas}}
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card border-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">PAGAMENTO RECUSADO</div>
+                <div class="card-body text-danger">
+                    <h5 class="card-title">Partida: {{CodigoPartida}}</h5>
+                    <p class="card-text"><strong>Motivo:</strong> {{Motivo}} </p>
+                </div>
+                <div class="card-footer bg-transparent border-danger">Contato: {{EmailLocatario}}</div>
+            </div>
+        </div>
+    </div>
+
+    {{/each}}
+
+
     <div class="row" id="meuPontuacao">
 
         <div class="col-sm-12">
@@ -19,14 +37,14 @@
             <div class="card" style="width: 10rem;">
                 <div class="card-body">
                     <h5 class="card-title">Conduta</h5>
-                    
+
                     <p class="card-text"><strong>{{media}}</strong></p>
-                    
+
                 </div>
             </div>
         </div>
         {{else}}
-        
+
         {{/each}}
         {{#each avaliacaoHabilidade}}
         <div class="col-sm-2" id="pontEsporte">
@@ -104,8 +122,8 @@
                     <th scope="col">{{Data}}</th>
                     <th scope="col">{{HorarioInicio}} - {{HorarioFim}}</th>
                     <th scope="col">{{pago}}</th>
-                    <th scope="col"><a href="/atleta/pagamentos/{{../id}}/{{CodigoPartida}}"><input type="button" class="btn btn-outline-danger" id="btn"
-                    value="Pagar"></a></th>
+                    <th scope="col"><a href="/atleta/pagamentos/{{../id}}/{{CodigoPartida}}"><input type="button"
+                                class="btn btn-outline-danger" id="btn" value="Pagar"></a></th>
                 </tbody>
                 {{/each}}
             </table>
@@ -120,13 +138,6 @@
     </div>
 
 </div>
-
-<div class="container">
-    <div class="row">
-        AQUI VAI PARECER RECLAMAÇÔES DE PAGAMENTOS CASO TENHA:
-    </div>
-</div>
-
 
 
 <footer class="rodape">
