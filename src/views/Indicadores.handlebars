@@ -9,20 +9,18 @@
 
 <div>
     <h1>Quadras cadastradas por mês</h1>
-    <input type="text" id="stringQuadras" value={{stringQuadras}}>
-    <input type="text" id="stringQuadrasdia" value={{stringQuadrasdia}}>
-    <h1>Partidas cadastradas por mês</h1>
-    <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
-    <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
+    <input type="text" id="stringQuadras" style="display: none;" value={{stringQuadras}}>
+    <input type="text" id="stringQuadrasdia" style="display: none;" value={{stringQuadrasdia}}>
+    <input type="text" id="stringstringpartidas" style="display: none;" value={{stringpartidas}}>
+    <input type="text" id="stringstringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
     <br>
-    <h2>ARTHUR AQUI</h2>
     <!--  Inputs do Arthur -> Sai souza   -->
-    <input type="text" id="totalPartidas" value={{totalPartidas}}>
-    <input type="text" id="futPartidas" value={{futPartidas}}>
-    <input type="text" id="basPartidas" value={{basPartidas}}>
-    <input type="text" id="futVolPartidas" value={{futVolPartidas}}>
-    <input type="text" id="volPartidas" value={{VolPartidas}}>
-    <input type="text" id="tenPartidas" value={{TenPartidas}}>
+    <input type="text" id="totalPartidas" style="display: none;" value={{totalPartidas}}>
+    <input type="text" id="futPartidas" style="display: none;" value={{futPartidas}}>
+    <input type="text" id="basPartidas" style="display: none;" value={{basPartidas}}>
+    <input type="text" id="futVolPartidas" style="display: none;" value={{futVolPartidas}}>
+    <input type="text" id="volPartidas" style="display: none;" value={{VolPartidas}}>
+    <input type="text" id="tenPartidas" style="display: none;" value={{TenPartidas}}>
     <div id="grafico1" style="width: 800px;"></div>
 
     <div>
@@ -36,9 +34,41 @@
 
     <div id="graficoEsportes"></div><!-- Grafico para partidas por esporte -->
 
-    <h1>Média da avaliação de conduta</h1>
-    <p>Média de avaliação de conduta: {{mediaAvaliacao}}</p>
+
 </div>
+
+<div>
+
+    <h1>Jogadores com avaliação abaixo da média: {{mediaAvaliacao}}</h1>
+    <table id="grid_loc_pag" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Email</th>
+                <th scope="col">Nota</th>
+            </tr>
+        </thead>
+        {{#each atletasAgr}}
+        <tbody id="grid_loc_pag">
+            <th scope="col">{{EmailAtleta}}</th>
+            <th scope="col">{{Nota}}</th>
+
+        </tbody>
+        {{/each}}
+    </table>
+
+
+</div>
+<style>
+    td {
+        background-color: black !important;
+        margin: 15px 0 !important;
+    }
+
+    td {
+        background-color: black !important;
+        margin: 15px 0 !important;
+    }
+</style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
