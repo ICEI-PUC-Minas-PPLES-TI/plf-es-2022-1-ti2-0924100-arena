@@ -9,20 +9,19 @@
 
 <div>
     <h1>Quadras cadastradas por mês</h1>
-    <input type="text" id="stringQuadras" value={{stringQuadras}}>
-    <input type="text" id="stringQuadrasdia" value={{stringQuadrasdia}}>
-    <h1>Partidas cadastradas por mês</h1>
-    <input type="text" id="stringstringpartidas" value={{stringpartidas}}>
-    <input type="text" id="stringstringpartidasdia" value={{stringpartidasdia}}>
+    <input type="text" id="stringQuadras" style="display: none;" value={{stringQuadras}}>
+    <input type="text" id="stringQuadrasdia" style="display: none;" value={{stringQuadrasdia}}>
+    <input type="text" id="stringstringpartidas" style="display: none;" value={{stringpartidas}}>
+    <input type="text" id="stringstringpartidasdia" style="display: none;" value={{stringpartidasdia}}>
     <br>
-    <h2>ARTHUR AQUI</h2>
-    <!--  Inputs do Arthur -> Sai souza   -->
-    <input type="text" id="totalPartidas" value={{totalPartidas}}>
-    <input type="text" id="futPartidas" value={{futPartidas}}>
-    <input type="text" id="basPartidas" value={{basPartidas}}>
-    <input type="text" id="futVolPartidas" value={{futVolPartidas}}>
-    <input type="text" id="volPartidas" value={{VolPartidas}}>
-    <input type="text" id="tenPartidas" value={{TenPartidas}}>
+    
+    
+    <input type="text" id="totalPartidas" style="display: none;" value={{totalPartidas}}>
+    <input type="text" id="futPartidas" style="display: none;" value={{futPartidas}}>
+    <input type="text" id="basPartidas" style="display: none;" value={{basPartidas}}>
+    <input type="text" id="futVolPartidas"style="display: none;" value={{futVolPartidas}}>
+    <input type="text" id="volPartidas"style="display: none;" value={{VolPartidas}}>
+    <input type="text" id="tenPartidas"style="display: none;" value={{TenPartidas}}>
     <div id="grafico1" style="width: 800px;"></div>
 
     <div>
@@ -108,7 +107,7 @@
     console.log(arreyDadosEsportes)
     var data = [{
         values: arreyDadosEsportes,
-        labels: ['Futbol', 'Basquete', 'FutVolei', 'Volei', 'Tenis'],
+        labels: ['Futbol', 'Volei', 'Basquete', 'FutVolei', 'Tenis'],
         type: 'pie'
     }];
 
