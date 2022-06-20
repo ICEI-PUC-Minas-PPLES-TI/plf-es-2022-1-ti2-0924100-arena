@@ -30,10 +30,12 @@ app.use(bodyParser.json())
 router.get('/home/:id', async (req, res) => {
     //PRECISO DAS TABELAS: partida [TIMEPARTIDAS , PAGAMENTOS] [TIMES , ATLETATIMES] , [ AVALIACAOHABILIDADES , AVALIACAOCONDUTA ]
 
+        // SELECT A MÉDIA DAS AVALIAÇÕES DO ATLETA LOGADO
+        let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) as media FROM avaliacaocondutas WHERE EmailAtleta =  '${req.params.id}';`,{type: QueryTypes.SELECT})
+        
 
     // SELECT A MÉDIA DAS AVALIAÇÕES DO ATLETA LOGADO
-    let avaliacaoConduta = await sequelize.query(`SELECT avg(Nota) as media FROM avaliacaocondutas
-     WHERE emailatleta =  '${req.params.id}';`, { type: QueryTypes.SELECT })
+
 
     //SELECT para a media de avaliações das habilidades por esporte
     let avaliacaoHabilidade = await sequelize.query(`select t1.nome, avg(t2.nota) as nota 

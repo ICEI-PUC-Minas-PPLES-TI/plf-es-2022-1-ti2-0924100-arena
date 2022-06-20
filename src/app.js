@@ -178,6 +178,8 @@ app.get('/indicadores', (req, res) => {
         var mediaAvaliacao = await sequelize.query(
             `SELECT AVG(Nota) FROM avaliacaoCondutas;`
         )
+
+
         let mediaFormartada = ""
         mediaAvaliacao = JSON.stringify(mediaAvaliacao[0])
         mediaAvaliacao = JSON.stringify(mediaAvaliacao).split(':', 2)[1]
@@ -190,10 +192,13 @@ app.get('/indicadores', (req, res) => {
         console.log(mediaFormartada)
         let atletasAgr = await sequelize.query(
             `SELECT Nota, EmailAtleta from avaliacaocondutas
-                where Nota>${ mediaFormartada }
-                 GROUP BY EmailAtleta;`
+                where Nota<${mediaFormartada}
+                 GROUP BY EmailAtleta;`, { plain: true }
         )
-        
+        let atletasAgrformatado = []
+        console.log(atletasAgr)
+        atletasAgrformatado.push(atletasAgr)
+        console.log(atletasAgrformatado)
         res.render('Indicadores', {
             qtdAtual: tam, stringQuadras: JSON.stringify(arreyCadastros),
             stringQuadrasdia: JSON.stringify(arreyCadastrosdia),
@@ -205,7 +210,8 @@ app.get('/indicadores', (req, res) => {
             futVolPartidas: totalPartidasFutVol,
             VolPartidas: totalPartidasVol,
             TenPartidas: totalPartidasTen,
-            mediaAvaliacao: mediaFormartada
+            mediaAvaliacao: mediaFormartada,
+            atletasAgr: atletasAgrformatado
         })
     }
     executa()
