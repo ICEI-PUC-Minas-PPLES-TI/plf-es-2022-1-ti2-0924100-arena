@@ -52,17 +52,22 @@
     <br>
     <br>
     <div class="container">
-        <form action="/atleta//recebeComprovante/{{email}}/{{idPartida}}" method="post">
+        <form action="/atleta/recebeComprovante/{{email}}/{{idPartida}}" method="post">
             <div class="row">
                 <div class="col-sm-5">
                     <h3><strong>Valor a pagar: {{valorIndividual}}</strong></h3>
                 </div>
                 <div class="col-sm-4">
-                    <input type="file" name="arquivo" class="btn btn-outline-danger" required id="{{idPartida}}" accept=".pdf,.png,.jpg">
+                    <input type="file" name="arquivo" id="arquivo" class="btn btn-outline-danger" required
+                        accept=".pdf,.png,.jpg" oninput="convertToBase64()">
                 </div>
                 <div class="col-sm-2">
-                <a href="#"><input type="submit" class="botao_sair" value="Enviar"></a>
-            </div>
+                    <a href="#"><input type="submit" class="botao_sair" value="Enviar"></a>
+                </div>
+                <div class="col-sm-4">
+                    <input type="hidden" name="b64" class="btn btn-outline-danger" required id="b64"
+                        accept=".pdf,.png,.jpg">
+                </div>
             </div>
         </form>
     </div>
@@ -103,8 +108,99 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
+<script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
 <script>
+    var base64;
+    function convertToBase64() {
+        //Read File
+        var selectedFile = document.getElementById("arquivo").files;
+        var inputB64 = document.getElementById("b64")
+        //Check File is not Empty
+        if (selectedFile.length > 0) {
+            // Select the very first file from list
+            var fileToLoad = selectedFile[0];
+            // FileReader function for read the file.
+            var fileReader = new FileReader();
+
+            // Onload of file read the file content
+            fileReader.onload = function (fileLoadedEvent) {
+
+                base64 = fileLoadedEvent.target.result;
+                // Print data in console
+                console.log(base64);
+                inputB64.value = base64
+            };
+            // Convert data to base64
+            fileReader.readAsDataURL(fileToLoad);
+
+        }
+
+    }
+    var b64;
+    var indice = 0;
+    function baixar() {
+
+    }
+    var url = "";
+    function demo1(indice) {
+        console.log("Este é o indice:", indice)
+        var doc = new jsPDF()
+        doc.addPage();
+        doc.text(20, 20, 'Hello world!');
+        doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
+
+        // Making Data URI
+        url = apdf[indice];
+
+        var iframe = "<iframe width='100%' height='100%' src='" + db_internados_inicial.data[selecionado - 1].documentos[indice - 1] + "'></iframe>"
+        var x = window.open();
+        x.document.open();
+        x.document.write(iframe);
+        x.document.close();
+
+    }
+    function salvar() {
+
+        // The Base64 string of a simple PDF file
+        b64 = base64;
+
+        // Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+        var bin = b64;
+        console.log('File Size:', Math.round(bin.length / 1024), 'KB');
+        console.log('PDF Version:', bin.match(/^.PDF-([0-9.]+)/));
+        console.log('Create Date:', bin.match(/<xmp:CreateDate>(.+?)<\/xmp:CreateDate>/));
+        console.log('Modify Date:', bin.match(/<xmp:ModifyDate>(.+?)<\/xmp:ModifyDate>/));
+        console.log('Creator Tool:', bin.match(/<xmp:CreatorTool>(.+?)<\/xmp:CreatorTool>/));
+
+        // Embed the PDF into the HTML page and show it to the user
+        var obj = document.createElement('object');
+        obj.style.width = '100%';
+        obj.style.height = '0pt';
+        obj.type = 'application/pdf';
+        obj.data = 'data:application/pdf;base64,' + b64;
+        document.body.appendChild(obj);
+
+        // Insert a link that allows the user to download the PDF file
+        var link = document.createElement('a');
+
+        link.download = 'file.pdf';
+        link.href = b64;
+
+        localStorage.setItem('PDF:', b64);
 
 
 
+
+
+        db_internados_inicial.data[(selecionado) - 1].documentos.push(b64);
+        db_internados_inicial.data[(selecionado) - 1].resumo.push(camporesumo.value);
+        db_internados_inicial.data[(selecionado) - 1].data.push(campodata.value)
+
+        camporesumo = document.getElementById('camporesumo');
+        localStorage.setItem('Resumo:', camporesumo.value);
+        campodata = document.getElementById("campodata");
+        localStorage.setItem('Data:', campodata.value);
+    }
+}
 </script>
