@@ -194,46 +194,28 @@ router.get('/pagamentos/:idAtleta/:idPartida', async (req, res) => {
 
 //ROTA PARA RECEBER O COMPRAVANTE ENVIADO POR UM ATLETA:
 router.post('/recebeComprovante/:idAtleta/:idPartida', async (req, res) => {
+    //Area de teste:
+    
+    
+    //fim da area de teste
     //Pegando a data atual
     var data = new Date();
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
     var ano = data.getFullYear();
-    dataAtual = ano + '-' + mes + '-' + dia;
+    dataAtual = ano + mes + dia;
 
-    //PROCURA OS DADOS DO ATLETA NA TABELA PAGAMENTOS
-    pagamento.findOne({ _CodigoPartida: req.params.idPartida, _EmailAtleta: req.params.idAtleta })
-        .then((pagamento) => {
-            pagamento.Pago = 'Em avaliação'
-            pagamento.DataPagamento = dataAtual
-            pagamento.Comprovante = req.body.arquivo
+    //UPDATE tabela pagamentos
+    await sequelize.query(`UPDATE pagamentos 
+    set pago = 'Em avaliação', datapagamento = ${dataAtual} 
+    WHERE EmailAtleta = '${req.params.idAtleta}' and CodigoPartida = ${req.params.idPartida} ;`, { type: QueryTypes.UPDATE })
 
-            pagamento.save().then(() => {
-                recusa.destroy({
-                    where: {
-                        EmailLocatario: req.params.idAtleta,
-                        CodigoPartida: req.params.idPartida
-                    }
-                })
-                .then(()=>{
-                    res.redirect('/atleta/home/' + req.params.idAtleta)
-                    console.log("RECUSA DELETADO")
-                }).catch((err)=>{
-                    res.redirect('/atleta/home/' + req.params.idAtleta)
-                    console.log("RECUSA nao foi DELETADO" + err)
-                })
-            }).catch((erro) => {
-                res.send("DEU UM ERRO AÍ" + erro)
-            })
-        }).catch((err) => {
-            res.send("DEU UM ERRO AÍ" + err)
-        })
+    await sequelize.query(`DELETE from reclamacoes 
+    where EmailAtleta =  '${req.params.idAtleta}' and CodigoPartida = ${req.params.idPartida} ;`, { type: QueryTypes.DELETE })
 
+    res.redirect('/atleta/home/' + req.params.idAtleta)
 
 })
 
-
-
-
-
 module.exports = router
+
