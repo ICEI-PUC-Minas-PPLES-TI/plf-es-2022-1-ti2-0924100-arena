@@ -111,6 +111,7 @@
 <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
 <script>
+    
     var base64;
     function convertToBase64() {
         //Read File
@@ -129,6 +130,7 @@
                 base64 = fileLoadedEvent.target.result;
                 // Print data in console
                 console.log(base64);
+                
                 inputB64.value = base64
             };
             // Convert data to base64
@@ -202,5 +204,5 @@
         campodata = document.getElementById("campodata");
         localStorage.setItem('Data:', campodata.value);
     }
-}
+
 </script>

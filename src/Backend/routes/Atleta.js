@@ -196,7 +196,6 @@ router.get('/pagamentos/:idAtleta/:idPartida', async (req, res) => {
 router.post('/recebeComprovante/:idAtleta/:idPartida', async (req, res) => {
     //Area de teste:
     
-    
     //fim da area de teste
     //Pegando a data atual
     var data = new Date();
@@ -207,7 +206,7 @@ router.post('/recebeComprovante/:idAtleta/:idPartida', async (req, res) => {
 
     //UPDATE tabela pagamentos
     await sequelize.query(`UPDATE pagamentos 
-    set pago = 'Em avaliação', datapagamento = ${dataAtual} 
+    set pago = 'Em avaliação', datapagamento = ${dataAtual} , comprovante = ${req.body.b64}
     WHERE EmailAtleta = '${req.params.idAtleta}' and CodigoPartida = ${req.params.idPartida} ;`, { type: QueryTypes.UPDATE })
 
     await sequelize.query(`DELETE from reclamacoes 
