@@ -290,16 +290,15 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Atleta | Seleção única | Obrigatório |  |
+| Atleta | Seleção única | |  |
 
 
 **Avaliar atleta**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Habilidade | Número | Intervalo: [0,10] (Obrigatório) |  |
-| Conduta Esportiva   |  Número  |  Intervalo: [0,10] (Obrigatório) | |
-| Comentários   |  Área de texto  |     |
+| Habilidade | Número | Intervalo: [0,10] |  |
+| Conduta Esportiva   |  Número  |  Intervalo: [0,10] | |
 
 ### 4.2. Tecnologias
 
