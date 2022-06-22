@@ -61,7 +61,7 @@ Estes são os resultados esperados pelo projeto.
 
 Ciente que essa vida sedentária é nociva à saúde, o projeto Arena pode colaborar para inverter esse quadro. Com o avanço significativo das vacinas e o regresso gradativo da vida cotidiana, os esportes estão retornando como uma ótima opção de atividade física e lazer. 
 
-Através de um processo automatizado, a aplicação proporcionará um acesso mais rápido e descomplicado para os espaços físicos e simplificará a organização e a formação de times, partidas e campeonatos. Consequentemente, poderá incentivar as pessoas a praticar esportes e sair da vida sedentária.
+Através de um processo automatizado, a aplicação proporcionará um acesso mais rápido e descomplicado para os espaços físicos e simplificará a organização e a formação de times e partidas. Consequentemente, poderá incentivar as pessoas a praticar esportes e sair da vida sedentária.
  
 
 ## 2. Participantes do processo
@@ -90,7 +90,7 @@ Por esse processo não ser integrado aos outros, pode ocorrer erros nos dados in
 
 Para utilizar a  ferramenta Arena, o usuário deverá se cadastrar informando dados relevantes como nome, CPF e os esportes que deseja praticar. Após o registro, a plataforma disponibilizará meios para: formar um time, procurar um para ingressar ou simplesmente encontrar pessoas com quem jogar. Dessa forma, os potenciais participantes serão todos os usuários cadastrados no banco de dados. Por consequência, a partida terá uma maior probabilidade de realização. 
 
-Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos ou campeonatos públicos formados por terceiros.
+Os assuntos relacionados à realização da partida podem ser tratadas no momento da criação do evento. O criador fornecerá o esporte, as datas, os horários, e a duração. Nesse momento, os outros participantes poderão escolher a melhor opção. Com isso, espera-se que as informações mais relevantes, como o horário de realização e o número de jogadores, sejam destacadas. Caso não queira criar uma partida, o usuário poderá buscar por jogos formados por terceiros.
 
 Assim que pelo menos um número mínimo de participantes - estabelecido pelo criador - confirmar a presença,  a Arena   auxialará na efetivação do agendamento da quadra previamente escolhida.
 
