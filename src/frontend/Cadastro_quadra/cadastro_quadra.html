@@ -629,7 +629,7 @@
 
         .campomonetario {
             margin-left: 5px;
-            width: 100% !important;
+            width: 80% !important;
         }
 
         .for2 {
@@ -800,8 +800,8 @@
 <body>
     <header>
         <div class="flex-container">
-            <div><img src="../Tela_inicial/img/logo.png" class="logo" alt=""></div>
-            <div><button class="botao_sair" id="botaoSair">Sair</button></div>
+            <div><img src="../../img/logo.png" class="logo" alt=""></div>
+            <div><button class="botao_sair" id="botaoSair" onclick="history.go(-2)">Sair</button></div>
         </div>
     </header>
     <form action="/locatario/quadraCadastrada" method="post">
@@ -905,25 +905,24 @@
             </div>
             <div class="row titulo">
                 <div class="titulo">
-                    <p>Preencha com os horarios (inicio)(fim) e o preço desejado</p>
+                    <p>Preencha com o horario (inicio)(fim) e o preço desejado</p>
                 </div>
 
             </div>
 
             <div class="row primeirobloco">
                 <div class="col formulario_central2">
-                    <div class="col form-floating3 mb-3">
-                        <div class="margim">
+                    <div class="">
+                        <div class="margim" style="padding-bottom: 6px;">
                             <label for="hora">Inicio:</label>
-                        </div>
-                        <div class="margim">
                             <input type="time" class="time" id="timeInicio" name="timeInicio">
-                        </div>
-                        <div class="margim">
-                            <label for="hora">Fim:</label>
+                        </div> 
+                        <div class="margim" style="padding-bottom: 6px;">
+                            <label for="hora">Fim:&nbsp&nbsp&nbsp</label>
                             <input type="time" class="time" id="timeFim" name="timeFim">
                         </div>
-                        <div class="margim">
+                        <div class="margim" style="display:flex;">
+                            <label for="">Preço:&nbsp&nbsp </label>
                             <input type="text" value="000.00" name="campopreco" class="form-control campomonetario"
                                 onkeypress="$(this).mask('##0.00', {reverse: true});">
                         </div>
@@ -931,14 +930,28 @@
                 </div>
             </div>
         </section>
-
-        <button onclick="domingo()" type="button">Domingo</button>
-        <button onclick="segunda()" type="button">Segunda</button>
-        <button onclick="terca()" type="button">Terça</button>
-        <button onclick="quarta()" type="button">Quarta</button>
-        <button onclick="quinta()" type="button">Quinta</button>
-        <button onclick="sexta()" type="button">Sexta</button>
-        <button onclick="sabado()" type="button">Sabado</button>
+        <div class="linha1">
+            __________________________________________________________
+        </div>
+        <section style="padding-bottom: 50px;">
+            <div class="row titulo">
+            <div class="titulo">
+                <p>Selecionar pelos dias da semana:</p>
+            </div>
+        </div>        
+            
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <button class="botao_sair" onclick="domingo()" type="button">Domingo</button>
+                <button class="botao_sair" onclick="segunda()" type="button">Segunda</button>
+                <button class="botao_sair" onclick="terca()" type="button">Terça</button>
+                <button class="botao_sair" onclick="quarta()" type="button">Quarta</button>
+                <button class="botao_sair" onclick="quinta()" type="button">Quinta</button>
+                <button class="botao_sair" onclick="sexta()" type="button">Sexta</button>
+                <button class="botao_sair" onclick="sabado()" type="button">Sabado</button>
+            </div>
+       
+        </section>
+        
 
 
 
@@ -1060,7 +1073,7 @@
             <div class="flex-container botoes">
 
 
-                <button class="botao_sair" id="botaoVoltar">Voltar</button>
+                <button class="botao_sair" id="botaoVoltar" type="button" onclick="history.go(-1)">Voltar</button>
                 <button class="botao_sair" type="submit" id="botaoConfirmar">Confirmar</button>
 
 
