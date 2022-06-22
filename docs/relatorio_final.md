@@ -126,7 +126,8 @@ Processo no qual o usuário registrado poderá criar um novo time ou se inscreve
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
-![Processo 4 - Criar ou entrar em uma partida (2)](https://user-images.githubusercontent.com/90854484/169402826-37227b8d-da25-4f23-9f5a-e834b03cebb7.png)
+![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/175141967-ddde1eca-0d72-4003-85be-d4818ef40aee.png)
+
 
 Pré-requisitos: Estar logado como atleta.
 
@@ -237,15 +238,16 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Ingressar | Link |  |  |
+| Ingressar | Seleção única |  |  |
 
 **Informar dados da partida**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
+| Data | Data | Obrigatório | --- |
 | Número de Participantes | Número | Obrigatório |  |
-| Tempo de Jogo | Número | Obrigatório |  |
-| Horário de Realização | Data | Obrigatório |  |
+| Horario de Início | Tempo | Obrigatório |  |
+| Horário de Fim | Tempo | Obrigatório |  |
 
 **Escolher quadra**
 
@@ -279,7 +281,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Motivo | área de texto | Obrigatório quando o comprovante é recusado |  |
+| Motivo | Área de texto | Obrigatório quando o comprovante é recusado |  |
 
 
 #### Processo 6 – Avaliar Participantes
