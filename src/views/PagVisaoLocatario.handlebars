@@ -36,7 +36,7 @@
                             <th scope="col"><input type="hidden" name="email" value="{{EmailAtleta}}"> {{EmailAtleta}}</th>
                             <th scope="col">{{DataPagamento}}</th>
                             <th scope="col">{{Pago}}</th>
-                            <th scope="col"><button onclick="demo1({{Comprovante}})">Comprovante</button></th>
+                            <th scope="col"><button onclick="demo1( '{{Comprovante}}')">Comprovante</button></th>
                             <th scope="col"><button type="submit" class="btn btn-outline-danger">Sim</button>
                             <a href="/locatario/recusado/{{../idQuadra}}/{{../idLocatario}}/{{../idPartida}}/{{EmailAtleta}}">
                             <button type="button" class="btn btn-outline-danger">Não</button></a></th>
@@ -48,6 +48,7 @@
             </div>
     </div>
     </form>
+    
     <footer class="rodape">
 
         <div class="container">
@@ -120,23 +121,23 @@
 
     }
     var url = "";
-    function demo1(b64) {
-        console(b64)
-        var doc = new jsPDF()
-        doc.addPage();
-        doc.text(20, 20, 'Hello world!');
-        doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
+    function demo1(passado) {
+    console.log("Este é o indice:", passado)
+    var doc = new jsPDF()
+    doc.addPage();
+    doc.text(20, 20, 'Hello world!');
+    doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
 
-        // Making Data URI
-        url = apdf[b64];
+    // Making Data URI
+  
+    console.log(passado)
+    var iframe = "<iframe width='100%' height='100%' src='" + passado + "'></iframe>"
+    var x = window.open();
+    x.document.open();
+    x.document.write(iframe);
+    x.document.close();
 
-        var iframe = "<iframe width='100%' height='100%' src='" + b64 + "'></iframe>"
-        var x = window.open();
-        x.document.open();
-        x.document.write(iframe);
-        x.document.close();
-
-    }
+}
     function salvar() {
 
         // The Base64 string of a simple PDF file
