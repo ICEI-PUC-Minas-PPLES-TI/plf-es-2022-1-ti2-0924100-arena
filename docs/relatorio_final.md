@@ -400,7 +400,7 @@ Gabriel de Souza: A realização deste trabalho aprofundou meus conhecimentos v�
 
 Gabriel Lima de Souza: Com o desenvolvimento do projeto Arena pude aprender mais sobre processos de negócios e sua importância para o planejamento de um software que atende todos os requisitos gerados, além disso, o desenvolvimento do sistema me possibiltou adquirir experiência com backend e a linguagem NodeJS, módulos npm, banco de dados MySQL e sua utilização em aplicações WEB. Tudo isso colaborou para a aquisição de conhecimento profissional e educacional.
 
-Marcus Vinícius:
+Marcus Vinícius: O projeto Arena me trouxe muito conhecimento no desenvolvimento de um software, além de mostrar como o trabalho em equipe é um bom planejamento faz a diferença, trabalhamos com diversas novas ferramentas oque serviu como uma grande experiência em backend e novas linguagens. A experiência foi excelente, os erros cometidos ao longo do desenvolvimento serviram de aprendizado a esse e aos próximos projetos.
 
 # REFERÊNCIAS
 
