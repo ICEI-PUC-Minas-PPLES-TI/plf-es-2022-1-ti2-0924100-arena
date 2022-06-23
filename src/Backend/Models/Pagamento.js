@@ -37,7 +37,7 @@ const pagamento = db.sequelize.define("pagamentos", {
   },
 
   Comprovante: {
-    type: db.Sequelize.BLOB('medium')
+    type: db.Sequelize.TEXT('medium')
   }
 });
 

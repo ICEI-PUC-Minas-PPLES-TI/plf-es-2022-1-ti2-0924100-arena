@@ -58,8 +58,7 @@
                     <h3><strong>Valor a pagar: {{valorIndividual}}</strong></h3>
                 </div>
                 <div class="col-sm-4">
-                    <input type="file" name="arquivo" id="arquivo" class="btn btn-outline-danger" required
-                        accept=".pdf,.png,.jpg" oninput="convertToBase64()">
+                    <input type="file" name="arquivo" id="arquivo" class="btn btn-outline-danger" accept="application/pdf" oninput="convertToBase64()">
                 </div>
                 <div class="col-sm-2">
                     <a href="#"><input type="submit" class="botao_sair" value="Enviar"></a>
@@ -111,6 +110,7 @@
 <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
 <script>
+    
     var base64;
     function convertToBase64() {
         //Read File
@@ -129,6 +129,7 @@
                 base64 = fileLoadedEvent.target.result;
                 // Print data in console
                 console.log(base64);
+                
                 inputB64.value = base64
             };
             // Convert data to base64
@@ -202,5 +203,5 @@
         campodata = document.getElementById("campodata");
         localStorage.setItem('Data:', campodata.value);
     }
-}
+
 </script>

@@ -450,7 +450,17 @@
             }
         }
 
+    function testpress(){
+                if (campoCEP.value.length > 8) {
+                    let inputText = campoCEP.value;
+                    campoCEP.value = inputText.substring(0, inputText.length - 1);
+                    msgCEP.style.display = "";
+                }
+                else {
+                    msgCEP.style.display = "none";
+                }
 
+            }
 
 
 
@@ -464,17 +474,7 @@
             var tecla;
             let campoCEP = document.getElementById("campoCEP");
             let msgCEP = document.getElementById("msgCEP");
-            campoCEP.addEventListener("input", () => {
-                if (campoCEP.value.length > 8) {
-                    let inputText = campoCEP.value;
-                    campoCEP.value = inputText.substring(0, inputText.length - 1);
-                    msgCEP.style.display = "";
-                }
-                else {
-                    msgCEP.style.display = "none";
-                }
-
-            })
+            
             /**************************************************/
 
             //Campo Checkboxes
@@ -804,13 +804,12 @@
             <div><button class="botao_sair" id="botaoSair" onclick="history.go(-2)">Sair</button></div>
         </div>
     </header>
-    <form action="/locatario/quadraCadastrada" method="post">
+    <form action="/locatario/quadraCadastrada/{{email}}" method="post">
         <section class="formulario">
             <div class="row tituloss">
                 <div class="titulo">
                     <p>Preencha os campos com os respectivos dados</p>
                 </div>
-
             </div>
             <div class="row primeirobloco">
                 <div class="col formulario_central">
@@ -821,7 +820,7 @@
                     </div>
                     <div class="form-floating mb-3">
                         <input type="number" name="Cep" class="form-control" id="campoCEP"
-                            placeholder="name@example.com" maxlength="10">
+                            placeholder="name@example.com" maxlength="10" onkeypress="testpress()">
                         <label for="floatingInput">CEP</label>
                         <span id="msgCEP" style="color: red; display: none;">O campo deve possuir somente 8
                             digítos</span>
@@ -835,11 +834,6 @@
                         <input type="number" min="0" class="form-control" id="floatingInput" placeholder="200"
                             name="capacidade">
                         <label for="floatingInput">Capacidade</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" min="0" class="form-control" id="floatingInput" placeholder="200"
-                            name="invisivel">
-                            <label for="floatingInput">E-mail</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" min="0" class="form-control" id="invisivel2" style="display:none;" placeholder="200"
@@ -923,8 +917,8 @@
                         </div>
                         <div class="margim" style="display:flex;">
                             <label for="">Preço:&nbsp&nbsp </label>
-                            <input type="text" value="000.00" name="campopreco" class="form-control campomonetario"
-                                onkeypress="$(this).mask('##0.00', {reverse: true});">
+                            <input type="text" value="0.00" name="campopreco" class="form-control campomonetario"
+                                onkeypress="$(this).mask('###.00', {reverse: true});">
                         </div>
                     </div>
                 </div>
