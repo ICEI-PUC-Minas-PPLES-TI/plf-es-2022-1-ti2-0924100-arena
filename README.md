@@ -1,3 +1,4 @@
+![Captura de tela 2022-06-23 205226](https://user-images.githubusercontent.com/90854062/175433730-ec3369fc-1f0f-4ddf-809e-3972b3ca3244.jpg)
 # Arena 🏀
 
 A aplicação busca facilitar a organização de partidas para competidores, buscando criar um canal entre pessoas que querem competir e locais disponíveis para sediar a partida, facilitando as partes burocráticas e dando oportunidade para novos atletas.
