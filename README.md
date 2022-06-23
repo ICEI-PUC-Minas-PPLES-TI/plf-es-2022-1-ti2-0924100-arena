@@ -16,7 +16,14 @@ A aplicação busca facilitar a organização de partidas para competidores, bus
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Para executar a aplicação:
+
+- Clone o projeto
+- Navegue até a pasta src
+- Execute o comando "npm install" 
+- Navegue até a pasta Backend
+- Execute o comando "node app.js"
+- Abra seu navegador e acesse "localhost:8081"
 
 ## Histórico de versões
 
