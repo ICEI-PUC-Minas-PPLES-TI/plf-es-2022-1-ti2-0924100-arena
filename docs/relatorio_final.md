@@ -104,8 +104,7 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_1](https://user-images.githubusercontent.com/90854173/175428523-2a185e3b-fc33-4495-a6fb-ad99e1111c35.png)
-
+![Cadastro_2](https://user-images.githubusercontent.com/90854173/165630556-de4fe76e-b28b-4707-912a-cbd331558af5.png)
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
@@ -119,13 +118,15 @@ Pré-requisitos: Estar logado em uma conta do tipo locatário.
 
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando atletas, para isso, o usuário deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
-![Time](https://user-images.githubusercontent.com/90854173/175429081-960b5eda-cd92-4cb5-849f-894e098c5061.png)
+
+!![modelagem](https://user-images.githubusercontent.com/90854062/168180450-b0415a45-5451-41fa-a543-c230826a12e2.png)
 
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
 
 Processo no qual o usuário registrado poderá criar uma partida ou ingressar em uma das já existentes. Para ingressar em partidas já existentes, o usuário deverá escolher entre as opções disponíveis a que melhor se adequa. Já na criação, dados como esporte escolhido, número de participantes, horário de realização e regras deverão ser informadas pelo organizador. Dessa forma, as informações importantes são colocadas em destaque, gerando maior facilidade na busca de jogadores e organização do evento.
 
+![Processo 4 - Criar ou entrar em uma partida](https://user-images.githubusercontent.com/90854484/175141967-ddde1eca-0d72-4003-85be-d4818ef40aee.png)
 
 
 Pré-requisitos: Estar logado como atleta.
@@ -134,7 +135,7 @@ Pré-requisitos: Estar logado como atleta.
 
 Processo para decidir o valor que cada atleta irá pagar, por meio do pix, para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa. 
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/175428475-0a27fac9-2c7e-4fbc-9de5-66a26f932e7d.png)
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/163892063-51eba942-62c5-472f-9bd6-e951dfcb81e4.png)
 
 
 ### 3.3.7 Processo 6 – Avaliar participantes
@@ -342,7 +343,54 @@ As tecnologias utilizadas para o desenvolvimento do projeto foram:
 
 ## 7.Sistema desenvolvido
 
-Faça aqui uma breve descrição do software e coloque as principais telas com uma explicação de como usar cada uma.
+#### Instruções de utilização do Arena:
+
+- Tela Inicial
+
+![Tela inicial](https://user-images.githubusercontent.com/90854484/175428620-1e9fb29a-8bd2-46e3-ab9c-66cad61d9184.png)
+
+Tela onde é possível realizar um cadastro como atleta ou locatário, realizar login e obter algumas informações sobre o Arena
+
+<hr>
+
+- Cadastro de Atleta
+
+![Cadastro Atleta](https://user-images.githubusercontent.com/90854484/175428703-590b5c0e-4e0b-4c29-9103-07d33ed2f780.png)
+
+Tela onde é possível criar um cadastro de atleta
+
+<hr>
+
+- Cadastro de Locatário
+
+![Cadastro Locatário](https://user-images.githubusercontent.com/90854484/175428728-c498e744-0f9a-40f5-8858-1ce34ee31068.png)
+
+Tela onde é possível criar um cadastro de locatário
+
+<hr>
+
+- Login
+
+![Login](https://user-images.githubusercontent.com/90854484/175428803-eb630900-1c81-496e-aa22-00571a297694.png)
+
+Tela de login do sistema
+
+<hr>
+
+- Tela do Atleta
+
+![Home Atleta](https://user-images.githubusercontent.com/90854484/175428814-4fc05c6e-7a1b-487e-9343-320b228b3cdd.png)
+
+Tela onde o atleta tem acesso a todas as funcionalidades a ele destinada 
+
+<hr>
+
+- Tela do Locatário
+
+![Home Locatário](https://user-images.githubusercontent.com/90854484/175428920-bc550e29-8236-4d47-ba67-5ff0e79a0614.png)
+
+Tela onde o locatário tem acesso a todas as funcionalidades a ele destinada 
+
 
 ## 8. Conclusão
 
