@@ -340,9 +340,6 @@ As tecnologias utilizadas para o desenvolvimento do projeto foram:
 | Percentual de pagamentos aprovados | Saber a efetividade do sistema de pagamento | Mede o percentual de pagamentos aprovados |  (∑ de pagamentos aprovados/ ∑ de pagamentos efetuados) * 100 | Tabela [Pagamentos] | Processos internos |
 | Média de avaliação de conduta dos jogadores | Identificar os jogadores mais violentos  | Contabilizar as avaliações de conduta dos jogadores e efetuar a média.| (∑ de avaliação dos jogadores / ∑ de jogadores) * 100 | Tabela [Avaliação/Conduta] |Clientes|
 
-
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe **a ser proposto**
-
 ## 7.Sistema desenvolvido
 
 Faça aqui uma breve descrição do software e coloque as principais telas com uma explicação de como usar cada uma.
