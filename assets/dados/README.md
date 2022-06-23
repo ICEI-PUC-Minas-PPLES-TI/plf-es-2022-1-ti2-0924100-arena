@@ -8,3 +8,6 @@ Os principais documentos a serem produzidos são:
 * `arena.sql`
 	* Script de criação do banco de dados.
 
+* `Modelo_dados.svg`
+	* Modelo de dados do sistema.
+
