@@ -328,7 +328,8 @@ As tecnologias utilizadas para o desenvolvimento do projeto foram:
 
 ## 5. Modelo de dados
 
-![TabelaRelacional drawio](https://user-images.githubusercontent.com/90854173/166162486-d20246d6-2b29-45e0-8904-10a7b1e7ec91.svg)
+![ArenaTabelaRelacional drawio](https://user-images.githubusercontent.com/90854173/175427517-834c80d7-216b-4a80-9a01-3cf90552a169.svg)
+
 
 ## 6. Indicadores de desempenho
 
