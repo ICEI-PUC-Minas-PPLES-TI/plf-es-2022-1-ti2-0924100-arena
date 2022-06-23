@@ -346,8 +346,6 @@ Faça aqui uma breve descrição do software e coloque as principais telas com u
 
 ## 8. Conclusão
 
-Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos no trabalho, onde se verifica as observações pessoais de cada aluno. Poderá também apresentar sugestões de novas linhas de estudo.
-
 O trabalho foi finalizado tendo 2 tipos de usuários, os atletas e locatários, onde nosso sistema realiza a intermediação entre os próprios atletas e os atletas com o locatário. Para essa intermediação, foram implementados processos para encontrar pessoas para jogar, quadras para alugar e formas de validar o pagamento. Sendo assim, o sistema foi concluido atendendo as demandas propostas e integrando os processos em uma plataforma unificada.
 Como propostas de melhorias, um sistema para realização de campeonatos.
 
@@ -358,6 +356,7 @@ Arthur Alexi:
 Gabriel de Souza: A realização deste trabalho aprofundou meus conhecimentos vários aspectos não trabalhados anteriormente, como na modelagem dos processos e dos dados, que deixou evidente a necessidade de um bom planejamento antes do desenvolvimeto, experiência com backend, principalmente trabalhando com o banco de dados, o uso de nossa ferramentas como o node.js e algumas biblioteca que não tinha utilizado anteriormente e o trabalho em equipe que foi essencial nesse trabalho. A experiência foi muito rica e com certeza colaborou com meu crescimento como aluno, futuro profissional e como pessoa.
 
 Gabriel Lima de Souza:
+
 Marcus Vinícius:
 
 # REFERÊNCIAS
