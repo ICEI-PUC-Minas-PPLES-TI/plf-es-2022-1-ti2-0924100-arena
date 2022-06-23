@@ -419,7 +419,7 @@ Dos artefatos (armazenado do repositório);
 
 Apresentação: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/apresenta%C3%A7%C3%A3o.md ;
 
-Do vídeo de apresentação (armazenado no repositório).
+Do vídeo de apresentação (armazenado no repositório https://youtu.be/_S9Y3b_Uisg).
 
 
 
