@@ -104,8 +104,7 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_1](https://user-images.githubusercontent.com/90854173/175429620-67334d42-5bc9-46de-8f32-6739d3b339bc.png)
-
+![Cadastro_2](https://user-images.githubusercontent.com/90854173/165630556-de4fe76e-b28b-4707-912a-cbd331558af5.png)
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
@@ -120,7 +119,7 @@ Pré-requisitos: Estar logado em uma conta do tipo locatário.
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando atletas, para isso, o usuário deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
 
-![Time](https://user-images.githubusercontent.com/90854173/175429372-8eeb1ae6-2a2a-4483-8e00-5b1f7bc462b2.png)
+!![modelagem](https://user-images.githubusercontent.com/90854062/168180450-b0415a45-5451-41fa-a543-c230826a12e2.png)
 
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
@@ -136,7 +135,8 @@ Pré-requisitos: Estar logado como atleta.
 
 Processo para decidir o valor que cada atleta irá pagar, por meio do pix, para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa. 
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/175429661-cbffebd5-a9b4-4fc8-bbf7-452fac004b52.png)
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/163892063-51eba942-62c5-472f-9bd6-e951dfcb81e4.png)
+
 
 ### 3.3.7 Processo 6 – Avaliar participantes
 
@@ -403,7 +403,7 @@ Arthur Alexi:
 
 Gabriel de Souza: A realização deste trabalho aprofundou meus conhecimentos vários aspectos não trabalhados anteriormente, como na modelagem dos processos e dos dados, que deixou evidente a necessidade de um bom planejamento antes do desenvolvimeto, experiência com backend, principalmente trabalhando com o banco de dados, o uso de nossa ferramentas como o node.js e algumas biblioteca que não tinha utilizado anteriormente e o trabalho em equipe que foi essencial nesse trabalho. A experiência foi muito rica e com certeza colaborou com meu crescimento como aluno, futuro profissional e como pessoa.
 
-Gabriel Lima de Souza:
+Gabriel Lima de Souza: Com o desenvolvimento do projeto Arena pude aprender mais sobre processos de negócios e sua importância para o planejamento de um software que atende todos os requisitos gerados, além disso, o desenvolvimento do sistema me possibiltou adquirir experiência com backend e a linguagem NodeJS, módulos npm, banco de dados MySQL e sua utilização em aplicações WEB. Tudo isso colaborou para a aquisição de conhecimento profissional e educacional.
 
 Marcus Vinícius:
 
