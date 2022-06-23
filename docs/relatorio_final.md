@@ -104,7 +104,8 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_2](https://user-images.githubusercontent.com/90854173/165630556-de4fe76e-b28b-4707-912a-cbd331558af5.png)
+![Cadastro_1](https://user-images.githubusercontent.com/90854173/175424482-94660c97-eda0-435e-a9d6-a1eb117a34a0.png)
+
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
@@ -119,7 +120,7 @@ Pré-requisitos: Estar logado em uma conta do tipo locatário.
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando atletas, para isso, o usuário deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
 
-!![modelagem](https://user-images.githubusercontent.com/90854062/168180450-b0415a45-5451-41fa-a543-c230826a12e2.png)
+![Time](https://user-images.githubusercontent.com/90854173/175424549-39b030cd-434b-4c91-9f65-b9ec83819405.png)
 
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
@@ -135,8 +136,7 @@ Pré-requisitos: Estar logado como atleta.
 
 Processo para decidir o valor que cada atleta irá pagar, por meio do pix, para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa. 
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/163892063-51eba942-62c5-472f-9bd6-e951dfcb81e4.png)
-
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/175424592-ef34b3be-38e5-4147-bdc2-ff39bac828ba.png)
 
 ### 3.3.7 Processo 6 – Avaliar participantes
 
