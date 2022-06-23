@@ -302,7 +302,28 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 ### 4.2. Tecnologias
 
-Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas. Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+As tecnologias utilizadas para o desenvolvimento do projeto foram:
+
+- Frontend </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" width="40" /> HTML 5 </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" width="40" /> CSS 3 </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" width="40" /> JavaScript </br>
+
+- Backend </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="30" width="40" /> NodeJS </br>
+
+- Banco de Dados </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="30" width="40" /> MySQL </br>
+
+- Frameworks </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" height="30" width="40" /> Express.js </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="35" width="40" /> Bootstrap </br>
+
+- Controle de Versão </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" width="40" /> Git </br>
+
+- IDE </br>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" width="40" /> Visual Studio Code </br>
 
 ## 5. Modelo de dados
 
@@ -318,9 +339,6 @@ Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou se
 | Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela [Partida] | Aprendizado e Crescimento |
 | Percentual de pagamentos aprovados | Saber a efetividade do sistema de pagamento | Mede o percentual de pagamentos aprovados |  (∑ de pagamentos aprovados/ ∑ de pagamentos efetuados) * 100 | Tabela [Pagamentos] | Processos internos |
 | Média de avaliação de conduta dos jogadores | Identificar os jogadores mais violentos  | Contabilizar as avaliações de conduta dos jogadores e efetuar a média.| (∑ de avaliação dos jogadores / ∑ de jogadores) * 100 | Tabela [Avaliação/Conduta] |Clientes|
-
-
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe **a ser proposto**
 
 ## 7.Sistema desenvolvido
 
