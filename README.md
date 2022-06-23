@@ -18,12 +18,17 @@ A aplicação busca facilitar a organização de partidas para competidores, bus
 
 Para executar a aplicação:
 
-`- Clone o projeto
-- Navegue até a pasta src
-- Execute o comando "npm install" 
-- Navegue até a pasta Backend
-- Execute o comando "node app.js"
-- Abra seu navegador e acesse "localhost:8081"`
+`- Clone o projeto`
+
+`- Navegue até a pasta src`
+
+`- Execute o comando "npm install" no prompt` 
+
+`- Navegue até a pasta Backend`
+
+`- Execute o comando "node app.js" no prompt`
+
+`- Abra seu navegador e acesse "localhost:8081"`
 
 ## Histórico de versões
 
