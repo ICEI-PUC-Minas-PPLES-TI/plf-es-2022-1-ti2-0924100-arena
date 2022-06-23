@@ -104,8 +104,7 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_1](https://user-images.githubusercontent.com/90854173/175424482-94660c97-eda0-435e-a9d6-a1eb117a34a0.png)
-
+![Cadastro_2](https://user-images.githubusercontent.com/90854173/165630556-de4fe76e-b28b-4707-912a-cbd331558af5.png)
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
@@ -120,7 +119,7 @@ Pré-requisitos: Estar logado em uma conta do tipo locatário.
 Processo no qual o usuário registrado poderá criar um novo time ou se inscrever para entrar em algum já existente. Para conseguir criar um time, o usuário deverá especificar o esporte e o nível de experiencia dos jogadores do time. Para entrar em um já existente, o usuário deve se candidatar em times que estejam procurando atletas, para isso, o usuário deverá deixar dados como seu nível de experiência e quantas vezes na semana ou mês tem disponibilidade para estar participando dos jogos.
 
 
-![Time](https://user-images.githubusercontent.com/90854173/175424549-39b030cd-434b-4c91-9f65-b9ec83819405.png)
+!![modelagem](https://user-images.githubusercontent.com/90854062/168180450-b0415a45-5451-41fa-a543-c230826a12e2.png)
 
 
 ### 3.3.4 Processo 4 – Criar ou entrar em uma partida
@@ -136,7 +135,8 @@ Pré-requisitos: Estar logado como atleta.
 
 Processo para decidir o valor que cada atleta irá pagar, por meio do pix, para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa. 
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/175424592-ef34b3be-38e5-4147-bdc2-ff39bac828ba.png)
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/163892063-51eba942-62c5-472f-9bd6-e951dfcb81e4.png)
+
 
 ### 3.3.7 Processo 6 – Avaliar participantes
 
@@ -176,6 +176,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Contato | Número |  |  |
+| Tipo de chave pix | Caixa de Texto |  | Email |
 | Chave pix | Caixa de Texto |  |  |
 
 #### Processo 2 – Cadastrar quadra
@@ -335,9 +336,8 @@ As tecnologias utilizadas para o desenvolvimento do projeto foram:
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
 | Quantidade de partidas no mês | Saber o indice de atividades no mês | Contabiliza o número de partidas realizadas no mês | Quantidade de registros de partidas feitos no mês | Tabela [Partida] | Processos internos |
-| Tempo de formação de um time | Saber o tempo necessário para formar um time completo  | Contabiliza o tempo médio que um time demora para ter o número máximo de pessoas | (∑ data de criação - data de entradada última seleção) / ∑ times) | Tabela [Time] | Processos Internos |
+| Quantidade de quaras cadastradas no mês | Saber o indice de crescimento da quantidade de quadrass  |Contabiliza o número de quadras cadastradas no mês | Quantidade de registros de quadras feitos no mês | Tabela [Quadras] | Processos Internos |
 | Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela [Partida] | Aprendizado e Crescimento |
-| Percentual de pagamentos aprovados | Saber a efetividade do sistema de pagamento | Mede o percentual de pagamentos aprovados |  (∑ de pagamentos aprovados/ ∑ de pagamentos efetuados) * 100 | Tabela [Pagamentos] | Processos internos |
 | Média de avaliação de conduta dos jogadores | Identificar os jogadores mais violentos  | Contabilizar as avaliações de conduta dos jogadores e efetuar a média.| (∑ de avaliação dos jogadores / ∑ de jogadores) * 100 | Tabela [Avaliação/Conduta] |Clientes|
 
 ## 7.Sistema desenvolvido
@@ -347,6 +347,18 @@ Faça aqui uma breve descrição do software e coloque as principais telas com u
 ## 8. Conclusão
 
 Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos no trabalho, onde se verifica as observações pessoais de cada aluno. Poderá também apresentar sugestões de novas linhas de estudo.
+
+O trabalho foi finalizado tendo 2 tipos de usuários, os atletas e locatários, onde nosso sistema realiza a intermediação entre os próprios atletas e os atletas com o locatário. Para essa intermediação, foram implementados processos para encontrar pessoas para jogar, quadras para alugar e formas de validar o pagamento. Sendo assim, o sistema foi concluido atendendo as demandas propostas e integrando os processos em uma plataforma unificada.
+Como propostas de melhorias, um sistema para realização de campeonatos.
+
+Observações pessoais:
+
+Arthur Alexi:
+
+Gabriel de Souza: A realização deste trabalho aprofundou meus conhecimentos vários aspectos não trabalhados anteriormente, como na modelagem dos processos e dos dados, que deixou evidente a necessidade de um bom planejamento antes do desenvolvimeto, experiência com backend, principalmente trabalhando com o banco de dados, o uso de nossa ferramentas como o node.js e algumas biblioteca que não tinha utilizado anteriormente e o trabalho em equipe que foi essencial nesse trabalho. A experiência foi muito rica e com certeza colaborou com meu crescimento como aluno, futuro profissional e como pessoa.
+
+Gabriel Lima de Souza:
+Marcus Vinícius:
 
 # REFERÊNCIAS
 
@@ -359,11 +371,11 @@ Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos n
 
 **Colocar link:**
 
-Código: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/tree/master/src
+Do código (armazenado no repositório);
 
-Artefatos: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/tree/master/assets
+Dos artefatos (armazenado do repositório);
 
-Apresentação: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/apresenta%C3%A7%C3%A3o.md 
+Apresentação: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/apresenta%C3%A7%C3%A3o.md ;
 
 Do vídeo de apresentação (armazenado no repositório).
 
