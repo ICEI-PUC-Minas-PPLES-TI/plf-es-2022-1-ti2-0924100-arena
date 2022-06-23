@@ -26,11 +26,11 @@ app.use(bodyParser.json())
 // estrutura para pegar os dados: -> req.body.(nome do input)-> atribui os nomes para os inputs com o atributo name
 
 //ROTA PARA CADASTRAR QUADRA:
-router.get('/cadastrar/quadra', (req, res) => {
-    res.sendFile(path.join(__dirname, '../', '../', 'frontend', 'Cadastro_quadra', 'Cadastro_quadra.html'))
+router.get('/cadastrar/quadra/:email', (req, res) => {
+    res.render('cadastroQuadra', {email: req.params.email})
 })
 //ROTA PARA RECEBER DADOS DO FORMULARIO DE CADASTRO DA QUADRA:
-router.post('/quadraCadastrada', (req, res) => {
+router.post('/quadraCadastrada/:email', (req, res) => {
 
 
     let checkFutebol = req.body.checkFutebol
@@ -39,7 +39,7 @@ router.post('/quadraCadastrada', (req, res) => {
     let checkFutevolei = req.body.checkFutevolei
     let checkTenis = req.body.checkTenis
     //CRIANDO QUADRA LOCATÁRIO:
-    var invisivel = req.body.invisivel;
+    var invisivel = req.params.email;
     var nomeQuadra = req.body.nomeQuadra;
     var CEP = req.body.Cep;
     var numero = req.body.numero;
@@ -107,7 +107,7 @@ router.post('/quadraCadastrada', (req, res) => {
                 }
 
 
-                res.send('Quadra "' + nomeQuadra + '" cadastrada!')
+                res.redirect('/locatario/home/' +  req.params.email)
             }
         })
     }
