@@ -8,7 +8,6 @@ const locatario = require("./Backend/routes/Locatario")
 const atleta = require('./Backend/routes/Atleta')
 const partida = require('./Backend/routes/Partida')
 const time = require('./Backend/routes/Time')
-const indicadores = require('./Backend/routes/Indicadores')
 const atletaBd = require('./Backend/Models/Atleta')
 const locatarioBd = require('./Backend/Models/Locatario')
 const { QueryTypes } = require('sequelize')
@@ -37,9 +36,6 @@ app.get('/', function (req, res) {
 app.get('/login', (req, res) => {
     res.render('login')
 })
-
-
-
 
 app.get('/indicadores', (req, res) => {
     //----- Indicador 1: Inicio
