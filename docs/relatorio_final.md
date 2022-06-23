@@ -336,7 +336,7 @@ As tecnologias utilizadas para o desenvolvimento do projeto foram:
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
 | Quantidade de partidas no mês | Saber o indice de atividades no mês | Contabiliza o número de partidas realizadas no mês | Quantidade de registros de partidas feitos no mês | Tabela [Partida] | Processos internos |
-| Quantidade de quaras cadastradas no mês | Saber o indice de crescimento da quantidade de quadrass  |Contabiliza o número de quadras cadastradas no mês | Quantidade de registros de quadras feitos no mês | Tabela [Quadras] | Processos Internos |
+| Quantidade de quadras cadastradas no mês | Saber o indice de crescimento da quantidade de quadras  |Contabiliza o número de quadras cadastradas no mês | Quantidade de registros de quadras feitos no mês | Tabela [Quadras] | Processos Internos |
 | Percentual esportes | Identificar os esportes mais populares | Mede o percentual de partidas realizadas em cada esporte na plataforma | (∑ de partidas de um esporte / ∑ de partidas gerais) * 100  | Tabela [Partida] | Aprendizado e Crescimento |
 | Média de avaliação de conduta dos jogadores | Identificar os jogadores mais violentos  | Contabilizar as avaliações de conduta dos jogadores e efetuar a média.| (∑ de avaliação dos jogadores / ∑ de jogadores) * 100 | Tabela [Avaliação/Conduta] |Clientes|
 
