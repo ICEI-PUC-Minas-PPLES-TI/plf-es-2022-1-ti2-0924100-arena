@@ -413,9 +413,9 @@ Marcus Vinícius: O projeto Arena me trouxe muito conhecimento no desenvolviment
 
 **Colocar link:**
 
-Do código (armazenado no repositório);
+Código: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/tree/master/src
 
-Dos artefatos (armazenado do repositório);
+Artefatos: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/tree/master/assets
 
 Apresentação: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/apresenta%C3%A7%C3%A3o.md ;
 
