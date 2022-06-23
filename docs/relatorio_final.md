@@ -347,7 +347,7 @@ Faça aqui uma breve descrição do software e coloque as principais telas com u
 ## 8. Conclusão
 
 O trabalho foi finalizado tendo 2 tipos de usuários, os atletas e locatários, onde nosso sistema realiza a intermediação entre os próprios atletas e os atletas com o locatário. Para essa intermediação, foram implementados processos para encontrar pessoas para jogar, quadras para alugar e formas de validar o pagamento. Sendo assim, o sistema foi concluido atendendo as demandas propostas e integrando os processos em uma plataforma unificada.
-Como propostas de melhorias, um sistema para realização de campeonatos.
+Como propostas de melhorias planejamos a implementação de um sistema para realização de campeonatos dentro da plataforma.
 
 Observações pessoais:
 
