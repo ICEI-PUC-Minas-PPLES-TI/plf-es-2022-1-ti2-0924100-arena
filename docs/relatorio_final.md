@@ -156,28 +156,27 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 #### Processo 1 – Cadastrar usuário
 
-**Inserir dados gerais**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Nome | Caixa de Texto |  |  |
-| Data de Nascimento | Data |  |  |
-| E-mail | Caixa de Texto |  |  |
-| Senha | Caixa de Texto | Mínimo 8 caracteres |   |
 
 **Inserir dados do atleta**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Esportes | Múltipla escolha | Pelo menos 1 |  
-| Sexo | Seleção única | Pelo menos 1 |
+| Nome | Caixa de Texto |  |  |
+| Data de Nascimento | Data |  |  |  
+| E-mail | Caixa de Texto |  |  |
+| Senha | Caixa de Texto | Mínimo 8 caracteres |   |
+| Sexo | Seleção única |  | |
 
 **Inserir dados do locatário**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
+| Nome | Caixa de Texto |  |  |
+| Data de Nascimento | Data |  |  |  
+| E-mail | Caixa de Texto |  |  |
+| Senha | Caixa de Texto | Mínimo 8 caracteres |   |
 | Contato | Número |  |  |
-| Tipo de chave pix | Caixa de Texto |  | Email |
+| Tipo de chave pix | Seleção única |  |  |
 | Chave pix | Caixa de Texto |  |  |
 
 #### Processo 2 – Cadastrar quadra
@@ -197,18 +196,14 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 #### Processo 3 - Criar ou entrar em um time
 
-**Escolher esporte**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Esporte | Seleção única |  |  |
 
 **Criar Time**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nível de experiencia | Seleção única | Obrigatório  |  |
-| Vagas disponíveis | Número | Obrigatório |  |
+| Nome | Caixa de Texto |   |  |
+| Esporte | Seleção única |  |  |
+| Número Máximo de atletas | Númerp |  |  |
 
 **Escolher Time** 
 
@@ -220,6 +215,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
+| Email | Caixa de Texto |  |  |
 | Increver time | Seleção Única |  |  |
 
 #### Processo 4 - Criar ou entrar em uma partida
@@ -259,13 +255,11 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 #### Processo 5 – Realizar pagamento
 
-**Escolher a(s) partida(s)**
+**Escolher a partida**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Partidas | Múltipla escolha | Pelo menos 1 |  |
-
-**Escolher forma de pagamento**
+| Partida | Seleção Única |  |  |
 
 **Enviar o comprovante**
 
