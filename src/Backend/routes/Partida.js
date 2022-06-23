@@ -74,6 +74,8 @@ router.get('/entrar/lobby/:codigotime/:esporte/:codigopartida/:id',function(req,
     getPartidas();
 })
 
+// Formulário de Criação de Partida
+
 router.get('/criar/form/:id',function(req,res){
     res.render('partida/criar/form', {id:req.params.id})
 })
@@ -110,7 +112,7 @@ router.get('/lobby/:codesporte/:horarioi/:horariof/:data/:minimop/:codquadra/:pr
             let time = await sequelize.query(`SELECT * FROM TIMES WHERE CodigoTime=${req.params.codigotime};`, {type: QueryTypes.SELECT})
             let quadra = await sequelize.query(`SELECT * FROM QUADRAS WHERE CodigoQuadra=${req.params.codquadra};`,{type: QueryTypes.SELECT})
             let esporte = await sequelize.query(`SELECT * FROM ESPORTES WHERE IdEsporte=${req.params.codesporte};`,{type: QueryTypes.SELECT})
-            res.render('partida/criar/lobby', {atletatime: atletatime, esporte: esporte[0],quadra: quadra[0],time: time[0],horarioi: req.params.horarioi, horariof: req.params.horariof, data: req.params.data,minimop: req.params.minimop})
+            res.render('partida/criar/lobby', {id: req.params.id, atletatime: atletatime, esporte: esporte[0],quadra: quadra[0],time: time[0],horarioi: req.params.horarioi, horariof: req.params.horariof, data: req.params.data,minimop: req.params.minimop})
         }
         getTimes();
     }).catch((erro)=>{
