@@ -394,7 +394,7 @@ Como propostas de melhorias planejamos a implementação de um sistema para real
 
 Observações pessoais:
 
-Arthur Alexi:
+Arthur Alexi: Com esse projeto pude testar minha lógica de programação e pude desenvolver um sistema com o Backend. Além disso, observei como um bom planejamento do modelo de dados - MER e DER -  e dos processos com o BPMN pode facilitar com a codificação da aplicação e com a visualização do projeto final.
 
 Gabriel de Souza: A realização deste trabalho aprofundou meus conhecimentos vários aspectos não trabalhados anteriormente, como na modelagem dos processos e dos dados, que deixou evidente a necessidade de um bom planejamento antes do desenvolvimeto, experiência com backend, principalmente trabalhando com o banco de dados, o uso de nossa ferramentas como o node.js e algumas biblioteca que não tinha utilizado anteriormente e o trabalho em equipe que foi essencial nesse trabalho. A experiência foi muito rica e com certeza colaborou com meu crescimento como aluno, futuro profissional e como pessoa.
 
