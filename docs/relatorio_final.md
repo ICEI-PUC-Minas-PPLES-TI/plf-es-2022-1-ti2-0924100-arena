@@ -104,7 +104,8 @@ Com a conclusão da partida, os jogadores poderão avaliar uns aos outros. Prime
 
 Processo para obter dados necessários e criar um login de cada usuário . Dessa forma, o sistema conseguirá identificar se é um atleta ou um locatário logado. Por conta disso, a Arena poderá disponibilizar informações e funcionalidades adequadas para cada tipo de participante.
 
-![Cadastro_2](https://user-images.githubusercontent.com/90854173/165630556-de4fe76e-b28b-4707-912a-cbd331558af5.png)
+![Cadastro_1](https://user-images.githubusercontent.com/90854173/175429620-67334d42-5bc9-46de-8f32-6739d3b339bc.png)
+
 
 ### 3.3.2 Processo 2 – Cadastrar Quadra
 
@@ -135,8 +136,7 @@ Pré-requisitos: Estar logado como atleta.
 
 Processo para decidir o valor que cada atleta irá pagar, por meio do pix, para alugar a quadra e controlar quem já quitou o valor. Dessa forma,  o sistema poderá auxiliar na gestão de pagamentos, e consequentemente, fornecer para o proprietário de quadra uma maior segurança do cumprimento dessa tarefa. 
 
-![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/163892063-51eba942-62c5-472f-9bd6-e951dfcb81e4.png)
-
+![Pagamento_BPMN](https://user-images.githubusercontent.com/90854173/175429661-cbffebd5-a9b4-4fc8-bbf7-452fac004b52.png)
 
 ### 3.3.7 Processo 6 – Avaliar participantes
 
