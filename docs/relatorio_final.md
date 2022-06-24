@@ -419,9 +419,10 @@ Código: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-ar
 
 Artefatos: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/tree/master/assets
 
-Apresentação: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/Apresenta%C3%A7%C3%A3o%20Final%20Arena%20(2).pptx ;
+Apresentação: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/Apresenta%C3%A7%C3%A3o%20Final%20Arena.pptx
 
-Do vídeo de apresentação https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/V%C3%ADdeo%20de%20Apresenta%C3%A7%C3%A3o (armazenado no repositório https://youtu.be/_S9Y3b_Uisg).
+Do vídeo de apresentação https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-arena/blob/master/docs/V%C3%ADdeo%20de%20Apresenta%C3%A7%C3%A3o  
+Link vídeo Youtube: https://youtu.be/_S9Y3b_Uisg
 
 
 
