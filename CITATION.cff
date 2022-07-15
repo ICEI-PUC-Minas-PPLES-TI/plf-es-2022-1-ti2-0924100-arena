@@ -1,0 +1,30 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Arena
+authors:
+  - family-names: Moreira Menezes
+    given-names: Arthur Alexi
+  - family-names: Lima de Souza
+    given-names: Gabriel
+  - family-names: Dos Santos Ferreira de Andrade
+    given-names: Frederico
+  - family-names: Pinto Viana Filho
+    given-names: Marcus Vinícius
+ 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: De Paula
+    given-names: Hugo Bastos
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: De Paiva Carvalho
+    given-names: Joyce Christina
+keywords:
+  - Modelagem de Processos de negócios
+  - Indicadores de Desempenho
+  - Automação de Processos
+  - Organização de Partidas
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2022-1-ti2-0924100-chamanow
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2022-07-15
